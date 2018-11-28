@@ -33,6 +33,17 @@
                      <a class="navbar-brand logo-biss" href="index.html"> <img src="assets/images/logo.png">  </a>
                   </div>
                   <!-- end header-logo -->
+                  <div class="header-navbar">
+                     <ul>
+                           <li class="current"><a class=""  href="/home" >Home</a></li>
+                           <li><a class=""  href="/about" >About</a></li>
+                           <li><a class=""  href="/services" >Services</a></li>
+                           <li><a class=""  href="/blog" >Blog</a></li>
+                           <li><a class="" href="/elements" >Elements</a></li>
+                           <li><a class=""  href="/contact">Contact</a></li>
+                     </ul>
+                  </nav>
+                  
                   <nav class="header-nav">
                      <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
                      <div class="header-nav__content">

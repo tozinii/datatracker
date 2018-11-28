@@ -379,29 +379,29 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
  * ## main navigation 
  * ------------------------------------------------------------------- */
 .header-nav {
-  /*z-index: 900;*/
+  z-index: 900;
   font-family: "metropolis-regular", sans-serif;
   font-size: 1.3rem;
   line-height: 1.846;
   padding: 3.6rem 3rem 3.6rem 3.6rem;
   height: 100%;
   width: 280px;
- background: #265db9 !important;
-    background-image: linear-gradient(to right top ,#6871f4,#6871f4,#6871f48f,#265db9 ,#265db9b0 )!important;
+  background: #265db9 !important;
+  background-image: linear-gradient(to right top ,#6871f4,#6871f4,#6871f48f,#265db9 ,#265db9b0 )!important;
   color: rgba(255, 255, 255, 0.25);
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
   right: 0;
   top: 0;
-  /*-webkit-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
-  visibility: hidden;*/
+  visibility: hidden;
 }
 .header-nav a,
 .header-nav a:visited {
@@ -431,7 +431,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   position: relative;
   left: 50px;
   opacity: 0;
-  /*visibility: hidden;*/
+  visibility: hidden;
 }
 
 .header-nav__list {
@@ -451,7 +451,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 .header-nav__list a {
-  display: block;
+  display: inline-block;
   color: #ffffff;
   position: relative;
   padding-left: 3.5rem;
@@ -531,6 +531,13 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.header-navbar li {
+  display: inline-block;
+}
+.header-navbar {
+  float: left;
 }
 
 /* menu is open
@@ -618,6 +625,11 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 }
 .header-menu-icon::after {
   bottom: -9px;
+}
+
+nav li {
+  display: block;
+  float: left;
 }
 
 
