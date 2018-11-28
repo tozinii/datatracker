@@ -443,9 +443,12 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   counter-reset: ctr;
 }
 .header-nav__list li {
-     border-top: 1px solid rgba(202, 197, 197, 0.66);
+  /*border-top: 1px solid rgba(202, 197, 197, 0.66);*/
   line-height: 4.8rem;
   position: relative;
+  display: inline-block;
+  left: 400px;
+  bottom: 15px;
 }
 .header-nav__list li:last-child {
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -457,8 +460,8 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   padding-left: 3.5rem;
 }
 .header-nav__list a::before {
-  content: counter(ctr, decimal-leading-zero) ".";
-  counter-increment: ctr;
+  /*content: counter(ctr, decimal-leading-zero) ".";
+  counter-increment: ctr;*/
   font-family: "metropolis-regular", sans-serif;
   font-size: 11px;
   color: rgba(255, 255, 255, 0.25);
@@ -531,13 +534,6 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-
-.header-navbar li {
-  display: inline-block;
-}
-.header-navbar {
-  float: left;
 }
 
 /* menu is open

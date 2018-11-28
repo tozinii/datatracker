@@ -33,7 +33,7 @@
                      <a class="navbar-brand logo-biss" href="index.html"> <img src="assets/images/logo.png">  </a>
                   </div>
                   <!-- end header-logo -->
-                  <div class="header-navbar">
+                  <div class="header-nav__list">
                      <ul>
                            <li class="current"><a class=""  href="/home" >Home</a></li>
                            <li><a class=""  href="/about" >About</a></li>
