@@ -379,7 +379,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
  * ## main navigation 
  * ------------------------------------------------------------------- */
 .header-nav {
-  z-index: 900;
+  /*z-index: 900;*/
   font-family: "metropolis-regular", sans-serif;
   font-size: 1.3rem;
   line-height: 1.846;
@@ -394,14 +394,14 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   position: fixed;
   right: 0;
   top: 0;
-  -webkit-transition: all 0.5s ease;
+  /*-webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
-  visibility: hidden;
+  visibility: hidden;*/
 }
 .header-nav a,
 .header-nav a:visited {
@@ -431,7 +431,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   position: relative;
   left: 50px;
   opacity: 0;
-  visibility: hidden;
+  /*visibility: hidden;*/
 }
 
 .header-nav__list {
