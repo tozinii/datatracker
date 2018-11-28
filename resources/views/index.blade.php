@@ -38,12 +38,12 @@
                      <div class="header-nav__content">
                         <h3>Intechnic </h3>
                         <ul class="header-nav__list">
-                           <li class="current"><a class=""  href="index.html" >Home</a></li>
-                           <li><a class=""  href="about.html" >About</a></li>
-                           <li><a class=""  href="services.html" >Services</a></li>
-                           <li><a class=""  href="blog.html" >Blog</a></li>
-                           <li><a class="" href="elements.html" >Elements</a></li>
-                           <li><a class=""  href="contact.html">Contact</a></li>
+                           <li class="current"><a class=""  href="/home" >Home</a></li>
+                           <li><a class=""  href="/about" >About</a></li>
+                           <li><a class=""  href="/services" >Services</a></li>
+                           <li><a class=""  href="/blog" >Blog</a></li>
+                           <li><a class="" href="/elements" >Elements</a></li>
+                           <li><a class=""  href="/contact">Contact</a></li>
                         </ul>
                         <ul class="header-nav__social">
                            <li>
@@ -82,11 +82,6 @@
                               <a id="#services"  href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" href="#"><span class="skew_14">GET STARTED FOR FREE </span></a>
                            </div>
                         </div>
-                        <div class=" col-md-5">
-                           <div class="video-imgs">
-                              <a href="#nogo" class="hero__play"><img  src="assets/images/img-g.png"></a>
-                           </div>
-                        </div>
                         <!-- /#banner-text End -->
                      </div>
                   </div>
@@ -96,51 +91,6 @@
             </div>
          </div>
          <!-- /#banner end -->
-         <!--#Our banner-shap- Area -->
-         <!--#EndOur banner-shap- Area -->
-         <!-- #About Us Area start -->
-         <div  id="about"  class=" py-70 pb_90">
-            <div class="container About-right-bg-img ">
-               <div class="row text-left  ">
-                  <div class="col-md-7">
-                     <div class="about_left_text wow fadeInUp">
-                        <h1>ABOUT US     </h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and type <br>setting industry.  </p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                        <div class="top-about wow fadeInRight wow fadeInUp">
-                           <a id="#services"  href="#services" class="btn btn-default btn_text_cap btn_bg_f button_py_12   wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" href="#"><span class="skew_14">Just Do it ! </span></a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-5">
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- #About Us Area End -->
-         <!--#Our Partners Area -->
-         <div class="our_partners_area bg_gary py-70 pb_0">
-            <div class="container">
-               <div class="our_partners_h wow fadeInUp">
-                  <h1>Trusted by over 5,000 of the world's most innovative companies</h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. been<br> the industry's</p>
-               </div>
-               <!--#Our Partners assets/images start -->
-               <div class="partners wow fadeInUp">
-                  <div class="item"><img src="assets/images/client_logo/client_logo-1.jpg" alt=""></div>
-                  <div class="item"><img src="assets/images/client_logo/client_logo-2.jpg" alt=""></div>
-                  <div class="item"><img src="assets/images/client_logo/client_logo-3.jpg" alt=""></div>
-                  <div class="item"><img src="assets/images/client_logo/client_logo-4.jpg" alt=""></div>
-                  <div class="item"><img src="assets/images/client_logo/client_logo-5.jpg" alt=""></div>
-               </div>
-               <!--#End Our Partners assets/images -->
-               <div class="bottom-partner wow fadeInRight text-center" style="visibility: visible; animation-name: fadeInRight;">
-                  <a id="#services" href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">LEARN MORE ABOUT OUR CUSTOMERS </span></a>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!--#End Our Partners Area -->
       <!--start Hey title Area-right_img -->
       <section class="">
          <div class="container-fluid ">
@@ -160,57 +110,6 @@
          </div>
       </section>
       <!--End Hey title Area-right_img -->
-      <!-- #service Us Area start -->
-      <div  id="about"  class=" back-right-text-c">
-         <div class="container">
-            <div class="row text-center mb-60 ">
-               <div class="title wow fadeInUp ">
-                  <h2> service  </h2>
-                  <h1>Optimize Every Touchpoint in the Customer Experience</h1  >
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem<br> Ipsum has been the industry's </p>
-               </div>
-            </div>
-            <div class="row about_row  py-40">
-               <!--#about-text start --> 
-               <div class="who_we_area col-md-4 col-sm-6 col-4pad wow fadeInUp">
-                  <div class="service-1">
-                     <div class="servise-top wow fadeInUp">
-                        <img src="assets/images/icone-1.png">
-                     </div>
-                     <h2 class="unify"> Marketing </h2>
-                     <p class="bottom-s">It is a long established fact that a reader will be distracted by the <br> readable.</p>
-                     <div class="top-banner wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
-                        <a id="#services" href="#services" class="btn btn-default btn_text_cap   wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Learn more </span></a>
-                     </div>
-                  </div>
-               </div>
-               <div class="who_we_area col-md-4 col-sm-6 col-4pad wow fadeInUp">
-                  <div class="service-1">
-                     <div class="servise-top wow fadeInUp">
-                        <img src="assets/images/icone-2.png">
-                     </div>
-                     <h2 class="unify"> Analyze </h2>
-                     <p class="bottom-s">It is a long established fact that a reader will be distracted by the<br> readable. </p>
-                     <div class="top-banner wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
-                        <a id="#services" href="#services" class="btn btn-default  btn_text_cap wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Learn more </span></a>
-                     </div>
-                  </div>
-               </div>
-               <div class="who_we_area col-md-4 col-sm-6 col-4pad wow fadeInUp">
-                  <div class="service-1">
-                     <div class="servise-top wow fadeInUp">
-                        <img src="assets/images/icone-3.png">
-                     </div>
-                     <h2 class="unify"> Marketing </h2>
-                     <p class="bottom-s">It is a long established fact that a reader will be distracted by the<br> readable. </p>
-                     <div class="top-banner wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
-                        <a id="#services" href="#services" class="btn btn-default btn_text_cap wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Learn more </span></a>
-                     </div>
-                  </div>
-               </div>
-               <!--#End service-text  --> 
-            </div>
-         </div>
          <!--#strat service-text  --> 
          <section class="">
             <div class="container-fluid ">
@@ -231,217 +130,6 @@
          </section>
       </div>
       <!--#End service-text  --> 
-      <!--#strat Analytics to answer   --> 
-      <div class="container-fluid wow fadeInUp">
-         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
-               <div class="col-lg-9 col-md-9 col-sm-12 col-xs-9 bhoechie-tab p0 ">
-                  <!-- Analytics section -->
-                  <div class="tabas-gb-clip">
-                  </div>
-                  <div class="bhoechie-tab-content active pl_90 wow fadeInUp">
-                     <h2> Analytics to answer any business question.</h2>
-                     <p> Full-funnel attribution, onboarding optimization, feature usage trends, subscription<br> growth, cohort analysis and more. Know exactly what users are doing across touch <br>points to increase acquisition, drive engagement and improve retention.</p>
-                     <div class="tabs-img">
-                        <img src="assets/images/tabs-img.png">
-                     </div>
-                     <div class="left-service wow fadeInRight text-center" style="visibility: visible; animation-name: fadeInRight;">
-                        <a  href="#" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">LEARN MORE ABOUT OUR CUSTOMERS</span></a>
-                     </div>
-                  </div>
-                  <!--  How often  section -->
-                  <div class="bhoechie-tab-content  pl_90 wow fadeInUp">
-                     <h2>  How often do I have to renew my subscription with Invoicera</h2>
-                     <p> Full-funnel attribution, onboarding optimization, feature usage trends, subscription<br> growth, cohort analysis and more. Know exactly what users are doing across touch <br>points to increase acquisition, drive engagement and improve retention.</p>
-                     <div class="tabs-img">
-                        <img src="assets/images/tabs-img.png">
-                     </div>
-                     <div class="left-service wow fadeInRight text-center" style="visibility: visible; animation-name: fadeInRight;">
-                        <a id="#services" href="#services" class="btn btn-default  wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">LEARN MORE ABOUT OUR CUSTOMERS</span></a>
-                     </div>
-                  </div>
-                  <!-- will happen  section -->
-                  <div class="bhoechie-tab-content  pl_90 wow fadeInUp">
-                     <h2> will happen to my account once the trial period is over</h2>
-                     <p> Full-funnel attribution, onboarding optimization, feature usage trends, subscription<br> growth, cohort analysis and more. Know exactly what users are doing across touch <br>points to increase acquisition, drive engagement and improve retention.</p>
-                     <div class="tabs-img">
-                        <img src="assets/images/tabs-img.png">
-                     </div>
-                     <div class="left-service wow fadeInRight text-center" style="visibility: visible; animation-name: fadeInRight;">
-                        <a id="#services" href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">LEARN MORE ABOUT OUR CUSTOMERS</span></a>
-                     </div>
-                  </div>
-                  <!--Can I change  section -->
-                  <div class="bhoechie-tab-content  pl_90 wow fadeInUp">
-                     <h2> Can I change my plan anytime during my subscription period</h2>
-                     <p> Full-funnel attribution, onboarding optimization, feature usage trends, subscription<br> growth, cohort analysis and more. Know exactly what users are doing across touch <br>points to increase acquisition, drive engagement and improve retention.</p>
-                     <div class="tabs-img">
-                        <img src="assets/images/tabs-img.png">
-                     </div>
-                     <div class="left-service wow fadeInRight text-center" style="visibility: visible; animation-name: fadeInRight;">
-                        <a id="#services" href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">LEARN MORE ABOUT OUR CUSTOMERS</span></a>
-                     </div>
-                  </div>
-                  <!--Analytics  section -->
-                  <div class="bhoechie-tab-content  pl_90 wow fadeInUp">
-                     <h2> Analytics to answer any business question.</h2>
-                     <p> Full-funnel attribution, onboarding optimization, feature usage trends, subscription<br> growth, cohort analysis and more. Know exactly what users are doing across touch <br>points to increase acquisition, drive engagement and improve retention.</p>
-                     <div class="tabs-img">
-                        <img src="assets/images/tabs-img.png">
-                     </div>
-                     <div class="left-service wow fadeInRight text-center" style="visibility: visible; animation-name: fadeInRight;">
-                        <a id="#services" href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">LEARN MORE ABOUT OUR CUSTOMERS</span></a>
-                     </div>
-                  </div>
-               </div>
-               <!--Analytics  section -->
-               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu ">
-                  <div class="list-group">
-                     <a href="#" class="list-group-item active text-center bg_t">
-                     <img src="assets/images/tabs-right-1.png" class="filter-img"> <img src="assets/images/tabs-bg-img.png" class="filter-img"> <span class="">Analytics</span> 
-                     </a>
-                     <a href="#" class="list-group-item text-center bg_t ">
-                     <img src="assets/images/tabs-right-2.png" class="filter-img"> <img src="assets/images/tabs-bg-img.png" class="filter-img"> <span>Execute</span> 
-                     </a>
-                     <a href="#" class="list-group-item text-center bg_t ">
-                     <img src="assets/images/tabs-right-3.png" class="filter-img"> <img src="assets/images/tabs-bg-img.png" class="filter-img"><span>Analyze</span> 
-                     </a>
-                     <a href="#" class="list-group-item text-center bg_t">
-                     <img src="assets/images/tabs-right-4.png" class="filter-img"> <img src="assets/images/tabs-bg-img.png" class="filter-img"><span>Analyze</span> 
-                     </a>
-                  </div>
-               </div>
-               <!--Analytics  section -->
-            </div>
-         </div>
-      </div>
-      <!-- End Analyze Us Area -->
-      <!-- #PRICING_tabel  Area start -->
-      <div  id="about"  class=" back-right-text-c">
-         <div class="container wow fadeInUp">
-            <div class="row text-center mb-60 ">
-               <div class="title wow fadeInUp">
-                  <h3>PRICING</h3>
-                  <h1>Lorem Ipsum is printing and typesetting industry. </h1>
-                  <p class="about_bottom_h mt-50   "> It is a long established fact that a reader will be distracted by the readable content <br>of a page when looking at its layout.</p>
-               </div>
-            </div>
-            <!-- #radio radio-primary  Area start -->
-            <div class="row mt_table_button_100">
-               <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                  <div class="radio radio-primary">
-                     <input type="radio" name="radio1" id="radio1" value="option1" class="tabs_label active_t">
-                     <label for="radio1">
-                     Monthly
-                     </label>
-                  </div>
-               </div>
-               <div class="col-md-6 col-sm-6 col-xs-6">
-                  <div class="radio radio-primary">
-                     <input type="radio" name="radio1" id="radio2" value="option2" class="tabs_label active_t">
-                     <label for="radio2">
-                     Yearly <span class="tabel-color_save">- Save 20% </span>
-                     </label>
-                  </div>
-               </div>
-            </div>
-            <!-- #End radio radio-primary  Area start -->
-         </div>
-         <!-- #Start STARTER EDITION  Area start -->
-         <div class="container-fluid">
-            <div class="col-md-3"></div>
-            <div class="col-md-9">
-               <div class="bg_bottom_table"></div>
-            </div>
-         </div>
-         <div class="container bg_top_table">
-            <div class="row wow fadeInUp  ">
-               <div class="col-md-4 col-sm-6 ">
-                  <div class="pricingTable ">
-                     <div class="pricingTable-header">
-                        <h3 class="heading_top"> STARTER EDITION</h3>
-                        <span class="price-value">
-                        <span class="currency"></span> free
-                        </span>
-                        <h3 class="heading">Forever</h3>
-                     </div>
-                     <div class="pricing-content">
-                        <h2 class="tabel-color">  Beginner  </h2>
-                        <ul>
-                           <li>1 GB of space</li>
-                           <li>Unlimited traffic</li>
-                           <li>Forum access</li>
-                           <li>Support at $25/hour</li>
-                        </ul>
-                        <a href="#" class="btn-default px_70">
-                        <span class="skew_14">SIGN UP</span></a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6 wow fadeInUp ">
-                  <div class="pricingTable ">
-                     <div class="pricingTable-header  pricingTable-header_pink">
-                        <h3 class="heading_top">PRO EDITION</h3>
-                        <div  class="currency_month">
-                           <span class="price-value">
-                           <span class="currency">$</span>24
-                           </span>
-                           <h3 class="heading">Per Month</h3>
-                        </div>
-                        <div  class="currency_year">
-                           <span class="price-value">
-                           <span class="currency">$</span>155
-                           </span>
-                           <h3 class="heading">Per year</h3>
-                        </div>
-                     </div>
-                     <div class="pricing-content">
-                        <h2 class="tabel-color">  Advanced  </h2>
-                        <ul>
-                           <li>1 GB of space</li>
-                           <li>Unlimited traffic</li>
-                           <li>Forum access</li>
-                           <li>Support at $25/hour</li>
-                        </ul>
-                        <a href="#" class="btn-default"><span class="skew_14">
-                        TAKE A  FREE TRIAL</span></a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6  wow fadeInUp ">
-                  <div class="pricingTable ">
-                     <div class="pricingTable-header pricingTable-header_blue ">
-                        <h3 class="heading_top ">INFINITE EDITION</h3>
-                        <div  class="currency_month">
-                           <span class="price-value">
-                           <span class="currency">$</span>149
-                           </span>
-                           <h3 class="heading">Per Month</h3>
-                        </div>
-                        <div  class="currency_year">
-                           <span class="price-value">
-                           <span class="currency">$</span>1499
-                           </span>
-                           <h3 class="heading">Per year</h3>
-                        </div>
-                     </div>
-                     <div class="pricing-content">
-                        <h2 class="tabel-color">  Professional  </h2>
-                        <ul>
-                           <li>1 GB of space</li>
-                           <li>Unlimited traffic</li>
-                           <li>Forum access</li>
-                           <li>Support at $25/hour</li>
-                        </ul>
-                        <a href="#" class="btn-default"><span class="skew_14">
-                        TAKE A FREE TRIAL</span></a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- #End tabel Area start -->
       <!--#Our Testimonial Area start-->
       <section id="testimonials" class="testimonial_area row">
          <div class="container ">
@@ -453,7 +141,7 @@
                      <div class="img-s ">
                         <img src="assets/images/testimonial-top.png">
                      </div>
-                     <h4 class="body-slider media-heading">Lorem Ipsum is simply dummy </h4>
+                     <h4 class="body-slider media-heading">Iker Apaolaza </h4>
                      <hr class="slider_hr">
                   </div>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting<br> industry. Lorem Ipsum has been the industry's standard dummy text<br> ever since the 1500s, </p>
@@ -464,7 +152,7 @@
                         </a>
                      </div>
                      <div class="media-body">
-                        <h4 class="media-heading">Joliya Devson <span class="slider_span_color">- Web Desinger</span></h4>
+                        <h4 class="media-heading">Iker Apaolaza <span class="slider_span_color">- Web Desinger</span></h4>
                      </div>
                   </div>
                </div>
@@ -473,7 +161,7 @@
                      <div class="img-s ">
                         <img src="assets/images/testimonial-top.png">
                      </div>
-                     <h4 class="body-slider media-heading">Lorem Ipsum is simply dummy  </h4>
+                     <h4 class="body-slider media-heading">Jon Jauregi </h4>
                      <hr class="slider_hr">
                   </div>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting<br> industry. Lorem Ipsum has been the industry's standard dummy text<br> ever since the 1500s, </p>
@@ -484,7 +172,7 @@
                         </a>
                      </div>
                      <div class="media-body">
-                        <h4 class="media-heading">Joliya Devson <span class="slider_span_color">- Web Desinger</span></h4>
+                        <h4 class="media-heading">Jon Jauregi <span class="slider_span_color">- Web Desinger</span></h4>
                      </div>
                   </div>
                </div>
@@ -493,7 +181,7 @@
                      <div class="img-s ">
                         <img src="assets/images/testimonial-top.png">
                      </div>
-                     <h4 class="body-slider media-heading">Lorem Ipsum is simply dummy </h4>
+                     <h4 class="body-slider media-heading">Ander González </h4>
                      <hr class="slider_hr">
                   </div>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting<br> industry. Lorem Ipsum has been the industry's standard dummy text<br> ever since the 1500s, </p>
@@ -504,7 +192,7 @@
                         </a>
                      </div>
                      <div class="media-body">
-                        <h4 class="media-heading">Joliya Devson <span class="slider_span_color">- Web Desinger</span></h4>
+                        <h4 class="media-heading">Ander González <span class="slider_span_color">- Web Desinger</span></h4>
                      </div>
                   </div>
                </div>
