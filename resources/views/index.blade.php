@@ -58,7 +58,7 @@
                            <li>
                               <a href="#0"><i class="fa fa-linkedin-square fa-3x social"></i></a>
                            </li>
-                           
+
                         </ul>
                      </div>
                      <!-- end header-nav__content -->
@@ -74,7 +74,7 @@
                <section id="banner" class=" mb-90">
                   <div class="container ">
                      <div class="row">
-                        <!-- #banner-text start -->            
+                        <!-- #banner-text start -->
                         <div id="banner-text" class="col-md-7 text-c text-left ">
                            <h5 class="wow fadeInUp main-h" data-wow-delay="0.2s" >End-to-End Customer<br> Journey Analytics</h5>
                            <p class="banner-text wow fadeInUp main-h3" data-wow-delay="0.8s">No hours sank into aggregating and cleaning data. No<br> complex SQL queries required. Just the answers teams <br>need to. </p>
@@ -110,7 +110,7 @@
          </div>
       </section>
       <!--End Hey title Area-right_img -->
-         <!--#strat service-text  --> 
+         <!--#strat service-text  -->
          <section class="">
             <div class="container-fluid ">
                <div class="row text-left about_row clip-polygon_right ">
@@ -129,7 +129,7 @@
             </div>
          </section>
       </div>
-      <!--#End service-text  --> 
+      <!--#End service-text  -->
       <!--#Our Testimonial Area start-->
       <section id="testimonials" class="testimonial_area row">
          <div class="container ">
@@ -282,7 +282,7 @@
             <a class="hero__close" href="#">Close</a>
             <iframe allowscriptaccess="always" id="hero-video" class="hero__player" src="https://www.youtube.com/embed/1NSA8ycGfKg?enablejsapi=1&html5=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
          </div>
-         <!-- /.hero__modal -->    
+         <!-- /.hero__modal -->
       </div>
       <!-- /.hero__overlay -->
       <!-- jQuery JS -->
@@ -299,7 +299,7 @@
            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
          });
          });
-      </script> 
+      </script>
       <script type="text/javascript">
          $(document).ready(function(){
            $(".currency_year").hide();
@@ -312,13 +312,13 @@
                  $(".currency_year").show();
              });
          });
-         
+
           $('.tabs_label').click(function(){
                       $('.tabs_label').removeClass('active_t');
                       $(this).addClass('active_t');
-         
+
                   })
-               
+
       </script>
       <!-- Bootstrap JS -->
       <script src="assets/js/bootstrap.min.js"></script>
