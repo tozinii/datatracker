@@ -35,24 +35,22 @@
                   <!-- end header-logo -->
                   <div class="main-navbar">
                         <ul>
-                              <li class="current"><a class=""  href="/home" >Home</a></li>
-                              <li><a class=""  href="/about" >About</a></li>
-                              <li><a class=""  href="/services" >Services</a></li>
-                              <li><a class=""  href="/blog" >Blog</a></li>
-                              <li><a class="" href="/elements" >Elements</a></li>
-                              <li><a class=""  href="/contact">Contact</a></li>
+                              <li class="current"><a class=""  href="/home" >Inicio</a></li>
+                              <li><a class=""  href="/about" >Herramientas</a></li>
+                              <li><a class=""  href="/services" >¿Quiénes somos?</a></li>
+                              <li><a class=""  href="/blog" >Contacto</a></li>
                         </ul>
                   </div>
-                  
+
                   <nav class="header-nav">
                      <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
                      <div class="header-nav__content">
                         <h3>Intechnic </h3>
                         <ul class="header-nav__list">
-                           <li class="current"><a class=""  href="/home" >Home</a></li>
-                           <li><a class=""  href="/about" >About</a></li>
-                           <li><a class=""  href="/services" >Services</a></li>
-                           <li><a class=""  href="/blog" >Blog</a></li>
+                           <li class="current"><a class="" href="/home" >Inicio</a></li>
+                           <li><a class=""  href="/about" >Herramientas</a></li>
+                           <li><a class=""  href="/services" >¿Quiénes somos?</a></li>
+                           <li><a class=""  href="/blog" >Contacto</a></li>
                            <li><a class="" href="/elements" >Elements</a></li>
                            <li><a class=""  href="/contact">Contact</a></li>
                         </ul>
@@ -91,7 +89,7 @@
                            <h5 class="wow fadeInUp main-h" data-wow-delay="0.2s" >Data Tracker</h5>
                            <p class="banner-text wow fadeInUp main-h3" data-wow-delay="0.8s">Administra tus coches y gestiona sus datos para<br> mejorar su rendimiento y capacidades. </p>
                            <div class="top-banner wow fadeInRight">
-                              <a id="#services"  href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" href="#"><span class="skew_14"><i> Más información </i> </span></a>
+                              <a id="#services"  href="#equipo" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s"><span class="skew_14"><i> Más información </i> </span></a>
                            </div>
                         </div>
                         <!-- /#banner-text End -->
@@ -107,7 +105,7 @@
       <section class="">
          <div class="container-fluid ">
             <div class="row text-left about_row_2 clip-polygon_right_2">
-               <div class="col-md-5 p-0 clip-polygon_left_2 wow fadeInUp">
+               <div id="equipo" class="col-md-5 p-0 clip-polygon_left_2 wow fadeInUp">
                   <div class="video-img">
                   </div>
                </div>
@@ -115,7 +113,7 @@
                   <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Equipo</p>
                   <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Crea o unete a un grupo y recopila información de los sensores implantados en vuestro coche para tener la certeza de poner en marcha el coche en cualquier momento.</p>
                   <div class="left-services wow fadeInRight text-right" style="visibility: visible; animation-name: fadeInRight;">
-                     <a id="#services" href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
+                     <a id="#services" href="#services" class="btn btn-default wow fadeInUp js-scroll-trigger disabled-link" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
                   </div>
                </div>
             </div>
@@ -126,11 +124,11 @@
          <section class="">
             <div class="container-fluid ">
                <div class="row text-left about_row clip-polygon_right ">
-                  <div class="col-md-7 wow fadeInUp pl_90 pr_90">
+                  <div id="estadisticas" class="col-md-7 wow fadeInUp pl_90 pr_90">
                      <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Estadisticas</p>
                      <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Visualiza de una manera facil y sencilla los datos recibidos <br>y mejora las capacidades de tu coche.</p>
                      <div class="left-services_32 wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
-                        <a id="#services" href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
+                        <a id="#services" href="#services" class="btn btn-default wow fadeInUp js-scroll-trigger disabled-link" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
                      </div>
                   </div>
                   <div class="col-md-5 p-0 clip-polygon_left wow fadeInUp">
@@ -254,7 +252,7 @@
                      </div>
                   </div>
                   <div class="col-md-12">
-                     <p class="color-gray"> Designed by <a href="https://www.navthemes.com">NavThemes </a> &amp; distributed by <a href="https://themewagon.com/">ThemeWagon</a></p>
+                    <p class="color-gray">DataTracker 2018 &copy;</p>
                   </div>
                </div>
             </div>
