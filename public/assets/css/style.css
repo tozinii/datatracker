@@ -437,7 +437,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 .header-nav__list, .main-navbar {
   font-family: "metropolis-regular", sans-serif;
   font-size: 1.6rem;
-  margin: 4.2rem 0 3rem 0;
+  margin: 4.6rem 0 3rem 0;
   padding: 0 0 1.8rem 0;
   list-style: none;
   counter-reset: ctr;
