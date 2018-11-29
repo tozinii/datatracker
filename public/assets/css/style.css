@@ -434,7 +434,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   visibility: hidden;
 }
 
-.header-nav__list {
+.header-nav__list, .main-navbar {
   font-family: "metropolis-regular", sans-serif;
   font-size: 1.6rem;
   margin: 3.6rem 0 3rem 0;
@@ -442,26 +442,30 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   list-style: none;
   counter-reset: ctr;
 }
-.header-nav__list li {
-  /*border-top: 1px solid rgba(202, 197, 197, 0.66);*/
+.header-nav__list li{
+  border-top: 1px solid rgba(202, 197, 197, 0.66);
   line-height: 4.8rem;
+  position: relative;
+}
+
+.main-navbar li {
   position: relative;
   display: inline-block;
   left: 400px;
   bottom: 15px;
 }
-.header-nav__list li:last-child {
+.header-nav__list li:last-child{
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
-.header-nav__list a {
-  display: inline-block;
+.header-nav__list a, .main-navbar a {
+  display: block;
   color: #ffffff;
   position: relative;
   padding-left: 3.5rem;
 }
-.header-nav__list a::before {
-  /*content: counter(ctr, decimal-leading-zero) ".";
-  counter-increment: ctr;*/
+.header-nav__list a::before/*, .main-navbar a::before */ {
+  content: counter(ctr, decimal-leading-zero) ".";
+  counter-increment: ctr;
   font-family: "metropolis-regular", sans-serif;
   font-size: 11px;
   color: rgba(255, 255, 255, 0.25);
@@ -471,7 +475,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   left: 3px;
   top: 0;
 }
-.header-nav__list a:hover::before {
+.header-nav__list a:hover::before/*, .main-navbar a:hover::before */ {
   color: #fff;
 }
 
@@ -486,7 +490,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   display: inline-block;
   margin-right: 12px;
   padding-left: 0;
-      font-size: 11px;
+  font-size: 11px;
 }
 .header-nav__social li a {
   color: rgba(255, 255, 255, 0.15);
@@ -594,8 +598,8 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 }
 
 .header-menu-icon {
-      display: block;
-       width: 35px;
+    display: block;
+    width: 35px;
     height: 3px;
     margin-top: -1px;
     right: auto;
@@ -633,15 +637,21 @@ nav li {
  * responsive:
  * header
  * ------------------------------------------------------------------- */
-@media only screen and (max-width: 1600px) {
+@media only screen and (min-width: 1001px) {
   .header-logo {
     left: 60px;
 
   }
 
   .header-menu-toggle {
-    right: 60px;
-    padding:20px;
+    display: none;
+    
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .main-navbar {
+    display: none;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -681,7 +691,7 @@ nav li {
 
   .header-logo {
     left: 25px;
-      top:60px;
+    top:60px;
   }
  
 
