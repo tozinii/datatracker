@@ -680,7 +680,6 @@ nav li {
 @media only screen and (max-width: 600px) {
   .s-header {
     height: 90px;
-    top: 12px;
   }
 
   .header-logo {
@@ -700,7 +699,6 @@ nav li {
 }
 @media only screen and (max-width: 400px) {
   .s-header {
-    top: 6px;
   }
 
   .header-logo {
@@ -1707,7 +1705,7 @@ position: relative;
 }
 .our_partners_area_register .book_now_aera_register .book_now_register .booking_text_register {
   width: 100px;
-  height: 100px; 
+  height: 100px;
 }
 .our_partners_area_register .book_now_aera_register .book_now_register .booking_text_register h2 {
 
