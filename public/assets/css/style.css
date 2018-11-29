@@ -1611,7 +1611,7 @@ font-weight:600;
   color: #364167;
     line-height: 30px;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
 
 }
 .our_partners_area .book_now_aera .book_now .booking_text p {
@@ -1663,6 +1663,84 @@ position: relative;
     -o-transform: skew(8deg);
 }
 /* End Our Partners Area */
+/* Start Our Partners Area 2*/
+
+
+.bg-grediunt{
+  background: #f4f9fb!important;
+    background-image: linear-gradient(to right bottom,#f4f9fb,#fff,#f4f9fb,#fff,#f4f9fb)!important;
+}
+.bg-grediunts {
+    background: #f1f9fc!important;
+    background-image: linear-gradient(to right bottom,#f1f9fc,#f1f9fc,#f1f9fc,#f1f9fc,#f1f9fc)!important;
+}
+.our_partners_area_register {
+  float: right;
+}
+.our_partners_area_register .partners {
+  padding-top: 20px;
+  padding-bottom: 20px;
+      text-align: right;
+}
+
+.our_partners_area_register .book_now_aera_register {
+  padding: 20px 0;
+}
+.our_partners_area_register .book_now_aera_register .container {
+  width: 400px;
+  height: 50px;
+  padding-right: 50px;
+}
+.our_partners_area_register .book_now_aera_register .book_now_register .booking_text_register {
+  padding-top: 8px;
+}
+.our_partners_area_register .book_now_aera_register .book_now_register .booking_text_register h4 {
+
+  color: #364167;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: 300;
+
+}
+.our_partners_area_register .book_now_aera_register .book_now_register .booking_text_register p {
+    color: #364167;
+    font-size: 16px;
+    padding-top: 5px;
+}
+.our_partners_h{
+  text-align: center;
+}
+
+.bg_gary{
+  background:#e8eafd !important;
+}
+
+.bottom-partner{
+position: relative;
+    top: 30px;
+  }
+.pb_0{
+  padding-bottom: 0px !important;
+}
+
+.bg-new{
+  background:#e8eafd !important;
+  padding:20px;
+      -webkit-transform: skew(-8deg);
+    -moz-transform: skew(-8deg);
+    -o-transform: skew(-8deg);
+        border-radius: 20px;
+}
+.skew_14{
+  display: block;
+  transform:skew(8deg);
+-webkit-transform: skew(8deg);
+    -moz-transform: skew(8deg);
+    -o-transform: skew(8deg);
+}
+
+
+/* End Our Partners Area 2 */
 /*----------------------------------
    14.our_modal_area
 ------------------------------------*/

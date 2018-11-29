@@ -93,6 +93,28 @@
                            </div>
                         </div>
                         <!-- /#banner-text End -->
+                        <div class="our_partners_area_register ">
+                           <div class="book_now_aera_register ">
+                              <div class="container">
+                                 <div class="row book_now_register bg-new">
+                                    <div class="col-md-7 booking_text">
+                                       <span class="skew_14">
+                                          <h2>Registrate!
+                                          </h2>
+                                       </span>
+                                    <div class="col-md-5 p0 book_bottun">
+                                       <div class="col-md-6">
+                                          <div class="top-banner wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
+                                             <a id="#services" href="#services" class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">CONTACT SALES</span></a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
                      </div>
                   </div>
                </section>
