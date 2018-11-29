@@ -252,32 +252,6 @@
                         <a href="" target="_blank" class="ml-15"><i id="social-em" class="fa fa-instagram fa-2x social"></i></a>
                         <a href="" target="_blank" class="ml-15"><i id="social-em" class="fa fa-linkedin fa-2x social"></i></a>
                      </div>
-                     <p class="footer-h"><a href=""> enquiry@demo.com </a></p>
-                     <p class="footer-h">+1- 982-8-587 452  </p>
-                  </div>
-                  <div class="col-md-1 ">
-                  </div>
-                  <div class="col-md-3">
-                     <h2 class="footer-top">SOLUTIONS </h2>
-                     <ul class="footer-menu">
-                        <li><a href=""><i class="fa fa-angle-double-right ml-15"></i> SaaS    </a></li>
-                        <li><a href=""><i class="fa fa-angle-double-right ml-15"></i> Mobile  </a> </li>
-                        <li><a href=""><i class="fa fa-angle-double-right ml-15"></i>Commerce    </a> </li>
-                        <li><a href=""><i class="fa fa-angle-double-right ml-15"></i>    Gaming    </a> </li>
-                        <li><a href=""><i class="fa fa-angle-double-right ml-15"></i>   Finance   </a> </li>
-                        <li><a href=""><i class="fa fa-angle-double-right ml-15"></i>         Media   </a></li>
-                     </ul>
-                  </div>
-                  <div class="col-md-4">
-                     <ul class="location">
-                        <li class="footer-left-h"><i class="fa fa-map-marker"></i>Address<br>505 Thornall St #301, Edison, <br>NJ 08837, USA</li>
-                        <li class="footer-left-h"><i class="fa fa-phone"></i>Call Us <br>+1- 982-8-587 452
-                           <br>+1- 982-8-587 452
-                        </li>
-                        <li class="footer-left-h"><i class="fa fa-envelope-o"></i>Email<br>
-                           <a href=""> enquiry@demo.com </a></br><a href=""> enquiry@demo.com </a>
-                        </li>
-                     </ul>
                   </div>
                   <div class="col-md-12">
                      <p class="color-gray"> Designed by <a href="https://www.navthemes.com">NavThemes </a> &amp; distributed by <a href="https://themewagon.com/">ThemeWagon</a></p>
