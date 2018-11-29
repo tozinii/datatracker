@@ -315,6 +315,6 @@
       <script src="assets/vendors/owl_carousel/owl.carousel.min.js"></script>
       <!-- Stellar JS-->
       <!-- Theme JS -->
-      <script src="assets/js/theme.min.js"></script>
+      <script src="assets/js/theme.js"></script>
    </body>
 </html>

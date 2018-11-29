@@ -437,7 +437,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 .header-nav__list, .main-navbar {
   font-family: "metropolis-regular", sans-serif;
   font-size: 1.6rem;
-  margin: 3.6rem 0 3rem 0;
+  margin: 4.2rem 0 3rem 0;
   padding: 0 0 1.8rem 0;
   list-style: none;
   counter-reset: ctr;
@@ -453,6 +453,15 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   display: inline-block;
   left: 400px;
   bottom: 15px;
+
+}
+.menu-fijo {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #265db9 !important;
+  background-image: linear-gradient(to right top ,#6871f4,#6871f4,#6871f48f,#265db9 ,#265db9b0 )!important;
+  color: rgba(255, 255, 255, 0.25);
 }
 .header-nav__list li:last-child{
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);

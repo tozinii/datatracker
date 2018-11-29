@@ -20,6 +20,20 @@
         };
     };
     
+
+    window.addEventListener('scroll', stickyNavigation);
+    function stickyNavigation() {
+        var header = document.getElementsByClassName("s-header")[0];
+        var sticky = header.offsetTop;
+
+        if (window.scrollY > sticky) {
+            header.classList.add('menu-fijo');
+        } else {
+            header.classList.remove('menu-fijo');
+        }
+    }
+    
+    
 	 //* nav_searchFrom
     function searchFrom(){
         if ( $('.nav_searchFrom').length ){  
