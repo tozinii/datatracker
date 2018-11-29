@@ -30,7 +30,7 @@
                   ================================================== -->
                <header class="s-header">
                   <div class="header-logo">
-                     <a class="navbar-brand logo-biss" href="index.html"> <img src="assets/images/logo.png">  </a>
+                     <a class="navbar-brand logo-biss" href="/home"> <img src="assets/images/logo.png">  </a>
                   </div>
                   <!-- end header-logo -->
                   <div class="header-nav__list">
@@ -88,10 +88,10 @@
                      <div class="row">
                         <!-- #banner-text start -->
                         <div id="banner-text" class="col-md-7 text-c text-left ">
-                           <h5 class="wow fadeInUp main-h" data-wow-delay="0.2s" >End-to-End Customer<br> Journey Analytics</h5>
-                           <p class="banner-text wow fadeInUp main-h3" data-wow-delay="0.8s">No hours sank into aggregating and cleaning data. No<br> complex SQL queries required. Just the answers teams <br>need to. </p>
+                           <h5 class="wow fadeInUp main-h" data-wow-delay="0.2s" >Data Tracker</h5>
+                           <p class="banner-text wow fadeInUp main-h3" data-wow-delay="0.8s">Administra tus coches y gestiona sus datos para<br> mejorar su rendimiento y capacidades. </p>
                            <div class="top-banner wow fadeInRight">
-                              <a id="#services"  href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" href="#"><span class="skew_14">GET STARTED FOR FREE </span></a>
+                              <a id="#services"  href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" href="#"><span class="skew_14"><i> Más información </i> </span></a>
                            </div>
                         </div>
                         <!-- /#banner-text End -->
@@ -112,10 +112,10 @@
                   </div>
                </div>
                <div class="col-md-7 wow fadeInUp  pl_90 pr_90">
-                  <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Hey title</p>
-                  <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever  book.</p>
+                  <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Equipo</p>
+                  <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Crea o unete a un grupo y recopila información de los sensores implantados en vuestro coche para tener la certeza de poner en marcha el coche en cualquier momento.</p>
                   <div class="left-services wow fadeInRight text-right" style="visibility: visible; animation-name: fadeInRight;">
-                     <a id="#services" href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">LEARN MORE ABOUT OUR CUSTOMERS</span></a>
+                     <a id="#services" href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
                   </div>
                </div>
             </div>
@@ -127,10 +127,10 @@
             <div class="container-fluid ">
                <div class="row text-left about_row clip-polygon_right ">
                   <div class="col-md-7 wow fadeInUp pl_90 pr_90">
-                     <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Hey title</p>
-                     <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 1500s,  type specimen book.</p>
+                     <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Estadisticas</p>
+                     <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Visualiza de una manera facil y sencilla los datos recibidos <br>y mejora las capacidades de tu coche.</p>
                      <div class="left-services_32 wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
-                        <a id="#services" href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">LEARN MORE ABOUT OUR CUSTOMERS</span></a>
+                        <a id="#services" href="#services" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
                      </div>
                   </div>
                   <div class="col-md-5 p-0 clip-polygon_left wow fadeInUp">
@@ -156,7 +156,7 @@
                      <h4 class="body-slider media-heading">Iker Apaolaza </h4>
                      <hr class="slider_hr">
                   </div>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting<br> industry. Lorem Ipsum has been the industry's standard dummy text<br> ever since the 1500s, </p>
+                  <p>Estudiante de grado superior en desarrollo web<br> en IES Zubiri - Manteo. </p>
                   <div class="media">
                      <div class="media-left">
                         <a href="#">
@@ -176,7 +176,7 @@
                      <h4 class="body-slider media-heading">Jon Jauregi </h4>
                      <hr class="slider_hr">
                   </div>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting<br> industry. Lorem Ipsum has been the industry's standard dummy text<br> ever since the 1500s, </p>
+                  <p>Estudiante de grado superior en desarrollo web<br> en IES Zubiri - Manteo.  </p>
                   <div class="media">
                      <div class="media-left">
                         <a href="#">
@@ -196,11 +196,11 @@
                      <h4 class="body-slider media-heading">Ander González </h4>
                      <hr class="slider_hr">
                   </div>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting<br> industry. Lorem Ipsum has been the industry's standard dummy text<br> ever since the 1500s, </p>
+                  <p>Estudiante de grado superior en desarrollo web<br> en IES Zubiri - Manteo.  </p>
                   <div class="media">
                      <div class="media-left">
                         <a href="#">
-                        <img class="media-object" src="assets/images/testimonial-1.jpg" alt="">
+                        <img class="media-object" src="assets/images/testimonial-3.jpg" alt="">
                         </a>
                      </div>
                      <div class="media-body">
