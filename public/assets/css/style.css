@@ -1672,7 +1672,7 @@ position: relative;
     -o-transform: skew(8deg);
 }
 /* End Our Partners Area */
-/* Start Our Partners Area 2*/
+/* Start Our Partners Area Register*/
 
 
 .bg-grediunt{
@@ -1701,20 +1701,22 @@ position: relative;
   padding-right: 50px;
 }
 .our_partners_area_register .book_now_aera_register .book_now_register .booking_text_register {
-  padding-top: 8px;
+  width: 100px;
+  height: 100px; 
 }
-.our_partners_area_register .book_now_aera_register .book_now_register .booking_text_register h4 {
+.our_partners_area_register .book_now_aera_register .book_now_register .booking_text_register h2 {
 
   color: #364167;
     line-height: 20px;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 30px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    margin-top: 5px;
 
 }
-.our_partners_area_register .book_now_aera_register .book_now_register .booking_text_register p {
-    color: #364167;
-    font-size: 16px;
-    padding-top: 5px;
+.our_partners_area_register .book_now_aera_register .book_now_register .booking_text_register a {
+
+    position:  right;
 }
 .our_partners_h{
   text-align: center;
