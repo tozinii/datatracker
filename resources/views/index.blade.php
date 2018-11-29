@@ -30,15 +30,15 @@
                   ================================================== -->
                <header class="s-header">
                   <div class="header-logo">
-                     <a class="navbar-brand logo-biss" href="/home"> <img src="assets/images/logo.png">  </a>
+                     <a class="navbar-brand logo-biss" href="/"> <img src="assets/images/logo.png">  </a>
                   </div>
                   <!-- end header-logo -->
                   <div class="main-navbar">
                         <ul>
-                              <li class="current"><a class=""  href="/home" >Inicio</a></li>
-                              <li><a class=""  href="/about" >Herramientas</a></li>
-                              <li><a class=""  href="/services" >¿Quiénes somos?</a></li>
-                              <li><a class=""  href="/blog" >Contacto</a></li>
+                              <li class="current"><a class=""  href="/" >Inicio</a></li>
+                              <li><a class=""  href="#herramientas" >Herramientas</a></li>
+                              <li><a class=""  href="#nosotros" >¿Quiénes somos?</a></li>
+                              <li><a class=""  href="#contacto" >Contacto</a></li>
                         </ul>
                   </div>
 
@@ -47,12 +47,10 @@
                      <div class="header-nav__content">
                         <h3>Intechnic </h3>
                         <ul class="header-nav__list">
-                           <li class="current"><a class="" href="/home" >Inicio</a></li>
-                           <li><a class=""  href="/about" >Herramientas</a></li>
-                           <li><a class=""  href="/services" >¿Quiénes somos?</a></li>
-                           <li><a class=""  href="/blog" >Contacto</a></li>
-                           <li><a class="" href="/elements" >Elements</a></li>
-                           <li><a class=""  href="/contact">Contact</a></li>
+                           <li class="current"><a class="" href="/" >Inicio</a></li>
+                           <li><a class=""  href="#herramientas" >Herramientas</a></li>
+                           <li><a class=""  href="#nosotros" >¿Quiénes somos?</a></li>
+                           <li><a class=""  href="#contacto" >Contacto</a></li>
                         </ul>
                         <ul class="header-nav__social">
                            <li>
@@ -176,7 +174,7 @@
                         </a>
                      </div>
                      <div class="media-body">
-                        <h4 class="media-heading">Iker Apaolaza <span class="slider_span_color">- Web Desinger</span></h4>
+                        <h4 class="media-heading">Iker Apaolaza <span class="slider_span_color"></span></h4>
                      </div>
                   </div>
                </div>
@@ -196,7 +194,7 @@
                         </a>
                      </div>
                      <div class="media-body">
-                        <h4 class="media-heading">Jon Jauregi <span class="slider_span_color">- Web Desinger</span></h4>
+                        <h4 class="media-heading">Jon Jauregi <span class="slider_span_color"></span></h4>
                      </div>
                   </div>
                </div>
@@ -216,7 +214,7 @@
                         </a>
                      </div>
                      <div class="media-body">
-                        <h4 class="media-heading">Ander González <span class="slider_span_color">- Web Desinger</span></h4>
+                        <h4 class="media-heading">Ander González <span class="slider_span_color"></span></h4>
                      </div>
                   </div>
                </div>
@@ -224,17 +222,19 @@
          </div>
       </section>
       <!--#End Our testimonial Area -->
-      <div class="our_partners_area ">
+      <div id="contacto" class="our_partners_area ">
          <div class="book_now_aera ">
             <div class="container">
                <div class="row book_now bg-new">
                   <div class="col-md-7 booking_text">
-                     <span class="skew_14">
-                        <h4>Full insight into the customer journey.<br>
-                           No SQL required.
-                        </h4>
-                        <p>Get started for free to see who your customers are, what they do and what keeps them coming back.</p>
-                     </span>
+                    <form id="form-contacto">
+                      <label>Nombre: </label>
+                      <input type="text" name="nombre"placeholder="Nombre" />
+                      <label>E-mail: </label>
+                      <input type="text" name="email" placeholder="E-mail" /><br />
+                      <label>Mensaje:</label><br />
+                      <textarea form="form-contacto" placeholder="Texto"></textarea>
+                    </form>
                   </div>
                   <div class="col-md-5 p0 book_bottun">
                      <div class="col-md-6">
@@ -273,16 +273,6 @@
          </div>
       </div>
       <!--#End Our footer Area -->
-      <!-- The following is only needed when the video is in the html
-         otherwise the who .hero__overlay html can be removed -->
-      <div class="hero__overlay">
-         <div class="hero__modal">
-            <a class="hero__close" href="#">Close</a>
-            <iframe allowscriptaccess="always" id="hero-video" class="hero__player" src="https://www.youtube.com/embed/1NSA8ycGfKg?enablejsapi=1&html5=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-         </div>
-         <!-- /.hero__modal -->
-      </div>
-      <!-- /.hero__overlay -->
       <!-- jQuery JS -->
       <script src="assets/js/jquery-1.12.0.min.js"></script>
       <script src="assets/vendors/popup/lightbox.min.js"></script>
