@@ -472,6 +472,11 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   position: relative;
   padding-left: 3.5rem;
 }
+
+.main-navbar a:hover {
+  border-bottom: 1px solid rgba(255, 255, 255);
+  -webkit-transition: border-bottom-width 0.5s linear-gradient;
+}
 .header-nav__list a::before/*, .main-navbar a::before */ {
   content: counter(ctr, decimal-leading-zero) ".";
   counter-increment: ctr;
