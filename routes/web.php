@@ -18,5 +18,12 @@ Route::view('/about', 'about');
 Route::view('/blog', 'blog');
 Route::view('/contact', 'contact');
 Route::view('/elements', 'elements');
-Route::view('/home', 'index');
 Route::view('/services', 'services');
+
+
+
+// Rutas auth:
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
