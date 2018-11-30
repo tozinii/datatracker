@@ -39,6 +39,7 @@
                               <li><a class=""  href="#herramientas" >Herramientas</a></li>
                               <li><a class=""  href="#nosotros" >¿Quiénes somos?</a></li>
                               <li><a class=""  href="#contacto" >Contacto</a></li>
+                              <li><a class=""  href="/login" >Iniciar sesión</a></li>
                         </ul>
                   </div>
 
@@ -51,6 +52,7 @@
                            <li><a class=""  href="#herramientas" >Herramientas</a></li>
                            <li><a class=""  href="#nosotros" >¿Quiénes somos?</a></li>
                            <li><a class=""  href="#contacto" >Contacto</a></li>
+                           <li><a class=""  href="/login" >Iniciar sesión</a></li>
                         </ul>
                         <ul class="header-nav__social">
                            <li>
@@ -98,7 +100,7 @@
                                     <div class="col-md-7 booking_text_register">
                                           <h2>¡Registrate!
                                           </h2>
-                                          <a id="#services" href="#services" class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Registrate!</span></a>
+                                          <a id="#services" href="/register" class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Registrate!</span></a>
                                     </div>
                                  </div>
                               </div>
