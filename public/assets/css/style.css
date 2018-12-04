@@ -3536,3 +3536,10 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 .disabled-link{
   cursor: default;
 }
+
+/*#equipo{
+  margin-top: -96px;
+  height: 96px;
+  visibility: hidden;
+
+}*/

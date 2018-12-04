@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-6">
           <div class="top-banner wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
-            <a id="#services" href="#services" class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">CONTACT SALES</span></a>
+            <a id="#services" href="#services" class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">ENVIAR</span></a>
           </div>
         </div>
       </div>

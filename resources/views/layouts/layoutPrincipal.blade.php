@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      include('elements.head')
+      @include('elements.head')
    </head>
    <body id="top">
       <div class="bg-grediunt">
@@ -11,7 +11,7 @@
                <!-- header
                   ================================================== -->
                <header class="s-header">
-                  include('elements.navBar')
+                  @include('elements.navBar')
                </header>
                <!-- end s-header -->
                <!-- End Header_Area -->
@@ -21,7 +21,7 @@
                      <div class="row">
                         <!-- #banner-text start -->
                         <div id="banner-text" class="col-md-7 text-c text-left ">
-                           <h5 class="wow fadeInUp main-h" data-wow-delay="0.2s" >Data Tracker</h5>
+                           <h5 class="wow fadeInUp main-h" data-wow-delay="0.2s" >Euskelec Data Tracker</h5>
                            <p class="banner-text wow fadeInUp main-h3" data-wow-delay="0.8s">Administra tus coches y gestiona sus datos para<br> mejorar su rendimiento y capacidades. </p>
                            <div class="top-banner wow fadeInRight">
                               <a id="#services"  href="#equipo" class="btn btn-default  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s"><span class="skew_14"><i> Más información </i> </span></a>
@@ -51,42 +51,10 @@
          </div>
          <!-- /#banner end -->
       <!--start Hey title Area-right_img -->
-      <section class="">
-         <div class="container-fluid ">
-            <div class="row text-left about_row_2 clip-polygon_right_2">
-               <div id="equipo" class="col-md-5 p-0 clip-polygon_left_2 wow fadeInUp">
-                  <div class="video-img">
-                  </div>
-               </div>
-               <div class="col-md-7 wow fadeInUp  pl_90 pr_90">
-                  <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Equipo</p>
-                  <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Crea o unete a un grupo y recopila información de los sensores implantados en vuestro coche para tener la certeza de poner en marcha el coche en cualquier momento.</p>
-                  <div class="left-services wow fadeInRight text-right" style="visibility: visible; animation-name: fadeInRight;">
-                     <a id="#services" href="#services" class="btn btn-default wow fadeInUp js-scroll-trigger disabled-link" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
+        @yield('contenido')
       <!--End Hey title Area-right_img -->
          <!--#strat service-text  -->
-         <section class="">
-            <div class="container-fluid ">
-               <div class="row text-left about_row clip-polygon_right ">
-                  <div id="estadisticas" class="col-md-7 wow fadeInUp pl_90 pr_90">
-                     <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Estadisticas</p>
-                     <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Visualiza de una manera facil y sencilla los datos recibidos <br>y mejora las capacidades de tu coche.</p>
-                     <div class="left-services_32 wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
-                        <a id="#services" href="#services" class="btn btn-default wow fadeInUp js-scroll-trigger disabled-link" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
-                     </div>
-                  </div>
-                  <div class="col-md-5 p-0 clip-polygon_left wow fadeInUp">
-                     <div class="video-img">
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
+
       </div>
       <!--#End service-text  -->
       <!--#Our Testimonial Area start-->
@@ -160,13 +128,13 @@
       </section>
       <!--#End Our testimonial Area -->
       <div id="contacto" class="our_partners_area ">
-         include(elements.contact)
+         @include('elements.contact')
       </div>
       <!--#start Our footer Area -->
       <div class="our_footer_area">
-         include(elements.footer)
+         @include('elements.footer')
       </div>
       <!--#End Our footer Area -->
-      include('elements.scripts')
+      @include('elements.scripts')
    </body>
 </html>
