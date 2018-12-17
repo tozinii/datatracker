@@ -32,7 +32,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form>
+              <form action="">
                 <div class="form-group">
                   <label for="name" class="col-form-label">Nombre:</label>
                   <input type="text" class="form-control" placeholder="Introduzca un nombre..." id="name">
