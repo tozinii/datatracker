@@ -14,8 +14,8 @@
             <div class="container">
                <div class="row book_now_register bg-new">
                   <div class="col-md-7 booking_text_register">
-                     <h2>¡Registrate!</h2>
-                     <a id="services" href="#" data-target="#registrar" data-toggle="modal" data-whatever="@mdo" class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Registrate!</span></a>
+                     <h2>¡Regístrate!</h2>
+                     <a id="services" href="#" data-target="#registrar" data-toggle="modal" data-whatever="@mdo" class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">¡Regístrate!</span></a>
                   </div>
                </div>
             </div>
@@ -26,7 +26,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+              <h4 class="modal-title" id="exampleModalLabel">Añada sus datos para registrarse:</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -34,18 +34,21 @@
             <div class="modal-body">
               <form>
                 <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Recipient:</label>
-                  <input type="text" class="form-control" id="recipient-name">
+                  <label for="name" class="col-form-label">Nombre:</label>
+                  <input type="text" class="form-control" placeholder="Escriba su nombre..." id="name">
                 </div>
                 <div class="form-group">
-                  <label for="message-text" class="col-form-label">Message:</label>
-                  <textarea class="form-control" id="message-text"></textarea>
+                  <label for="email" class="col-form-label">Correo:</label>
+                  <input type="email" name="email" id="email" placeholder="Escriba su correo electronico..." class="form-control">
+                </div>
+                <div class="form-group">
+                   <label for="password" class="col-form-label">Contraseña:</label>
+                   <input type="password" class="form-control" placeholder="Escriba su contraseña..." name="password" id="password">
                 </div>
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" >Close</button>
-              <button type="button" class="btn btn-primary">Send message</button>
+              <button type="button" class="btn btn-primary">Registrar</button>
             </div>
           </div>
         </div>
