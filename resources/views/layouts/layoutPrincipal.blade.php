@@ -13,6 +13,7 @@
                <header class="s-header">
                   @include('elements.navBar')
                </header>
+              @include('elements.pop-up-login')
                <!-- end s-header -->
                <!-- End Header_Area -->
                <!-- #banner start -->
