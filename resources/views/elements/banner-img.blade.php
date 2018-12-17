@@ -35,15 +35,15 @@
               <form>
                 <div class="form-group">
                   <label for="name" class="col-form-label">Nombre:</label>
-                  <input type="text" class="form-control" placeholder="Escriba su nombre..." id="name">
+                  <input type="text" class="form-control" placeholder="Introduzca un nombre..." id="name">
                 </div>
                 <div class="form-group">
                   <label for="email" class="col-form-label">Correo:</label>
-                  <input type="email" name="email" id="email" placeholder="Escriba su correo electronico..." class="form-control">
+                  <input type="email" name="email" id="email" placeholder="Introduzca un correo electronico..." class="form-control">
                 </div>
                 <div class="form-group">
                    <label for="password" class="col-form-label">Contraseña:</label>
-                   <input type="password" class="form-control" placeholder="Escriba su contraseña..." name="password" id="password">
+                   <input type="password" class="form-control" placeholder="Introduzca una contraseña..." name="password" id="password">
                 </div>
               </form>
             </div>
