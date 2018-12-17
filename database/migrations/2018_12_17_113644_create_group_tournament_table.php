@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGroupsTable extends Migration
+class CreateGroupTournamentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('groups', function (Blueprint $table) {
-          $table->increments('id');
-          $table->string('name');
-          $table->string('password');
-          $table->string('description')->nullable();
-          $table->timestamps();
+        Schema::create('group_tournament', function (Blueprint $table) {
+          $table->integer('group_id')->unsigned();
+          $table->integer('tournament_id')->unsigned();
         });
     }
 
@@ -29,6 +26,6 @@ class CreateGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('groups');
+        Schema::dropIfExists('group_tournament');
     }
 }

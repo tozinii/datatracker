@@ -17,6 +17,7 @@ class CreateSensorsDataTable extends Migration
             $table->increments('id');
             $table->string('data_type');
             $table->string('data');
+            $table->dateTime('date');
             $table->timestamps();
         });
     }

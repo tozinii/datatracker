@@ -15,7 +15,7 @@ class CreateCarTable extends Migration
     {
         Schema::create('car', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
