@@ -23,9 +23,9 @@ Route::view('/services', 'services');
 // Rutas auth:
 Auth::routes(['verify' => true]);
 // Authentication Routes...
-//Route::get('login', 'Auth\LoginController@showLoginForm')->name('loginForm');
-//Route::post('login', 'Auth\LoginController@login')->name('login');
-//Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('loginForm');
+Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // Registration Routes...
 // no sirve --> Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 // Route::post('register', 'Auth\RegisterController@register');

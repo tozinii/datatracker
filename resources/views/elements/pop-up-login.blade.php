@@ -10,10 +10,10 @@
       <div class="modal-body">
         <form id="form-contacto" method="POST" action="{{ route('login') }}">
           @csrf
-          <label>Nombre: </label>
-          <input type="text" name="nombre" placeholder="Nombre" />
           <label>E-mail: </label>
-          <input type="text" name="email" placeholder="E-mail" /><br />
+          <input type="text" name="email" placeholder="E-mail" /><br/>
+          <label>Contraseña: </label>
+          <input type="password" name="password" placeholder="Contraseña" />
           <button type="submit" class="btn btn-primary">Inicia Sesión</button>
         </form>
         <a href="#" style="color:">Has olvidado la contraseña?</a>

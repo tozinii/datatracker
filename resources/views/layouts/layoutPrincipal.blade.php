@@ -18,6 +18,8 @@
                   <header class="s-header">
                      @include("elements.navbarUser")
                  </header>
+
+                 {{'Bienvenido' Auth::user()->name}}
                   
                @endguest   
                
