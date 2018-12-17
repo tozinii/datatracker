@@ -32,23 +32,21 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="">
+              <form action="#">
                 <div class="form-group">
                   <label for="name" class="col-form-label">Nombre:</label>
-                  <input type="text" class="form-control" placeholder="Introduzca un nombre..." id="name">
+                  <input type="text" class="form-control" placeholder="Introduzca un nombre..." minlength="5" id="name" required>
                 </div>
                 <div class="form-group">
                   <label for="email" class="col-form-label">Correo:</label>
-                  <input type="email" name="email" id="email" placeholder="Introduzca un correo electronico..." class="form-control">
+                  <input type="email" name="email" id="email" placeholder="Introduzca un correo electronico..." class="form-control" required>
                 </div>
                 <div class="form-group">
                    <label for="password" class="col-form-label">Contraseña:</label>
-                   <input type="password" class="form-control" placeholder="Introduzca una contraseña..." name="password" id="password">
+                   <input type="password" class="form-control" placeholder="Introduzca una contraseña de 8 o más carácteres." minlength="8" name="password" id="password" required>
                 </div>
+              <button type="submit" class="btn btn-primary">Registrar</button>
               </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Registrar</button>
             </div>
           </div>
         </div>
