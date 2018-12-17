@@ -8,7 +8,7 @@
       <li><a class=""  href="#equipo" >Herramientas</a></li>
       <li><a class=""  href="#testimonials" >¿Quiénes somos?</a></li>
       <li><a class=""  href="#contacto" >Contacto</a></li>
-      <li><a class=""  href="/login" data-toggle="modal" data-target="#login" data-backdrop="false">Iniciar Sesión</a></li>
+      <li><a class=""  href="#" data-toggle="modal" data-target="#login">Iniciar Sesión</a></li>
    </ul>
 </div>
 
