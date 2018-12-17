@@ -37,12 +37,12 @@
                   <div class="header-nav__content">
                      <h3>intechnic </h3>
                      <ul class="header-nav__list">
-                        <li class="current"><a class=""  href="index.html" >Home</a></li>
-                        <li><a class=""  href="about.html" >About</a></li>
-                        <li><a class=""  href="services.html" >Services</a></li>
-                        <li><a class="" href="blog.html" >Blog</a></li>
-                        <li><a class="" href="elements.html" >Elements</a></li>
-                        <li><a class=""  href="contact.html">Contact</a></li>
+                        <li class="current"><a class=""  href="/home" >Home</a></li>
+                        <li><a class=""  href="/about" >About</a></li>
+                        <li><a class=""  href="/services" >Services</a></li>
+                        <li><a class=""  href="/blog" >Blog</a></li>
+                        <li><a class="" href="/elements" >Elements</a></li>
+                        <li><a class=""  href="/contact">Contact</a></li>
                      </ul>
                      <ul class="header-nav__social">
                         <li>

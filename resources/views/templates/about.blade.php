@@ -37,12 +37,12 @@
                   <div class="header-nav__content">
                      <h3>intechnic </h3>
                      <ul class="header-nav__list">
-                        <li class="current"><a class=""  href="index.html" >Home</a></li>
-                        <li><a class=""  href="about.html" >About</a></li>
-                        <li><a class=""  href="services.html" >Services</a></li>
-                        <li><a class=""  href="blog.html" >Blog</a></li>
-                        <li><a class="" href="elements.html" >Elements</a></li>
-                        <li><a class=""  href="contact.html">Contact</a></li>
+                        <li class="current"><a class=""  href="/home" >Home</a></li>
+                        <li><a class=""  href="/about" >About</a></li>
+                        <li><a class=""  href="/services" >Services</a></li>
+                        <li><a class=""  href="/blog" >Blog</a></li>
+                        <li><a class="" href="/elements" >Elements</a></li>
+                        <li><a class=""  href="/contact">Contact</a></li>
                      </ul>
                      <ul class="header-nav__social">
                         <li>
@@ -57,7 +57,7 @@
                         <li>
                            <a href="#0"><i class="fa fa-facebook-square fa-3x social"></i></a>
                         </li>
-                       
+
                      </ul>
                   </div>
                   <!-- end header-nav__content -->
@@ -73,12 +73,12 @@
             <section id="banner" class="py_120">
                <div class="container ">
                   <div class="row">
-                     <!-- #banner-text start -->            
+                     <!-- #banner-text start -->
                      <div id="banner-text" class="col-md-7 text-c text-left ">
                         <h5 class="wow fadeInUp main-h font_30" data-wow-delay="0.2s" >WEL COME TO intechnic
-                           <br><span class="about_text "> ABOUT US?</span>  
+                           <br><span class="about_text "> ABOUT US?</span>
                         </h5>
-                        
+
                      </div>
                      <!-- /#banner-text End -->
                   </div>
@@ -140,7 +140,7 @@
                </div>
             </div>
             <div class="row about_row ">
-               <!--#about-text start --> 
+               <!--#about-text start -->
                <div class="who_we_area col-md-4 col-sm-6 px_10 wow fadeInUp">
                   <div class="service-about">
                      <div class="servise-right wow fadeInUp">
@@ -168,10 +168,10 @@
                      <p class="bottom-s">Lorem Ipsum is simply dummy text of the printing and typesetting industry  it over 2000 years old. </p>
                   </div>
                </div>
-               <!--#End service-text  --> 
+               <!--#End service-text  -->
             </div>
             <div class="row  mt_20">
-               <!--#about-text start --> 
+               <!--#about-text start -->
                <div class="who_we_area col-md-4 col-sm-6 px_10 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
                   <div class="service-about">
                      <div class="servise-right wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
@@ -201,7 +201,7 @@
                      <p class="bottom-s">Lorem Ipsum is simply dummy text of the printing and typesetting industry  it over 2000 years old.  </p>
                   </div>
                </div>
-               <!--#End service-text  --> 
+               <!--#End service-text  -->
             </div>
          </div>
       </div>
@@ -291,7 +291,7 @@
          </div>
       </section>
       <!--#End Our testimonial Area -->
-      <!--#Our-Team-text start --> 
+      <!--#Our-Team-text start -->
       <section>
          <div class="container">
             <div class="row text-center mb-60 ">
@@ -346,11 +346,11 @@
                      </div>
                   </div>
                </div>
-               <!--#End service-text  --> 
+               <!--#End service-text  -->
             </div>
          </div>
       </section>
-      <!--#Our-Team-text End --> 
+      <!--#Our-Team-text End -->
       <!--#Our Partners Area -->
       <div class="our_partners_area  py-70 pb_0">
          <div class="container">
@@ -452,7 +452,7 @@
             <a class="hero__close" href="#">Close</a>
             <iframe allowscriptaccess="always" id="hero-video" class="hero__player" src="https://www.youtube.com/embed/1NSA8ycGfKg?enablejsapi=1&html5=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
          </div>
-         <!-- /.hero__modal -->    
+         <!-- /.hero__modal -->
       </div>
       <!-- /.hero__overlay -->
       <!-- jQuery JS -->
@@ -469,7 +469,7 @@
            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
          });
          });
-      </script> 
+      </script>
       <script type="text/javascript">
          $(document).ready(function(){
            $(".currency_year").hide();
@@ -482,13 +482,13 @@
                  $(".currency_year").show();
              });
          });
-         
+
           $('.tabs_label').click(function(){
                       $('.tabs_label').removeClass('active_t');
                       $(this).addClass('active_t');
-         
+
                   })
-               
+
       </script>
       <script type="text/javascript">
          $(document).ready(function () {
