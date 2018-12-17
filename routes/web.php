@@ -14,11 +14,14 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::view('/about', 'about');
-Route::view('/blog', 'blog');
-Route::view('/contact', 'contact');
-Route::view('/elements', 'elements');
-Route::view('/services', 'services');
+Route::view('/about', 'templates/about');
+Route::view('/blog', 'templates/blog');
+Route::view('/contact', 'templates/contact');
+Route::view('/elements', 'templates/elements');
+Route::view('/services', 'templates/services');
+
+Route::view('/common', 'users/common');
+Route::view('/admin', 'users/admin');
 
 // Rutas auth:
 
