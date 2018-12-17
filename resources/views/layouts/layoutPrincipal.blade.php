@@ -19,10 +19,8 @@
                      @include("elements.navbarUser")
                  </header>
 
-                 {{'Bienvenido' Auth::user()->name}}
-                  
-               @endguest   
-               
+               @endguest
+
               @include('elements.pop-up-login')
                <!-- end s-header -->
                <!-- End Header_Area -->

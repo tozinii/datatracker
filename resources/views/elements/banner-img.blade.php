@@ -15,7 +15,7 @@
                <div class="row book_now_register bg-new">
                   <div class="col-md-7 booking_text_register">
                      <h2>¡Regístrate!</h2>
-                     <a id="services" href="#" data-target="#registrar" data-toggle="modal" data-whatever="@mdo" class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">¡Regístrate!</span></a>
+                     <a id="services" href="" data-target="#registrar" data-toggle="modal" data-whatever="@mdo" class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">¡Regístrate!</span></a>
                   </div>
                </div>
             </div>
@@ -36,7 +36,7 @@
                 @csrf
                 <div class="form-group">
                   <label for="name" class="col-form-label">Nombre:</label>
-                  <input type="text" class="form-control" placeholder="Introduzca un nombre..." minlength="5" id="name" required>
+                  <input type="text" class="form-control" placeholder="Introduzca un nombre..." minlength="5" id="name" name="nombre" required>
                 </div>
                 <div class="form-group">
                   <label for="email" class="col-form-label">Correo:</label>
