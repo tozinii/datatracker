@@ -29,7 +29,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // Registration Routes...
 //no sirve
  Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('registerForm');
-Route::post('register', 'Auth\RegisterController@register')->name('register');
+Route::post('register', 'Auth\RegisterController@create')->name('register');
 // Password Reset Routes...
 //Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
 //Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');

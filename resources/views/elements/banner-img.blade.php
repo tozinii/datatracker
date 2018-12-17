@@ -36,7 +36,7 @@
                 @csrf
                 <div class="form-group">
                   <label for="name" class="col-form-label">Nombre:</label>
-                  <input type="text" class="form-control" placeholder="Introduzca un nombre..." minlength="5" id="name" name="nombre" required>
+                  <input type="text" class="form-control" placeholder="Introduzca un nombre..." minlength="5" id="name" name="name" required>
                 </div>
                 <div class="form-group">
                   <label for="email" class="col-form-label">Correo:</label>
