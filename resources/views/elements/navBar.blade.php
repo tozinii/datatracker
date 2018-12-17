@@ -8,20 +8,20 @@
       <li><a class=""  href="#equipo" >Herramientas</a></li>
       <li><a class=""  href="#testimonials" >¿Quiénes somos?</a></li>
       <li><a class=""  href="#contacto" >Contacto</a></li>
-      <li><a class=""  href="/login" >Iniciar Sesión</a></li>
+      <li><a class=""  href="#" data-toggle="modal" data-target="#login">Iniciar Sesión</a></li>
    </ul>
 </div>
 
 <nav class="header-nav">
    <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
    <div class="header-nav__content">
-      <h3>Intechnic </h3>
+      <h3>Euskelec Data Tracker </h3>
       <ul class="header-nav__list">
          <li class="current"><a class="" href="/" >Inicio</a></li>
          <li><a class=""  href="#herramientas" >Herramientas</a></li>
          <li><a class=""  href="#nosotros" >¿Quiénes somos?</a></li>
          <li><a class=""  href="#contacto" >Contacto</a></li>
-         <li><a class=""  href="/login" >Iniciar Sesión</a></li>
+         <li><a class=""  href="#" data-toggle="modal" data-target="#login">Iniciar Sesión</a></li>
       </ul>
       <ul class="header-nav__social">
          <li>

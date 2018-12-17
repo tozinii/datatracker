@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <title> Data Tracker  </title>
 <!-- Favicon -->
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -10,8 +11,7 @@
 <link href="assets/vendors/animate/animate.css" rel="stylesheet">
 <!-- Icon CSS-->
 <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
-<!-- Camera Slider -->
-<link rel="stylesheet" href="assets/vendors/camera-slider/camera.css">
+
 <!-- Owlcarousel CSS-->
 <link rel="stylesheet" type="text/css" href="assets/vendors/owl_carousel/owl.carousel.css" media="all">
 <!--Template Styles CSS-->
