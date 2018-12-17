@@ -32,7 +32,8 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="#">
+              <form action="{{route('register')}}" method="post">
+                @csrf
                 <div class="form-group">
                   <label for="name" class="col-form-label">Nombre:</label>
                   <input type="text" class="form-control" placeholder="Introduzca un nombre..." minlength="5" id="name" required>

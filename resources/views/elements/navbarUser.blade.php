@@ -8,7 +8,7 @@
       <li><a class=""  href="#equipo" >Herramientas</a></li>
       <li><a class=""  href="#testimonials" >¿Quiénes somos?</a></li>
       <li><a class=""  href="#contacto" >Contacto</a></li>
-      <li><a class=""  href="#" data-toggle="modal" data-target="#login">Iniciar Sesión</a></li>
+      <li><a class=""  href="{{ route('logout')}}">Cerrar Sesión</a></li>
    </ul>
 </div>
 
@@ -21,7 +21,10 @@
          <li><a class=""  href="#herramientas" >Herramientas</a></li>
          <li><a class=""  href="#nosotros" >¿Quiénes somos?</a></li>
          <li><a class=""  href="#contacto" >Contacto</a></li>
-         <li><a class=""  href="{{ route('login') }}" data-toggle="modal" data-target="#login">Iniciar Sesión</a></li>
+         <li><a class=""  href="{{route('logout')}}">Cerrar Sesión</a></li>
+         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+         </form>
       </ul>
       <ul class="header-nav__social">
          <li>

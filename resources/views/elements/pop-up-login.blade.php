@@ -8,16 +8,15 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="form-contacto">
+        <form id="form-contacto" method="POST" action="{{ route('login') }}">
+          @csrf
           <label>Nombre: </label>
-          <input type="text" name="nombre"placeholder="Nombre" />
+          <input type="text" name="nombre" placeholder="Nombre" />
           <label>E-mail: </label>
           <input type="text" name="email" placeholder="E-mail" /><br />
+          <button type="submit" class="btn btn-primary">Inicia Sesión</button>
         </form>
         <a href="#" style="color:">Has olvidado la contraseña?</a>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Inicia Sesión</button>
       </div>
     </div>
   </div>
