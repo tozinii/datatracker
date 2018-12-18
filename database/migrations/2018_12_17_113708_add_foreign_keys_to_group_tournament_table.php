@@ -14,8 +14,8 @@ class AddForeignKeysToGroupTournamentTable extends Migration
     public function up()
     {
         Schema::table('group_tournament', function (Blueprint $table) {
-          $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
-          $table->foreign('tournament_id')->references('id')->on('tournaments')->onDelete('cascade');
+          $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade')->onUpdate('cascade');
+          $table->foreign('tournament_id')->references('id')->on('tournaments')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
