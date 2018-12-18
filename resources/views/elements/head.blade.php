@@ -11,7 +11,8 @@
 <link href="assets/vendors/animate/animate.css" rel="stylesheet">
 <!-- Icon CSS-->
 <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
-
+<!-- Camera Slider -->
+<link rel="stylesheet" href="assets/vendors/camera-slider/camera.css">
 <!-- Owlcarousel CSS-->
 <link rel="stylesheet" type="text/css" href="assets/vendors/owl_carousel/owl.carousel.css" media="all">
 <!--Template Styles CSS-->
