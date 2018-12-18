@@ -10,7 +10,7 @@
                <!-- Header_Area -->
                <!-- header
                   ================================================== -->
-               <header class="s-header">
+               <header class="">
                   <!-- Crear elemento layout para el navegador en la columna izquierda
                   -->
                   @include('elements.navCol')
