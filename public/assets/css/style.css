@@ -1334,7 +1334,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
     color: #dedede;
 }
 a{
-    color: #fff !important;
+    color: #fff ;
     text-decoration: none !important;
 }
 
