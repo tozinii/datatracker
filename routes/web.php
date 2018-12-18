@@ -11,17 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+
+Route::get('/', 'HomeController@index')->name('home');
+
+//Ruta de form-contacto
+Route::post('/postContact', 'ContactController@postContact')->name('postContact');
+
 Route::view('/about', 'about');
 Route::view('/blog', 'blog');
 Route::view('/contact', 'contact');
 Route::view('/elements', 'elements');
 Route::view('/services', 'services');
 
-// Rutas auth:
 
+// Rutas auth:
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -34,5 +37,3 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
-
-Route::get('/home', 'HomeController@index')->name('home');
