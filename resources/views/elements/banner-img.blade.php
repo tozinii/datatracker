@@ -32,25 +32,29 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="{{route('register')}}" method="post">
+              <form id="form-register" action="{{route('register')}}" method="post">
                 @csrf
                 <div class="form-group">
                   <label for="name" class="col-form-label">Nombre:</label>
-                  <input type="text" class="form-control" placeholder="Introduzca un nombre..." minlength="5" id="name" name="name" required>
+                  <input id="register-name" type="text" class="form-control" placeholder="Nombre" name="name" required>
+                  <span id="register-name-error-text" class="register-error">Introduce un nombre válido</span>
                 </div>
                 <div class="form-group">
-                  <label for="email" class="col-form-label">Correo:</label>
-                  <input type="email" name="email" id="email" placeholder="Introduzca un correo electronico..." class="form-control" required>
+                  <label for="email" class="col-form-label">Correo electrónico:</label>
+                  <input id="register-email" type="email" name="email" placeholder="Correo electrónico" class="form-control" required>
+                  <span id="register-email-error-text" class="register-error">Introduce un correo válido</span>
                 </div>
                 <div class="form-group">
                    <label for="password" class="col-form-label">Contraseña:</label>
-                   <input type="password" class="form-control" placeholder="Introduzca una contraseña de 8 o más carácteres." minlength="8" name="password" id="password" required>
+                   <input id="register-password" type="password" class="form-control" placeholder="Contraseña" name="password" required>
+                   <span id="register-password-error-text" class="register-error">La contraseña debe tener más de 8 carácteres</span>
                 </div>
                 <div class="form-group">
                    <label for="password" class="col-form-label">Confirmar contraseña:</label>
-                   <input type="password" class="form-control" name="password_confirmation" id="password-confirm" required>
+                   <input id="register-confirm-password" type="password" class="form-control" placeholder="Repita su contraseña" name="password_confirmation" required>
+                   <span id="register-confirm-password-error-text" class="register-error">Las contraseñas no coinciden</span>
                 </div>
-              <button type="submit" class="btn btn-primary">Registrar</button>
+              <button id="register-submit" type="submit" class="btn btn-primary">Registrar</button>
               </form>
             </div>
           </div>

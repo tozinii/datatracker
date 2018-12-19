@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="form-contacto" method="POST" action="{{ route('login') }}">
+        <form id="form-login" method="POST" action="{{ route('login') }}">
           @csrf
           <label>E-mail: </label>
           <input type="text" name="email" placeholder="E-mail" /><br/>
