@@ -9,7 +9,12 @@
       <li><a class=""  href="#testimonials" >¿Quiénes somos?</a></li>
       <li><a class=""  href="#contacto" >Contacto</a></li>
       <li><a class=""  href="#">{{ Auth::user()->name}}</a></li>
-      <li><a class=""  href="{{ route('logout')}}">Cerrar Sesión</a></li>
+      <li><a class=""  href="{{ route('logout')}}" onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+           @csrf
+        </form>
+      </li>
 
    </ul>
 </div>
@@ -25,7 +30,7 @@
          <li><a class=""  href="#contacto" >Contacto</a></li>
          <li>
            <a class=""  href="{{route('logout')}}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">>Cerrar Sesión</a>
+                                                 document.getElementById('logout-form').submit();">Cerrar Sesión</a>
            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               @csrf
            </form>

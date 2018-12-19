@@ -46,6 +46,10 @@
                    <label for="password" class="col-form-label">Contraseña:</label>
                    <input type="password" class="form-control" placeholder="Introduzca una contraseña de 8 o más carácteres." minlength="8" name="password" id="password" required>
                 </div>
+                <div class="form-group">
+                   <label for="password" class="col-form-label">Confirmar contraseña:</label>
+                   <input type="password" class="form-control" name="password_confirmation" id="password-confirm" required>
+                </div>
               <button type="submit" class="btn btn-primary">Registrar</button>
               </form>
             </div>
