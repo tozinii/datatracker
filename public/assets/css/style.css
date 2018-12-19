@@ -3537,6 +3537,11 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   cursor: default;
 }
 
+.form-error{
+  color: red;
+  display: none;
+}
+
 /*#equipo{
   margin-top: -96px;
   height: 96px;
