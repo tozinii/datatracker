@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
+    protected $table = 'users';
+
     use Notifiable;
 
     /**
@@ -27,4 +29,9 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function groups()
+      {
+          return $this->hasMany('App\Group');
+      }
 }

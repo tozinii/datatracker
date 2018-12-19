@@ -1,5 +1,5 @@
 <!-- jQuery JS -->
-      <script src="assets/js/jquery-3.3.1.min.js"></script>
+      <script src="assets/js/jquery-1.12.0.min.js"></script>
       <script src="assets/vendors/popup/lightbox.min.js"></script>
       <script type="text/javascript">
          $(document).ready(function() {
@@ -40,6 +40,7 @@
       <script src="assets/vendors/sidebar/main.js"></script>
       <!-- Owlcarousel JS -->
       <script src="assets/vendors/owl_carousel/owl.carousel.min.js"></script>
-      <!-- Stellar JS-->
+      <!-- Self JS -->
+      <script src="assets/js/scripts.js"></script>
       <!-- Theme JS -->
       <script src="assets/js/theme.js"></script>
