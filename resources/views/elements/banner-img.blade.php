@@ -15,7 +15,7 @@
                <div class="row book_now_register bg-new">
                   <div class="col-md-7 booking_text_register">
                      <h2>¡Regístrate!</h2>
-                     <a id="services" href="#" data-target="#registrar" data-toggle="modal" data-whatever="@mdo" class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">¡Regístrate!</span></a>
+                     <a id="services" href="" data-target="#registrar" data-toggle="modal" data-whatever="@mdo" class="btn btn-primary button_12  wow fadeInUp  js-scroll-trigger" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">¡Regístrate!</span></a>
                   </div>
                </div>
             </div>
@@ -32,10 +32,11 @@
               </button>
             </div>
             <div class="modal-body">
-              <form action="#">
+              <form action="{{route('register')}}" method="post">
+                @csrf
                 <div class="form-group">
                   <label for="name" class="col-form-label">Nombre:</label>
-                  <input type="text" class="form-control" placeholder="Introduzca un nombre..." minlength="5" id="name" required>
+                  <input type="text" class="form-control" placeholder="Introduzca un nombre..." minlength="5" id="name" name="name" required>
                 </div>
                 <div class="form-group">
                   <label for="email" class="col-form-label">Correo:</label>
@@ -44,6 +45,10 @@
                 <div class="form-group">
                    <label for="password" class="col-form-label">Contraseña:</label>
                    <input type="password" class="form-control" placeholder="Introduzca una contraseña de 8 o más carácteres." minlength="8" name="password" id="password" required>
+                </div>
+                <div class="form-group">
+                   <label for="password" class="col-form-label">Confirmar contraseña:</label>
+                   <input type="password" class="form-control" name="password_confirmation" id="password-confirm" required>
                 </div>
               <button type="submit" class="btn btn-primary">Registrar</button>
               </form>

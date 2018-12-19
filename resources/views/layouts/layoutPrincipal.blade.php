@@ -10,9 +10,17 @@
                <!-- Header_Area -->
                <!-- header
                   ================================================== -->
-               <header class="s-header">
-                  @include('elements.navBar')
-               </header>
+               @guest
+                 <header class="s-header">
+                     @include('elements.navBar')
+                 </header>
+               @else
+                  <header class="s-header">
+                     @include("elements.navbarUser")
+                 </header>
+
+               @endguest
+
               @include('elements.pop-up-login')
                <!-- end s-header -->
                <!-- End Header_Area -->

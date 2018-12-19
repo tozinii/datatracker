@@ -21,18 +21,20 @@ Route::view('/elements', 'elements');
 Route::view('/services', 'services');
 
 // Rutas auth:
-
+Auth::routes(['verify' => true]);
 // Authentication Routes...
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('loginForm');
+Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // Registration Routes...
-// no sirve --> Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-// Route::post('register', 'Auth\RegisterController@register');
+//no sirve
+ Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('registerForm');
+Route::post('register', 'Auth\RegisterController@register')->name('register');
+//Route::get('email/verify', 'Auth\VerificationController@show')->name('verification');
 // Password Reset Routes...
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+//Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+//Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+//Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+//Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'HomeController@index')->name('home');
