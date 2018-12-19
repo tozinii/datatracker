@@ -23,8 +23,10 @@ Route::view('/contact', 'contact');
 Route::view('/elements', 'elements');
 Route::view('/services', 'services');
 
+
 // Rutas auth:
 Auth::routes(['verify' => true]);
+
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('loginForm');
 Route::post('login', 'Auth\LoginController@login')->name('login');
@@ -35,6 +37,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 //Route::get('email/verify', 'Auth\VerificationController@show')->name('verification');
 // Password Reset Routes...
+
 //Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
 //Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
 //Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');

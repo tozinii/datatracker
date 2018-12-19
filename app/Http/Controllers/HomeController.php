@@ -13,8 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-      //Pedira autenticarse a todas las funciones de este controlador
-        $this->middleware(['auth','verified']);
+        $this->middleware(['auth','verified'])->except('index');
     }
 
     /**
