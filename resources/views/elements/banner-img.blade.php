@@ -37,22 +37,22 @@
                 <div class="form-group">
                   <label for="name" class="col-form-label">Nombre:</label>
                   <input id="register-name" type="text" class="form-control" placeholder="Nombre" name="name" required>
-                  <span id="register-name-error-text" class="register-error">Introduce un nombre válido</span>
+                  <span id="register-name-error-text" class="form-error">Introduce un nombre válido</span>
                 </div>
                 <div class="form-group">
                   <label for="email" class="col-form-label">Correo electrónico:</label>
                   <input id="register-email" type="email" name="email" placeholder="Correo electrónico" class="form-control" required>
-                  <span id="register-email-error-text" class="register-error">Introduce un correo válido</span>
+                  <span id="register-email-error-text" class="form-error">Introduce un correo válido</span>
                 </div>
                 <div class="form-group">
                    <label for="password" class="col-form-label">Contraseña:</label>
                    <input id="register-password" type="password" class="form-control" placeholder="Contraseña" name="password" required>
-                   <span id="register-password-error-text" class="register-error">La contraseña debe tener más de 8 carácteres</span>
+                   <span id="register-password-error-text" class="form-error">La contraseña debe tener más de 8 carácteres</span>
                 </div>
                 <div class="form-group">
                    <label for="password" class="col-form-label">Confirmar contraseña:</label>
                    <input id="register-confirm-password" type="password" class="form-control" placeholder="Repita su contraseña" name="password_confirmation" required>
-                   <span id="register-confirm-password-error-text" class="register-error">Las contraseñas no coinciden</span>
+                   <span id="register-confirm-password-error-text" class="form-error">Las contraseñas no coinciden</span>
                 </div>
               <button id="register-submit" type="submit" class="btn btn-primary">Registrar</button>
               </form>

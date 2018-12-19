@@ -10,11 +10,13 @@
       <div class="modal-body">
         <form id="form-login" method="POST" action="{{ route('login') }}">
           @csrf
-          <label>E-mail: </label>
-          <input type="text" name="email" placeholder="E-mail" /><br/>
+          <label>Correo electrónico: </label>
+          <input id="login-email" type="text" name="email" placeholder="Correo electrónico" required /><br/>
+          <span id="login-email-error-text" class="form-error">Introduce un correo válido</span>
           <label>Contraseña: </label>
-          <input type="password" name="password" placeholder="Contraseña" />
-          <button type="submit" class="btn btn-primary">Inicia Sesión</button>
+          <input id="login-password" type="password" name="password" placeholder="Contraseña" required />
+          <span id="login-password-error-text" class="form-error">La contraseña debe tener más de 8 carácteres</span>
+          <button id="login-submit" type="submit" class="btn btn-primary">Inicia Sesión</button>
         </form>
         <a href="#" style="color:">Has olvidado la contraseña?</a>
       </div>

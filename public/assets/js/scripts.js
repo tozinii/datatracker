@@ -49,6 +49,27 @@ $(document).ready(function(){
         }
       });
     //Validación login
+      //Validación email
+      $('#login-email').on('input', function(){
+        if(isValidEmail($(this).val())){
+          $('#login-email-error-text').css('display','none');
+          $('#login-submit').prop('disabled',false);
+        }else{
+          $('#login-email-error-text').css('display','block');
+          $('#login-submit').prop('disabled',true);
+        }
+      });
+      //Validación password
+      $('#login-password').on('input', function(){
+        if(isValidPassword($(this).val())){
+          $('#login-password-error-text').css('display','none');
+          $('#login-submit').prop('disabled',false);
+        }else{
+          $('#login-password-error-text').css('display','block');
+          $('#login-submit').prop('disabled',true);
+        }
+      });
+
 
 });
 //Funciones validacion register
