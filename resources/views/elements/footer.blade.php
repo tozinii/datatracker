@@ -3,7 +3,7 @@
       <div class="row book_now">
          <div class="col-md-4">
             <div class="">
-               <a class=" logo-biss" href="index.html">  <img src="assets/images/logo.png"></a>
+               <a class=" logo-biss" href="index.html">  <img src="{{asset('assets/images/logo.png')}}"></a>
             </div>
             <div class="bigpixi-footer-social">
                <a href="" target="_blank" class="ml-15"><i id="social-fb" class="fa fa-facebook fa-2x social"></i></a>
