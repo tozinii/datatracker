@@ -20,8 +20,13 @@ Route::view('/contact', 'templates/contact');
 Route::view('/elements', 'templates/elements');
 Route::view('/services', 'templates/services');
 
+// Rutas a vistas usuarios y admins
 Route::view('/common', 'users/common');
 Route::view('/admin', 'users/admin');
+Route::view('/profile', 'users/profile');
+Route::view('/groups', 'users/groups');
+Route::view('/cars', 'users/cars');
+Route::view('/sensors', 'users/sensors');
 
 // Rutas auth:
 

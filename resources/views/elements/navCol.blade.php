@@ -7,16 +7,16 @@
    <div>
       <ul class="nav flex-column">
         <li class="nav-item lista">
-          <a class="nav-link active" href="#">Perfil</a>
+          <a class="nav-link active" href="/profile">Perfil</a>
         </li>
         <li class="nav-item lista">
-          <a class="nav-link" href="#">Grupos</a>
+          <a class="nav-link" href="/groups">Grupos</a>
         </li>
         <li class="nav-item lista">
-          <a class="nav-link" href="#">Coches</a>
+          <a class="nav-link" href="cars">Coches</a>
         </li>
         <li class="nav-item lista">
-          <a class="nav-link disabled" href="#">Sensores</a>
+          <a class="nav-link disabled" href="/sensors">Sensores</a>
         </li>
       </ul>
    </div>

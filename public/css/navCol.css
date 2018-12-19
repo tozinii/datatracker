@@ -10,12 +10,10 @@
   overflow-x: hidden;
   padding-top: 2%;
   align-content: center;
+  transition: margin-left .5s;
+  padding: 20px;
 }
 
-/* Page content */
-.main {
-  margin-left: 15%; /* Same as the width of the sidenav */
-} 
 
 
 
