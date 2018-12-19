@@ -23,13 +23,8 @@ Route::view('/contact', 'contact');
 Route::view('/elements', 'elements');
 Route::view('/services', 'services');
 
-<<<<<<< HEAD
 // Rutas auth:
 Auth::routes(['verify' => true]);
-=======
-
-// Rutas auth:
->>>>>>> e82bc167c6f9b1ccaf69c151a348686c566245e3
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('loginForm');
 Route::post('login', 'Auth\LoginController@login')->name('login');
@@ -40,16 +35,9 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 //Route::get('email/verify', 'Auth\VerificationController@show')->name('verification');
 // Password Reset Routes...
-<<<<<<< HEAD
 //Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
 //Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
 //Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
 //Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'HomeController@index')->name('home');
-=======
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
->>>>>>> e82bc167c6f9b1ccaf69c151a348686c566245e3
