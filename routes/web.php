@@ -51,4 +51,4 @@ Route::get('email/verify', 'Auth\VerificationController@show')->name('verificati
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Admin panel
-Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/adminpanel', 'AdminController@adminPanel')->name('adminpanel');

@@ -21,6 +21,7 @@
 
                @endguest
 
+              @include('elements.pop-up-login')
                <!-- end s-header -->
                <!-- End Header_Area -->
                <!-- #banner start -->
@@ -37,6 +38,7 @@
 
       </div>
       <!--#End service-text  -->
+
       <div id="contacto" class="our_partners_area ">
          @include('elements.contact')
       </div>

@@ -44,6 +44,6 @@ class VerificationController extends Controller
     {
         return $request->user()->hasVerifiedEmail()
                         ? redirect($this->redirectPath())
-                        : view('verify');
+                        : view('elements.verify');
     }
 }
