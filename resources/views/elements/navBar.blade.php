@@ -5,9 +5,9 @@
 <div class="main-navbar">
    <ul>
       <li class="current"><a class=""  href="/" >Inicio</a></li>
-      <li><a class=""  href="#equipo" >Herramientas</a></li>
-      <li><a class=""  href="#testimonials" >¿Quiénes somos?</a></li>
-      <li><a class=""  href="#contacto" >Contacto</a></li>
+      <li><a class="nav-herramientas"  href="#">Herramientas</a></li>
+      <li><a class="nav-quienes-somos"  href="#">¿Quiénes somos?</a></li>
+      <li><a class="nav-contacto"  href="#">Contacto</a></li>
       <li><a class=""  href="#" data-toggle="modal" data-target="#login">Iniciar Sesión</a></li>
    </ul>
 </div>
@@ -18,9 +18,9 @@
       <h3>Euskelec Data Tracker </h3>
       <ul class="header-nav__list">
          <li class="current"><a class="" href="/" >Inicio</a></li>
-         <li><a class=""  href="#herramientas" >Herramientas</a></li>
-         <li><a class=""  href="#nosotros" >¿Quiénes somos?</a></li>
-         <li><a class=""  href="#contacto" >Contacto</a></li>
+         <li><a class="nav-herramientas"  href="#">Herramientas</a></li>
+         <li><a class="nav-quienes-somos"  href="#">¿Quiénes somos?</a></li>
+         <li><a class="nav-contacto"  href="#">Contacto</a></li>
          <li><a class=""  href="#" data-toggle="modal" data-target="#login">Iniciar Sesión</a></li>
       </ul>
       <ul class="header-nav__social">
