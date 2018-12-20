@@ -41,16 +41,11 @@ class LoginController extends Controller
 
     public function redirectPath()
     {
-      $user = Auth::User();
-        if ($user->role == 'Admin') {
+        if (Auth::User()->role == 'Admin') {
             return '/adminpanel';
         }
 
         return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
-    }
-
-    public function get(){
-
     }
 
 }
