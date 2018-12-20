@@ -11,6 +11,8 @@
 <link href="{{asset('assets/vendors/animate/animate.css')}}" rel="stylesheet">
 <!-- Icon CSS-->
 <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
+<!-- navCol CSS -->
+<link rel="stylesheet" type="text/css" href="css/navCol.css">
 <!-- Owlcarousel CSS-->
 <link rel="stylesheet" type="text/css" href="{{asset('vendors/owl_carousel/owl.carousel.css')}}" media="all">
 <!--Template Styles CSS-->
