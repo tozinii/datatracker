@@ -1,5 +1,11 @@
-$(document).ready(function(){
+var validRegisterName = false;
+var validRegisterEmail = false;
+var validRegisterPassword = false;
+var validRegisterConfirmPassword = false;
+var validLoginEmail = false;
+var validLoginPassword = false;
 
+$(document).ready(function(){
   //Hace submit del formulario de contacto
   $('#enviar-form-contacto').click(function(){
       $('#form-contacto').submit();
@@ -12,62 +18,68 @@ $(document).ready(function(){
         var nameReg = /^[a-zA-Z]+$/;
         if($(this).val().match(nameReg)){
           $('#register-name-error-text').css('display','none');
-          $('#register-submit').prop('disabled',false);
+          validRegisterName = true;
         }else{
           $('#register-name-error-text').css('display','block');
-          $('#register-submit').prop('disabled',true);
+          validRegisterName = false;
         }
+      registerValidated();
       });
       //Validacion email
     	$('#register-email').on('input', function(){
     		if(isValidEmail($(this).val())){
     			$('#register-email-error-text').css('display','none');
-    			$('#register-submit').prop('disabled',false);
+    			validRegisterEmail = true;
     		}else{
     			$('#register-email-error-text').css('display','block');
-    			$('#register-submit').prop('disabled',true);
+    			validRegisterEmail = false;
     		}
+        registerValidated();
       });
       //Validación contraseña
       $('#register-password').on('input', function(){
         if(isValidPassword($(this).val())){
           $('#register-password-error-text').css('display','none');
-          $('#register-submit').prop('disabled',false);
+          validRegisterPassword = true;
         }else{
           $('#register-password-error-text').css('display','block');
-          $('#register-submit').prop('disabled',true);
+          validRegisterPassword = false;
         }
+        registerValidated();
       });
       //Validación repetir contraseña
       $('#register-confirm-password').on('input', function(){
         if(passwordMatches($('#register-password').val(),$(this).val())){
           $('#register-confirm-password-error-text').css('display','none');
-          $('#register-submit').prop('disabled',false);
+          validRegisterConfirmPassword = true;
         }else{
           $('#register-confirm-password-error-text').css('display','block');
-          $('#register-submit').prop('disabled',true);
+          validRegisterConfirmPassword = false;
         }
+        registerValidated();
       });
     //Validación login
       //Validación email
       $('#login-email').on('input', function(){
         if(isValidEmail($(this).val())){
           $('#login-email-error-text').css('display','none');
-          $('#login-submit').prop('disabled',false);
+          validLoginEmail = true;
         }else{
           $('#login-email-error-text').css('display','block');
-          $('#login-submit').prop('disabled',true);
+          validLoginEmail = false;
         }
+        loginValidated();
       });
       //Validación password
       $('#login-password').on('input', function(){
         if(isValidPassword($(this).val())){
           $('#login-password-error-text').css('display','none');
-          $('#login-submit').prop('disabled',false);
+          validLoginPassword = true;
         }else{
           $('#login-password-error-text').css('display','block');
-          $('#login-submit').prop('disabled',true);
+          validLoginPassword = false;
         }
+        loginValidated();
       });
 
 
@@ -104,4 +116,21 @@ function passwordMatches(password, confirmPassword){
     return true;
   }
   return false;
+}
+
+function registerValidated(){
+  if(validRegisterName && validRegisterEmail &&
+    validRegisterPassword && validRegisterConfirmPassword){
+    $('#register-submit').prop('disabled',false);
+  }else{
+    $('#register-submit').prop('disabled',true);
+  }
+}
+
+function loginValidated(){
+  if(validLoginEmail && validLoginPassword){
+    $('#login-submit').prop('disabled',false);
+  }else{
+    $('#login-submit').prop('disabled',true);
+  }
 }
