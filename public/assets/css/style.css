@@ -3545,21 +3545,23 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   margin-left: 15%; /* Same as the width of the sidenav */
 }
 .profile-content{
-  padding: 3%;
+  height: 100%;
+  padding: 2.5%;
 }
 .sections{
-  padding: 2%;
+  height: 20%;
+  width: 100%;
+  margin: 2%;
 }
 .sections img{
   height: 200px;
   width: 200px;
-  float: left;
 }
 .profile-data{
-  float: left;
 }
 .sections form{
-
+  height: 200px;
+  width: 1260px;
 }
 
 

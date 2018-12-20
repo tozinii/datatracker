@@ -10,28 +10,25 @@
 
 		<!-- Profile data -->
 		<form class="needs-validation profile-data" novalidate>
-		  <div class="form-row">
 		    <div class="col-md-4 mb-3">
-		      <label for="validationTooltip01">Nombre</label>
-		      <input type="text" class="form-control" id="validationTooltip01" placeholder="Nombre" value="Paco" disabled="disabled">
+		      <label>Nombre</label>
+		      <input type="text" class="form-control" placeholder="Nombre" value="Paco" disabled="disabled">
 		    </div>
 		    <div class="col-md-4 mb-3">
-		      <label for="validationTooltip02">Apellido</label>
-		      <input type="text" class="form-control" id="validationTooltip02" placeholder="Apellido" value="Petardos" disabled="disabled">
+		      <label>Apellido</label>
+		      <input type="text" class="form-control" placeholder="Apellido" value="Petardos" disabled="disabled">
 		    </div>
 		    <div class="col-md-4 mb-3">
-		      <label for="validationTooltip02">Correo electronico</label>
-		      <input type="text" class="form-control" id="validationTooltip02" placeholder="Correo electronico" value="Petardos" disabled="disabled">
+		      <label>Correo electrónico</label>
+		      <input type="text" class="form-control" placeholder="Correo electronico" value="Petardos" disabled="disabled">
 		    </div>
 		    <div class="col-md-4 mb-3">
-		      <label for="validationTooltipUsername">Descripción</label>
-		      <textarea class="form-control" id="validationTooltip03" placeholder="Pon lo que te salga de los..." disabled="disabled"></textarea>
+		      <label>Descripción</label>
+		      <textarea class="form-control" placeholder="Hey there! I am using Telegram!" disabled="disabled"></textarea>
 		    </div>
-		  </div>
-		  <div class="form-row">
-		    <div class="col-md-6 mb-3">
-		  </div>
-		  <button class="btn btn-primary" type="submit">Editar perfil</button>
+		    <div class="col-md-4 mb-3">
+		  	  <button class="btn btn-primary" type="submit">Editar perfil</button>
+		    </div>
 		</form>
 
 	</div>
