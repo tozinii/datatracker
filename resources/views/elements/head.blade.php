@@ -6,13 +6,19 @@
 <!-- Favicon -->
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <!-- Bootstrap CSS -->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
 <!-- Animate CSS -->
-<link href="assets/vendors/animate/animate.css" rel="stylesheet">
+<link href="{{asset('assets/vendors/animate/animate.css')}}" rel="stylesheet">
 <!-- Icon CSS-->
+<<<<<<< HEAD
 <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
+=======
+<link rel="stylesheet" href="{{asset('assets/vendors/font-awesome/css/font-awesome.min.css')}}">
+<!-- Camera Slider -->
+<link rel="stylesheet" href="{{asset('assets/vendors/camera-slider/camera.css')}}">
+>>>>>>> 3b35608b680c3e534a1843d0300affdeef0f40ff
 <!-- Owlcarousel CSS-->
-<link rel="stylesheet" type="text/css" href="assets/vendors/owl_carousel/owl.carousel.css" media="all">
+<link rel="stylesheet" type="text/css" href="{{asset('vendors/owl_carousel/owl.carousel.css')}}" media="all">
 <!--Template Styles CSS-->
-<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" media="all" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">

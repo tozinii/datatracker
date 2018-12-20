@@ -12,7 +12,10 @@
 */
 
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', function ()
+{
+  return view('index');
+});
 
 //Ruta de form-contacto
 Route::post('/postContact', 'ContactController@postContact')->name('postContact');
@@ -35,7 +38,9 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 //no sirve
  Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('registerForm');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
-//Route::get('email/verify', 'Auth\VerificationController@show')->name('verification');
+
+//Verify email
+Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 // Password Reset Routes...
 
 //Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
@@ -44,3 +49,6 @@ Route::post('register', 'Auth\RegisterController@register')->name('register');
 //Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Admin panel
+Route::get('/adminpanel', 'AdminController@adminPanel')->name('adminpanel');

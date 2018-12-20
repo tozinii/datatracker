@@ -1,4 +1,4 @@
-@extends('layouts.layoutUser')
+@extends('layouts.layoutAdmin')
 
 @section('bienvenido')
 
