@@ -1,3 +1,4 @@
+//Variables para validación de login y register
 var validRegisterName = false;
 var validRegisterEmail = false;
 var validRegisterPassword = false;
@@ -84,7 +85,7 @@ $(document).ready(function(){
 
 
 });
-//Funciones validacion register
+//Funciones validacion login y register
 function isValidEmail(email){
   if(email.includes('@') &&
     email.includes('.') &&
