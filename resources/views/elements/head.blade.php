@@ -10,13 +10,7 @@
 <!-- Animate CSS -->
 <link href="{{asset('assets/vendors/animate/animate.css')}}" rel="stylesheet">
 <!-- Icon CSS-->
-<<<<<<< HEAD
 <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
-=======
-<link rel="stylesheet" href="{{asset('assets/vendors/font-awesome/css/font-awesome.min.css')}}">
-<!-- Camera Slider -->
-<link rel="stylesheet" href="{{asset('assets/vendors/camera-slider/camera.css')}}">
->>>>>>> 3b35608b680c3e534a1843d0300affdeef0f40ff
 <!-- Owlcarousel CSS-->
 <link rel="stylesheet" type="text/css" href="{{asset('vendors/owl_carousel/owl.carousel.css')}}" media="all">
 <!--Template Styles CSS-->
