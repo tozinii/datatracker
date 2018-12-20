@@ -1,4 +1,10 @@
 @extends('layouts.layoutPrincipal')
+
+@section('banner')
+
+@include('elements.banner-img')
+
+@endsection
 @section('contenido')
       <!--start Hey title Area-right_img -->
       <section class="" >
