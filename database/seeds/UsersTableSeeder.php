@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
           'name'=> $obj->name,
           'lastname'=> $obj->lastname,
           'email'=>$obj->email,
+          'email_verified_at'=>$obj->email_verified_at,
           'password'=>$obj->password,
           'description'=>$obj->description,
           'role'=>$obj->role
