@@ -1,6 +1,6 @@
 @extends('layouts.layoutUser')
 
-@section('contenido')
+@section('mensaje')
 
 
 <div class="container ">

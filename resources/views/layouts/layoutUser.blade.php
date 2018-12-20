@@ -25,7 +25,7 @@
                <!-- End Header_Area -->
                <!-- #banner start -->
                <section id="banner" class=" mb-90">
-                  @yield('bienvenido')
+                  @yield('mensaje')
                </section>
                <div class="container-fluid p0 banner-shap-img">
                </div>
