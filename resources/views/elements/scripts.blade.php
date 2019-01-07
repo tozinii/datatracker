@@ -1,6 +1,7 @@
 <!-- jQuery JS -->
-      <script src="assets/js/jquery-1.12.0.min.js"></script>
+      <script src="assets/js/jquery-3.3.1.min.js"></script>
       <script src="assets/vendors/popup/lightbox.min.js"></script>
+      <script src="js/editarPerfil.js" charset="utf-8"></script>
       <script type="text/javascript">
          $(document).ready(function() {
          $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {

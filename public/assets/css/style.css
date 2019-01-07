@@ -3541,7 +3541,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 .disabled-link{
   cursor: default;
 }
- /* Si se os ocurre un mejor nombre 
+ /* Si se os ocurre un mejor nombre
     para esta clase decidmelo porfa
     |||
     vvv     */
@@ -3583,3 +3583,10 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   visibility: hidden;
 
 }*/
+
+
+/* Editar Perfil */
+
+#guardarPerfil {
+  visibility: hidden;
+}
