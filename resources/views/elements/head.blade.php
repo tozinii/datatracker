@@ -14,7 +14,7 @@
 <!-- navCol CSS -->
 <link rel="stylesheet" type="text/css" href="css/navCol.css">
 <!-- Owlcarousel CSS-->
-<link rel="stylesheet" type="text/css" href="{{asset('vendors/owl_carousel/owl.carousel.css')}}" media="all">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/owl_carousel/owl.carousel.css')}}" media="all">
 <!--Template Styles CSS-->
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}" media="all" />
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
