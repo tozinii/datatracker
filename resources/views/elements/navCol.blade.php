@@ -18,6 +18,13 @@
         <li class="nav-item lista">
           <a class="nav-link disabled" href="/sensors">Sensores</a>
         </li>
+        <li class="nav-item lista">
+          <a class="nav-link disabled" href="{{ route('logout')}}"  onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+           @csrf
+        </form>
+        </li>
       </ul>
    </div>
    <!--          Ends views-menu           -->
