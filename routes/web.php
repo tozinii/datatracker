@@ -28,11 +28,11 @@ Route::view('/services', 'templates/services');
 
 // Rutas a vistas usuarios y admins
 Route::view('/common', 'users/common');
-Route::view('/admin', 'users/admin');
-Route::view('/profile', 'users/profile');
-Route::view('/groups', 'users/groups');
-Route::view('/cars', 'users/cars');
-Route::view('/sensors', 'users/sensors');
+Route::view('/admin', 'users/admin')->middleware('auth');;
+Route::view('/profile', 'users/profile')->middleware(['auth','verified']);
+Route::view('/groups', 'users/groups')->middleware(['auth','verified']);;
+Route::view('/cars', 'users/cars')->middleware(['auth','verified']);;
+Route::view('/sensors', 'users/sensors')->middleware(['auth','verified']);;
 
 
 // Rutas auth:

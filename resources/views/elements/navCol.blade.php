@@ -1,8 +1,8 @@
- 
+
 
 
 <div id="mySidenav" class="sidenav">
-   <a class="navCol-icon" href="/"> <img src="assets/images/logo.png"></a>
+   <a class="navCol-icon" href="/home"> <img src="{{asset('assets/images/logo.png')}}"></a>
    <!--          Starts views-menu        -->
    <div>
       <ul class="nav flex-column">
@@ -24,7 +24,6 @@
 
    <!--       Starts profile-options       -->
    <div class="nav-icon">
-     <img  src="assets/images/navIcon.png">
+     <img  src="{{asset('assets/images/navIcon.png')}}">
    </div>
 </div>
-
