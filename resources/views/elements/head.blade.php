@@ -12,7 +12,7 @@
 <!-- Icon CSS-->
 <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
 <!-- navCol CSS -->
-<link rel="stylesheet" type="text/css" href="css/navCol.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/navCol.css')}}">
 <!-- Owlcarousel CSS-->
 <link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/owl_carousel/owl.carousel.css')}}" media="all">
 <!--Template Styles CSS-->
