@@ -15,7 +15,7 @@
 Route::get('/', function ()
 {
   return view('index');
-});
+})->name('root');
 
 //Ruta de form-contacto
 Route::post('/postContact', 'ContactController@postContact')->name('postContact');
