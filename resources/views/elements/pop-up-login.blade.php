@@ -17,8 +17,10 @@
           <input id="login-password" type="password" name="password" placeholder="Contraseña" required />
           <span id="login-password-error-text" class="form-error">La contraseña debe tener más de 8 carácteres</span>
           <button id="login-submit" type="submit" class="btn btn-primary">Inicia Sesión</button>
+          <a href="{{ route('password.request') }}" class="resetPasswordLink">Has olvidado la contraseña?</a>
         </form>
-        <a href="#" style="color:">Has olvidado la contraseña?</a>
+
+
       </div>
     </div>
   </div>

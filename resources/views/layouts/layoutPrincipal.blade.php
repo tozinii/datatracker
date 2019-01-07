@@ -26,7 +26,7 @@
                <!-- End Header_Area -->
                <!-- #banner start -->
                <section id="banner" class=" mb-90">
-                  @include('elements.banner-img')
+                  @yield('banner')
                </section>
                <div class="container-fluid p0 banner-shap-img">
                </div>
@@ -41,74 +41,7 @@
       </div>
       <!--#End service-text  -->
       <!--#Our Testimonial Area start-->
-      <section id="testimonials" class="testimonial_area row">
-         <div class="container ">
-            <div class="title wow fadeInUp">
-            </div>
-            <div class="testimonial_carosel">
-               <div class="item">
-                  <div class="text-center">
-                     <div class="img-s ">
-                        <img src="assets/images/testimonial-top.png">
-                     </div>
-                     <h4 class="body-slider media-heading">Iker Apaolaza </h4>
-                     <hr class="slider_hr">
-                  </div>
-                  <p>Estudiante de grado superior en desarrollo web<br> en IES Zubiri - Manteo. </p>
-                  <div class="media">
-                     <div class="media-left">
-                        <a href="#">
-                        <img class="media-object" src="assets/images/testimonial-3.jpg" alt="">
-                        </a>
-                     </div>
-                     <div class="media-body">
-                        <h4 class="media-heading">Iker Apaolaza <span class="slider_span_color"></span></h4>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <div class=" text-center">
-                     <div class="img-s ">
-                        <img src="assets/images/testimonial-top.png">
-                     </div>
-                     <h4 class="body-slider media-heading">Jon Jauregi </h4>
-                     <hr class="slider_hr">
-                  </div>
-                  <p>Estudiante de grado superior en desarrollo web<br> en IES Zubiri - Manteo.  </p>
-                  <div class="media">
-                     <div class="media-left">
-                        <a href="#">
-                        <img class="media-object" src="assets/images/testimonial-2.jpg" alt="">
-                        </a>
-                     </div>
-                     <div class="media-body">
-                        <h4 class="media-heading">Jon Jauregi <span class="slider_span_color"></span></h4>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <div class=" text-center">
-                     <div class="img-s ">
-                        <img src="assets/images/testimonial-top.png">
-                     </div>
-                     <h4 class="body-slider media-heading">Ander González </h4>
-                     <hr class="slider_hr">
-                  </div>
-                  <p>Estudiante de grado superior en desarrollo web<br> en IES Zubiri - Manteo.  </p>
-                  <div class="media">
-                     <div class="media-left">
-                        <a href="#">
-                        <img class="media-object" src="assets/images/testimonial-3.jpg" alt="">
-                        </a>
-                     </div>
-                     <div class="media-body">
-                        <h4 class="media-heading">Ander González <span class="slider_span_color"></span></h4>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
+      @yield('members')
       <!--#End Our testimonial Area -->
       <div id="contacto" class="our_partners_area ">
          @include('elements.contact')
