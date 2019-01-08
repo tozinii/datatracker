@@ -85,18 +85,17 @@ class LoginController extends Controller
 
     protected function sendLoginResponse(Request $request)
     {
-        $request->session()->regenerate();
+      $request->session()->regenerate();
 
-        $this->clearLoginAttempts($request);
+      $this->clearLoginAttempts($request);
 
-        return $this->authenticated($request, $this->guard()->user())
-                ?: redirect()->intended($this->redirectPath());
+      return $this->authenticated($request, $this->guard()->user())
+              ?: redirect()->intended($this->redirectPath());
     }
 
     protected function sendFailedLoginResponse(Request $request)
     {
-        Debugbar::info(true);
-        return redirect()->route('root', ['loginError'=>true]);
+        return redirect('/')->with('loginError','Error en la autenticación, vuelve a intentarlo.');
     }
 
 }

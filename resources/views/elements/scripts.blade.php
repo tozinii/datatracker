@@ -33,6 +33,13 @@
                   })
 
       </script>
+      @if(Session::has('loginError') && Session::get('loginError') != null)
+        <script>
+          $(document).ready(function(){
+            $('#login').modal('show');
+          });
+        </script>
+      @endif
       <!-- Bootstrap JS -->
       <script src="assets/js/bootstrap.min.js"></script>
       <!-- Animate JS -->
