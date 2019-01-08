@@ -9,18 +9,18 @@
 		<img src="assets/images/navIcon.png" alt="Imagen de perfil">
 
 		<!-- Profile data -->
-		<form class="needs-validation profile-data" novalidate enctype="multipart/form-data">
+		<form class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="get" action="{{ route('profile.edit')}}">
 		    <div class="col-md-4 mb-3">
 		      <label>Nombre</label>
-		      <input type="text" class="form-control" id="nombre" placeholder="Nombre" value="Paco" disabled>
+		      <input type="text" class="form-control" id="nombre" placeholder="Nombre" value="{{auth()->user()->name}}" disabled>
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Apellido</label>
-		      <input type="text" class="form-control" id="apellido" placeholder="Apellido" value="Petardos" disabled>
+		      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" value="Petardos" disabled>
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Correo electrónico</label>
-		      <input type="text" class="form-control" id="emailPerfil" placeholder="Correo electronico" value="Petardos" disabled>
+		      <input type="text" class="form-control" id="emailPerfil" name="email" placeholder="Correo electronico" value="{{auth()->user()->email}}" disabled>
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Descripción</label>
@@ -28,7 +28,7 @@
 		    </div>
 				<div class="col-md-4 mb-3">
 		      <label>Imagen</label>
-		      <input type="file" class="form-control" id="imagenPerfil" disabled>
+		      <input type="file" class="form-control" name="imagenPerfil" id="imagenPerfil" disabled>
 		    </div>
 		    <div class="col-md-4 mb-3" id="botonPerfil">
 		  	  <button class="btn btn-primary" type="button" id="editarPerfil">Editar perfil</button>
