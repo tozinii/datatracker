@@ -9,10 +9,11 @@
 		<img src="assets/images/navIcon.png" alt="Imagen de perfil">
 
 		<!-- Profile data -->
-		<form class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="get" action="{{ route('profile.edit')}}">
+		<form class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="post" action="{{ route('profile.edit')}}">
+				@csrf
 		    <div class="col-md-4 mb-3">
 		      <label>Nombre</label>
-		      <input type="text" class="form-control" id="nombre" placeholder="Nombre" value="{{auth()->user()->name}}" disabled>
+		      <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" value="{{auth()->user()->name}}" disabled>
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Apellido</label>

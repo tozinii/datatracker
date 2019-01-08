@@ -57,7 +57,8 @@ class ProfileController extends Controller
      */
     public function edit(Request $request)
     {
-          dd($request->file('imagenPerfil'));
+
+          $request->file('imagenPerfil')->store('public');
     }
 
     /**
