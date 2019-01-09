@@ -15,8 +15,8 @@
                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo electrónico') }}</label>
 
                            <div class="col-md-6">
-                               <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
+                               <input id="reset-password-email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                               <span id="reset-password-error-text" class="form-error">Introduce un correo válido</span>
                                @if ($errors->has('email'))
                                    <span class="invalid-feedback" role="alert">
                                        <strong>{{ $errors->first('email') }}</strong>
@@ -27,7 +27,7 @@
 
                        <div class="form-group row mb-0">
                            <div class="col-md-6 offset-md-4">
-                               <button type="submit" class="btn btn-primary">
+                               <button id="reset-password-submit" type="submit" class="btn btn-primary">
                                    {{ __('Enviar correo') }}
                                </button>
                            </div>

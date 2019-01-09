@@ -15,6 +15,9 @@
           <span id="login-email-error-text" class="form-error">Introduce un correo válido</span>
           <label>Contraseña: </label>
           <input id="login-password" type="password" name="password" placeholder="Contraseña" required />
+          @if(Session::has('loginError'))
+            <span class="form-error-displayed">{{ Session::get('loginError') }}</span>
+          @endif
           <span id="login-password-error-text" class="form-error">La contraseña debe tener más de 8 carácteres</span>
           <button id="login-submit" type="submit" class="btn btn-primary">Inicia Sesión</button>
           <a href="{{ route('password.request') }}" class="resetPasswordLink">Has olvidado la contraseña?</a>

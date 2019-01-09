@@ -3,13 +3,17 @@ var validRegisterName = false;
 var validRegisterEmail = false;
 var validRegisterPassword = false;
 var validRegisterConfirmPassword = false;
+
 var validLoginEmail = false;
 var validLoginPassword = false;
 
+var validResetPasswordEmail = false;
+
 $(document).ready(function(){
   //Hace submit del formulario de contacto
-  $('#enviar-form-contacto').click(function(){
-      $('#form-contacto').submit();
+  $('#enviar-form-contacto').click(function(e){
+    e.preventDefault();
+    $('#submit-form-contacto').click();
   });
 
   //Scrolling al clicar en un elemento de navbar
@@ -107,6 +111,18 @@ $(document).ready(function(){
         loginValidated();
       });
 
+    //Validacion reset password
+      $('#reset-password-email').on('input', function(){
+        if(isValidEmail($(this).val())){
+          $('#reset-password-error-text').css('display','none');
+          validResetPasswordEmail = true;
+        }else{
+          $('#reset-password-error-text').css('display','block');
+          validResetPasswordEmail = false;
+        }
+        resetPasswordEmailValidated();
+      });
+
 
 });
 //Funciones validacion login y register
@@ -157,5 +173,13 @@ function loginValidated(){
     $('#login-submit').prop('disabled',false);
   }else{
     $('#login-submit').prop('disabled',true);
+  }
+}
+
+function resetPasswordEmailValidated(){
+  if(validResetPasswordEmail){
+    $('#reset-password-submit').prop('disabled', false);
+  }else{
+    $('#reset-password-submit').prop('disabled', true);
   }
 }
