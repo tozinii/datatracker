@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
           'lastname'=> $obj->lastname,
           'email'=>$obj->email,
           'email_verified_at'=>$obj->email_verified_at,
-          'password'=>$obj->password,
+          'password'=>Hash::make($obj->password),
           'description'=>$obj->description,
           'role'=>$obj->role
         ));
