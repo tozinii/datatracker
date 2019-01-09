@@ -1,17 +1,65 @@
 @extends('layouts.layoutLogged')
 @section('contenido')
 
-<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-</div>
-<div class="tab-content" id="v-pills-tabContent">
-  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
-  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+
+	<div class="sections">
+		
+		<!-- Profile image -->
+		<img src="assets/images/navIcon.png" alt="Imagen de perfil">
+
+		<!-- Profile data -->
+		<form class="needs-validation profile-data" novalidate>
+		    <div class="col-md-4 mb-3">
+		      <label>Nombre</label>
+		      <input type="text" class="form-control" placeholder="Nombre" value="Paco" disabled="disabled">
+		    </div>
+		    <div class="col-md-4 mb-3">
+		      <label>Apellido</label>
+		      <input type="text" class="form-control" placeholder="Apellido" value="Petardos" disabled="disabled">
+		    </div>
+		    <div class="col-md-4 mb-3">
+		      <label>Correo electrónico</label>
+		      <input type="text" class="form-control" placeholder="Correo electronico" value="Petardos" disabled="disabled">
+		    </div>
+		    <div class="col-md-4 mb-3">
+		      <label>Descripción</label>
+		      <textarea class="form-control" placeholder="Hey there! I am using Telegram!" disabled="disabled"></textarea>
+		    </div>
+		    <div class="col-md-4 mb-3">
+		  	  <button class="btn btn-primary" type="submit">Editar perfil</button>
+		    </div>
+		</form>
+
+	</div>
+
+<div>
+	<ul class="nav nav-tabs">
+	    <li class="active"><a data-toggle="tab" href="#sensores">Usuarios</a></li>
+	    <li><a data-toggle="tab" href="#estadisticas">Grupos</a></li>
+	</ul>
+
+	<div class="tab-content">
+    	<div id="sensores" class="tab-pane fade in active">
+	      <h3>Usuarios</h3>
+	      <div class="list-group">
+			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
+			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
+			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
+			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
+			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
+			</div>
+	    </div>
+    <div id="estadisticas" class="tab-pane fade">
+    	<h3>Grupos</h3>
+	      <div class="list-group">
+			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
+			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
+			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
+			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
+			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
+			</div>
+    </div>
+  </div>
 </div>
 
 @endsection
