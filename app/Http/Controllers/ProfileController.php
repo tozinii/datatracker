@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
 {
@@ -58,18 +59,18 @@ class ProfileController extends Controller
     public function edit(Request $request,$id)
     {
           $user=User::find($id);
+          if(!$this->validator($request->all())->fails()){
+            if ($request->hasFile('avatar')) {
+              $user->avatar = $request->file('avatar')->store('public');
+            }
+            $user->name = $request->input('nombre');
+            $user->lastname = $request->input('apellido');
+            $user->email = $request->input('email');
+            $user->description = $request->get('descripcion');
 
-          if ($request->hasFile('avatar')) {
-            $user-> avatar = $request->file('avatar')->store('public');
+            $user->save();
           }
-
-          $user->name = $request->input('nombre');
-
-          $user->lastname = $request->input('apellido');
-
-          $user->save();
-
-          return back();
+          return redirect('/profile')->with('editProfileError', 'Error en la solicitud. Por favor, rellena los campos obligatorios. (*)');
     }
 
     /**
@@ -93,5 +94,16 @@ class ProfileController extends Controller
     public function destroy(User $user)
     {
         //
+    }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'nombre' => ['required', 'string', 'min:1', 'max:50'],
+            'apellido' => ['string', 'min:1', 'max:50'],
+            'email' => ['required', 'email'],
+            'descripcion' => ['string', 'min:1'],
+            'avatar' => ['image'],
+        ]);
     }
 }
