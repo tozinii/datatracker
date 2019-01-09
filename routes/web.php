@@ -17,7 +17,16 @@ Route::get('/', function ()
   return view('index');
 });
 
-//Ruta de form-contacto
+
+// Multi idioma
+
+Route::get('welcome/{locale}', function ($locale) {
+    App::setLocale($locale);
+
+    //
+});
+
+// Ruta de form-contacto
 Route::post('/postContact', 'ContactController@postContact')->name('postContact');
 
 Route::view('/about', 'templates/about');
@@ -43,11 +52,11 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('loginForm');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // Registration Routes...
-//no sirve
+// no sirve
  Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('registerForm');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 
-//Verify email
+// Verify email
 Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 
 
