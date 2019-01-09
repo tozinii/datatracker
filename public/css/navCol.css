@@ -1,0 +1,38 @@
+ /* The sidenav */
+.sidenav {
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 2%;
+  align-content: center;
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+
+
+
+/*
+    Nav elements
+*/
+.navCol-icon img{
+  width: 80%;
+  height: 5%;
+  margin-bottom: 5%;
+}
+
+a.nav-link:hover {
+  color: black;
+}
+
+.nav-icon {
+  height: 50px;
+  width: 50px;
+  position: bottom;
+
+}
