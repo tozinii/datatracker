@@ -4921,23 +4921,14 @@ textarea.input-group-sm>.input-group-btn>.btn {
     }
 }
 
-.nav-pills>li {
-    float: left
+.nav-pills .nav-link {
+  border-radius: 0.25rem;
 }
 
-.nav-pills>li>a {
-    border-radius: 4px
-}
-
-.nav-pills>li+li {
-    margin-left: 2px
-}
-
-.nav-pills>li.active>a,
-.nav-pills>li.active>a:focus,
-.nav-pills>li.active>a:hover {
-    color: #fff;
-    background-color: #337ab7
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #007bff;
 }
 
 .nav-stacked>li {
@@ -6289,10 +6280,12 @@ a.thumbnail:hover {
 }
 
 .list-group-item {
-    position: relative;
-    display: block;
-    padding: 0px 15px;
-    margin-bottom: -1px;
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
    
 }
 
