@@ -1,6 +1,6 @@
 <!-- jQuery JS -->
-      <script src="assets/js/jquery-1.12.0.min.js"></script>
-      <script src="assets/vendors/popup/lightbox.min.js"></script>
+      <script src="{{asset('assets/js/jquery-1.12.0.min.js')}}"></script>
+      <script src="{{asset('assets/vendors/popup/lightbox.min.js')}}"></script>
       <script type="text/javascript">
          $(document).ready(function() {
          $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
@@ -41,13 +41,13 @@
         </script>
       @endif
       <!-- Bootstrap JS -->
-      <script src="assets/js/bootstrap.min.js"></script>
+      <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
       <!-- Animate JS -->
-      <script src="assets/vendors/animate/wow.min.js"></script>
-      <script src="assets/vendors/sidebar/main.js"></script>
+      <script src="{{asset('assets/vendors/animate/wow.min.js')}}"></script>
+      <script src="{{asset('assets/vendors/sidebar/main.js')}}"></script>
       <!-- Owlcarousel JS -->
-      <script src="assets/vendors/owl_carousel/owl.carousel.min.js"></script>
+      <script src="{{asset('assets/vendors/owl_carousel/owl.carousel.min.js')}}"></script>
       <!-- Self JS -->
-      <script src="assets/js/scripts.js"></script>
+      <script src="{{asset('assets/js/scripts.js')}}"></script>
       <!-- Theme JS -->
-      <script src="assets/js/theme.js"></script>
+      <script src="{{asset('assets/js/theme.js')}}"></script>

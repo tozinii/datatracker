@@ -4,13 +4,13 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title> Data Tracker  </title>
 <!-- Favicon -->
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon" />
 <!-- Bootstrap CSS -->
 <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
 <!-- Animate CSS -->
 <link href="{{asset('assets/vendors/animate/animate.css')}}" rel="stylesheet">
 <!-- Icon CSS-->
-<link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{asset('assets/vendors/font-awesome/css/font-awesome.min.css')}}">
 <!-- navCol CSS -->
 <link rel="stylesheet" type="text/css" href="{{asset('css/navCol.css')}}">
 <!-- Owlcarousel CSS-->

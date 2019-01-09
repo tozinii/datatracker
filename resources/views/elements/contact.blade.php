@@ -5,11 +5,15 @@
           <form id="form-contacto" method="POST" action="{{ route('postContact') }}">
             @csrf
             <label>Nombre: </label>
-            <input type="text" name="name"placeholder="Nombre" />
+            <input type="text" name="name"placeholder="Nombre"  />
             <label>E-mail: </label>
-            <input type="text" name="email" placeholder="E-mail" /><br />
+            <input type="text" name="email" placeholder="E-mail"  /><br />
             <label>Mensaje:</label><br />
             <textarea form="form-contacto" name="message" placeholder="Texto"></textarea>
+            @if(Session::has('contactError'))
+              <span class="form-error-displayed">{{ Session::get('contactError') }}</span>
+            @endif
+            <input id="submit-form-contacto" type="submit" hidden />
           </form>
         </div>
       <div class="col-md-5 p0 book_bottun">
