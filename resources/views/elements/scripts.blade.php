@@ -2,6 +2,7 @@
       <script src="{{asset('assets/js/jquery-1.12.0.min.js')}}"></script>
       <script src="{{asset('assets/vendors/popup/lightbox.min.js')}}"></script>
       <script src="{{asset('js/editarPerfil.js')}}" charset="utf-8"></script>
+      <script src="{{asset('assets/js/validation.js')}}" charset="utf-8"></script>
       <script type="text/javascript">
          $(document).ready(function() {
          $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {

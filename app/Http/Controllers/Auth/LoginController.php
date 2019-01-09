@@ -94,7 +94,7 @@ class LoginController extends Controller
 
     protected function sendFailedLoginResponse(Request $request)
     {
-        return redirect('/')->with('loginError','Error en la autenticación, vuelve a intentarlo.');
+        return back()->with('loginError','Error en la autenticación, vuelve a intentarlo.');
     }
 
 }
