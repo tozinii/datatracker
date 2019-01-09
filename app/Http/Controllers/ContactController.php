@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contact;
 use Illuminate\Support\Facades\Validator;
-use Debugbar;
 
 class ContactController extends Controller
 {
