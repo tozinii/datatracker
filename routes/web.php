@@ -30,7 +30,7 @@ Route::view('/services', 'templates/services');
 Route::view('/common', 'users/common');
 Route::view('/admin', 'users/admin')->middleware('auth');;
 Route::get('/profile', 'ProfileController@show')->name('profile')->middleware(['auth','verified']);
-Route::post('/profile/edit', 'ProfileController@edit')->name('profile.edit');
+Route::post('/profile/{profile}/edit', 'ProfileController@edit')->name('profile.edit');
 Route::view('/groups', 'users/groups')->middleware(['auth','verified']);;
 Route::view('/cars', 'users/cars')->middleware(['auth','verified']);;
 Route::view('/sensors', 'users/sensors')->middleware(['auth','verified']);;

@@ -5,7 +5,7 @@ window.onload = function () {
     document.getElementById('apellido').removeAttribute('disabled');
     document.getElementById('emailPerfil').removeAttribute('disabled');
     document.getElementById('descripcion').removeAttribute('disabled');
-    document.getElementById('imagenPerfil').removeAttribute('disabled');
+    document.getElementById('avatar').removeAttribute('disabled');
 
     document.getElementById('guardarPerfil').style.visibility = "visible";
     document.getElementById('editarPerfil').style.visibility = "hidden";

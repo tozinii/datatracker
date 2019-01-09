@@ -55,10 +55,21 @@ class ProfileController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit(Request $request,$id)
     {
+          $user=User::find($id);
 
-          $request->file('imagenPerfil')->store('public');
+          if ($request->hasFile('avatar')) {
+            $user-> avatar = $request->file('avatar')->store('public');
+          }
+
+          $user->name = $request->input('nombre');
+
+          $user->lastname = $request->input('apellido');
+
+          $user->save();
+
+          return back();
     }
 
     /**

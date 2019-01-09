@@ -6,10 +6,10 @@
 	<div class="sections">
 
 		<!-- Profile image -->
-		<img src="assets/images/navIcon.png" alt="Imagen de perfil">
+		<img src="{{Storage::url(auth()->user()->avatar)}}" alt="Imagen de perfil">
 
 		<!-- Profile data -->
-		<form class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="post" action="{{ route('profile.edit')}}">
+		<form class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="post" action="{{ route('profile.edit',auth()->user()->id)}}">
 				@csrf
 		    <div class="col-md-4 mb-3">
 		      <label>Nombre</label>
@@ -17,7 +17,7 @@
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Apellido</label>
-		      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" value="Petardos" disabled>
+		      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" value="{{auth()->user()->lastname}}" disabled>
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Correo electrónico</label>
@@ -29,7 +29,7 @@
 		    </div>
 				<div class="col-md-4 mb-3">
 		      <label>Imagen</label>
-		      <input type="file" class="form-control" name="imagenPerfil" id="imagenPerfil" disabled>
+		      <input type="file" class="form-control" name="avatar" id="avatar" disabled>
 		    </div>
 		    <div class="col-md-4 mb-3" id="botonPerfil">
 		  	  <button class="btn btn-primary" type="button" id="editarPerfil">Editar perfil</button>
