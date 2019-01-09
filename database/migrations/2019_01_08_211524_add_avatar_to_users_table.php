@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyToCarTable extends Migration
+class AddAvatarToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddForeignKeyToCarTable extends Migration
      */
     public function up()
     {
-        Schema::table('car', function (Blueprint $table) {
-          $table->integer('group_id')->unsigned();
-            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade')->onUpdate('cascade');
+        Schema::table('users', function (Blueprint $table) {
+          $table->string('avatar')->after('email')->default('avatar.png');
         });
     }
 
@@ -26,8 +25,8 @@ class AddForeignKeyToCarTable extends Migration
      */
     public function down()
     {
-        Schema::table('car', function (Blueprint $table) {
-            //
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('avatar');
         });
     }
 }

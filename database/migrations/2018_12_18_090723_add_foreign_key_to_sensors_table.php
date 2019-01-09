@@ -14,7 +14,7 @@ class AddForeignKeyToSensorsTable extends Migration
     public function up()
     {
         Schema::table('sensors', function (Blueprint $table) {
-          $table->integer('car_id');
+          $table->integer('car_id')->unsigned();
           $table->foreign('car_id')->references('id')->on('car')->onDelete('cascade')->onUpdate('cascade');
         });
     }

@@ -38,7 +38,8 @@ Route::view('/services', 'templates/services');
 // Rutas a vistas usuarios y admins
 Route::view('/common', 'users/common');
 Route::view('/admin', 'users/admin')->middleware('auth');;
-Route::view('/profile', 'users/profile')->middleware(['auth','verified']);
+Route::get('/profile', 'ProfileController@show')->name('profile')->middleware(['auth','verified']);
+Route::post('/profile/{profile}/edit', 'ProfileController@edit')->name('profile.edit');
 Route::view('/groups', 'users/groups')->middleware(['auth','verified']);;
 Route::view('/cars', 'users/cars')->middleware(['auth','verified']);;
 Route::view('/sensors', 'users/sensors')->middleware(['auth','verified']);;
