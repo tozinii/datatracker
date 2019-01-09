@@ -69,6 +69,7 @@ class ProfileController extends Controller
             $user->description = $request->get('descripcion');
 
             $user->save();
+            return redirect('/profile');
           }
           return redirect('/profile')->with('editProfileError', 'Error en la solicitud. Por favor, rellena los campos obligatorios. (*)');
     }

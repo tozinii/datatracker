@@ -13,7 +13,8 @@
 				@csrf
 		    <div class="col-md-4 mb-3">
 		      <label>Nombre*</label>
-		      <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" value="{{auth()->user()->name}}" disabled>
+		      <input id="profile-name" type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{auth()->user()->name}}" disabled>
+					<span id="profile-name-error-text" class="form-error">Introduce un nombre válido</span>
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Apellido</label>
@@ -21,7 +22,8 @@
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Correo electrónico*</label>
-		      <input type="text" class="form-control" id="emailPerfil" name="email" placeholder="Correo electronico" value="{{auth()->user()->email}}" disabled>
+		      <input id="profile-email" type="text" class="form-control" name="email" placeholder="Correo electronico" value="{{auth()->user()->email}}" disabled>
+					<span id="profile-email-error-text" class="form-error">Introduce un correo válido</span>
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Descripción</label>
