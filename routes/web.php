@@ -70,4 +70,4 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Admin panel
-Route::get('/adminpanel', 'AdminController@adminPanel')->name('adminpanel');
+Route::get('/adminpanel', 'AdminController@adminPanel')->name('admin');
