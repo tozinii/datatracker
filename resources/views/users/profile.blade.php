@@ -49,7 +49,7 @@
 			<button class="btn btn-primary" type="button" id="eliminar" data-toggle="modal" data-target="#delete">Eliminar Cuenta</button>
 		</div>
 
-		@include('elements.pop-up-delete.blade.php')
+		@include('elements.pop-up-delete')
 	</div>
 
 	<!-- Section group -->

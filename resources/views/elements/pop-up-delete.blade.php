@@ -6,9 +6,14 @@
       </div>
       <div class="modal-body">
         <h5>¿Está usted seguro de querer eliminar su cuenta? No podrá volver a recuperarla más adelante. </h5>
-        <button type="button" class="btnedit btnedit-outline-danger btnedit-size">Delete</button>
+        <button type="button" class="btnedit btnedit-outline-danger btnedit-size" href="{{ route('profile.destroy',auth()->user()->id) }}" onclick="event.preventDefault();
+                                              document.getElementById('delete-form').submit();">Delete</button>
         <button type="button" class="btnedit btnedit-outline-secondary btnedit-size " data-dismiss="modal" aria-label="Close">Cancel</button>
       </div>
     </div>
   </div>
 </div>
+<form id="delete-form" action="{{ route('profile.destroy',auth()->user()->id) }}" method="post">
+  @csrf
+  @method('DELETE')
+</form>
