@@ -46,8 +46,10 @@
 		@endif
 
 		<div class="col-md-4 mb-3" id="botonPerfil">
-			<button class="btn btn-primary" type="button" id="eliminar" href="{{ route('profile.destroy', auth()->user()->id) }}">Eliminar Cuenta</button>
+			<button class="btn btn-primary" type="button" id="eliminar" data-toggle="modal" data-target="#delete">Eliminar Cuenta</button>
 		</div>
+
+		@include('elements.pop-up-delete.blade.php')
 	</div>
 
 	<!-- Section group -->
