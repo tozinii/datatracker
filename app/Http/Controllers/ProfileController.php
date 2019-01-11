@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
 {
+
+    public function __construct(){
+      $this->middleware('auth', ['except' => ['edit']]);
+      $this->middleware('verified');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -101,10 +106,14 @@ class ProfileController extends Controller
     {
         return Validator::make($data, [
             'nombre' => ['required', 'string', 'min:1', 'max:50'],
-            'apellido' => ['string', 'min:1', 'max:50'],
+            'apellido' => ['string', 'nullable', 'max:50'],
             'email' => ['required', 'email'],
             'descripcion' => ['string', 'max:150','nullable'],
             'avatar' => ['image'],
         ]);
+    }
+
+    public function changePassword(Request $request){
+      //TODO funcion para cambio de contraseña
     }
 }

@@ -7,7 +7,10 @@ window.onload = function () {
     document.getElementById('descripcion').removeAttribute('disabled');
     document.getElementById('avatar').removeAttribute('disabled');
 
-    document.getElementById('guardarPerfil').style.visibility = "visible";
-    document.getElementById('editarPerfil').style.visibility = "hidden";
+    //document.getElementById('guardarPerfil').style.visibility = "visible";
+    //document.getElementById('editarPerfil').style.visibility = "hidden";
+    $('#editarPerfil').fadeToggle(function(){
+      $('#guardarPerfil').fadeToggle();
+    });
   })
 }

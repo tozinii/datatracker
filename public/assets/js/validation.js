@@ -15,6 +15,11 @@ var validResetPasswordEmail = false;
 var validProfileName =true;
 var validProfileEmail = true;
 
+//Variables para validación de cambio de contraseña
+var validChangePasswordOld = false;
+var validChangePasswordNew = false;
+var validChangePasswordNewRepeat = false;
+
 $(document).ready(function(){
   //Validación formularios register y login
     //Validación register
@@ -124,6 +129,41 @@ $(document).ready(function(){
     		}
         userProfileValidated();
       });
+
+      //Validacion cambiar contraseña
+      //Contraseña actual
+      $('#old-password').on('input', function(){
+        if(isValidPassword($(this).val())){
+          $('#old-password-error-text').css('display','none');
+          validChangePasswordOld = true;
+        }else{
+          $('#old-password-error-text').css('display','block');
+          validChangePasswordOld = false;
+        }
+        changePasswordValidated();
+      });
+      //Nueva contraseña
+      $('#new-password').on('input', function(){
+        if(isValidPassword($(this).val())){
+          $('#new-password-error-text').css('display','none');
+          validChangePasswordNew = true;
+        }else{
+          $('#new-password-error-text').css('display','block');
+          validChangePasswordNew = false;
+        }
+        changePasswordValidated();
+      });
+      //Repetir nueva contraseña
+      $('#repeat-new-password').on('input', function(){
+        if(passwordMatches($('#new-password').val(),$(this).val())){
+          $('#repeat-new-password-error-text').css('display','none');
+          validChangePasswordNewRepeat = true;
+        }else{
+          $('#repeat-new-password-error-text').css('display','block');
+          validChangePasswordNewRepeat = false;
+        }
+        changePasswordValidated();
+      });
 });
 
 //Funciones validacion login y register
@@ -192,5 +232,13 @@ function userProfileValidated(){
     $('#guardarPerfil').prop('disabled', false);
   }else{
     $('#guardarPerfil').prop('disabled', true);
+  }
+}
+
+function changePasswordValidated(){
+  if(validChangePasswordOld && validChangePasswordNew && validChangePasswordNewRepeat){
+    $('#change-password-submit').prop('disabled', false);
+  }else{
+    $('#change-password-submit').prop('disabled', true);
   }
 }
