@@ -45,6 +45,9 @@
 			<span class="form-error-displayed">{{ Session::get('editProfileError') }}</span>
 		@endif
 
+		<div class="col-md-4 mb-3" id="botonPerfil">
+			<button class="btn btn-primary" type="button" id="eliminar" href="{{ route('profile.destroy', auth()->user()->id) }}">Eliminar Cuenta</button>
+		</div>
 	</div>
 
 	<!-- Section group -->

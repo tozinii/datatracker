@@ -7,7 +7,7 @@
    <div>
       <ul class="nav flex-column">
         <li class="nav-item lista">
-          <a class="nav-link active" href="{{route('profile')}}">Perfil</a>
+          <a class="nav-link active" href="{{route('profile.show',auth()->user()->id)}}">Perfil</a>
         </li>
         <li class="nav-item lista">
           <a class="nav-link" href="/groups">Grupos</a>

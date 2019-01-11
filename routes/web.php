@@ -38,8 +38,9 @@ Route::view('/services', 'templates/services');
 // Rutas a vistas usuarios y admins
 Route::view('/common', 'users/common');
 Route::get('/admin', 'AdminController@adminPanel')->name('admin');
-Route::get('/profile', 'ProfileController@show')->name('profile')->middleware(['auth','verified']);
+Route::get('/profile/{profile}', 'ProfileController@show')->name('profile.show')->middleware(['auth','verified']);
 Route::post('/profile/{profile}/edit', 'ProfileController@edit')->name('profile.edit');
+Route::post('/profile/{profile}','ProfileController@destroy')->name('profile.destroy');
 Route::view('/groups', 'users/groups')->middleware(['auth','verified']);;
 Route::view('/cars', 'users/cars')->middleware(['auth','verified']);;
 Route::view('/sensors', 'users/sensors')->middleware(['auth','verified']);;
@@ -54,7 +55,7 @@ Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // Registration Routes...
 // no sirve
- Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('registerForm');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('registerForm');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 
 // Verify email
