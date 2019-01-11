@@ -17,7 +17,7 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function adminPanel () {
-        return view('admin');
+        return view('users.admin');
     }
 
 
