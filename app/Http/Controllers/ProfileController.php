@@ -58,8 +58,8 @@ class ProfileController extends Controller
      */
     public function edit(Request $request,$id)
     {
-          $user=User::find($id);
           if(!$this->validator($request->all())->fails()){
+            $user=User::find($id);
             if ($request->hasFile('avatar')) {
               $user->avatar = $request->file('avatar')->store('public');
             }
@@ -69,7 +69,7 @@ class ProfileController extends Controller
             $user->description = $request->get('descripcion');
 
             $user->save();
-            return redirect('/profile');
+            return back();
           }
           return redirect('/profile')->with('editProfileError', 'Error en la solicitud. Por favor, rellena los campos obligatorios. (*)');
     }
@@ -103,7 +103,7 @@ class ProfileController extends Controller
             'nombre' => ['required', 'string', 'min:1', 'max:50'],
             'apellido' => ['string', 'min:1', 'max:50'],
             'email' => ['required', 'email'],
-            'descripcion' => ['string', 'min:1'],
+            'descripcion' => ['string', 'max:150','nullable'],
             'avatar' => ['image'],
         ]);
     }

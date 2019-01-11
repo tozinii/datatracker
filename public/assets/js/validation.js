@@ -12,8 +12,8 @@ var validLoginPassword = false;
 var validResetPasswordEmail = false;
 
 //Variables para validación de user profile
-var validProfileName =false;
-var validProfileEmail = false;
+var validProfileName =true;
+var validProfileEmail = true;
 
 $(document).ready(function(){
   //Validación formularios register y login
