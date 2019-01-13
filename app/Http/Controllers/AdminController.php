@@ -31,7 +31,7 @@ class AdminController extends Controller
       ->orderBy('name', 'asc')
       ->get();
 
-      return view('users.admin')->with([
+      return view('users.listUsers')->with([
         'users'=>$users
       ]);
     }

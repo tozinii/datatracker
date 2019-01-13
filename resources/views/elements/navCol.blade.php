@@ -21,7 +21,10 @@
           </li>
         @else
           <li class="nav-item lista">
-            <a class="nav-link" href="/groups">Lista de usuarios</a>
+            <a class="nav-link" href="{{route('listUsers')}}">Lista de usuarios</a>
+          </li>
+          <li class="nav-item lista">
+            <a class="nav-link" href="/groups">Estadisticas</a>
           </li>
         @endif
         <li class="nav-item lista">
