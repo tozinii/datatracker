@@ -9,15 +9,21 @@
         <li class="nav-item lista">
           <a class="nav-link active" href="{{route('profile.show',auth()->user()->id)}}">Perfil</a>
         </li>
-        <li class="nav-item lista">
-          <a class="nav-link" href="/groups">Grupos</a>
-        </li>
-        <li class="nav-item lista">
-          <a class="nav-link" href="cars">Coches</a>
-        </li>
-        <li class="nav-item lista">
-          <a class="nav-link disabled" href="/sensors">Sensores</a>
-        </li>
+        @if(auth()->user()->role == 'User')
+          <li class="nav-item lista">
+            <a class="nav-link" href="/groups">Grupos</a>
+          </li>
+          <li class="nav-item lista">
+            <a class="nav-link" href="cars">Coches</a>
+          </li>
+          <li class="nav-item lista">
+            <a class="nav-link disabled" href="/sensors">Sensores</a>
+          </li>
+        @else
+          <li class="nav-item lista">
+            <a class="nav-link" href="/groups">Lista de usuarios</a>
+          </li>
+        @endif
         <li class="nav-item lista">
           <a class="nav-link disabled" href="{{ route('logout')}}"  onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">Cerrar Sesión</a>
