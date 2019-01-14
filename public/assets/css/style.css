@@ -1980,8 +1980,8 @@ padding-bottom: 90px;
   position: absolute;
   width: 100%;
   background-image: url(../images/footer-img.jpg);
-    padding-top:30px;
-    padding-bottom: 50px;
+    padding-top:10px;
+    padding-bottom: 30px;
     background-repeat: no-repeat;
     background-position: center top;
     -webkit-background-size: cover;
@@ -2366,10 +2366,21 @@ border-left: 10px solid #ffaa00 !important;
     min-height: 312px;
 }
 .card-text{
-  font-size: 20px;
+  font-size: 15px;
   color: #b4becc;
   line-height: 30px;
   margin-bottom: 18px;
+  margin-right: 0px;
+  width: 565px;
+}
+
+.card-text::placeholder{
+  font-size: 15px;
+  color: #45b7b7;
+  line-height: 30px;
+  margin-bottom: 18px;
+  margin-right: 0px;
+  width: 565px;
 }
 .card-body a{
   font-size: 20px;
@@ -3547,7 +3558,23 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 26.End Responsive
 ------------------------------------*/
 
-/*Estilos añadidos*/
+/*
+-------------                               ---------------
+   ------------------------------------------------------
+
+
+                      Estilos añadidos
+
+
+   ------------------------------------------------------
+-------------                               --------------
+*/
+
+
+.algn-cnt{
+  text-align: center;
+  align-content: center;
+}
 
 .disabled-link{
   cursor: default;
@@ -3555,7 +3582,8 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
  /* Si se os ocurre un mejor nombre
     para esta clase decidmelo porfa
     |||
-    vvv     */
+    vvv 
+    Esta bien asi, no te preocupes    */
 .container-profile{
   /*float: left;*/
   margin-left: 15%;
@@ -3605,6 +3633,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 }
 
 
+
 /*
 -------------                           ---------------
  ------------------------------------------------------
@@ -3617,7 +3646,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 -------------                            --------------
 
 
-
+*/
 
 /*
   
@@ -3731,7 +3760,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   left: 0;
   padding: 1.25rem;
 }
-
+outline-suc
 .card-img {
   width: 100%;
   border-radius: calc(0.25rem - 1px);
@@ -3905,12 +3934,12 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   ////////////////////////////////////////////////////
 
 */
-
 /*
 
-    Buton editado (delete & cancel)
+    Buton edited 
 
 */
+
 .btnedit {
   display: inline-block;
   font-weight: 400;
@@ -3928,6 +3957,86 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   border-radius: 5px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+/*
+
+    Buton edited 2 
+
+    (diferente tamaño, si, soy muy rata, lo siento, pero es que me 
+    estaba machacando el tamaño y esta era la opcion mas facil y rapida.)
+
+*/
+
+
+.btnedit2 {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.6rem 1.3rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  border-radius: 5px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+}
+/*
+
+    Buton editado (success -añadir cosas y demas-)
+
+*/
+
+
+
+.btnedit-outline-success {
+  color: #28a745;
+  background-color: transparent;
+  background-image: none;
+  border-color: #28a745;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.btnedit-outline-success:hover {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btnedit-outline-success:focus, .btnedit-outline-success.focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.btnedit-outline-success.disabled, .btnedit-outline-success:disabled {
+  color: #28a745;
+  background-color: transparent;
+}
+
+.btnedit-outline-success:not(:disabled):not(.disabled):active, .btnedit-outline-success:not(:disabled):not(.disabled).active,
+.show > .btnedit-outline-success.dropdown-toggle {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btnedit-outline-success:not(:disabled):not(.disabled):active:focus, .btnedit-outline-success:not(:disabled):not(.disabled).active:focus,
+.show > .btnedit-outline-success.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+
+/*
+
+    Buton editado (delete & cancel)
+
+*/
 .btnedit-size {
   height: 40px;
   width: 70px;
