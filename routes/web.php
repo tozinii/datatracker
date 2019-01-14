@@ -15,7 +15,7 @@
 Route::get('/', function ()
 {
   return view('index');
-})->name('root');
+})->name('root')->middleware('guest');
 
 
 // Multi idioma
@@ -37,7 +37,8 @@ Route::view('/services', 'templates/services');
 
 // Rutas a vistas usuarios y admins
 Route::view('/common', 'users/common');
-Route::get('/admin', 'AdminController@userList')->name('admin');
+Route::get('/admin', 'AdminController@adminPanel')->name('admin');
+Route::get('/listUsers', 'AdminController@userList')->name('listUsers');
 Route::resource('profile','ProfileController')->only('show','edit','destroy');
 Route::view('/groups', 'users/groups')->middleware(['auth','verified']);;
 Route::view('/cars', 'users/cars')->middleware(['auth','verified']);;
