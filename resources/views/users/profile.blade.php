@@ -50,7 +50,7 @@
 		</div>
 		<div id="change-password-element" class="col-md-12" style="display:none">
 			<h2>Cambiar contraseña:</h2>
-			<form id="form-change-password" method="POST" action="{{ route('changePassword') }}">
+			<form id="form-change-password" method="POST" action="{{ route('changePassword',auth()->user()->id) }}">
 				@csrf
 				<label>Contraseña actual: </label>
 				<input id="old-password" type="password" name="old-password" placeholder="Contraseña actual" required /><br/>
@@ -62,6 +62,7 @@
 				<input id="repeat-new-password" type="password" name="repeat-new-password" placeholder="Repite la nueva contraseña" required />
 				@if(Session::has('changePasswordError'))
 					<span class="form-error-displayed">{{ Session::get('changePasswordError') }}</span>
+					<script>$('#change-password-element').show();</script>
 				@endif
 				<span id="repeat-new-password-error-text" class="form-error">Las contraseñas no coinciden</span>
 				<button id="change-password-submit" type="submit" class="btn btn-primary">Guardar</button>
@@ -73,14 +74,14 @@
 	</div>
 
 	<!-- Section group -->
-	<div class="sections">
-		<!--<p>Aquí irá la información del grupo al que este usuario pertenece</p>-->
-	</div>
+	<!--<div class="sections">
+		<p>Aquí irá la información del grupo al que este usuario pertenece</p>
+	</div>-->
 
 	<!-- Section cars -->
-	<div class="sections">
-		<!--<p>Aquí irá la información del coche que tiene este usuario</p>-->
-	</div>
+	<!--<div class="sections">
+		<p>Aquí irá la información del coche que tiene este usuario</p>
+	</div>-->
 </section>
 
 @endsection

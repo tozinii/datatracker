@@ -39,7 +39,7 @@ Route::view('/services', 'templates/services');
 Route::view('/common', 'users/common');
 Route::get('/admin', 'AdminController@userList')->middleware('auth')->name('admin');
 Route::get('/profile', 'ProfileController@show')->name('profile');
-Route::post('/password/change', 'ProfileController@changePassword')->name('changePassword');
+Route::post('/password/{user}/change', 'ProfileController@changePassword')->name('changePassword');
 Route::post('/profile/{profile}/edit', 'ProfileController@edit')->name('profile.edit');
 Route::view('/groups', 'users/groups')->middleware(['auth','verified']);
 Route::view('/cars', 'users/cars')->middleware(['auth','verified']);
