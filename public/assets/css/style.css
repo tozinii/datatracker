@@ -3604,6 +3604,10 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   display: none;
 }
 
+#profile-image{
+  border-radius: 50%;
+}
+
 
 /*
 -------------                           ---------------
@@ -3620,9 +3624,9 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 
 
 /*
-  
+
   ////////////////////////////////////////////////////
-  
+
   //////////        Estilos cartas          //////////
 
   ////////////////////////////////////////////////////

@@ -6,11 +6,13 @@
 	<div class="sections">
 		<h2>Información de perfil:</h2>
 		<!-- Profile image -->
-		<img src="{{Storage::url(auth()->user()->avatar)}}" alt="Imagen de perfil">
+		<img id="profile-image" src="{{Storage::url(auth()->user()->avatar)}}" alt="Imagen de perfil">
 
 		<!-- Profile data -->
-		<form id="editar-formulario" class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="get" action="{{ route('profile.edit',auth()->user()->id)}}">
+		<form id="editar-formulario" class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="post" action="{{ route('profile.update',auth()->user()->id)}}">
 
+			@csrf
+			@method('PUT')
 		    <div class="col-md-4 mb-3">
 		      <label>Nombre*</label>
 		      <input id="profile-name" type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{auth()->user()->name}}" disabled>
@@ -80,31 +82,9 @@
 	</div>
 
 	<!-- Section group -->
-	<div class="sections">
-		<div class="row">
-		  <div class="col-sm-6">
-		    <div class="card">
-		      <div class="card-body">
-		        <form>
-		        <h5 class="card-title">Crea un grupo</h5>
-		        <p class="card-text">No estas en ningun grupo? Estas pensando en crear uno? Aqui tienes la solucion! Tan solo debes introducir el nombre del grupo y una etiqueta.</p>
-		        <input type="text" name="">
-		        </form>
-				<button type="button" class="btnedit btn-info">Info</button>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col-sm-6">
-		    <div class="card">
-		      <div class="card-body">
-		        <h5 class="card-title">Unete a un grupo</h5>
-		        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-				<button type="button" class="btnedit btn-info">Info</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-	</div>
+	<!--<div class="sections">
+		<p>Aquí irá la información del grupo al que este usuario pertenece</p>
+	</div>-->
 
 	<!-- Section cars -->
 	<!--<div class="sections">

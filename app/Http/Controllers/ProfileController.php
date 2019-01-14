@@ -47,9 +47,9 @@ class ProfileController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-      $user = User::find($id);
+      $user = Auth::user();
         return view('users.profile')->with('user', $user);
     }
 
@@ -59,7 +59,19 @@ class ProfileController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request,$id)
+    public function edit(Request $request)
+    {
+
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
     {
       if(!$this->validator($request->all())->fails()){
         $user=User::find($id);
@@ -75,18 +87,6 @@ class ProfileController extends Controller
         return back();
       }
       return back()->with('editProfileError', 'Error en la solicitud. Por favor, rellena los campos obligatorios. (*)');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, User $user)
-    {
-        //
     }
 
     /**
@@ -126,7 +126,7 @@ class ProfileController extends Controller
             'apellido' => ['string', 'nullable', 'max:50'],
             'email' => ['required', 'email'],
             'descripcion' => ['string', 'max:150','nullable'],
-            'avatar' => ['image','nullable'],
+            'avatar' => ['image', 'nullable'],
         ]);
     }
 
