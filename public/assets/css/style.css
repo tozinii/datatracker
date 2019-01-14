@@ -266,6 +266,10 @@ a {
   padding: 0;
 }
 
+html,body{
+  height: 100%;
+  position: relative;
+}
 body {
  font-family: 'Open Sans', sans-serif;
   /*Section Fix*/
@@ -1973,6 +1977,8 @@ padding-bottom: 90px;
 }
 
 .our_footer_area{
+  position: absolute;
+  width: 100%;
   background-image: url(../images/footer-img.jpg);
     padding-top:30px;
     padding-bottom: 50px;
@@ -1982,6 +1988,11 @@ padding-bottom: 90px;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.our_footer_area.logged-in-footer{
+  bottom: 0;
+  position: fixed;
 }
 
 .footer-h{
@@ -3547,11 +3558,16 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
     vvv     */
 .container-profile{
   /*float: left;*/
-  margin-left: 15%; /* Same as the width of the sidenav */
+  margin-left: 15%;
+  position: absolute;
+  margin-bottom: 20%;
 }
 .profile-content{
   height: 100%;
   padding: 2.5%;
+}
+.profile-content button{
+  z-index: 0;
 }
 .sections{
   height: 300px;
@@ -3564,7 +3580,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 }
 .profile-data{
 }
-.sections form{
+.sections #editar-formulario{
   height: 200px;
   width: 1260px;
 }
@@ -3585,15 +3601,16 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 /* Editar Perfil */
 
 #guardarPerfil {
-  visibility: hidden;
+  display: none;
 }
+
 
 /*
 -------------                           ---------------
  ------------------------------------------------------
 
 
-                    Bootstrap v4.0 
+                    Bootstrap v4.0
 
 
  ------------------------------------------------------
@@ -3880,9 +3897,9 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 
 
 /*
-  
+
   ////////////////////////////////////////////////////
-  
+
   //////////        Estilos botones         //////////
 
   ////////////////////////////////////////////////////
@@ -3992,9 +4009,9 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 
 
 /*
-  
+
   /////////////////////////////////////////////////////
-  
+
   //////////        Estilos listas         ////////////
 
   /////////////////////////////////////////////////////
@@ -4122,7 +4139,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   background-color: #1b1e21;
   border-color: #1b1e21;
 }
-/* 
+/*
 
   Fin estilos listas
 

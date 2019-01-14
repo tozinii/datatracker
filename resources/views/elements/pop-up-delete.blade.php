@@ -10,8 +10,8 @@
           @csrf
           @method('DELETE')
           <button type="submit" class="btnedit btnedit-outline-danger btnedit-size">Delete</button>
-        </form>
-        <button type="button" class="btnedit btnedit-outline-secondary btnedit-size " data-dismiss="modal" aria-label="Close">Cancel</button>
+          <button type="button" class="btnedit btnedit-outline-secondary btnedit-size " data-dismiss="modal" aria-label="Close">Cancel</button>
+        </form>        
       </div>
     </div>
   </div>

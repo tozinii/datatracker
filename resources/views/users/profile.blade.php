@@ -4,13 +4,13 @@
 <section class="profile-content">
 	<!-- User data -->
 	<div class="sections">
-
+		<h2>Información de perfil:</h2>
 		<!-- Profile image -->
 		<img src="{{Storage::url(auth()->user()->avatar)}}" alt="Imagen de perfil">
 
 		<!-- Profile data -->
-		<form class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="post" action="{{ route('profile.edit',auth()->user()->id)}}">
-				@csrf
+		<form id="editar-formulario" class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="get" action="{{ route('profile.edit',auth()->user()->id)}}">
+
 		    <div class="col-md-4 mb-3">
 		      <label>Nombre*</label>
 		      <input id="profile-name" type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{auth()->user()->name}}" disabled>
@@ -45,11 +45,38 @@
 			<span class="form-error-displayed">{{ Session::get('editProfileError') }}</span>
 		@endif
 
-		<div class="col-md-4 mb-3" id="botonPerfil">
-			<button class="btn btn-primary" type="button" id="eliminar" data-toggle="modal" data-target="#delete">Eliminar Cuenta</button>
+		<div class="col-md-12">
+			<a id="change-password-button" class="btn btn-primary button_12  wow fadeInUp js-scroll-trigger"><span class="skew_14">Opciones avanzadas</span></a>
+		</div>
+		<div id="change-password-element" class="col-md-12" style="display:none">
+			<h2>Cambiar contraseña:</h2>
+			<form id="form-change-password" method="POST" action="{{ route('changePassword',auth()->user()->id) }}">
+				@csrf
+				<label>Contraseña actual: </label>
+				<input id="old-password" type="password" name="old-password" placeholder="Contraseña actual" required /><br/>
+				<span id="old-password-error-text" class="form-error">Introduce una contraseña válida</span>
+				<label>Nueva contraseña: </label>
+				<input id="new-password" type="password" name="new-password" placeholder="Nueva contraseña" required />
+				<span id="new-password-error-text" class="form-error">La contraseña debe tener 8 carácteres o más</span>
+				<label>Repite la nueva contraseña: </label>
+				<input id="repeat-new-password" type="password" name="repeat-new-password" placeholder="Repite la nueva contraseña" required />
+				@if(Session::has('changePasswordError'))
+					<span class="form-error-displayed">{{ Session::get('changePasswordError') }}</span>
+					<script>$('#change-password-element').show();</script>
+				@endif
+				<span id="repeat-new-password-error-text" class="form-error">Las contraseñas no coinciden</span>
+				<button id="change-password-submit" type="submit" class="btn btn-primary">Guardar</button>
+			</form>
+
+			<h2>Eliminar cuenta</h2>
+			<div id="botonPerfil">
+				<button class="btn btn-primary" type="button" id="eliminar" data-toggle="modal" data-target="#delete{{auth()->user()->id}}">Eliminar</button>
+			</div>
+
+			@include('elements.pop-up-delete')
+
 		</div>
 
-		@include('elements.pop-up-delete')
 	</div>
 
 	<!-- Section group -->
@@ -80,9 +107,9 @@
 	</div>
 
 	<!-- Section cars -->
-	<div class="sections">
-		<!--<p>Aquí irá la información del coche que tiene este usuario</p>-->
-	</div>
+	<!--<div class="sections">
+		<p>Aquí irá la información del coche que tiene este usuario</p>
+	</div>-->
 </section>
 
 @endsection

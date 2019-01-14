@@ -47,7 +47,7 @@
                 <div class="form-group">
                    <label for="password" class="col-form-label">Contraseña:</label>
                    <input id="register-password" type="password" class="form-control" placeholder="Contraseña" name="password" required>
-                   <span id="register-password-error-text" class="form-error">La contraseña debe tener más de 8 carácteres</span>
+                   <span id="register-password-error-text" class="form-error">La contraseña debe tener 8 carácteres o más</span>
                 </div>
                 <div class="form-group">
                    <label for="password" class="col-form-label">Confirmar contraseña:</label>
