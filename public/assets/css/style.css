@@ -3582,7 +3582,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
  /* Si se os ocurre un mejor nombre
     para esta clase decidmelo porfa
     |||
-    vvv 
+    vvv
     Esta bien asi, no te preocupes    */
 .container-profile{
   /*float: left;*/
@@ -3595,6 +3595,9 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   padding: 2.5%;
 }
 .profile-content button{
+  z-index: 0;
+}
+#change-password-button{
   z-index: 0;
 }
 .sections{
@@ -3940,7 +3943,7 @@ outline-suc
 */
 /*
 
-    Buton edited 
+    Buton edited
 
 */
 
@@ -3964,9 +3967,9 @@ outline-suc
 
 /*
 
-    Buton edited 2 
+    Buton edited 2
 
-    (diferente tamaño, si, soy muy rata, lo siento, pero es que me 
+    (diferente tamaño, si, soy muy rata, lo siento, pero es que me
     estaba machacando el tamaño y esta era la opcion mas facil y rapida.)
 
 */
