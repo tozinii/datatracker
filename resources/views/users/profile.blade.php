@@ -6,11 +6,13 @@
 	<div class="sections">
 		<h2>Información de perfil:</h2>
 		<!-- Profile image -->
-		<img src="{{Storage::url(auth()->user()->avatar)}}" alt="Imagen de perfil">
+		<img id="profile-image" src="{{Storage::url(auth()->user()->avatar)}}" alt="Imagen de perfil">
 
 		<!-- Profile data -->
-		<form id="editar-formulario" class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="get" action="{{ route('profile.edit',auth()->user()->id)}}">
+		<form id="editar-formulario" class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="post" action="{{ route('profile.update',auth()->user()->id)}}">
 
+			@csrf
+			@method('PUT')
 		    <div class="col-md-4 mb-3">
 		      <label>Nombre*</label>
 		      <input id="profile-name" type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{auth()->user()->name}}" disabled>
@@ -79,7 +81,6 @@
 
 	</div>
 
-	<!-- Section group -->
 	<div class="sections">
 		<div class="row">
 		  <div class="col-sm-6">
