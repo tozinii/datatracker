@@ -15,8 +15,9 @@
 	      	  @foreach($users as $user)
 			  <a class="list-group-item list-group-item-action list-group-item-light">
 			  	{{$user->name}}
-			  	<button type="button" data-toggle="modal" data-target="#delete" class="btnedit btnedit-outline-danger">Delete</button>
+			  	<button type="button" data-toggle="modal" data-target="#delete{{$user->id}}" class="btnedit btnedit-outline-danger">Delete</button>
 			  </a>
+				@include('elements.pop-up-delete')
 			  @endforeach
 		  </div>
 	    </div>
@@ -33,6 +34,5 @@
   </div>
 </div>
 <!-- Pop up delete -->
-@include('elements.pop-up-delete')
 
 @endsection
