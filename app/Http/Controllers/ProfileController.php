@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+=======
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -108,6 +110,19 @@ class ProfileController extends Controller
 
     }
 
+    public function changePassword(Request $request,$id){
+      if(!$this->passwordValidator($request->all())->fails()){
+        $user = User::find($id);
+        if(Hash::check($request->input('old-password'), $user->password)){
+          $user->password = Hash::make($request->input('new-password'));
+          $user->save();
+          return redirect('/profile');
+        }
+        return redirect('/profile')->with('changePasswordError', 'Error en el cambio de contraseña. Inténtalo de nuevo.');
+      }
+      return redirect('/profile')->with('changePasswordError', 'Error en el cambio de contraseña. Inténtalo de nuevo.');
+    }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -116,6 +131,15 @@ class ProfileController extends Controller
             'email' => ['required', 'email'],
             'descripcion' => ['string', 'max:150','nullable'],
             'avatar' => ['image'],
+        ]);
+    }
+
+    protected function passwordValidator(array $data)
+    {
+        return Validator::make($data, [
+            'old-password' => ['required', 'string', 'min:1'],
+            'new-password' => ['required', 'string', 'min:1'],
+            'repeat-new-password' => ['required', 'string', 'min:1'],
         ]);
     }
 }
