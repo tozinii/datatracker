@@ -38,6 +38,8 @@ class AdminController extends Controller
 
     public function statistics()
     {
-      return view('users.statistics')->with('user','holaa');
+      $users = User::where('role', 'User')->groupBy('created_at')->get();
+
+      return view('users.statistics')->with('users',$users);
     }
 }

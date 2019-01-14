@@ -1,19 +1,28 @@
 @extends('layouts.layoutLogged')
 @section('contenido')
+
   <script src="{{asset('assets/js/statistics/Chart.bundle.js')}}"></script>
   <script src="{{asset('assets/js/statistics/Chart.js')}}"></script>
   <h2>Registro de usuarios</h2>
-  <canvas id="grafRegisterUsers" width="600" height="300"></canvas>
+  <canvas id="grafRegisterUsers" width="800" height="250"></canvas>
 
   <script type="text/javascript">
   var ctx = document.getElementById("grafRegisterUsers").getContext('2d');
   var myChart = new Chart(ctx, {
       type: 'line',
       data: {
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          labels: [
+            @foreach($users as $user)
+              '{{$user->created_at->format("d/m/Y")}}',
+            @endforeach
+          ],
           datasets: [{
               label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
+              data: [
+                @foreach($users as $user)
+                  '{{$user->name}}',
+                @endforeach
+              ],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
@@ -43,6 +52,7 @@
           }
       }
   });
+
   </script>
 
 
