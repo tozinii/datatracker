@@ -1,19 +1,18 @@
-<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="delete{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" id="exampleModalLabel">Eliminar cuenta</h4>
       </div>
       <div class="modal-body">
-        <h5>¿Está usted seguro de querer eliminar su cuenta? No podrá volver a recuperarla más adelante. </h5>
-        <button type="button" class="btnedit btnedit-outline-danger btnedit-size" href="{{ route('profile.destroy',auth()->user()->id) }}" onclick="event.preventDefault();
-                                              document.getElementById('delete-form').submit();">Delete</button>
+        <h5>¿Está usted seguro de querer eliminar su cuenta({{ $user->id }})? No podrá volver a recuperarla más adelante. </h5>
+        <form id="delete-form" action="{{ route('profile.destroy',$user->id) }}" method="post">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btnedit btnedit-outline-danger btnedit-size">Delete</button>
+        </form>
         <button type="button" class="btnedit btnedit-outline-secondary btnedit-size " data-dismiss="modal" aria-label="Close">Cancel</button>
       </div>
     </div>
   </div>
 </div>
-<form id="delete-form" action="{{ route('profile.destroy',auth()->user()->id) }}" method="post">
-  @csrf
-  @method('DELETE')
-</form>
