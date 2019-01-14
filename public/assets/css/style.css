@@ -1992,6 +1992,7 @@ padding-bottom: 90px;
 
 .our_footer_area.logged-in-footer{
   bottom: 0;
+  position: fixed;
 }
 
 .footer-h{
@@ -3557,7 +3558,9 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
     vvv     */
 .container-profile{
   /*float: left;*/
-  margin-left: 15%; /* Same as the width of the sidenav */
+  margin-left: 15%;
+  position: absolute;
+  margin-bottom: 20%;
 }
 .profile-content{
   height: 100%;
@@ -3596,6 +3599,10 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 
 #guardarPerfil {
   display: none;
+}
+
+#change-password-submit{
+  z-index: 0;
 }
 
 /*
