@@ -3566,6 +3566,9 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   height: 100%;
   padding: 2.5%;
 }
+.profile-content button{
+  z-index: 0;
+}
 .sections{
   height: 20%;
   width: 100%;
@@ -3577,7 +3580,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 }
 .profile-data{
 }
-.sections form{
+.sections #editar-formulario{
   height: 200px;
   width: 1260px;
 }
@@ -3601,9 +3604,6 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   display: none;
 }
 
-#change-password-submit{
-  z-index: 0;
-}
 
 /*
 -------------                           ---------------
