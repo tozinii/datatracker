@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -47,7 +48,8 @@ class ProfileController extends Controller
      */
     public function show()
     {
-        return view('users.profile');
+      $user = Auth::user();
+        return view('users.profile')->with('user', $user);
     }
 
     /**
