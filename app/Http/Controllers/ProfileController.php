@@ -95,6 +95,15 @@ class ProfileController extends Controller
     public function destroy($id)
     {
       User::destroy($id);
+
+      if (Auth::User()->role == 'Admin') {
+        return back();
+      } else {
+        return redirect('/');
+      }
+
+
+
     }
 
     protected function validator(array $data)
