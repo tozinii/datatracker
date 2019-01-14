@@ -21,7 +21,10 @@
       </div>
 
       <div class="container-profile">
-         @yield('contenido')
+        <div class="container">
+          @yield('contenido')
+        </div>
+
       </div>
       <!--#start Our footer Area -->
       <div class="our_footer_area logged-in-footer">

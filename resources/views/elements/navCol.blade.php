@@ -44,7 +44,7 @@
             <a class="nav-link" href="{{route('listUsers')}}">Lista de usuarios</a>
           </li>
           <li class="nav-item lista">
-            <a class="nav-link" href="/groups">Estadisticas</a>
+            <a class="nav-link" href="{{route('statistics')}}">Estadisticas</a>
           </li>
         @endif
       </ul>

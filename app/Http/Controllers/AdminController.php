@@ -35,4 +35,9 @@ class AdminController extends Controller
         'users'=>$users
       ]);
     }
+
+    public function statistics()
+    {
+      return view('users.statistics')->with('user','holaa');
+    }
 }

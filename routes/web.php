@@ -39,6 +39,7 @@ Route::view('/services', 'templates/services');
 Route::view('/common', 'users/common');
 Route::get('/admin', 'AdminController@adminPanel')->name('admin');
 Route::get('/listUsers', 'AdminController@userList')->name('listUsers');
+Route::get('/statistics','AdminController@statistics')->name('statistics');
 Route::resource('profile','ProfileController')->only('show','edit','destroy');
 Route::post('/password/{user}/change', 'ProfileController@changePassword')->name('changePassword');
 Route::view('/groups', 'users/groups')->middleware(['auth','verified']);;
