@@ -9,8 +9,8 @@
 		<img src="{{Storage::url(auth()->user()->avatar)}}" alt="Imagen de perfil">
 
 		<!-- Profile data -->
-		<form id="editar-formulario" class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="post" action="{{ route('profile.edit',auth()->user()->id)}}">
-				@csrf
+		<form id="editar-formulario" class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="get" action="{{ route('profile.edit',auth()->user()->id)}}">
+
 		    <div class="col-md-4 mb-3">
 		      <label>Nombre*</label>
 		      <input id="profile-name" type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{auth()->user()->name}}" disabled>
@@ -70,7 +70,7 @@
 
 			<h2>Eliminar cuenta</h2>
 			<div id="botonPerfil">
-				<button class="btn btn-primary" type="button" id="eliminar" data-toggle="modal" data-target="#delete">Eliminar</button>
+				<button class="btn btn-primary" type="button" id="eliminar" data-toggle="modal" data-target="#delete{{auth()->user()->id}}">Eliminar</button>
 			</div>
 
 			@include('elements.pop-up-delete')
