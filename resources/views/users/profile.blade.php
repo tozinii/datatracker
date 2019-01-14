@@ -54,7 +54,29 @@
 
 	<!-- Section group -->
 	<div class="sections">
-		<!--<p>Aquí irá la información del grupo al que este usuario pertenece</p>-->
+		<div class="row">
+		  <div class="col-sm-6">
+		    <div class="card">
+		      <div class="card-body">
+		        <form>
+		        <h5 class="card-title">Crea un grupo</h5>
+		        <p class="card-text">No estas en ningun grupo? Estas pensando en crear uno? Aqui tienes la solucion! Tan solo debes introducir el nombre del grupo y una etiqueta.</p>
+		        <input type="text" name="">
+		        </form>
+				<button type="button" class="btnedit btn-info">Info</button>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6">
+		    <div class="card">
+		      <div class="card-body">
+		        <h5 class="card-title">Unete a un grupo</h5>
+		        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+				<button type="button" class="btnedit btn-info">Info</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 	</div>
 
 	<!-- Section cars -->
