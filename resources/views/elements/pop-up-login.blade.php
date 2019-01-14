@@ -18,7 +18,7 @@
           @if(Session::has('loginError'))
             <span class="form-error-displayed">{{ Session::get('loginError') }}</span>
           @endif
-          <span id="login-password-error-text" class="form-error">La contraseña debe tener más de 8 carácteres</span>
+          <span id="login-password-error-text" class="form-error">La contraseña debe tener 8 carácteres o más</span>
           <button id="login-submit" type="submit" class="btn btn-primary">Inicia Sesión</button>
           <a href="{{ route('password.request') }}" class="resetPasswordLink">Has olvidado la contraseña?</a>
         </form>

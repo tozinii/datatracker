@@ -47,9 +47,9 @@
          @include('elements.contact')
       </div>
       <!--#start Our footer Area -->
-      <div class="our_footer_area">
-         @include('elements.footer')
-      </div>
+        <div class="our_footer_area">
+           @include('elements.footer')
+        </div>
       <!--#End Our footer Area -->
       @include('elements.scripts')
    </body>
