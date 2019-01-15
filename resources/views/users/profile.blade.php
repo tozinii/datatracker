@@ -72,10 +72,10 @@
 
 			<h2>Eliminar cuenta</h2>
 			<div id="botonPerfil">
-				<button class="btn btn-primary" type="button" id="eliminar" data-toggle="modal" data-target="#delete{{auth()->user()->id}}">Eliminar</button>
+				<button class="btn btn-primary" type="button" id="eliminar" data-toggle="modal" data-target="#ban{{auth()->user()->id}}">Eliminar</button>
 			</div>
 
-			@include('elements.pop-up-delete')
+			@include('elements.pop-up-ban')
 
 		</div>
 
