@@ -12,7 +12,7 @@
       data: {
           labels: [
             @foreach($users as $user)
-                 '{{$user->created_at->year}}',
+                 '{{$user->mes}}',
             @endforeach
           ],
           datasets: [{
