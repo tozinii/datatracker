@@ -84,7 +84,7 @@ class ProfileController extends Controller
         $user->description = $request->get('descripcion');
 
         $user->save();
-        return back();
+        return back()->withCookie(cookie('name', 'value', 60));
       }
       return back()->with('editProfileError', 'Error en la solicitud. Por favor, rellena los campos obligatorios. (*)');
     }
