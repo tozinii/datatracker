@@ -1,10 +1,9 @@
 @extends('layouts.layoutLogged')
 @section('contenido')
-
   <script src="{{asset('assets/js/statistics/Chart.bundle.js')}}"></script>
   <script src="{{asset('assets/js/statistics/Chart.js')}}"></script>
   <h2>Registro de usuarios</h2>
-  <canvas id="grafRegisterUsers" width="800" height="250"></canvas>
+  <canvas id="grafRegisterUsers" width="800" height="350"></canvas>
 
   <script type="text/javascript">
   var ctx = document.getElementById("grafRegisterUsers").getContext('2d');
@@ -13,15 +12,15 @@
       data: {
           labels: [
             @foreach($users as $user)
-              '{{$user->created_at->format("d/m/Y")}}',
+                 '{{$user->created_at->year}}',
             @endforeach
           ],
           datasets: [{
-              label: '# of Votes',
+              label: 'Registros del dia',
               data: [
-                @foreach($users as $user)
-                  '{{$user->name}}',
-                @endforeach
+                 @foreach($users as $user)
+                      {{$user->contador}},
+                 @endforeach
               ],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',

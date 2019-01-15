@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -38,7 +39,7 @@ class AdminController extends Controller
 
     public function statistics()
     {
-      $users = User::where('role', 'User')->groupBy('created_at')->get();
+      $users = User::select(DB::raw('count(*) as contador,created_at'))->where('role','User')->groupBy('created_at')->get();
 
       return view('users.statistics')->with('users',$users);
     }
