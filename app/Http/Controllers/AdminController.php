@@ -31,8 +31,27 @@ class AdminController extends Controller
       ->orderBy('name', 'asc')
       ->get();
 
+
+      $banneds = User::onlyTrashed()
+      ->orderBy('name', 'asc')
+      ->get();
+
+      /*
+      $restoreds = User::onlyTrashed()->find()->get();
+*/
       return view('users.listUsers')->with([
-        'users'=>$users
+        'users'=>$users,
+        'banneds'=>$banneds
       ]);
     }
+/*
+    public function banList(){
+      $banneds = User::query()->restore()
+      ->orderBy('name', 'asc')
+      ->get();
+
+      return view('users.listUsers')->with([
+        'banneds'=>$banneds
+      ]);
+    }*/
 }
