@@ -9,7 +9,7 @@
 		<img src="{{Storage::url(auth()->user()->avatar)}}" alt="Imagen de perfil">
 
 		<!-- Profile data -->
-		<form class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="post" action="{{ route('profile.edit',auth()->user()->id)}}">
+		<form class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="post" action="{{ route('profile.update',auth()->user()->id)}}">
 				@csrf
 		    <div class="col-md-4 mb-3">
 		      <label>Nombre</label>
