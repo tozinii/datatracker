@@ -23,10 +23,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'name', 'email', 'password','role','avatar'
     ];
 
-    protected $casts = [
-    'created_at' => 'datetime:Y-m-d',
-    ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
