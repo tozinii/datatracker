@@ -6,7 +6,7 @@
 	<div class="sections">
 		
 		<!-- Car image -->
-		<img src="assets/images/icone-3.png" alt="Imagen de perfil">
+		<img src="assets/images/article.jpeg" alt="Imagen de perfil">
 
 		<!-- Car data -->
 		<form class="needs-validation profile-data" novalidate>

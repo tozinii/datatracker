@@ -84,7 +84,7 @@ class ProfileController extends Controller
         $user->description = $request->get('descripcion');
 
         $user->save();
-        return back();
+        return back()->withCookie(cookie('name', 'value', 60));
       }
       return back()->with('editProfileError', 'Error en la solicitud. Por favor, rellena los campos obligatorios. (*)');
     }
@@ -97,13 +97,25 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-      if (Auth::User()->role == 'Admin') {
-        User::destroy($id);
-        return back();
-      } else {
-        User::destroy($id);
-        return redirect('/');
-      }
+        $user=User::find($id);/*
+        if ($user->delete_at == '') {*/
+            if (Auth::User()->role == 'Admin') {
+                User::destroy($id);
+                return back();
+            } else {
+                User::destroy($id);
+                return redirect('/');
+            }/*
+        } else {
+            if (Auth::User()->role == 'Admin') {
+                User::forceDelete($id);
+                return back();
+            } else {
+                User::forceDelete($id);
+                return redirect('/');
+            }
+
+        }*/
     }
 
     public function changePassword(Request $request,$id){
