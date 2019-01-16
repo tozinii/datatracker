@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -34,5 +35,16 @@ class AdminController extends Controller
       return view('users.listUsers')->with([
         'users'=>$users
       ]);
+    }
+
+    public function statistics()
+    {
+      $users = User::select(DB::raw('count(*) as contador, date_format(created_at, "%M %Y") as mes, date_format(created_at, "%Y%m") as anio'))
+      ->where('role','User')
+      ->groupBy('mes')
+      ->orderBy('mes','desc')
+      ->get();
+
+      return view('users.statistics')->with('users',$users);
     }
 }
