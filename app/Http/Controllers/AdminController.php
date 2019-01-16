@@ -45,8 +45,6 @@ class AdminController extends Controller
         'banneds'=>$banneds
       ]);
     }
-<<<<<<< HEAD
-
     public function statistics()
     {
       $users = User::select(DB::raw('count(*) as contador, date_format(created_at, "%M %Y") as mes, date_format(created_at, "%Y%m") as anio'))
@@ -57,7 +55,6 @@ class AdminController extends Controller
 
       return view('users.statistics')->with('users',$users);
     }
-=======
 /*
     public function banList(){
       $banneds = User::query()->restore()
@@ -68,5 +65,4 @@ class AdminController extends Controller
         'banneds'=>$banneds
       ]);
     }*/
->>>>>>> 958332d02c5483b1b0265be2b35c2d56b8944853
 }
