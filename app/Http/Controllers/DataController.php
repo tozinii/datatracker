@@ -3,9 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Car;
+use App\Sensor;
 
 class DataController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    /*public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }*/
+
     /**
      * Display a listing of the resource.
      *
@@ -34,11 +46,16 @@ class DataController extends Controller
      */
     public function store(Request $request)
     {
+      $code = $request->get('code');
+      $type = $request->get('type');
+      $car = Car::where('code',$code)->get();
+      $sensor = Sensor::find(1);
+      //dd($sensor);
+      dd($car->sensors);
+      /*$jsonData = json_decode($request->getContent(), true);
+      $json_string = json_encode($jsonData, JSON_PRETTY_PRINT);*/
 
-      $jsonData = json_decode($request->getContent(), true);
-      $json_string = json_encode($jsonData, JSON_PRETTY_PRINT);
-
-      return (var_dump($json_string));
+      return (var_dump($car));
 
 
     }

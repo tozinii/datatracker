@@ -71,4 +71,4 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Ruta para recibir datos de sensores
-Route::post('data', 'DataController@store');
+Route::get('data', 'DataController@store');
