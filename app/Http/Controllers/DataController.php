@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Car;
 use App\Sensor;
+use App\SensorData;
+use DateTime;
 
 class DataController extends Controller
 {
@@ -48,10 +50,20 @@ class DataController extends Controller
     {
       $code = $request->get('code');
       $type = $request->get('type');
-      $car = Car::where('code',$code)->get();
-      $sensor = Sensor::find(1);
-      //dd($sensor);
-      dd($car->sensors);
+
+      $car = Car::where('code',$code)->first();
+
+      $sensorData = new SensorData();
+      $sensorData->data = $type;
+      $sensorData->date = new DateTime();
+      $sensorData->data_type = 'prueba1';
+      $sensorData->sensor_id = $car->sensors[0]->id;
+
+      //dd($sensorData);
+
+      $sensorData->save();
+      //dd($car->sensors[0]->sensorsData);
+
       /*$jsonData = json_decode($request->getContent(), true);
       $json_string = json_encode($jsonData, JSON_PRETTY_PRINT);*/
 

@@ -14,6 +14,6 @@ class Car extends Model
     }
   public function sensors()
     {
-      return $this->hasMany('App\Sensor');
+      return $this->hasMany('App\Sensor','car_id');
     }
 }
