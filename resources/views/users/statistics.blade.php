@@ -16,7 +16,7 @@
             @endforeach
           ],
           datasets: [{
-              label: 'Registros del dia',
+              label: 'Registros de cada mes',
               data: [
                  @foreach($users as $user)
                       {{$user->contador}},
