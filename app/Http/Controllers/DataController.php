@@ -46,29 +46,19 @@ class DataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$code,$sensorName,$type)
     {
-      $code = $request->get('code');
-      $type = $request->get('type');
-
-      $car = Car::where('code',$code)->first();
+      $car = Car::where('code',strtolower($code))->first();
+      $sensor = Sensor::where('name',$sensorName)->first();
 
       $sensorData = new SensorData();
       $sensorData->data = $type;
-      $sensorData->date = new DateTime();
-      $sensorData->data_type = 'prueba1';
-      $sensorData->sensor_id = $car->sensors[0]->id;
-
-      //dd($sensorData);
+      $sensorData->data_type = 'prueba2';
+      $sensorData->sensor_id = $sensor->id;
 
       $sensorData->save();
-      //dd($car->sensors[0]->sensorsData);
 
-      /*$jsonData = json_decode($request->getContent(), true);
-      $json_string = json_encode($jsonData, JSON_PRETTY_PRINT);*/
-
-      return (var_dump($car));
-
+      return redirect()->route('root');
 
     }
 
