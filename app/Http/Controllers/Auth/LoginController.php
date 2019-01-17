@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -42,7 +42,7 @@ class LoginController extends Controller
     public function redirectPath()
     {
         if (Auth::User()->role == 'Admin') {
-            return '/adminpanel';
+            return '/admin';
         }
 
         return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
@@ -94,7 +94,7 @@ class LoginController extends Controller
 
     protected function sendFailedLoginResponse(Request $request)
     {
-        return redirect('/')->with('loginError','Error en la autenticación, vuelve a intentarlo.');
+        return back()->with('loginError','Error en la autenticación, vuelve a intentarlo.');
     }
 
 }

@@ -15,7 +15,7 @@
 Route::get('/', function ()
 {
   return view('index');
-})->name('root');
+})->name('root')->middleware('guest');
 
 
 // Multi idioma
@@ -37,9 +37,12 @@ Route::view('/services', 'templates/services');
 
 // Rutas a vistas usuarios y admins
 Route::view('/common', 'users/common');
-Route::view('/admin', 'users/admin')->middleware('auth');;
-Route::get('/profile', 'ProfileController@show')->name('profile')->middleware(['auth','verified']);
-Route::post('/profile/{profile}/edit', 'ProfileController@edit')->name('profile.edit');
+Route::get('/admin', 'AdminController@adminPanel')->name('admin');
+Route::get('/listUsers', 'AdminController@userList')->name('listUsers');
+Route::resource('profile','ProfileController')->only('show','update','destroy');
+Route::get('/statistics','AdminController@statistics')->name('statistics');
+Route::resource('profile','ProfileController')->only('show','edit','destroy');
+Route::post('/password/{user}/change', 'ProfileController@changePassword')->name('changePassword');
 Route::view('/groups', 'users/groups')->middleware(['auth','verified']);;
 Route::view('/cars', 'users/cars')->middleware(['auth','verified']);;
 Route::view('/sensors', 'users/sensors')->middleware(['auth','verified']);;
@@ -54,7 +57,7 @@ Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // Registration Routes...
 // no sirve
- Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('registerForm');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('registerForm');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 
 // Verify email
@@ -68,6 +71,3 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-//Admin panel
-Route::get('/adminpanel', 'AdminController@adminPanel')->name('adminpanel');

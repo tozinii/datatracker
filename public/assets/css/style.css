@@ -266,6 +266,10 @@ a {
   padding: 0;
 }
 
+html,body{
+  height: 100%;
+  position: relative;
+}
 body {
  font-family: 'Open Sans', sans-serif;
   /*Section Fix*/
@@ -1973,15 +1977,22 @@ padding-bottom: 90px;
 }
 
 .our_footer_area{
+  position: absolute;
+  width: 100%;
   background-image: url(../images/footer-img.jpg);
-    padding-top:30px;
-    padding-bottom: 50px;
+    padding-top:10px;
+    padding-bottom: 30px;
     background-repeat: no-repeat;
     background-position: center top;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.our_footer_area.logged-in-footer{
+  bottom: 0;
+  position: fixed;
 }
 
 .footer-h{
@@ -2355,10 +2366,21 @@ border-left: 10px solid #ffaa00 !important;
     min-height: 312px;
 }
 .card-text{
-  font-size: 20px;
+  font-size: 15px;
   color: #b4becc;
   line-height: 30px;
   margin-bottom: 18px;
+  margin-right: 0px;
+  width: 565px;
+}
+
+.card-text::placeholder{
+  font-size: 15px;
+  color: #45b7b7;
+  line-height: 30px;
+  margin-bottom: 18px;
+  margin-right: 0px;
+  width: 565px;
 }
 .card-body a{
   font-size: 20px;
@@ -3536,7 +3558,23 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 26.End Responsive
 ------------------------------------*/
 
-/*Estilos añadidos*/
+/*
+-------------                               ---------------
+   ------------------------------------------------------
+
+
+                      Estilos añadidos
+
+
+   ------------------------------------------------------
+-------------                               --------------
+*/
+
+
+.algn-cnt{
+  text-align: center;
+  align-content: center;
+}
 
 .disabled-link{
   cursor: default;
@@ -3544,17 +3582,26 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
  /* Si se os ocurre un mejor nombre
     para esta clase decidmelo porfa
     |||
-    vvv     */
+    vvv
+    Esta bien asi, no te preocupes    */
 .container-profile{
   /*float: left;*/
-  margin-left: 15%; /* Same as the width of the sidenav */
+  margin-left: 15%;
+  position: absolute;
+  margin-bottom: 20%;
 }
 .profile-content{
   height: 100%;
   padding: 2.5%;
 }
+.profile-content button{
+  z-index: 0;
+}
+#change-password-button{
+  z-index: 0;
+}
 .sections{
-  height: 20%;
+  height: 300px;
   width: 100%;
   margin: 2%;
 }
@@ -3564,7 +3611,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 }
 .profile-data{
 }
-.sections form{
+.sections #editar-formulario{
   height: 200px;
   width: 1260px;
 }
@@ -3582,16 +3629,636 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   display: block;
 }
 
-/*#equipo{
-  margin-top: -96px;
-  height: 96px;
-  visibility: hidden;
-
-}*/
-
-
 /* Editar Perfil */
 
 #guardarPerfil {
-  visibility: hidden;
+  display: none;
 }
+
+#profile-image{
+  border-radius: 50%;
+}
+
+
+
+/*
+-------------                           ---------------
+ ------------------------------------------------------
+
+
+                    Bootstrap v4.0
+
+
+ ------------------------------------------------------
+-------------                            --------------
+
+
+*/
+
+/*
+
+  ////////////////////////////////////////////////////
+
+  //////////        Estilos cartas          //////////
+
+  ////////////////////////////////////////////////////
+
+*/
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.card > hr {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.card > .list-group:first-child .list-group-item:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.card > .list-group:last-child .list-group-item:last-child {
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  width: 625px;
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+}
+
+.card-subtitle {
+  margin-top: -0.375rem;
+  margin-bottom: 0;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-link:hover {
+  text-decoration: none;
+}
+
+.card-link + .card-link {
+  margin-left: 1.25rem;
+}
+
+.card-header {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-header:first-child {
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+
+.card-header + .list-group .list-group-item:first-child {
+  border-top: 0;
+}
+
+.card-footer {
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-footer:last-child {
+  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+}
+
+.card-header-tabs {
+  margin-right: -0.625rem;
+  margin-bottom: -0.75rem;
+  margin-left: -0.625rem;
+  border-bottom: 0;
+}
+
+.card-header-pills {
+  margin-right: -0.625rem;
+  margin-left: -0.625rem;
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+}
+outline-suc
+.card-img {
+  width: 100%;
+  border-radius: calc(0.25rem - 1px);
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card-img-bottom {
+  width: 100%;
+  border-bottom-right-radius: calc(0.25rem - 1px);
+  border-bottom-left-radius: calc(0.25rem - 1px);
+}
+
+.card-deck {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.card-deck .card {
+  margin-bottom: 15px;
+}
+
+@media (min-width: 576px) {
+  .card-deck {
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .card-deck .card {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1 0 0%;
+    flex: 1 0 0%;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-bottom: 0;
+    margin-left: 15px;
+  }
+}
+
+.card-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.card-group > .card {
+  margin-bottom: 15px;
+}
+
+@media (min-width: 576px) {
+  .card-group {
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+  .card-group > .card {
+    -ms-flex: 1 0 0%;
+    flex: 1 0 0%;
+    margin-bottom: 0;
+  }
+  .card-group > .card + .card {
+    margin-left: 0;
+    border-left: 0;
+  }
+  .card-group > .card:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .card-group > .card:first-child .card-img-top,
+  .card-group > .card:first-child .card-header {
+    border-top-right-radius: 0;
+  }
+  .card-group > .card:first-child .card-img-bottom,
+  .card-group > .card:first-child .card-footer {
+    border-bottom-right-radius: 0;
+  }
+  .card-group > .card:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .card-group > .card:last-child .card-img-top,
+  .card-group > .card:last-child .card-header {
+    border-top-left-radius: 0;
+  }
+  .card-group > .card:last-child .card-img-bottom,
+  .card-group > .card:last-child .card-footer {
+    border-bottom-left-radius: 0;
+  }
+  .card-group > .card:only-child {
+    border-radius: 0.25rem;
+  }
+  .card-group > .card:only-child .card-img-top,
+  .card-group > .card:only-child .card-header {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  .card-group > .card:only-child .card-img-bottom,
+  .card-group > .card:only-child .card-footer {
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) {
+    border-radius: 0;
+  }
+  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-top,
+  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,
+  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-header,
+  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-footer {
+    border-radius: 0;
+  }
+}
+
+.card-columns .card {
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 576px) {
+  .card-columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
+    column-gap: 1.25rem;
+    orphans: 1;
+    widows: 1;
+  }
+  .card-columns .card {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.accordion .card:not(:first-of-type):not(:last-of-type) {
+  border-bottom: 0;
+  border-radius: 0;
+}
+
+.accordion .card:not(:first-of-type) .card-header:first-child {
+  border-radius: 0;
+}
+
+.accordion .card:first-of-type {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.accordion .card:last-of-type {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
+/*
+
+  ////////////////////////////////////////////////////
+
+  //////////        Estilos botones         //////////
+
+  ////////////////////////////////////////////////////
+
+*/
+/*
+
+    Buton edited
+
+*/
+
+.btnedit {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  border-radius: 5px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/*
+
+    Buton edited 2
+
+    (diferente tamaño, si, soy muy rata, lo siento, pero es que me
+    estaba machacando el tamaño y esta era la opcion mas facil y rapida.)
+
+*/
+
+
+.btnedit2 {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.6rem 1.3rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  border-radius: 5px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+}
+/*
+
+    Buton editado (success -añadir cosas y demas-)
+
+*/
+
+
+
+.btnedit-outline-success {
+  color: #28a745;
+  background-color: transparent;
+  background-image: none;
+  border-color: #28a745;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.btnedit-outline-success:hover {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btnedit-outline-success:focus, .btnedit-outline-success.focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.btnedit-outline-success.disabled, .btnedit-outline-success:disabled {
+  color: #28a745;
+  background-color: transparent;
+}
+
+.btnedit-outline-success:not(:disabled):not(.disabled):active, .btnedit-outline-success:not(:disabled):not(.disabled).active,
+.show > .btnedit-outline-success.dropdown-toggle {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btnedit-outline-success:not(:disabled):not(.disabled):active:focus, .btnedit-outline-success:not(:disabled):not(.disabled).active:focus,
+.show > .btnedit-outline-success.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+
+/*
+
+    Buton editado (delete & cancel)
+
+*/
+.btnedit-size {
+  height: 40px;
+  width: 70px;
+  font-size: 1.5rem;
+}
+
+.btnedit-outline-danger {
+  color: #dc3545;
+  background-color: transparent;
+  background-image: none;
+  border-color: #dc3545;
+}
+
+.btnedit-outline-danger:hover {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btnedit-outline-danger:focus, .btnedit-outline-danger.focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+}
+
+.btnedit-outline-danger.disabled, .btnedit-outline-danger:disabled {
+  color: #dc3545;
+  background-color: transparent;
+}
+
+.btnedit-outline-danger:not(:disabled):not(.disabled):active, .btnedit-outline-danger:not(:disabled):not(.disabled).active,
+.show > .btnedit-outline-danger.dropdown-toggle {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btnedit-outline-danger:not(:disabled):not(.disabled):active:focus, .btnedit-outline-danger:not(:disabled):not(.disabled).active:focus,
+.show > .btnedit-outline-danger.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+}
+
+
+
+
+
+.btnedit-outline-secondary {
+  color: #6c757d;
+  background-color: transparent;
+  background-image: none;
+  border-color: #6c757d;
+}
+
+.btnedit-outline-secondary:hover {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btnedit-outline-secondary:focus, .btnedit-outline-secondary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+}
+
+.btnedit-outline-secondary.disabled, .btnedit-outline-secondary:disabled {
+  color: #6c757d;
+  background-color: transparent;
+}
+
+.btnedit-outline-secondary:not(:disabled):not(.disabled):active, .btnedit-outline-secondary:not(:disabled):not(.disabled).active,
+.show > .btnedit-outline-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btnedit-outline-secondary:not(:disabled):not(.disabled):active:focus, .btndlt-outline-secondary:not(:disabled):not(.disabled).active:focus,
+.show > .btnedit-outline-secondary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+}
+
+
+
+/*
+
+  /////////////////////////////////////////////////////
+
+  //////////        Estilos listas         ////////////
+
+  /////////////////////////////////////////////////////
+
+*/
+
+
+.list-group-flush .list-group-item {
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+
+.list-group-flush:first-child .list-group-item:first-child {
+  border-top: 0;
+}
+
+.list-group-flush:last-child .list-group-item:last-child {
+  border-bottom: 0;
+}
+
+
+.list-group-item-action {
+  width: 100%;
+  color: #495057;
+  text-align: inherit;
+}
+
+.list-group-item-action:hover, .list-group-item-action:focus {
+  color: #495057;
+  text-decoration: none;
+  background-color: #f8f9fa;
+}
+
+.list-group-item-action:active {
+  color: #212529;
+  background-color: #e9ecef;
+}
+
+
+.list-group-item-primary.list-group-item-action:hover, .list-group-item-primary.list-group-item-action:focus {
+  color: #004085;
+  background-color: #9fcdff;
+}
+
+.list-group-item-primary.list-group-item-action.active {
+  color: #fff;
+  background-color: #004085;
+  border-color: #004085;
+}
+
+.list-group-item-secondary.list-group-item-action:hover, .list-group-item-secondary.list-group-item-action:focus {
+  color: #383d41;
+  background-color: #c8cbcf;
+}
+
+.list-group-item-secondary.list-group-item-action.active {
+  color: #fff;
+  background-color: #383d41;
+  border-color: #383d41;
+}
+
+.list-group-item-success.list-group-item-action:hover, .list-group-item-success.list-group-item-action:focus {
+  color: #155724;
+  background-color: #b1dfbb;
+}
+
+.list-group-item-success.list-group-item-action.active {
+  color: #fff;
+  background-color: #155724;
+  border-color: #155724;
+}
+
+.list-group-item-info.list-group-item-action:hover, .list-group-item-info.list-group-item-action:focus {
+  color: #0c5460;
+  background-color: #abdde5;
+}
+
+.list-group-item-info.list-group-item-action.active {
+  color: #fff;
+  background-color: #0c5460;
+  border-color: #0c5460;
+}
+
+.list-group-item-warning.list-group-item-action:hover, .list-group-item-warning.list-group-item-action:focus {
+  color: #856404;
+  background-color: #ffe8a1;
+}
+
+.list-group-item-warning.list-group-item-action.active {
+  color: #fff;
+  background-color: #856404;
+  border-color: #856404;
+}
+
+.list-group-item-danger.list-group-item-action:hover, .list-group-item-danger.list-group-item-action:focus {
+  color: #721c24;
+  background-color: #f1b0b7;
+}
+
+.list-group-item-danger.list-group-item-action.active {
+  color: #fff;
+  background-color: #721c24;
+  border-color: #721c24;
+}
+
+.list-group-item-light.list-group-item-action:hover, .list-group-item-light.list-group-item-action:focus {
+  color: #818182;
+  background-color: #ececf6;
+}
+
+.list-group-item-light.list-group-item-action.active {
+  color: #fff;
+  background-color: #818182;
+  border-color: #818182;
+}
+
+.list-group-item-dark.list-group-item-action:hover, .list-group-item-dark.list-group-item-action:focus {
+  color: #1b1e21;
+  background-color: #b9bbbe;
+}
+
+.list-group-item-dark.list-group-item-action.active {
+  color: #fff;
+  background-color: #1b1e21;
+  border-color: #1b1e21;
+}
+/*
+
+  Fin estilos listas
+
+  ////////////////////////////////////////////////////////
+
+*/
