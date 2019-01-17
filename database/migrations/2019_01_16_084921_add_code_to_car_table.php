@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSensorsDataTable extends Migration
+class AddCodeToCarTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateSensorsDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('sensors_data', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('data_type');
-            $table->string('data');
-            $table->timestamps();
+        Schema::table('car', function (Blueprint $table) {
+            $table->string('code')->unique();
         });
     }
 
@@ -28,6 +25,8 @@ class CreateSensorsDataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sensors_data');
+        Schema::table('car', function (Blueprint $table) {
+            //
+        });
     }
 }

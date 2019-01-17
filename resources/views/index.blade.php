@@ -117,4 +117,8 @@
       </div>
    </div>
 </section>
+<!--#End Our testimonial Area -->
+<div id="contacto" class="our_partners_area ">
+   @include('elements.contact')
+</div>
 @endsection

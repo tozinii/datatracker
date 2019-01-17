@@ -17,7 +17,8 @@ class CarTableSeeder extends Seeder
       foreach($data as $obj){
         Car::create(array(
           'description'=> $obj->description,
-          'group_id'=>$obj->group_id
+          'group_id'=>$obj->group_id,
+          'code'=>$obj->code
         ));
       }
     }
