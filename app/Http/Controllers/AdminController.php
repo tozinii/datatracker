@@ -52,7 +52,14 @@ class AdminController extends Controller
     }
     public function statistics()
     {
-      $users = DB::select("SELECT count(*) as contador, extract(year from created_at) as year, date_trunc('month', created_at) as mes  FROM users WHERE role='User' GROUP BY date_trunc('month', created_at) ORDER BY to_char(created_at, 'YYYY MM') asc");
+      /*$users = DB::select("SELECT count(*) as contador, extract(year from created_at) as year, date_trunc('month', created_at) as mes
+      FROM users
+      WHERE role='User'
+      GROUP BY date_trunc('month', created_at)
+      ORDER BY to_char(created_at, 'YYYY MM') asc");*/
+
+
+       $users = DB::select("SELECT count(*) as contador, to_char(created_at, 'YYYYMM') as fecha FROM users WHERE role='User' GROUP BY fecha ORDER BY fecha asc");
 
 
       return view('users.statistics')->with('users',$users);
