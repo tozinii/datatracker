@@ -45,7 +45,6 @@ class AdminController extends Controller
         'banneds'=>$banneds
       ]);
     }
-<<<<<<< HEAD
 
     public function statistics()
     {
@@ -53,7 +52,7 @@ class AdminController extends Controller
 
       return view('users.statistics')->with('users',$users);
     }
-=======
+
 /*
     public function banList(){
       $banneds = User::query()->restore()
@@ -64,5 +63,4 @@ class AdminController extends Controller
         'banneds'=>$banneds
       ]);
     }*/
->>>>>>> 958332d02c5483b1b0265be2b35c2d56b8944853
 }
