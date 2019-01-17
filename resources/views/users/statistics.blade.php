@@ -19,7 +19,7 @@
               label: 'Registros de cada mes',
               data: [
                  @foreach($users as $user)
-                      {{$user->fecha}},
+                      {{$user->contador}},
                  @endforeach
               ],
               backgroundColor: [
