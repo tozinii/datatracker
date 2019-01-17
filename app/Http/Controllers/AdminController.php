@@ -52,7 +52,7 @@ class AdminController extends Controller
     }
     public function statistics()
     {
-      $users = DB::select("SELECT count(*) as contador, to_char(created_at, 'Mon YYYY') as year  FROM users WHERE role='User' GROUP BY to_char(created_at, 'YYYYMM') ORDER BY to_char(created_at, 'YYYYMM')");
+      $users = DB::select("SELECT count(*) as contador, to_char(created_at, 'YYYYMM') as year  FROM users WHERE role='User' GROUP BY year ORDER BY year");
 
 
 
