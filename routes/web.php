@@ -39,6 +39,8 @@ Route::view('/services', 'templates/services');
 Route::view('/common', 'users/common');
 Route::get('/admin', 'AdminController@adminPanel')->name('admin');
 Route::get('/listUsers', 'AdminController@userList')->name('listUsers');
+Route::post('restore/{id}', 'ProfileController@restore')->name('restore');
+Route::post('forceDelete/{id}', 'ProfileController@forceDelete')->name('forceDelete');
 Route::resource('profile','ProfileController')->only('show','update','destroy');
 Route::get('/statistics','AdminController@statistics')->name('statistics');
 Route::resource('profile','ProfileController')->only('show','edit','destroy');
