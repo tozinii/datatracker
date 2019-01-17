@@ -27,9 +27,12 @@
 			  <a class="list-group-item list-group-item-action list-group-item-light">
 			  	{{$banned->name}}
 			  	<button type="button" data-toggle="modal" data-target="#delete{{$banned->id}}" class="btnedit btnedit-outline-danger">Delete</button>
-				<button type="button" class="btnedit btnedit-outline-success">Restore</button>
+              	<button type="button" data-toggle="modal" data-target="#restore{{$banned->id}}" class="btnedit btnedit-outline-success">Restore</button>
 			  </a>
-				@include('elements.pop-up-delete')
+			  @include('elements.pop-up-delete')
+				@include('elements.pop-up-restore')
+				
+
 			  @endforeach
 		  </div>
 	    </div>

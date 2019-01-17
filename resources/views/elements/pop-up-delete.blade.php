@@ -5,11 +5,10 @@
         <h4 class="modal-title" id="exampleModalLabel">Eliminar cuenta</h4>
       </div>
       <div class="modal-body">
-        <h5>¿Está usted seguro de querer eliminar a {{ $banned->name }}? No podrá volver a recuperarla más adelante. </h5>
-        <form id="delete-form" action="{{ route('profile.destroy',$banned->id) }}" method="post">
+        <h5>¿Está usted seguro de querer eliminar a {{ $banned->name }}  {{$banned->id}}? No podrá volver a recuperarla más adelante. </h5>
+        <form id="delete-form" action="{{ route('forceDelete',$banned->id) }}" method="post">
           @csrf
-          @method('DELETE')
-          <button type="submit" class="btnedit btnedit-outline-danger btnedit-size">Delete</button>
+          <button type="submit"  class="btnedit btnedit-outline-danger btnedit-size">Delete</button>
           <button type="button" class="btnedit btnedit-outline-secondary btnedit-size " data-dismiss="modal" aria-label="Close">Cancel</button>
         </form>        
       </div>

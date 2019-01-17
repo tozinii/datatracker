@@ -97,26 +97,33 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-        $user=User::find($id);/*
-        if ($user->delete_at == '') {*/
-            if (Auth::User()->role == 'Admin') {
-                User::destroy($id);
-                return back();
-            } else {
-                User::destroy($id);
-                return redirect('/');
-            }/*
+        $user=User::find($id);
+        if (Auth::User()->role == 'Admin') {
+            User::destroy($id);
+            return back();
         } else {
-            if (Auth::User()->role == 'Admin') {
-                User::forceDelete($id);
-                return back();
-            } else {
-                User::forceDelete($id);
-                return redirect('/');
-            }
-
-        }*/
+            User::destroy($id);
+            return redirect('/');
+        }
     }
+
+    public function restore($id){
+
+        $user = User::onlyTrashed()->find($id)->restore();
+        return back();
+    
+    }
+
+    public function forceDelete($id){
+
+        $user = User::onlyTrashed()->find($id)->restore();
+        $user = User::find($id)->forceDelete();
+        return back();
+    
+
+    }
+
+
 
     public function changePassword(Request $request,$id){
       if(!$this->passwordValidator($request->all())->fails()){
