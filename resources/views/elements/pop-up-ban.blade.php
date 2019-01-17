@@ -9,7 +9,7 @@
         <form id="ban-form" action="{{ route('profile.destroy',$user->id) }}" method="post">
           @csrf
           @method('DELETE')
-          <button type="submit" class="btnedit btnedit-outline-danger btnedit-size">Ban</button>
+          <button type="submit" id="ban" class="btnedit btnedit-outline-danger btnedit-size">Ban</button>
           <button type="button" class="btnedit btnedit-outline-secondary btnedit-size " data-dismiss="modal" aria-label="Close">Cancel</button>
         </form>        
       </div>
