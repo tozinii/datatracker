@@ -12,6 +12,7 @@
       data: {
           labels: [
             @foreach($users as $user)
+              '{{$user->fecha}}',
             @endforeach
           ],
           datasets: [{
