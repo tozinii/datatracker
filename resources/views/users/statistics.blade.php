@@ -3,7 +3,6 @@
   <script src="{{asset('assets/js/statistics/Chart.bundle.js')}}"></script>
   <script src="{{asset('assets/js/statistics/Chart.js')}}"></script>
   <h2>Registro de usuarios</h2>
-  {{var_dump($users)}}
   <canvas id="grafRegisterUsers" width="800" height="350"></canvas>
 
   <script type="text/javascript">
