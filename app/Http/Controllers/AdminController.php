@@ -48,19 +48,10 @@ class AdminController extends Controller
 
     public function statistics()
     {
-      $users = DB::select("SELECT count(*) as contador, date_format(created_at, '%M %Y') as fecha FROM users WHERE role='User' GROUP BY fecha ORDER BY date_format(created_at, '%Y%m') asc");
+
+      $users = DB::select("SELECT count(*) as contador, to_char(created_at, '%M %Y') as fecha FROM users WHERE role='User' GROUP BY fecha ORDER BY to_char(created_at, '%Y%m') asc");
+
 
       return view('users.statistics')->with('users',$users);
     }
-
-/*
-    public function banList(){
-      $banneds = User::query()->restore()
-      ->orderBy('name', 'asc')
-      ->get();
-
-      return view('users.listUsers')->with([
-        'banneds'=>$banneds
-      ]);
-    }*/
 }
