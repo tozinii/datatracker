@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Group;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -39,11 +40,14 @@ class AdminController extends Controller
       ->orderBy('name', 'asc')
       ->get();
 
+      // Recoge usuarios
+      $groups = Group::all();
 
       return view('users.listUsers
         ')->with([
         'users'=>$users,
-        'banneds'=>$banneds
+        'banneds'=>$banneds,
+        'groups'=>$groups
       ]);
     }
     public function statistics()
