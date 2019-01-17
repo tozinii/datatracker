@@ -38,11 +38,11 @@
 	    </div>
     	<div id="groupList" class="tab-pane fade">
 	      <div class="list-group">
-			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
-			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
-			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
-			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
-			  <a href="#" class="list-group-item list-group-item-action list-group-item-light">This is a info list group item</a>
+	      	  @foreach($groups as $group)
+			  <a class="list-group-item list-group-item-action list-group-item-light">
+			  	{{$group->name}}
+			  </a>			  
+			  @endforeach
 			</div>
     </div>
   </div>
