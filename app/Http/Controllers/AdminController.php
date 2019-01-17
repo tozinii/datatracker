@@ -49,11 +49,7 @@ class AdminController extends Controller
 
     public function statistics()
     {
-      $users = User::select(DB::raw('count(*) as contador, date_format(created_at, "%M %Y") as mes, date_format(created_at, "%Y%m") as anio'))
-      ->where('role','User')
-      ->groupBy('mes')
-      ->orderBy('mes','desc')
-      ->get();
+      $users = DB::select("SELECT count(*) as contador, date_format(created_at, '%M %Y') as fecha FROM users WHERE role='User' GROUP BY fecha ORDER BY date_format(created_at, '%Y%m') asc");
 
       return view('users.statistics')->with('users',$users);
     }
