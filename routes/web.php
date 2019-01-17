@@ -43,9 +43,9 @@ Route::resource('profile','ProfileController')->only('show','update','destroy');
 Route::get('/statistics','AdminController@statistics')->name('statistics');
 Route::resource('profile','ProfileController')->only('show','edit','destroy');
 Route::post('/password/{user}/change', 'ProfileController@changePassword')->name('changePassword');
-Route::view('/groups', 'users/groups')->middleware(['auth','verified']);;
-Route::view('/cars', 'users/cars')->middleware(['auth','verified']);;
-Route::view('/sensors', 'users/sensors')->middleware(['auth','verified']);;
+Route::view('/groups', 'users/groups')->middleware(['auth','verified']);
+Route::view('/cars', 'users/cars')->middleware(['auth','verified']);
+Route::view('/sensors', 'users/sensors')->middleware(['auth','verified']);
 
 
 // Rutas auth:
@@ -71,3 +71,6 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Ruta para recibir datos de sensores
+Route::get('/data/code/{code}/sensorname/{sensorName}/type/{type}', 'DataController@store');

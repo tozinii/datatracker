@@ -42,10 +42,7 @@
       <!--#End service-text  -->
       <!--#Our Testimonial Area start-->
       @yield('members')
-      <!--#End Our testimonial Area -->
-      <div id="contacto" class="our_partners_area ">
-         @include('elements.contact')
-      </div>
+      
       <!--#start Our footer Area -->
         <div class="our_footer_area">
            @include('elements.footer')

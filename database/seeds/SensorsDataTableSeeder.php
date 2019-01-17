@@ -18,7 +18,6 @@ class SensorsDataTableSeeder extends Seeder
         SensorData::create(array(
           'data_type'=> $obj->data_type,
           'data'=>$obj->data,
-          'date'=>$obj->date,
           'sensor_id'=>$obj->sensor_id
         ));
       }
