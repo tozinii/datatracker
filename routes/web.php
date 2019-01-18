@@ -44,10 +44,11 @@ Route::post('forceDelete/{id}', 'ProfileController@forceDelete')->name('forceDel
 Route::resource('profile','ProfileController')->only('show','update','destroy');
 Route::get('/statistics','AdminController@statistics')->name('statistics');
 Route::resource('profile','ProfileController')->only('show','edit','destroy');
+Route::resource('group','GroupController')->only('show','store');
 Route::post('/password/{user}/change', 'ProfileController@changePassword')->name('changePassword');
-Route::view('/groups', 'users/groups')->middleware(['auth','verified']);
-Route::view('/cars', 'users/cars')->middleware(['auth','verified']);
-Route::view('/sensors', 'users/sensors')->middleware(['auth','verified']);
+Route::view('/groups', 'users/groups')->middleware(['auth','verified','user']);;
+Route::view('/cars', 'users/cars')->middleware(['auth','verified','user']);;
+Route::view('/sensors', 'users/sensors')->middleware(['auth','verified','user']);;
 
 
 // Rutas auth:
