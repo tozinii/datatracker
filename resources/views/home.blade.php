@@ -2,12 +2,16 @@
 
 @section('contenido')
 
-<div class="container ">
+<div class="container">
    <div class="alert alert-success ttl" role="alert">
 	  <h3 class="alert-heading">Bienvenido {{ Auth::user()->name}}</h3>
-	  <p>Aquí podrás crear un grupo con el cual visualizar y gestionar los datos de vuestro coche o si ya tienes un grupo, únete a el!</p>
+	  <p>Esta es la vista principal, aquí podrás ver los últimos cambios en tu grupo y ver el estado del coche.</p>
 	  <hr>
-	  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+	  <h4 class="alert-heading">Grupos</h4>
+	  <p class="mb-0">Actualmente usted no está en ningún grupo.</p>
+	  <hr>
+	  <h4 class="alert-heading">Coche</h4>
+	  <p class="mb-0">Actualmente usted no dispone de ningún coche.</p>
 	</div>
 </div>
 
