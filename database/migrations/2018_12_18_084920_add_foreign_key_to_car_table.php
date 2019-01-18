@@ -15,7 +15,7 @@ class AddForeignKeyToCarTable extends Migration
     {
         Schema::table('car', function (Blueprint $table) {
           $table->integer('group_id')->unsigned();
-            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade')->onUpdate('cascade');
+          $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

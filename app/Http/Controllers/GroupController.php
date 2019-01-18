@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Group;
+use App\User;
 use Illuminate\Support\Facades\DB;
 
 
@@ -57,15 +58,7 @@ class GroupController extends Controller
         $groups = DB::table('group_user')->select('group_id')
         ->where('user_id',$id)->get();
         $usuarios = array();
-        for ($i=0; $i < count($groups); $i++) {
-          $usuariosGrupo = DB::table('groups')
-          ->join('group_user','groups.id', '=','group_user.group_id')
-          ->join('users','group_user.user_id', '=','users.id')
-          ->select('users.name','groups.name')
-          ->where('users.id','=',$id)->get();
-          dd($usuariosGrupo);
-          array_push($usuarios,$usuariosGrupo);
-        }
+
 
         return view('users.groups')->with('groups', $usuarios);
     }
