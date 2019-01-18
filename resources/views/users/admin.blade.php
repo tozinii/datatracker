@@ -3,44 +3,26 @@
 
 
 
-	<div class="sections">
-
-		<!-- Profile image -->
-		<img src="{{Storage::url(auth()->user()->avatar)}}" alt="Imagen de perfil">
-
-		<!-- Profile data -->
-		<form class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="post" action="{{ route('profile.update',auth()->user()->id)}}">
-				@csrf
-		    <div class="col-md-4 mb-3">
-		      <label>Nombre</label>
-		      <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" value="{{auth()->user()->name}}" disabled>
-		    </div>
-		    <div class="col-md-4 mb-3">
-		      <label>Apellido</label>
-		      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" value="{{auth()->user()->lastname}}" disabled>
-		    </div>
-		    <div class="col-md-4 mb-3">
-		      <label>Correo electrónico</label>
-		      <input type="text" class="form-control" id="emailPerfil" name="email" placeholder="Correo electronico" value="{{auth()->user()->email}}" disabled>
-		    </div>
-		    <div class="col-md-4 mb-3">
-		      <label>Descripción</label>
-		      <textarea class="form-control" id="descripcion" placeholder="Hey there! I am using Telegram!" disabled></textarea>
-		    </div>
-				<div class="col-md-4 mb-3">
-		      <label>Imagen</label>
-		      <input type="file" class="form-control" name="avatar" id="avatar" disabled>
-		    </div>
-		    <div class="col-md-4 mb-3" id="botonPerfil">
-		  	  <button class="btn btn-primary" type="button" id="editarPerfil">Editar perfil</button>
-		    </div>
-				<br>
-				<div class="col-md-4 mb-3">
-		  	  <button class="btn btn-primary" type="submit" id="guardarPerfil">Guardar</button>
-		    </div>
-		</form>
-
+<div class="container">
+   <div class="alert alert-info ttl" role="alert">
+	  <h3 class="alert-heading">Bienvenido {{ Auth::user()->name}}</h3>
+	  <p>Este es el panel de administrador, aquí podrás ver la cantidad total de usuarios y grupos que actualmente estan registrados en la base de datos.</p>
 	</div>
+</div>
+
+<div class="card text-white crd-primary mb-3">
+  <div class="card-header">Usuarios</div>
+  <div class="card-body">
+    <p class="card-text text-white">Hay {{$users}} en la base de datos.</p>
+  </div>
+</div>
+
+<div class="card text-white crd-primary mb-3">
+  <div class="card-header">Grupos</div>
+  <div class="card-body">
+    <p class="card-text text-white">Hay {{$groups}} en la base de datos.</p>
+  </div>
+</div>
 
 
 @endsection
