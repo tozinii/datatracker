@@ -21,7 +21,7 @@
 			  @endforeach
 		  </div>
 	    </div>
-    	<div id="bannedList" class="tab-pane fade in active">
+    	<div id="bannedList" class="tab-pane fade">
 	      <div class="list-group">
 	      	  @foreach($banneds as $banned)
 			  <a class="list-group-item list-group-item-action list-group-item-light">

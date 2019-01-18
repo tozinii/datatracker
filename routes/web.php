@@ -76,3 +76,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Ruta para recibir datos de sensores
 Route::get('/data/code/{code}/sensorname/{sensorName}/type/{type}', 'DataController@store');
+Route::get('/data/code/{code}/sensorname/{sensorName}', 'DataController@showSensorData');

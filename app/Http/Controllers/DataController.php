@@ -53,7 +53,7 @@ class DataController extends Controller
 
       $sensorData = new SensorData();
       $sensorData->data = $type;
-      $sensorData->data_type = 'prueba2';
+      $sensorData->data_type = 'Tipo de dato';
       $sensorData->sensor_id = $sensor->id;
 
       $sensorData->save();
@@ -105,5 +105,12 @@ class DataController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showSensorData($code, $sensorName){
+      $car = Car::where('code',strtolower($code))->first();
+      $sensor = Sensor::where('name',$sensorName)->first();
+
+      return view('data.sensor-data',['sensorsData'=>$sensor->sensorsData]);
     }
 }

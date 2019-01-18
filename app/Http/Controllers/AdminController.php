@@ -19,7 +19,9 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function adminPanel () {
-        return view('users.admin');
+      $Users = User::where('role','User')->withTrashed()->get()->count();
+      $groups = Group::all()->count();
+        return view('users.admin')->with(['users'=>$Users,'groups'=>$groups]);
     }
 
 
