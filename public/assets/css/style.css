@@ -1908,7 +1908,7 @@ section{
 .main-h{
     font-size: 43px;
     line-height: 55px;
-    color: #fff;
+    color: #fffeee;
     text-align: left;
     font-weight: 600;
     text-transform: uppercase;
@@ -3654,6 +3654,24 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 
 
 */
+
+
+/*
+
+  ////////////////////////////////////////////////////
+
+  //////////           Vista home           //////////
+
+  ////////////////////////////////////////////////////
+
+*/
+
+.ttl{
+  margin-top: 25px;
+}
+
+
+
 
 /*
 
