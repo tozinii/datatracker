@@ -81,34 +81,6 @@
 
 	</div>
 
-	<div class="sections">
-		<div class="row">
-		  <div class="col-sm-6">
-		    <div class="card">
-		      <div class="card-body">
-		        <form action="#" method="post">
-		        <h5 class="card-title">Crea un grupo</h5>
-		        <p class="card-text">¿No estás en ningún grupo? ¿Estás pensando en crear uno? ¡Aquí tienes la solución! Tan solo debes introducir el nombre del grupo y una etiqueta.</p>
-		        <input type="text" name="groupName" class="card-text" placeholder="Escriba aqui el nombre del grupo (E.j. Alumnos Zubiri Manteo)">
-		        <input type="text" name="groupTag" class="card-text" placeholder="Escriba aqui la etiqueta del grupo (E.j. AZM)">
-		        </form>
-				<button type="button" class="btnedit2 btnedit-outline-success">Crear</button>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col-sm-6">
-		    <div class="card">
-		      <div class="card-body">
-		        <h5 class="card-title">Unete a un grupo</h5>
-		        <p class="card-text">¿Ya tienes compañeros con los que estas trabajando?¿Te han invitado a algún grupo? ¡Únete!</p>
-		        <input type="text" name="groupName" class="card-text" placeholder="Escriba aqui el nombre del grupo al que quiera unirse...">
-				<button type="button" class="btnedit2 btnedit-outline-success">Unirse</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-	</div>
-
 	<!-- Section cars -->
 	<!--<div class="sections">
 		<p>Aquí irá la información del coche que tiene este usuario</p>

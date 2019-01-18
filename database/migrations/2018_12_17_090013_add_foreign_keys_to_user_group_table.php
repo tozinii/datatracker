@@ -13,7 +13,7 @@ class AddForeignKeysToUserGroupTable extends Migration
      */
     public function up()
     {
-        Schema::table('user_group', function (Blueprint $table) {
+        Schema::table('group_user', function (Blueprint $table) {
           $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
           $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade')->onUpdate('cascade');
         });
@@ -26,7 +26,7 @@ class AddForeignKeysToUserGroupTable extends Migration
      */
     public function down()
     {
-        Schema::table('user_group', function (Blueprint $table) {
+        Schema::table('group_user', function (Blueprint $table) {
           //
         });
     }

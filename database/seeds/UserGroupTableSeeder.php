@@ -14,7 +14,7 @@ class UserGroupTableSeeder extends Seeder
       $json = File::get('database/data/user-group-data.json');
       $data = json_decode($json);
       foreach($data as $obj){
-        DB::table('user_group')->insert([
+        DB::table('group_user')->insert([
           'user_id'=>$obj->user_id,
           'group_id'=>$obj->group_id
         ]);
