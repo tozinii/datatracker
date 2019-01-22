@@ -3984,7 +3984,8 @@ outline-suc
 */
 
 .userList{
-    
+  position: absolute;
+  margin-left: 500px;
 }
 
 
@@ -4065,10 +4066,10 @@ outline-suc
   background-color: transparent;
   background-image: none;
   border-color: #28a745;
-  margin-top: 1.5rem;
+  margin-top: 0.3rem;
   margin-bottom: 1rem;
-  font-size: 1.5rem;
-  left: 0;
+  margin-left: 60px;
+  font-size: 1.3rem;
   position: relative;
 }
 
@@ -4102,7 +4103,7 @@ outline-suc
 
 /*
 
-    Buton editado (delete & cancel)
+    Buton editado (delete)
 
 */
 .btnedit-size {
@@ -4115,10 +4116,12 @@ outline-suc
   color: #dc3545;
   background-color: transparent;
   background-image: none;
+  border-color: #dc3545;
   left: 0;
   position: absolute;
-  border-color: #dc3545;
-  margin-right: 100px;
+  margin-left: 10px;
+  margin-top: 3px;
+
 }
 
 .btnedit-outline-danger:hover {
@@ -4150,6 +4153,11 @@ outline-suc
 
 
 
+/*
+
+    Buton editado (cancel)
+
+*/
 
 
 .btnedit-outline-secondary {
@@ -4200,7 +4208,6 @@ outline-suc
 
 
 .list-group-flush .list-group-item {
-  height: 35px;
   border-right: 0;
   border-left: 0;
   border-radius: 0;
@@ -4216,6 +4223,7 @@ outline-suc
 
 
 .list-group-item-action {
+  min-height: 50px;
   width: 100%;
   color: #495057;
   text-align: inherit;

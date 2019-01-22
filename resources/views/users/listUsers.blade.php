@@ -27,7 +27,7 @@
 	      <div class="list-group">
 	      	  @foreach($banneds as $banned)
 			  <a class="list-group-item list-group-item-action list-group-item-light">
-			  	<p>
+			  	<p class="userList">
 			  		{{$banned->name}}
 			  	</p>
 			  	<button type="button" data-toggle="modal" data-target="#delete{{$banned->id}}" class="btnedit btnedit-outline-danger">Delete</button>
