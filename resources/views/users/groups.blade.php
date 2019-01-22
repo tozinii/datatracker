@@ -1,23 +1,49 @@
 @extends('layouts.layoutLogged')
 @section('contenido')
 
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#groups').DataTable();
+} );
 
+</script>
 
 <!--<div class="panel panel-default">-->
   <!-- Default panel contents -->
   <h1>Grupos</h1>
+  <table id="groups">
+
   @foreach($groups as $group)
-  <h2>{{$group->name}}</h2>
-  <div class="panel-heading">Miembros</div>
+  <thead>
+    <tr>
+      <th colspan="3"><h2>{{$group->name}}</h2></th>
+    </tr>
+  </thead>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
     @foreach($group->users as $user)
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{$user->name}} {{$user->lastname}}</li>
-    </ul>
+      <tr>
+        <td>{{$user->name}}</td>
+        <td>{{$user->lastname}}</td>
+        <td>{{$user->email}}</td>
+      </tr>
+
     @endforeach
+  </tbody>
+  <!--<div class="panel-heading">Miembros</div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> </li>
+  </ul>-->
 
   @endforeach
 
-
+  </table>
 
 <!-- </div>-->
 
@@ -51,3 +77,6 @@
   </div>
 </div>
 @endsection
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" charset="utf-8"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js" charset="utf-8"></script>
