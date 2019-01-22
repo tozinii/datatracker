@@ -6,14 +6,18 @@
 <!--<div class="panel panel-default">-->
   <!-- Default panel contents -->
   <h1>Grupos</h1>
-  @foreach($users->groups as $groups)
-  <h2>{{$groups->name}}</h2>
-    
-  @endforeach
+  @foreach($groups as $group)
+  <h2>{{$group->name}}</h2>
   <div class="panel-heading">Miembros</div>
+    @foreach($group->users as $user)
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">prueba</li>
+      <li class="list-group-item">{{$user->name}}</li>
     </ul>
+    @endforeach
+
+  @endforeach
+
+
 
 <!-- </div>-->
 

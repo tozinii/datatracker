@@ -57,14 +57,24 @@ class GroupController extends Controller
     {
         $user = User::find($id);
 
+        //dd($user);
         $groups = array();
 
-        for ($i=0; $i <count($user->groups); $i++) {
-          $group = Group::find($user->groups[$i]);
-          array_push($groups, $group);
+        foreach ($user->groups as $key => $value) {
+          $group = Group::find($value->id);
+          array_push($groups,$group);
         }
 
-        dd($groups);
+        foreach ($groups as $key => $value) {
+          foreach ($value->users as $key => $valor) {
+            //dd($valor->name);
+          }
+
+        }
+
+
+
+        //dd($groups);
 
         return view('users.groups')->with('groups',$groups);
     }
