@@ -55,10 +55,18 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-        $groups = User::select('group_id')->where('id',$id);
+        $user = User::find($id);
 
+        $groups = array();
 
-        return view('users.groups');
+        for ($i=0; $i <count($user->groups); $i++) {
+          $group = Group::find($user->groups[$i]);
+          array_push($groups, $group);
+        }
+
+        dd($groups);
+
+        return view('users.groups')->with('groups',$groups);
     }
 
     /**
