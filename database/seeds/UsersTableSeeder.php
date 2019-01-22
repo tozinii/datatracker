@@ -22,7 +22,8 @@ class UsersTableSeeder extends Seeder
           'email_verified_at'=>$obj->email_verified_at,
           'password'=>Hash::make($obj->password),
           'description'=>$obj->description,
-          'role'=>$obj->role
+          'role'=>$obj->role,
+          'group_id'=>$obj->group_id
         ));
       }
     }

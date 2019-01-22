@@ -12,7 +12,7 @@ class GroupsTableSeeder extends Seeder
      */
     public function run()
     {
-      $json = File::get('database/data/users-data.json');
+      $json = File::get('database/data/groups-data.json');
       $data = json_decode($json);
       foreach($data as $obj){
         Group::create(array(

@@ -12,14 +12,14 @@
       data: {
           labels: [
             @foreach($users as $user)
-              '{{$user->fecha}}',
+              '{{$user->year}}',
             @endforeach
           ],
           datasets: [{
               label: 'Registros de cada mes',
               data: [
                  @foreach($users as $user)
-                      {{$user}},
+                      '{{$user->contador}}',
                  @endforeach
               ],
               backgroundColor: [
