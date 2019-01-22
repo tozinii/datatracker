@@ -3978,6 +3978,24 @@ outline-suc
 
   ////////////////////////////////////////////////////
 
+  //////////       Estilos user list        //////////
+
+  ////////////////////////////////////////////////////
+
+*/
+
+.userList{
+    
+}
+
+
+
+
+
+/*
+
+  ////////////////////////////////////////////////////
+
   //////////        Estilos botones         //////////
 
   ////////////////////////////////////////////////////
@@ -4051,6 +4069,8 @@ outline-suc
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   font-size: 1.5rem;
+  left: 0;
+  position: relative;
 }
 
 .btnedit-outline-success:hover {
@@ -4096,7 +4116,10 @@ outline-suc
   color: #dc3545;
   background-color: transparent;
   background-image: none;
+  left: 0;
+  position: absolute;
   border-color: #dc3545;
+  margin-right: 100px;
 }
 
 .btnedit-outline-danger:hover {
@@ -4178,6 +4201,7 @@ outline-suc
 
 
 .list-group-flush .list-group-item {
+  height: 35px;
   border-right: 0;
   border-left: 0;
   border-radius: 0;
