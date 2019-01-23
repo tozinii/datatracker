@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Group;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 
@@ -39,8 +40,10 @@ class GroupController extends Controller
     public function store(Request $request)
     {
         $group = new Group;
+        $date = Carbon::now();
         $group->name = $request->input('groupName');
-        $group->password = 'fafads';
+        $group->created_at = $date->year;
+        $group->users()->attach(4);
         $group->save();
 
         return back()->with('Grupo creado correctamente');

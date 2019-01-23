@@ -17,7 +17,6 @@ class GroupsTableSeeder extends Seeder
       foreach($data as $obj){
         Group::create(array(
           'name'=> $obj->name,
-          'password'=>$obj->password,
           'description'=>$obj->description
         ));
       }

@@ -16,7 +16,7 @@ $(document).ready(function() {
   @foreach($groups as $group)
   <thead>
     <tr>
-      <th colspan="3"><h2>{{$group->name}}</h2></th>
+      <th colspan="3"><h2>{{$group->name}} {{$group->created_at}}</h2></th>
     </tr>
   </thead>
   <thead>
@@ -24,6 +24,7 @@ $(document).ready(function() {
       <th>Nombre</th>
       <th>Apellido</th>
       <th>Email</th>
+      <th>Año</th>
     </tr>
   </thead>
   <tbody>
