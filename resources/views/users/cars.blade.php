@@ -37,6 +37,7 @@
 		    <li class="active"><a data-toggle="tab" href="#sensores">Sensores</a></li>
 		    <li><a data-toggle="tab" href="#estadisticas">Estadisticas</a></li>
 		    <li><a data-toggle="tab" href="#comentarios">Comentarios</a></li>
+		    <li><a data-toggle="tab" href="#mapa">Comentarios</a></li>
 		</ul>
 
 		<div class="tab-content">
@@ -55,29 +56,32 @@
 		      	<input type="text" name="maxMarcas" value="Esta en la tercera curva..." disabled="disabled">
 		      </form>
 		    </div>
-	    <div id="estadisticas" class="tab-pane fade">
-	    	<h3>Estadisticas</h3>
-	    	<form>
-	    		<label>Mejores marcas</label>
-	    		<input type="text" name="maxMarcas" value="Su mejor carrera la hizo en 40mins, 12secs..." disabled="disabled">
-		      	<label>Ultimas marcas</label>
-		      	<input type="text" name="ultMarcas" value="Su ultima carrera la terminó en 56mins, 37secs..." disabled="disabled">
-		      	<label>Consumo</label>
-		      	<input type="text" name="consumo" value="El consumo medio de gasolina en cada carrera es de 25 litros" disabled="disabled">
-		      	<label>Accidentes</label>
-		      	<input type="text" name="fallos" value="Este coche ha tenido 4 accidentes" disabled="disabled">
-		    </form>
-	    </div>
-	    <div id="comentarios" class="tab-pane fade">
-	    	<h3>Comentarios</h3>
-	    	<form>
-	    		<textarea placeholder="Escriba aquí su comentario..."></textarea>
-	    		<input type="submit" name="submit" value="Enviar comentario">
-	    	</form>
-	    	<div class="comments-list">
-	    		<span>Paco: El coche ha girado mal en la quinta curva, tenemos que mirarlo, YA.</span>
+	    	<div id="estadisticas" class="tab-pane fade">
+		    	<h3>Estadisticas</h3>
+		    	<form>
+		    		<label>Mejores marcas</label>
+		    		<input type="text" name="maxMarcas" value="Su mejor carrera la hizo en 40mins, 12secs..." disabled="disabled">
+			      	<label>Ultimas marcas</label>
+			      	<input type="text" name="ultMarcas" value="Su ultima carrera la terminó en 56mins, 37secs..." disabled="disabled">
+			      	<label>Consumo</label>
+			      	<input type="text" name="consumo" value="El consumo medio de gasolina en cada carrera es de 25 litros" disabled="disabled">
+			      	<label>Accidentes</label>
+			      	<input type="text" name="fallos" value="Este coche ha tenido 4 accidentes" disabled="disabled">
+			    </form>
 	    	</div>
-	    </div>
+		    <div id="comentarios" class="tab-pane fade">
+		    	<h3>Comentarios</h3>
+		    	<form>
+		    		<textarea placeholder="Escriba aquí su comentario..."></textarea>
+		    		<input type="submit" name="submit" value="Enviar comentario">
+		    	</form>
+		    	<div class="comments-list">
+		    		<span>Paco: El coche ha girado mal en la quinta curva, tenemos que mirarlo, YA.</span>
+		    	</div>
+		    </div>
+		    <div id="mapa" class="tab-pane fade">
+		    	<h3>Comentarios</h3>
+		    </div>
 	  </div>
 	</div>
 	</div>

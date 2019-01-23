@@ -5703,7 +5703,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pagination>.disabled>span,
 .pagination>.disabled>span:focus,
 .pagination>.disabled>span:hover {
-    color: #777;
+    color: black;
     cursor: not-allowed;
     background-color: #fff;
     border-color: #ddd
@@ -5787,7 +5787,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pager .disabled>a:focus,
 .pager .disabled>a:hover,
 .pager .disabled>span {
-    color: #777;
+    color: black;
     cursor: not-allowed;
     background-color: #fff
 }
