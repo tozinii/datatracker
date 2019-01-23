@@ -37,7 +37,7 @@
 		    <li class="active"><a data-toggle="tab" href="#sensores">Sensores</a></li>
 		    <li><a data-toggle="tab" href="#estadisticas">Estadisticas</a></li>
 		    <li><a data-toggle="tab" href="#comentarios">Comentarios</a></li>
-		    <li><a data-toggle="tab" href="#mapid">Mapa</a></li>
+		    <li><a data-toggle="tab" href="#map">Mapa</a></li>
 		</ul>
 
 		<div class="tab-content">
@@ -79,21 +79,20 @@
 		    		<span>Paco: El coche ha girado mal en la quinta curva, tenemos que mirarlo, YA.</span>
 		    	</div>
 		    </div>
-		    <div id="mapid">
+		    <div id="map">
 		    </div>
 	  </div>
 	</div>
 	</div>
 </section>
 <script>
-	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+	var carmap = L.map('map').setView([51.505, -0.09], 13);
 
-	L.tileLayer('https://api.mapbox.com/{endpoint}?access_token={your_access_token}', {
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiY3luZGEiLCJhIjoiY2pyOTM3b2ZmMDB0dDQzcGZ5ajR4aXJyNiJ9.uQDXCNWklDqzIdAHxI0XqA', {
 	    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 	    maxZoom: 18,
-	    id: 'mapbox.streets',
-	    accessToken: 'your.mapbox.access.token'
-	}).addTo(mymap);
+	    id: 'mapbox.streets'
+	}).addTo(carmap);
 </script>
 
 @endsection
