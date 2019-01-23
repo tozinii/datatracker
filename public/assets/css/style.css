@@ -1993,6 +1993,11 @@ padding-bottom: 90px;
 .our_footer_area.logged-in-footer{
   bottom: 0;
   position: fixed;
+  z-index: 5;
+}
+
+#mySidenav{
+  z-index: 10;
 }
 
 .footer-h{

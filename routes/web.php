@@ -43,6 +43,8 @@ Route::post('restore/{id}', 'ProfileController@restore')->name('restore');
 Route::post('forceDelete/{id}', 'ProfileController@forceDelete')->name('forceDelete');
 Route::resource('profile','ProfileController')->only('show','update','destroy');
 Route::get('/statistics','AdminController@statistics')->name('statistics');
+Route::get('/events','AdminController@adminEvents')->name('adminEvents');
+Route::post('/event/create','AdminController@createEvent')->name('createEvent');
 Route::resource('profile','ProfileController')->only('show','edit','destroy');
 Route::resource('group','GroupController')->only('show','store');
 Route::post('/password/{user}/change', 'ProfileController@changePassword')->name('changePassword');

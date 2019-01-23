@@ -60,4 +60,8 @@ class AdminController extends Controller
 
       return view('users.statistics')->with('users',$users);
     }
+
+    public function adminEvents(){
+      return view('users.adminEvents');
+    }
 }

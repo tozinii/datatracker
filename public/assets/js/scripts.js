@@ -31,5 +31,4 @@ $(document).ready(function(){
       $('#change-password-element').fadeToggle();
       $(this).hide();
     });
-
 });

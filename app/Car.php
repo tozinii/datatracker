@@ -16,4 +16,9 @@ class Car extends Model
     {
       return $this->hasMany('App\Sensor');
     }
+
+  public function events()
+    {
+      return $this->hasMany('App\Event');
+    }
 }

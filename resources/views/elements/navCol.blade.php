@@ -46,6 +46,9 @@
           <li class="nav-item lista">
             <a class="nav-link" href="{{route('statistics')}}">Estadisticas</a>
           </li>
+          <li class="nav-item lista">
+            <a class="nav-link" href="{{route('adminEvents')}}">Eventos</a>
+          </li>
         @endif
       </ul>
    </div>

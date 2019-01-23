@@ -13,11 +13,6 @@ class Group extends Model
       return $this->hasMany('App\User');
     }
 
-  public function tournaments()
-    {
-      return $this->hasMany('App\Tournament');
-    }
-
   public function car()
     {
       return $this->hasOne('App\Car');
