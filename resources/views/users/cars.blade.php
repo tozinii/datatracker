@@ -37,7 +37,7 @@
 		    <li class="active"><a data-toggle="tab" href="#sensores">Sensores</a></li>
 		    <li><a data-toggle="tab" href="#estadisticas">Estadisticas</a></li>
 		    <li><a data-toggle="tab" href="#comentarios">Comentarios</a></li>
-		    <li><a data-toggle="tab" href="#mapa">Comentarios</a></li>
+		    <li><a data-toggle="tab" href="#mapid">Mapa</a></li>
 		</ul>
 
 		<div class="tab-content">
@@ -79,12 +79,21 @@
 		    		<span>Paco: El coche ha girado mal en la quinta curva, tenemos que mirarlo, YA.</span>
 		    	</div>
 		    </div>
-		    <div id="mapa" class="tab-pane fade">
-		    	<h3>Comentarios</h3>
+		    <div id="mapid">
 		    </div>
 	  </div>
 	</div>
 	</div>
 </section>
+<script>
+	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+	L.tileLayer('https://api.mapbox.com/{endpoint}?access_token={your_access_token}', {
+	    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	    maxZoom: 18,
+	    id: 'mapbox.streets',
+	    accessToken: 'your.mapbox.access.token'
+	}).addTo(mymap);
+</script>
 
 @endsection
