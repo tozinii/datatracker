@@ -6,19 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
-  protected $table = 'car';
+  protected $table = 'cars';
 
-  public function group()
+  public function kits()
     {
-      return $this->belongsTo('App\Group');
+        return $this->hasMany('App\Kit');
     }
   public function sensors()
     {
-      return $this->hasMany('App\Sensor');
+      return $this->belongsToMany('App\Sensor');
     }
+    public function user()
+      {
+        return $this->belongsTo('App\User');
+      }
 
-  public function events()
-    {
-      return $this->hasMany('App\Event');
-    }
 }

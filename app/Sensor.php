@@ -8,12 +8,14 @@ class Sensor extends Model
 {
   protected $table = 'sensors';
 
-  public function car()
+  public function cars()
     {
-      return $this->belongsTo('App\Car');
+      return $this->belongsToMany('App\Car');
     }
-  public function sensorsData()
-    {
-      return $this->hasMany('App\SensorData');
-    }
+
+    public function kits()
+      {
+        return $this->belongsToMany('App\Kit');
+      }
+
 }
