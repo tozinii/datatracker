@@ -16,7 +16,7 @@ class CreateTableKit extends Migration
         Schema::create('kits', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('num_serie')->unique();
+            $table->bigInteger('num_serie')->unique();
             $table->timestamps();
         });
     }

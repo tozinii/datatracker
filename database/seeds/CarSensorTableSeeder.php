@@ -16,7 +16,8 @@ class CarSensorTableSeeder extends Seeder
       foreach($data as $obj){
         DB::table('car_sensor')->insert([
           'car_id'=>$obj->car_id,
-          'sensor_id'=> $obj->sensor_id
+          'sensor_id'=> $obj->sensor_id,
+          'data'=>$obj->data
         ]);
       }
     }
