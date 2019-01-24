@@ -3563,6 +3563,18 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 26.End Responsive
 ------------------------------------*/
 
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 -------------                               ---------------
    ------------------------------------------------------
@@ -3574,8 +3586,22 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
    ------------------------------------------------------
 -------------                               --------------
 */
+/*
+  Para el mapa
+*/
+
+#map{
+  margin-top: 30px;
+  margin-left: 50px;
+  width: 550px;
+  height: 370px;
+  color: red;
+}
+
+/* 
 
 
+*/
 .algn-cnt{
   text-align: center;
   align-content: center;
