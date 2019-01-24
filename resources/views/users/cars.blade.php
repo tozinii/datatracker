@@ -121,6 +121,8 @@
 	];
 	var polyline4 = L.polyline(etapa4, {color: 'yellow'}).addTo(carmap);
 
+	var distancia = distance([43.326353, -1.971578], [43.324529, -1.974172]);
+	polyline2.bindPopup('Ha recorrido km');
 
 </script>
 
