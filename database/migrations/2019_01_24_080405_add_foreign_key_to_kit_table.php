@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSensorsDataTable extends Migration
+class AddForeignKeyToKitTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateSensorsDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('sensors_data', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('data_type');
-            $table->string('data');
-            $table->timestamps();
+        Schema::table('kits', function (Blueprint $table) {
+            $table->integer('car_id')->unsigned();
+            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -28,6 +26,8 @@ class CreateSensorsDataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sensors_data');
+        Schema::table('kits', function (Blueprint $table) {
+            //
+        });
     }
 }

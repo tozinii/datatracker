@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddCodeToCarTable extends Migration
+class CreateTableKit extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AddCodeToCarTable extends Migration
      */
     public function up()
     {
-        Schema::table('car', function (Blueprint $table) {
-            $table->string('code')->unique();
+        Schema::create('kits', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('num_serie')->unique();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class AddCodeToCarTable extends Migration
      */
     public function down()
     {
-        Schema::table('car', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('kits');
     }
 }

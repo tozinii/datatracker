@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCarTable extends Migration
+class CreateCarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateCarTable extends Migration
      */
     public function up()
     {
-        Schema::create('car', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('description')->nullable();
-            $table->timestamps();
-        });
+      Schema::create('cars', function (Blueprint $table) {
+          $table->increments('id');
+          $table->string('description')->nullable();
+          $table->string('code')->unique();
+          $table->timestamps();
+      });
     }
 
     /**
@@ -27,6 +28,6 @@ class CreateCarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car');
+        Schema::dropIfExists('cars');
     }
 }
