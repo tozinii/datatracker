@@ -45,9 +45,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'password', 'remember_token',
     ];
 
-    public function groups()
+    public function cars()
       {
-          return $this->belongsToMany('App\Group');
+          return $this->hasMany('App\Car');
       }
 
       public function role() {
