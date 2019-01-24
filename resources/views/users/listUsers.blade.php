@@ -6,7 +6,6 @@
 	<ul class="nav nav-tabs">
 	    <li class="active"><a data-toggle="tab" href="#userList">Usuarios</a></li>
 	    <li><a data-toggle="tab" href="#bannedList">Banned users</a></li>
-	    <li><a data-toggle="tab" href="#groupList">Grupos</a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -35,20 +34,11 @@
 			  </a>
 			  @include('elements.pop-up-delete')
 				@include('elements.pop-up-restore')
-				
+
 
 			  @endforeach
 		  </div>
 	    </div>
-    	<div id="groupList" class="tab-pane fade">
-	      <div class="list-group">
-	      	  @foreach($groups as $group)
-			  <a class="list-group-item list-group-item-action list-group-item-light">
-			  	{{$group->name}}
-			  </a>			  
-			  @endforeach
-			</div>
-    </div>
   </div>
 </div>
 <!-- Pop up delete -->

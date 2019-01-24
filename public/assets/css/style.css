@@ -2376,7 +2376,6 @@ border-left: 10px solid #ffaa00 !important;
   line-height: 30px;
   margin-bottom: 18px;
   margin-right: 0px;
-  width: 565px;
 }
 
 .card-text::placeholder{
@@ -2385,7 +2384,6 @@ border-left: 10px solid #ffaa00 !important;
   line-height: 30px;
   margin-bottom: 18px;
   margin-right: 0px;
-  width: 565px;
 }
 .card-body a{
   font-size: 20px;
@@ -3598,7 +3596,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   color: red;
 }
 
-/* 
+/*
 
 
 */
@@ -3767,10 +3765,10 @@ button.crd-primary:focus {
 }
 
 .card-body {
+  -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 1.25rem;
-  width: 625px;
 }
 
 .card-title {

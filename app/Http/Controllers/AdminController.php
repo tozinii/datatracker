@@ -20,8 +20,7 @@ class AdminController extends Controller
      */
     public function adminPanel () {
       $Users = User::where('role','User')->withTrashed()->get()->count();
-      $groups = Group::all()->count();
-        return view('users.admin')->with(['users'=>$Users,'groups'=>$groups]);
+        return view('users.admin')->with('users',$Users);
     }
 
 
@@ -43,13 +42,11 @@ class AdminController extends Controller
       ->get();
 
       // Recoge usuarios
-      $groups = Group::all();
 
       return view('users.listUsers
         ')->with([
         'users'=>$users,
-        'banneds'=>$banneds,
-        'groups'=>$groups
+        'banneds'=>$banneds
       ]);
     }
     public function statistics()
