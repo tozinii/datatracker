@@ -37,7 +37,7 @@
 		    <li class="active"><a data-toggle="tab" href="#sensores">Sensores</a></li>
 		    <li><a data-toggle="tab" href="#estadisticas">Estadisticas</a></li>
 		    <li><a data-toggle="tab" href="#comentarios">Comentarios</a></li>
-		    <li><a data-toggle="tab" href="#mapa">Comentarios</a></li>
+		    <li><a data-toggle="tab" href="#map">Mapa</a></li>
 		</ul>
 
 		<div class="tab-content">
@@ -79,12 +79,51 @@
 		    		<span>Paco: El coche ha girado mal en la quinta curva, tenemos que mirarlo, YA.</span>
 		    	</div>
 		    </div>
-		    <div id="mapa" class="tab-pane fade">
-		    	<h3>Comentarios</h3>
+		    <div id="map">
 		    </div>
 	  </div>
 	</div>
 	</div>
 </section>
+<script>
+	var carmap = L.map('map').setView([43.326025, -1.968831], 16);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiY3luZGEiLCJhIjoiY2pyOTM3b2ZmMDB0dDQzcGZ5ajR4aXJyNiJ9.uQDXCNWklDqzIdAHxI0XqA', {
+	    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	    maxZoom: 18,
+	    id: 'mapbox.streets'
+	}).addTo(carmap);
+
+
+
+	// create a red polyline from an array of LatLng points
+	var etapa1 = [
+	    [43.326353, -1.971578],
+	    [43.324529, -1.974172]
+	];
+	var polyline = L.polyline(etapa1, {color: 'orange'}).addTo(carmap);
+
+	var etapa2 = [
+	    [43.324529, -1.974172],
+	    [43.323622, -1.973014]
+	];
+	var polyline2 = L.polyline(etapa2, {color: 'red'}).addTo(carmap);
+
+	var etapa3 = [
+	    [43.323622, -1.973014],
+	    [43.323419, -1.970289]
+	];
+	var polyline3 = L.polyline(etapa3, {color: 'orange'}).addTo(carmap);
+
+	var etapa4 = [
+	    [43.323419, -1.970289],
+	    [43.326353, -1.971578]
+	];
+	var polyline4 = L.polyline(etapa4, {color: 'yellow'}).addTo(carmap);
+
+	var distancia = distance([43.326353, -1.971578], [43.324529, -1.974172]);
+	polyline2.bindPopup('Ha recorrido km');
+
+</script>
 
 @endsection
