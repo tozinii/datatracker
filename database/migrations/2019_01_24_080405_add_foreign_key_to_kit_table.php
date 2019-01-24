@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCarTable extends Migration
+class AddForeignKeyToKitTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateCarTable extends Migration
      */
     public function up()
     {
-        Schema::create('car', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('description')->nullable();
-            $table->timestamps();
+        Schema::table('kits', function (Blueprint $table) {
+            $table->integer('car_id')->unsigned();
+            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -27,6 +26,8 @@ class CreateCarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car');
+        Schema::table('kits', function (Blueprint $table) {
+            //
+        });
     }
 }

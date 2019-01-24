@@ -31,9 +31,6 @@
         </li>
         @if(auth()->user()->role == 'User')
           <li class="nav-item lista">
-            <a class="nav-link" href="{{route('group.show',auth()->user()->id)}}">Grupos</a>
-          </li>
-          <li class="nav-item lista">
             <a class="nav-link" href="cars">Coches</a>
           </li>
           <li class="nav-item lista">

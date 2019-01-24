@@ -23,7 +23,6 @@ class UsersTableSeeder extends Seeder
           'password'=>Hash::make($obj->password),
           'description'=>$obj->description,
           'role'=>$obj->role,
-          'group_id'=>$obj->group_id
         ));
       }
     }
