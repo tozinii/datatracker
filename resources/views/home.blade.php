@@ -20,8 +20,12 @@
     <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{$kit->name}}</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
+    <ul class="list-group list-group-flush">
+    @foreach($kit->sensors as $sensor)
+      <li class="list-group-item">{{$sensor->name}}</li>
+    @endforeach
+  </ul>
   </div>
 
   @endforeach
