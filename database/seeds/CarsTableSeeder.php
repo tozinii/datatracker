@@ -10,16 +10,16 @@ class CarsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-      $json = File::get('database/data/cars-data.json');
-      $data = json_decode($json);
-      foreach($data as $obj){
-        Car::create(array(
-          'description'=> $obj->description,
-          'code'=>$obj->code,
-          'user_id'=>$obj->user_id
-        ));
-      }
-    }
+     public function run()
+     {
+       $json = File::get('database/data/cars-data.json');
+       $data = json_decode($json);
+       foreach($data as $obj){
+         Car::create(array(
+           'description'=> $obj->description,
+           'code'=>$obj->code,
+           'user_id'=>$obj->user_id,
+         ));
+       }
+     }
 }
