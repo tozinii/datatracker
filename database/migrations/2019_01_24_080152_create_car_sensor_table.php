@@ -19,7 +19,7 @@ class CreateCarSensorTable extends Migration
             $table->foreign('sensor_id')->references('id')->on('sensors')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade')->onUpdate('cascade');
             $table->string('data');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(date("Y-m-d H:i:s"));
         });
     }
 

@@ -18,8 +18,7 @@ class CreateKitSensorTable extends Migration
             $table->integer('sensor_id')->unsigned();
             $table->foreign('kit_id')->references('id')->on('kits')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('sensor_id')->references('id')->on('sensors')->onDelete('cascade')->onUpdate('cascade');
-
-            $table->timestamps();
+            $table->timestamp('created_at')->default(date("Y-m-d H:i:s"));
         });
     }
 
