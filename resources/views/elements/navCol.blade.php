@@ -33,18 +33,12 @@
           <li class="nav-item lista">
             <a class="nav-link" href="cars">Coches</a>
           </li>
-          <li class="nav-item lista">
-            <a class="nav-link disabled" href="/sensors">Sensores</a>
-          </li>
         @else
           <li class="nav-item lista">
             <a class="nav-link" href="{{route('listUsers')}}">Lista de usuarios</a>
           </li>
           <li class="nav-item lista">
             <a class="nav-link" href="{{route('statistics')}}">Estadisticas</a>
-          </li>
-          <li class="nav-item lista">
-            <a class="nav-link" href="{{route('adminEvents')}}">Eventos</a>
           </li>
         @endif
       </ul>
