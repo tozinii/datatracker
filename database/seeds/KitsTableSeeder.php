@@ -17,8 +17,7 @@ class KitsTableSeeder extends Seeder
       foreach($data as $obj){
         Kit::create(array(
           'name'=> $obj->name,
-          'num_serie'=>$obj->num_serie,
-          'car_id'=>$obj->car_id
+          'num_serie'=>$obj->num_serie
         ));
       }
     }
