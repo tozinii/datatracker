@@ -23,8 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $kits = Kit::find(4);
-        dd($kits->sensors);
+        $kits = Kit::all();
         return view('home')->with('kits',$kits);
     }
 }

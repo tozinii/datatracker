@@ -15,7 +15,7 @@
 Route::get('/', function ()
 {
   return view('index');
-})->name('root')->middleware('guest');
+})->name('root');
 
 
 // Multi idioma
