@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Car;
 use App\Sensor;
-use App\SensorData;
 use DateTime;
 
 class DataController extends Controller
@@ -46,17 +46,17 @@ class DataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$code,$sensorName,$type)
+    public function store(Request $request,$code,$sensorName,$value)
     {
       $car = Car::where('code',strtolower($code))->first();
       $sensor = Sensor::where('name',$sensorName)->first();
+      dump($sensorName);
+      dump('coche',$car);
+      dump('sensor',$sensor);
 
-      $sensorData = new SensorData();
-      $sensorData->data = $type;
-      $sensorData->data_type = 'Tipo de dato';
-      $sensorData->sensor_id = $sensor->id;
-
-      $sensorData->save();
+      DB::table('car_sensor')->insert(
+        ['sensor_id' => $sensor->id, 'car_id' => $car->id, 'data'=>$value]
+      );
 
       return redirect()->route('root');
 
@@ -107,10 +107,14 @@ class DataController extends Controller
         //
     }
 
-    public function showSensorData($code, $sensorName){
+    public function showSensorData($code){
       $car = Car::where('code',strtolower($code))->first();
-      $sensor = Sensor::where('name',$sensorName)->first();
+      $carsData = DB::table('car_sensor')->where('car_id',$car->id)->get();
 
-      return view('data.sensor-data',['sensorsData'=>$sensor->sensorsData]);
+      //Crea una nueva propiedad 'sensor_name' para mostrar el nombre del sensor de cada coche
+      foreach ($carsData as $data){
+        $data->{'sensor_name'} = Sensor::where('id',$data->sensor_id)->first()->name;
+      }
+      return view('data.sensor-data',['carsData'=>$carsData]);
     }
 }

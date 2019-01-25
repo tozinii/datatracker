@@ -5,13 +5,15 @@
   <table>
     <tr>
       <th>Tipo de dato</th>
-      <th>Dato</th>
+      <th>Valor</th>
+      <th>Fecha</th>
     </tr>
   <th></th>
-  @foreach($sensorsData as $dataRow)
+  @foreach($carsData as $dataRow)
   <tr>
-    <td>{{ $dataRow->data_type }}</td>
+    <td>{{ $dataRow->sensor_name }}</td>
     <td>{{ $dataRow->data }}</td>
+    <td>{{ $dataRow->created_at }}</td>
   </tr>
   @endforeach
   </table>
