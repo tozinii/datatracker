@@ -50,12 +50,9 @@ class DataController extends Controller
     {
       $car = Car::where('code',strtolower($code))->first();
       $sensor = Sensor::where('name',$sensorName)->first();
-      dump($sensorName);
-      dump('coche',$car);
-      dump('sensor',$sensor);
 
       DB::table('car_sensor')->insert(
-        ['sensor_id' => $sensor->id, 'car_id' => $car->id, 'data'=>$value]
+        ['sensor_id' => $sensor->id, 'car_id' => $car->id, 'data'=>$value, 'created_at'=>date("Y-m-d H:i:s")]
       );
 
       return redirect()->route('root');
