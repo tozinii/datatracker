@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Ruta para recibir datos de sensores
+Route::get('/data/{code}/{sensorName}/{type}', 'DataController@store');
+Route::get('/data/{code}', 'DataController@showSensorData');
