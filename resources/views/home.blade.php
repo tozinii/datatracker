@@ -21,11 +21,19 @@
     <div class="card-body">
       <h5 class="card-title">{{$kit->name}}</h5>
     </div>
-    <ul class="list-group list-group-flush">
-    @foreach($kit->sensors as $sensor)
-      <li class="list-group-item">{{$sensor->name}}</li>
-    @endforeach
-  </ul>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        @foreach($kit->sensors as $sensor)
+          <li class="list-group-item">{{$sensor->name}}</li>
+        @endforeach
+      </ul>
+    </div>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+
+
   </div>
 
   @endforeach
