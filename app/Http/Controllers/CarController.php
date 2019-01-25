@@ -84,7 +84,18 @@ class CarController extends Controller
 
 
 
-    public function recorridoMapa($id){
+    public function recorridoMapa($car_id){
+
+        //Coger las coordenadas de la base de datos y meterlas en un array
+
+          $carsData = DB::table('car_sensor')->where('car_id',$car->id)->get();
+
+          //Crea una nueva propiedad 'sensor_name' para mostrar el nombre del sensor de cada coche
+          foreach ($carsData as $data){
+            $data->{'sensor_name'} = Sensor::where('id',$data->sensor_id)->first()->name;
+          }
+          return view('data.sensor-data',['carsData'=>$carsData]);
+
 
     }
 }
