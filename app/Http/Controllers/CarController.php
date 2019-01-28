@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Car;
 use App\Sensor;
 use DateTime;
+use Auth;
 
 class CarController extends Controller
 {
@@ -22,7 +23,9 @@ class CarController extends Controller
      */
     public function index()
     {
-      return view('users.cars');
+      $cars = Car::where('user_id', Auth::user()->id)->get();
+
+      return view('users.cars')->with('cars',$cars);
     }
 
     /**
@@ -32,7 +35,7 @@ class CarController extends Controller
      */
     public function create()
     {
-      
+
     }
 
     /**
@@ -52,9 +55,19 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($code)
     {
-        //
+      $car = Car::where('code',strtolower($code))->first();
+
+      $coordenadas = [];
+
+      foreach ($car->sensors as $data){
+        if ($data->id == 3 ) {
+            array_push($coordenadas, $data->pivot->data);
+        }
+      }
+
+      return view('users/car',['coordenadas' => $coordenadas]);
     }
 
     /**
@@ -91,23 +104,4 @@ class CarController extends Controller
         //
     }
 
-
-
-    public function recorridoMapa($code){
-
-
-          $car = Car::where('code',strtolower($code))->first();
-
-          $coordenadas = [];
-
-          foreach ($car->sensors as $data){
-            if ($data->id == 3 ) {
-                array_push($coordenadas, $data->pivot->data);
-            }
-          }
-
-          return view('users/cars',['coordenadas' => $coordenadas]);
-
-
-    }
 }
