@@ -5,8 +5,8 @@
    </head>
    <body id="top">
       <div class="bg-grediunt">
-         <div class="bg-banner-img ">
-            <div class="overlay-all ">
+         <div class="bg-banner-img bg-banner-img-principal">
+            <div class="overlay-all overlay-all-principal">
                <!-- Header_Area -->
                <!-- header
                   ================================================== -->

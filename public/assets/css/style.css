@@ -742,8 +742,12 @@ nav li {
     background-size: cover;
     position: relative;
     max-width: 100%;
-    height: 100vh;
 }
+
+.bg-banner-img-principal{
+  height: 100vh;
+}
+
 .about-bg-banner-img{
 
     background: rgba(255,255,255,0);
@@ -800,7 +804,10 @@ padding: 120px 0px;
     bottom: 0;
     width: 100%;
     background-color: rgba(11, 13, 37, 0.4);
-    height: 100vh;
+}
+
+.overlay-all-principal{
+  height: 100vh;
 }
 
 .ovrllay{
