@@ -6,9 +6,6 @@
    <div class="alert alert-success ttl" role="alert">
 	  <h3 class="alert-heading">Bienvenido {{ Auth::user()->name}}</h3>
 	  <hr>
-	  <h4 class="alert-heading">Grupos</h4>
-	  <p class="mb-0">Actualmente usted no está en ningún grupo.</p>
-	  <hr>
 	  <h4 class="alert-heading">Coche</h4>
 	  <p class="mb-0">Actualmente usted no dispone de ningún coche.</p>
 	</div>
