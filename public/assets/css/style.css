@@ -2387,8 +2387,8 @@ border-left: 10px solid #ffaa00 !important;
 }
 .card-body a{
   font-size: 20px;
-  color:#ffaa00 !important;
-padding-bottom: 30px;
+  color:#fff !important;
+  padding-bottom: 30px;
 }
 
 .frontside .card .card-title {
@@ -3716,7 +3716,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+  flex-direction: row;
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
@@ -3765,10 +3765,12 @@ button.crd-primary:focus {
 }
 
 .card-body {
-  -webkit-box-flex: 1;
+  display: flex;
+  flex-direction: row;
+  /*-webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1.25rem;
+  padding: 1.25rem;*/
 }
 
 .card-title {
