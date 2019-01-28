@@ -1,4 +1,4 @@
-@extends('layouts.layoutPrincipal')
+@extends('layouts.layoutData')
 
 @section('contenido')
 <section>
