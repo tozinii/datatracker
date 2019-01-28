@@ -31,7 +31,7 @@
         </li>
         @if(auth()->user()->role == 'User')
           <li class="nav-item lista">
-            <a class="nav-link" href="cars">Coches</a>
+            <a class="nav-link" href="{{route('listCars')}}">Coches</a>
           </li>
         @else
           <li class="nav-item lista">
