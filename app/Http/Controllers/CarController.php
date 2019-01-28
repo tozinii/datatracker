@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth','verified','user']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +28,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+      
     }
 
     /**

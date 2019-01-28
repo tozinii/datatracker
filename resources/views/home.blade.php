@@ -26,8 +26,7 @@
       </ul>
     </div>
     <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <a href="{{route('car.create',['kit_id' => $kit->id])}}" class="btn btn-default  wow fadeInUp  js-scroll-trigger">Comprar</a>
     </div>
 
 
