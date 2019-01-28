@@ -28,8 +28,6 @@
                <section id="banner" class=" mb-90">
                   @yield('banner')
                </section>
-               <div class="container-fluid p0 banner-shap-img">
-               </div>
             </div>
          </div>
          <!-- /#banner end -->
@@ -42,7 +40,7 @@
       <!--#End service-text  -->
       <!--#Our Testimonial Area start-->
       @yield('members')
-      
+
       <!--#start Our footer Area -->
         <div class="our_footer_area">
            @include('elements.footer')

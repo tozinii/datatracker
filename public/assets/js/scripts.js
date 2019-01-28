@@ -10,7 +10,7 @@ $(document).ready(function(){
       $('html, body').animate({
         scrollTop: $('#equipo').offset().top
       }, 500, function(){
-        window.scrollTo(0, 850);
+        window.scrollTo(0, 1100);
       });
     });
 

@@ -742,6 +742,7 @@ nav li {
     background-size: cover;
     position: relative;
     max-width: 100%;
+    height: 100vh;
 }
 .about-bg-banner-img{
 
@@ -799,6 +800,7 @@ padding: 120px 0px;
     bottom: 0;
     width: 100%;
     background-color: rgba(11, 13, 37, 0.4);
+    height: 100vh;
 }
 
 .ovrllay{
@@ -836,23 +838,6 @@ img{
     font-size: 20px;
     color: #fff;
     line-height: 40px;
-}
-
-
-.banner-shap-img{
-    background-image: url(../images/shap-banner.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    bottom: 0px;
-    height: 100px;
-    position: absolute;
-    z-index: 9;
-    left: 0;
-    right: 0;
 }
 
 .py-70{
@@ -1993,7 +1978,7 @@ padding-bottom: 90px;
 .our_footer_area.logged-in-footer{
   bottom: 0;
   position: fixed;
-  z-index: 5;
+  z-index: 25;
 }
 
 #mySidenav{
@@ -3382,6 +3367,8 @@ button.navbar-toggle {
   -webkit-transform: skew(0deg);
     -moz-transform: skew(0deg);
     -o-transform: skew(0deg);
+  width: 100%;
+  margin: 0 auto;
 }
 .booking_text .skew_14{
   -webkit-transform: skew(0deg);
@@ -4364,3 +4351,7 @@ outline-suc
   ////////////////////////////////////////////////////////
 
 */
+
+#map{
+  z-index:2 ;
+}
