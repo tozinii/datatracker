@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Group;
+use App\Kit;
 
-class GroupsTableSeeder extends Seeder
+class KitsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,16 +12,13 @@ class GroupsTableSeeder extends Seeder
      */
     public function run()
     {
-      $json = File::get('database/data/users-data.json');
+      $json = File::get('database/data/kits-data.json');
       $data = json_decode($json);
       foreach($data as $obj){
-        Group::create(array(
+        Kit::create(array(
           'name'=> $obj->name,
-          'password'=>$obj->password,
-          'description'=>$obj->description
+          'num_serie'=>$obj->num_serie
         ));
       }
-
-
     }
 }

@@ -17,12 +17,5 @@
   </div>
 </div>
 
-<div class="card text-white crd-primary mb-3">
-  <div class="card-header">Grupos</div>
-  <div class="card-body">
-    <p class="card-text text-white">Hay {{$groups}} en la base de datos.</p>
-  </div>
-</div>
-
 
 @endsection

@@ -3,23 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Car;
-use App\Sensor;
-use DateTime;
 
-class DataController extends Controller
+class CarController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    /*public function __construct()
-    {
-        $this->middleware(['auth','verified']);
-    }*/
 
+    public function __construct()
+    {
+        $this->middleware(['auth','verified','user']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -27,7 +18,7 @@ class DataController extends Controller
      */
     public function index()
     {
-        //
+      return view('users.cars');
     }
 
     /**
@@ -37,7 +28,7 @@ class DataController extends Controller
      */
     public function create()
     {
-        //
+      
     }
 
     /**
@@ -46,17 +37,9 @@ class DataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$code,$sensorName,$value)
+    public function store(Request $request)
     {
-      $car = Car::where('code',strtolower($code))->first();
-      $sensor = Sensor::where('name',$sensorName)->first();
-
-      DB::table('car_sensor')->insert(
-        ['sensor_id' => $sensor->id, 'car_id' => $car->id, 'data'=>$value, 'created_at'=>date("Y-m-d H:i:s")]
-      );
-
-      return redirect()->route('root');
-
+        //
     }
 
     /**
@@ -104,14 +87,20 @@ class DataController extends Controller
         //
     }
 
-    public function showSensorData($code){
-      $car = Car::where('code',strtolower($code))->first();
-      $carsData = DB::table('car_sensor')->where('car_id',$car->id)->get();
 
-      //Crea una nueva propiedad 'sensor_name' para mostrar el nombre del sensor de cada coche
-      foreach ($carsData as $data){
-        $data->{'sensor_name'} = Sensor::where('id',$data->sensor_id)->first()->name;
-      }
-      return view('data.sensor-data',['carsData'=>$carsData]);
+
+    public function recorridoMapa($car_id){
+
+        //Coger las coordenadas de la base de datos y meterlas en un array
+
+          $carsData = DB::table('car_sensor')->where('car_id',$car->id)->get();
+
+          //Crea una nueva propiedad 'sensor_name' para mostrar el nombre del sensor de cada coche
+          foreach ($carsData as $data){
+            $data->{'sensor_name'} = Sensor::where('id',$data->sensor_id)->first()->name;
+          }
+          return view('data.sensor-data',['carsData'=>$carsData]);
+
+
     }
 }

@@ -15,7 +15,7 @@
 Route::get('/', function ()
 {
   return view('index');
-})->name('root')->middleware('guest');
+})->name('root');
 
 
 // Multi idioma
@@ -43,11 +43,11 @@ Route::post('restore/{id}', 'ProfileController@restore')->name('restore');
 Route::post('forceDelete/{id}', 'ProfileController@forceDelete')->name('forceDelete');
 Route::resource('profile','ProfileController')->only('show','update','destroy');
 Route::get('/statistics','AdminController@statistics')->name('statistics');
+Route::get('/events','AdminController@adminEvents')->name('adminEvents');
+Route::post('/event/create','AdminController@createEvent')->name('createEvent');
 Route::resource('profile','ProfileController')->only('show','edit','destroy');
-Route::resource('group','GroupController')->only('show','store');
 Route::post('/password/{user}/change', 'ProfileController@changePassword')->name('changePassword');
-Route::view('/groups', 'users/groups')->middleware(['auth','verified','user']);;
-Route::view('/cars', 'users/cars')->middleware(['auth','verified','user']);;
+Route::resource('car', 'CarController')->only('create','index');
 Route::view('/sensors', 'users/sensors')->middleware(['auth','verified','user']);;
 
 
@@ -74,7 +74,3 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-//Ruta para recibir datos de sensores
-Route::get('/data/code/{code}/sensorname/{sensorName}/type/{type}', 'DataController@store');
-Route::get('/data/code/{code}/sensorname/{sensorName}', 'DataController@showSensorData');

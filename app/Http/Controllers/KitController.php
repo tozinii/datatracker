@@ -1,14 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Kit;
 use Illuminate\Http\Request;
-use App\Group;
-use App\User;
-use Illuminate\Support\Facades\DB;
 
-
-class GroupController extends Controller
+class KitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +13,10 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //
+        $kits = Kit::all();
+
+        dd($kits);
+        return view();
     }
 
     /**
@@ -38,13 +37,7 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        $group = new Group;
-        $group->name = $request->input('groupName');
-        $group->password = 'fafads';
-        $group->save();
-
-        return back()->with('Grupo creado correctamente');
-
+        //
     }
 
     /**
@@ -55,10 +48,7 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-        $groups = User::select('group_id')->where('id',$id);
-
-
-        return view('users.groups');
+        //
     }
 
     /**

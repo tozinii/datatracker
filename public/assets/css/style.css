@@ -743,6 +743,11 @@ nav li {
     position: relative;
     max-width: 100%;
 }
+
+.bg-banner-img-principal{
+  height: 100vh;
+}
+
 .about-bg-banner-img{
 
     background: rgba(255,255,255,0);
@@ -801,6 +806,10 @@ padding: 120px 0px;
     background-color: rgba(11, 13, 37, 0.4);
 }
 
+.overlay-all-principal{
+  height: 100vh;
+}
+
 .ovrllay{
     position: relative;
     left: 0;
@@ -836,23 +845,6 @@ img{
     font-size: 20px;
     color: #fff;
     line-height: 40px;
-}
-
-
-.banner-shap-img{
-    background-image: url(../images/shap-banner.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    bottom: 0px;
-    height: 100px;
-    position: absolute;
-    z-index: 9;
-    left: 0;
-    right: 0;
 }
 
 .py-70{
@@ -1993,6 +1985,11 @@ padding-bottom: 90px;
 .our_footer_area.logged-in-footer{
   bottom: 0;
   position: fixed;
+  z-index: 25;
+}
+
+#mySidenav{
+  z-index: 50;
 }
 
 .footer-h{
@@ -2371,7 +2368,6 @@ border-left: 10px solid #ffaa00 !important;
   line-height: 30px;
   margin-bottom: 18px;
   margin-right: 0px;
-  width: 565px;
 }
 
 .card-text::placeholder{
@@ -2380,12 +2376,11 @@ border-left: 10px solid #ffaa00 !important;
   line-height: 30px;
   margin-bottom: 18px;
   margin-right: 0px;
-  width: 565px;
 }
 .card-body a{
   font-size: 20px;
-  color:#ffaa00 !important;
-padding-bottom: 30px;
+  color:#fff !important;
+  padding-bottom: 30px;
 }
 
 .frontside .card .card-title {
@@ -3379,6 +3374,8 @@ button.navbar-toggle {
   -webkit-transform: skew(0deg);
     -moz-transform: skew(0deg);
     -o-transform: skew(0deg);
+  width: 100%;
+  margin: 0 auto;
 }
 .booking_text .skew_14{
   -webkit-transform: skew(0deg);
@@ -3558,6 +3555,18 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 26.End Responsive
 ------------------------------------*/
 
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 -------------                               ---------------
    ------------------------------------------------------
@@ -3569,8 +3578,22 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
    ------------------------------------------------------
 -------------                               --------------
 */
+/*
+  Para el mapa
+*/
+
+#map{
+  margin-top: 30px;
+  margin-left: 50px;
+  width: 550px;
+  height: 370px;
+  color: red;
+}
+
+/*
 
 
+*/
 .algn-cnt{
   text-align: center;
   align-content: center;
@@ -3687,7 +3710,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+  flex-direction: row;
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
@@ -3736,10 +3759,12 @@ button.crd-primary:focus {
 }
 
 .card-body {
+  display: flex;
+  flex-direction: row;
+  /*-webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1.25rem;
-  width: 625px;
+  padding: 1.25rem;*/
 }
 
 .card-title {
@@ -3977,6 +4002,25 @@ outline-suc
 
   ////////////////////////////////////////////////////
 
+  //////////       Estilos user list        //////////
+
+  ////////////////////////////////////////////////////
+
+*/
+
+.userList{
+  position: absolute;
+  margin-left: 500px;
+}
+
+
+
+
+
+/*
+
+  ////////////////////////////////////////////////////
+
   //////////        Estilos botones         //////////
 
   ////////////////////////////////////////////////////
@@ -4047,9 +4091,11 @@ outline-suc
   background-color: transparent;
   background-image: none;
   border-color: #28a745;
-  margin-top: 1.5rem;
+  margin-top: 0.3rem;
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  margin-left: 60px;
+  font-size: 1.3rem;
+  position: relative;
 }
 
 .btnedit-outline-success:hover {
@@ -4082,7 +4128,7 @@ outline-suc
 
 /*
 
-    Buton editado (delete & cancel)
+    Buton editado (delete)
 
 */
 .btnedit-size {
@@ -4096,6 +4142,11 @@ outline-suc
   background-color: transparent;
   background-image: none;
   border-color: #dc3545;
+  left: 0;
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 3px;
+
 }
 
 .btnedit-outline-danger:hover {
@@ -4127,6 +4178,11 @@ outline-suc
 
 
 
+/*
+
+    Buton editado (cancel)
+
+*/
 
 
 .btnedit-outline-secondary {
@@ -4192,6 +4248,7 @@ outline-suc
 
 
 .list-group-item-action {
+  min-height: 50px;
   width: 100%;
   color: #495057;
   text-align: inherit;
@@ -4303,3 +4360,7 @@ outline-suc
   ////////////////////////////////////////////////////////
 
 */
+
+#map{
+  z-index:2 ;
+}
