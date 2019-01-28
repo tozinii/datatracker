@@ -8,9 +8,9 @@ class Kit extends Model
 {
   protected $table = 'kits';
 
-  public function car()
+  public function cars()
     {
-      return $this->belongsTo('App\Car');
+        return $this->hasMany('App\Car');
     }
 
   public function sensors()

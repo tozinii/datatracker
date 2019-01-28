@@ -31,10 +31,7 @@
         </li>
         @if(auth()->user()->role == 'User')
           <li class="nav-item lista">
-            <a class="nav-link" href="cars">Coches</a>
-          </li>
-          <li class="nav-item lista">
-            <a class="nav-link disabled" href="/sensors">Sensores</a>
+            <a class="nav-link" href="{{route('car.index')}}">Coches</a>
           </li>
         @else
           <li class="nav-item lista">
@@ -42,9 +39,6 @@
           </li>
           <li class="nav-item lista">
             <a class="nav-link" href="{{route('statistics')}}">Estadisticas</a>
-          </li>
-          <li class="nav-item lista">
-            <a class="nav-link" href="{{route('adminEvents')}}">Eventos</a>
           </li>
         @endif
       </ul>

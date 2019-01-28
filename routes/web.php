@@ -15,7 +15,7 @@
 Route::get('/', function ()
 {
   return view('index');
-})->name('root')->middleware('guest');
+})->name('root');
 
 
 // Multi idioma
@@ -47,7 +47,11 @@ Route::get('/events','AdminController@adminEvents')->name('adminEvents');
 Route::post('/event/create','AdminController@createEvent')->name('createEvent');
 Route::resource('profile','ProfileController')->only('show','edit','destroy');
 Route::post('/password/{user}/change', 'ProfileController@changePassword')->name('changePassword');
+<<<<<<< HEAD
 Route::get('/cars/{code}', 'CarController@recorridoMapa')->middleware(['auth','verified','user']);;
+=======
+Route::resource('car', 'CarController')->only('create','index');
+>>>>>>> 56ee815dc6e88f645bf489a29ec621478e2f526c
 Route::view('/sensors', 'users/sensors')->middleware(['auth','verified','user']);;
 
 
@@ -74,7 +78,3 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-//Ruta para recibir datos de sensores
-Route::get('/data/{code}/{sensorName}/{type}', 'DataController@store');
-Route::get('/data/{code}', 'DataController@showSensorData');

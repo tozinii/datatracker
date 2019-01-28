@@ -18,7 +18,8 @@ class CarsTableSeeder extends Seeder
         Car::create(array(
           'description'=> $obj->description,
           'code'=>$obj->code,
-          'user_id'=>$obj->user_id
+          'user_id'=>$obj->user_id,
+          'kit_id'=>$obj->kit_id
         ));
       }
     }

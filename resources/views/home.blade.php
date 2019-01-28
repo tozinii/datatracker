@@ -6,35 +6,37 @@
    <div class="alert alert-success ttl" role="alert">
 	  <h3 class="alert-heading">Bienvenido {{ Auth::user()->name}}</h3>
 	  <hr>
-	  <h4 class="alert-heading">Grupos</h4>
-	  <p class="mb-0">Actualmente usted no está en ningún grupo.</p>
-	  <hr>
 	  <h4 class="alert-heading">Coche</h4>
 	  <p class="mb-0">Actualmente usted no dispone de ningún coche.</p>
 	</div>
-</div>
+
 
 <div class="card-deck">
+  @foreach($kits as $kit)
   <div class="card">
     <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <h5 class="card-title">{{$kit->name}}</h5>
     </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <ul class="list-group list-group-flush">
+        @foreach($kit->sensors as $sensor)
+          <li class="list-group-item">{{$sensor->name}}</li>
+        @endforeach
+      </ul>
     </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <a href="{{route('car.create',['kit_id' => $kit->id])}}" class="btn btn-default  wow fadeInUp  js-scroll-trigger">Comprar</a>
     </div>
+
+
   </div>
+
+  @endforeach
+</div>
+
+
+
+
 </div>
 @endsection

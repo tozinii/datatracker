@@ -8,17 +8,17 @@ class Car extends Model
 {
   protected $table = 'cars';
 
-  public function kits()
+  public function kit()
     {
-        return $this->hasMany('App\Kit');
+      return $this->belongsTo('App\Kit');
     }
   public function sensors()
     {
       return $this->belongsToMany('App\Sensor')->withPivot('data');
     }
-    public function user()
-      {
-        return $this->belongsTo('App\User');
-      }
+  public function user()
+    {
+      return $this->belongsTo('App\User');
+    }
 
 }
