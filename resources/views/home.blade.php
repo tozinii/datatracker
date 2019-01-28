@@ -26,14 +26,16 @@
       </ul>
     </div>
     <div class="card-body">
-      <a href="{{route('car.create',['kit_id' => $kit->id])}}" class="btn btn-default  wow fadeInUp  js-scroll-trigger">Comprar</a>
+      <a href="" data-target="#createCar{{$kit->id}}" data-toggle="modal" class="btn btn-default  wow fadeInUp  js-scroll-trigger">Comprar</a>
     </div>
 
-
+    @include('elements.pop-up-createCar')
   </div>
 
   @endforeach
 </div>
+
+
 
 
 
