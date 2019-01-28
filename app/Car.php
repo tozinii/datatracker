@@ -14,7 +14,7 @@ class Car extends Model
     }
   public function sensors()
     {
-      return $this->belongsToMany('App\Sensor');
+      return $this->belongsToMany('App\Sensor')->withPivot('data');
     }
     public function user()
       {
