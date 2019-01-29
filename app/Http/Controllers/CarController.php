@@ -48,6 +48,8 @@ class CarController extends Controller
       $user = Auth::user()->id;
 
       $car->save();
+
+      return back()->with('confirmation','Enhorabuena!! Has comprado un coche');
     }
 
     /**

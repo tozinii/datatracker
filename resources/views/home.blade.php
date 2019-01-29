@@ -7,7 +7,11 @@
 	  <h3 class="alert-heading">Bienvenido {{ Auth::user()->name}}</h3>
 	  <hr>
 	  <h4 class="alert-heading">Coche</h4>
-	  <p class="mb-0">Actualmente usted no dispone de ningún coche.</p>
+    @if(Session::has('confirmation'))
+      <p class="mb-0">{{Session::get('confirmation')}}</p>
+    @else
+	    <p class="mb-0">Actualmente usted no dispone de ningún coche.</p>
+    @endif
 	</div>
 
 
