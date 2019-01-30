@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Kit;
+use App\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $cars = Car::where('user_id',Auth::user()->id)->count();
         $kits = Kit::all();
-        return view('home')->with('kits',$kits);
+        return view('home')->with(['kits' => $kits, 'cars' => $cars]);
     }
 }
