@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Car;
+use Illuminate\Support\Facades\Auth;
 
 class CarController extends Controller
 {
@@ -28,7 +30,7 @@ class CarController extends Controller
      */
     public function create()
     {
-      
+
     }
 
     /**
@@ -39,7 +41,15 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $car = new Car;
+      $car->code = $request->carname;
+      $car->user_id = Auth::user()->id;
+      $car->kit_id = $request->kit;
+      $user = Auth::user()->id;
+
+      $car->save();
+
+      return back()->with('confirmation','Enhorabuena!! Has comprado un coche');
     }
 
     /**
