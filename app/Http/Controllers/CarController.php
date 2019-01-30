@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Car;
+use App\Sensor;
 use Illuminate\Support\Facades\Auth;
 
 class CarController extends Controller
@@ -99,17 +100,20 @@ class CarController extends Controller
 
 
 
-    public function recorridoMapa($car_id){
+    public function recorridoMapa($code){
 
-        //Coger las coordenadas de la base de datos y meterlas en un array
 
-          $carsData = DB::table('car_sensor')->where('car_id',$car->id)->get();
+          $car = Car::where('code',strtolower($code))->first();
 
-          //Crea una nueva propiedad 'sensor_name' para mostrar el nombre del sensor de cada coche
-          foreach ($carsData as $data){
-            $data->{'sensor_name'} = Sensor::where('id',$data->sensor_id)->first()->name;
+          $coordenadas = [];
+
+          foreach ($car->sensors as $data){
+            if ($data->id == 3 ) {
+                array_push($coordenadas, $data->pivot->data);
+            }
           }
-          return view('data.sensor-data',['carsData'=>$carsData]);
+
+          return view('users/cars',['coordenadas' => $coordenadas]);
 
 
     }

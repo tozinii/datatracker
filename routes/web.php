@@ -48,6 +48,7 @@ Route::post('/event/create','AdminController@createEvent')->name('createEvent');
 Route::resource('profile','ProfileController')->only('show','edit','destroy');
 Route::post('/password/{user}/change', 'ProfileController@changePassword')->name('changePassword');
 Route::resource('car', 'CarController')->only('store','index');
+Route::get('/cars/{code}', 'CarController@recorridoMapa')->middleware(['auth','verified','user']);
 Route::view('/sensors', 'users/sensors')->middleware(['auth','verified','user']);;
 
 
