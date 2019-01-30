@@ -43,12 +43,13 @@ class VerifyEmail extends Notification
         }
 
         return (new MailMessage)
-            ->subject('Verifica tu correo electrónico')
-            ->greeting('Hola '. $notifiable->name.',')
-            ->line('Por favor pulsa el botón de abajo para verificar tu correo.')
+            ->subject('Verificación de correo electrónico')
+            ->greeting('Bienvenido a Data Tracker, '. $notifiable->name.'.')
+            ->line('Le agradecemos que quiera hacer uso de nuestros servicios.')
+            ->line('Por favor, pulsa el botón de abajo para verificar tu correo electrónico.')
             ->action('Verifica tu cuenta', $this->verificationUrl($notifiable))
-            ->line('Si no creaste ninguna cuenta, ignora este correo.')
-            ->salutation('Saludos,');
+            ->line('Si no has creado ninguna cuenta, ignora este correo.')
+            ->salutation('Muchas gracias.');
     }
 
     /**
