@@ -1,7 +1,7 @@
 @extends('layouts.layoutLogged')
 @section('contenido')
 
-<section class="profile-content">
+<section class="car-list-content">
 	<!-- Car data -->
 	<div class="sections">
 		<h2>Listado de Coches de {{auth()->user()->name}}</h2>

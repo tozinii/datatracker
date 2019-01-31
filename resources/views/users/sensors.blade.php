@@ -2,8 +2,25 @@
 @section('contenido')
 
 <div class="sensors">
-   <h1>Sensores</h1>
-   <p>Aquí podrá ver toda la información recibida de los sensores implantados en su coche.</p>
+   <h1>Sensor de {{ $sensorName }} del coche {{ $carName }}</h1>
+   <table class="table table-striped">
+     <thead>
+       <tr>
+         <th scope="col">Valor</th>
+         <th scope="col">Fecha</th>
+       </tr>
+     </thead>
+     <tbody>
+
+       @foreach($sensorInfo as $info)
+       <tr>
+         <td>{{ $info->data }}</td>
+         <td>{{ $info->created_at }}</td>
+       </tr>
+       @endforeach
+
+     </tbody>
+   </table>
 </div>
 
 @endsection

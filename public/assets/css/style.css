@@ -3613,7 +3613,8 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   position: absolute;
   margin-bottom: 20%;
 }
-.profile-content{
+.profile-content,
+.car-list-content{
   height: 100%;
   padding: 2.5%;
 }
@@ -3649,6 +3650,14 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 .form-error-displayed{
   color: red;
   display: block;
+}
+
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+  color: initial;
 }
 
 /* Editar Perfil */
