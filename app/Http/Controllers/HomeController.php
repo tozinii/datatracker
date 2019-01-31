@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Kit;
 use App\Car;
+use App\Sensor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,6 +28,19 @@ class HomeController extends Controller
     {
         $cars = Car::where('user_id',Auth::user()->id)->count();
         $kits = Kit::all();
-        return view('home')->with(['kits' => $kits, 'cars' => $cars]);
+        $sensors = Sensor::all();
+
+        $existe = [];
+
+        foreach ($kits as $kit) {
+            foreach ($kit->sensors as $sensor) {
+                if ($sensor->pivot->kit_id == $kit->id) {
+                    array_push($existe, true);
+                }else{
+                    array_push($existe, false);
+                }
+            }
+        }
+        return view('home')->with(['kits' => $kits, 'cars' => $cars, 'existe' => $existe]);
     }
 }
