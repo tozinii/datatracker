@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form  action="{{ route('car.store') }}" method="post">
+        <form  action="{{ route('cars.store') }}" method="post">
           @csrf
           <input type="hidden" name="kit" value="{{$kit->id}}">
           <label>Nombre del coche: </label>

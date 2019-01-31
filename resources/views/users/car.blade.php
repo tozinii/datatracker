@@ -10,9 +10,13 @@
 
 		<!-- Car data -->
 		<form class="needs-validation profile-data" novalidate>
+				<div class="col-md-4 mb-3">
+					<label>Nombre</label>
+					<input type="text" class="form-control" placeholder="Nombre" value="{{$car->code}}" disabled="disabled">
+				</div>
 		    <div class="col-md-4 mb-3">
-		      <label>Altura</label>
-		      <input type="text" class="form-control" placeholder="Nombre" value="1,7m" disabled="disabled">
+		      <label>Descripcion</label>
+		      <input type="text" class="form-control" placeholder="Nombre" value="{{$car->description}}" disabled="disabled">
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Anchura</label>
@@ -20,7 +24,7 @@
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Nº sensores</label>
-		      <input type="text" class="form-control" placeholder="3" value="3" disabled="disabled">
+		      <input type="text" class="form-control" placeholder="3" value="{{$car->kit->sensors->count()}}" disabled="disabled">
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Bateria</label>
@@ -48,12 +52,7 @@
 		      	<input type="text" name="bateria" value="Le queda bateria para 3 horas..." disabled="disabled">
 		      	<label>Velocidad</label>
 		      	<input type="text" name="velocidad" value="El coche esta yendo a 40km/h..." disabled="disabled">
-		      	<label>Caballos</label>
-		      	<input type="text" name="caballos" value="La potencia de este coche es de no se cuantos caballos" disabled="disabled">
-		      	<label>Gasolina</label>
-		      	<input type="text" name="gasolina" value="Este coche tiene un deposito de gasolina de 20 litros" disabled="disabled">
 		      	<label>GPS</label>
-		      	<input type="text" name="maxMarcas" value="Esta en la tercera curva..." disabled="disabled">
 		      </form>
 		    </div>
 	    	<div id="estadisticas" class="tab-pane fade">

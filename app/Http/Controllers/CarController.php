@@ -64,7 +64,8 @@ class CarController extends Controller
     public function show($id)
     {
       $car = Car::find($id);
-      dd($car);
+
+
       $coordenadas = [];
 
       foreach ($car->sensors as $data){
@@ -72,6 +73,8 @@ class CarController extends Controller
             array_push($coordenadas, $data->pivot->data);
         }
       }
+
+      return view('users.car')->with(['car' => $car,'coordenadas' => $coordenadas]);
     }
 
     /**
