@@ -16,6 +16,28 @@
     @endif
 	</div>
 
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        @foreach($kits as $kit)
+        <th scope="col">{{$kit->name}}</th>
+        @endforeach
+      </tr>
+    </thead>
+    <tbody>
+      @foreach($kit->sensors as $sensor)
+      <tr>
+        <th scope="row">{{$sensor->name}}</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
+
 
 <div class="card-deck">
   @foreach($kits as $kit)

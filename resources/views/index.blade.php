@@ -64,13 +64,8 @@
             </div>
             <p>Estudiante de grado superior en desarrollo web<br> en IES Zubiri - Manteo. </p>
             <div class="media">
-               <div class="media-left">
-                  <a href="#">
-                  <img class="media-object" src="assets/images/team/Iker_Apaolaza.png" alt="">
-                  </a>
-               </div>
                <div class="media-body">
-                  <h4 class="media-heading">Iker Apaolaza <span class="slider_span_color"></span></h4>
+                  <img class="media-object" src="assets/images/team/Iker_Apaolaza.png" alt="">
                </div>
             </div>
          </div>
@@ -84,13 +79,8 @@
             </div>
             <p>Estudiante de grado superior en desarrollo web<br> en IES Zubiri - Manteo.  </p>
             <div class="media">
-               <div class="media-left">
-                  <a href="#">
-                  <img class="media-object" src="assets/images/team/Jon_Jauregui.png" alt="">
-                  </a>
-               </div>
                <div class="media-body">
-                  <h4 class="media-heading">Jon Jauregi <span class="slider_span_color"></span></h4>
+                  <img class="media-object" src="assets/images/team/Jon_Jauregui.png" alt="Jon Jauregi">
                </div>
             </div>
          </div>
@@ -104,13 +94,8 @@
             </div>
             <p>Estudiante de grado superior en desarrollo web<br> en IES Zubiri - Manteo.  </p>
             <div class="media">
-               <div class="media-left">
-                  <a href="#">
-                  <img class="media-object" src="assets/images/team/Ander_Gonzalez.png" alt="">
-                  </a>
-               </div>
                <div class="media-body">
-                  <h4 class="media-heading">Ander González <span class="slider_span_color"></span></h4>
+                  <img class="media-object" src="assets/images/team/Ander_Gonzalez.png" alt="Ander González">
                </div>
             </div>
          </div>
@@ -119,18 +104,13 @@
                <div class="img-s ">
                   <img src="assets/images/testimonial-top.png">
                </div>
-               <h4 class="body-slider media-heading">Ekaitz </h4>
+               <h4 class="body-slider media-heading">Ekaitz Diestre </h4>
                <hr class="slider_hr">
             </div>
             <p>Estudiante de grado superior en electronica<br> en Don bosco. </p>
             <div class="media">
-               <div class="media-left">
-                  <a href="#">
-                  <img class="media-object" src="assets/images/team/Ekaitz.png" alt="">
-                  </a>
-               </div>
                <div class="media-body">
-                  <h4 class="media-heading">Ekaitz <span class="slider_span_color"></span></h4>
+                  <img class="media-object" src="assets/images/team/Ekaitz.png" alt="Ekaitz Diestre">
                </div>
             </div>
          </div>
@@ -139,18 +119,13 @@
                <div class="img-s ">
                   <img src="assets/images/testimonial-top.png">
                </div>
-               <h4 class="body-slider media-heading">Pablo </h4>
+               <h4 class="body-slider media-heading">Pablo Hernández </h4>
                <hr class="slider_hr">
             </div>
             <p>Estudiante de grado superior en electronica<br> en Don bosco. </p>
             <div class="media">
-               <div class="media-left">
-                  <a href="#">
-                  <img class="media-object" src="assets/images/team/Pablo.png" alt="">
-                  </a>
-               </div>
                <div class="media-body">
-                  <h4 class="media-heading">Pablo <span class="slider_span_color"></span></h4>
+                  <img class="media-object" src="assets/images/team/Pablo.png" alt="Pablo Hernández">
                </div>
             </div>
          </div>
@@ -159,18 +134,13 @@
                <div class="img-s ">
                   <img src="assets/images/testimonial-top.png">
                </div>
-               <h4 class="body-slider media-heading">Sergei </h4>
+               <h4 class="body-slider media-heading">Sergei Susperregui </h4>
                <hr class="slider_hr">
             </div>
             <p>Estudiante de grado superior en electronica<br> en Don bosco. </p>
             <div class="media">
-               <div class="media-left">
-                  <a href="#">
-                  <img class="media-object" src="assets/images/testimonial-3.jpg" alt="">
-                  </a>
-               </div>
                <div class="media-body">
-                  <h4 class="media-heading">Sergei <span class="slider_span_color"></span></h4>
+                  <img class="media-object" src="assets/images/team/Sergei.png" alt="Sergei Susperregui">
                </div>
             </div>
          </div>
@@ -179,18 +149,13 @@
                <div class="img-s ">
                   <img src="assets/images/testimonial-top.png">
                </div>
-               <h4 class="body-slider media-heading">David </h4>
+               <h4 class="body-slider media-heading">David García</h4>
                <hr class="slider_hr">
             </div>
             <p>Estudiante de grado superior en automoción<br> en Don bosco. </p>
             <div class="media">
-               <div class="media-left">
-                  <a href="#">
-                  <img class="media-object" src="assets/images/team/DavidGarcia.png" alt="">
-                  </a>
-               </div>
                <div class="media-body">
-                  <h4 class="media-heading">David <span class="slider_span_color"></span></h4>
+                  <img class="media-object" src="assets/images/team/DavidGarcia.png" alt="David García">
                </div>
             </div>
          </div>
@@ -199,18 +164,13 @@
                <div class="img-s ">
                   <img src="assets/images/testimonial-top.png">
                </div>
-               <h4 class="body-slider media-heading">David </h4>
+               <h4 class="body-slider media-heading">David Martín </h4>
                <hr class="slider_hr">
             </div>
             <p>Estudiante de grado superior en automoción<br> en Don bosco. </p>
             <div class="media">
-               <div class="media-left">
-                  <a href="#">
-                  <img class="media-object" src="assets/images/team/DavidMartin.png" alt="">
-                  </a>
-               </div>
                <div class="media-body">
-                  <h4 class="media-heading">David <span class="slider_span_color"></span></h4>
+                  <img class="media-object" src="assets/images/team/DavidMartin.png" alt="David Martín">
                </div>
             </div>
          </div>
@@ -219,18 +179,13 @@
                <div class="img-s ">
                   <img src="assets/images/testimonial-top.png">
                </div>
-               <h4 class="body-slider media-heading">Kaiet </h4>
+               <h4 class="body-slider media-heading">Kaiet López de Etxezarreta </h4>
                <hr class="slider_hr">
             </div>
             <p>Estudiante de grado superior en automoción<br> en Don bosco. </p>
             <div class="media">
-               <div class="media-left">
-                  <a href="#">
-                  <img class="media-object" src="assets/images/team/Kaiet.png" alt="">
-                  </a>
-               </div>
                <div class="media-body">
-                  <h4 class="media-heading">Kaiet <span class="slider_span_color"></span></h4>
+                  <img class="media-object" src="assets/images/team/Kaiet.png" alt="Kaiet López de Etxezarreta">
                </div>
             </div>
          </div>
@@ -239,18 +194,13 @@
                <div class="img-s ">
                   <img src="assets/images/testimonial-top.png">
                </div>
-               <h4 class="body-slider media-heading">Miguel</h4>
+               <h4 class="body-slider media-heading">Miguel Ángel Díaz</h4>
                <hr class="slider_hr">
             </div>
             <p>Estudiante de grado superior en automoción<br> en Don bosco. </p>
             <div class="media">
-               <div class="media-left">
-                  <a href="#">
-                  <img class="media-object" src="assets/images/team/Miguel.png" alt="">
-                  </a>
-               </div>
                <div class="media-body">
-                  <h4 class="media-heading">Miguel <span class="slider_span_color"></span></h4>
+                  <img class="media-object" src="assets/images/team/Miguel.png" alt="Miguel Ángel Díaz">
                </div>
             </div>
          </div>
