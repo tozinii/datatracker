@@ -21,7 +21,9 @@ class CarController extends Controller
      */
     public function index()
     {
-      return view('users.cars');
+      $user = Auth::user()->id;
+      $cars = Car::where('user_id',$user)->get();
+      return view('users.cars')->with('cars',$cars);
     }
 
     /**
@@ -61,7 +63,18 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        //
+      $car = Car::find($id);
+
+
+      $coordenadas = [];
+
+      foreach ($car->sensors as $data){
+        if ($data->id == 3 ) {
+            array_push($coordenadas, $data->pivot->data);
+        }
+      }
+
+      return view('users.car')->with(['car' => $car,'coordenadas' => $coordenadas]);
     }
 
     /**
