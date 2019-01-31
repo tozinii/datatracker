@@ -12,19 +12,19 @@
 		<form class="needs-validation profile-data" novalidate>
 				<div class="col-md-4 mb-3">
 					<label>Nombre</label>
-					<input type="text" class="form-control" placeholder="Nombre" value="{{$car->code}}" disabled="disabled">
+					<input type="text" class="form-control" value="{{$car->code}}" disabled="disabled">
 				</div>
 		    <div class="col-md-4 mb-3">
 		      <label>Descripcion</label>
-		      <input type="text" class="form-control" placeholder="Nombre" value="{{$car->description}}" disabled="disabled">
+		      <input type="text" class="form-control" value="{{$car->description}}" disabled="disabled">
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Anchura</label>
-		      <input type="text" class="form-control" placeholder="Apellido" value="1m" disabled="disabled">
+		      <input type="text" class="form-control" value="1m" disabled="disabled">
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Nº sensores</label>
-		      <input type="text" class="form-control" placeholder="3" value="{{$car->kit->sensors->count()}}" disabled="disabled">
+		      <input type="text" class="form-control" value="{{$car->kit->sensors->count()}}" disabled="disabled">
 		    </div>
 		    <div class="col-md-4 mb-3">
 		      <label>Bateria</label>
@@ -47,13 +47,12 @@
 		<div class="tab-content">
 	    	<div id="sensores" class="tab-pane fade in active">
 		      <h3>Sensores</h3>
-		      <form>
-		      	<label>Bateria</label>
-		      	<input type="text" name="bateria" value="Le queda bateria para 3 horas..." disabled="disabled">
-		      	<label>Velocidad</label>
-		      	<input type="text" name="velocidad" value="El coche esta yendo a 40km/h..." disabled="disabled">
+						@foreach($carSensorsNames as $sensorName)
+						<label>{{ ucfirst($sensorName) }}</label><br />
+		      	<a href="{{ route('sensorInfo',[$car->code, $sensorName]) }}" class="button">Ver datos</a><br />
+						@endforeach
 		      	<label>GPS</label>
-		      </form>
+						<div id="map"></div>
 		    </div>
 	    	<div id="estadisticas" class="tab-pane fade">
 		    	<h3>Estadisticas</h3>
@@ -77,8 +76,6 @@
 		    	<div class="comments-list">
 		    		<span>Paco: El coche ha girado mal en la quinta curva, tenemos que mirarlo, YA.</span>
 		    	</div>
-		    </div>
-		    <div id="map">
 		    </div>
 	  </div>
 	</div>

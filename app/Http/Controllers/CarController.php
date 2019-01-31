@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Car;
 use App\Sensor;
+use Illuminate\Support\Facades\DB;
 use DateTime;
 use Auth;
 
@@ -63,21 +64,19 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($code)
+    public function show($id)
     {
       $car = Car::find($id);
 
-      $carsSensorsNames = array();
+      $carSensorsNames = array();
 
       //Esta query devuelve un objeto
       $carSensorsId = DB::table('car_sensor')->distinct()->select('sensor_id')->where('car_id', '=', $car->id)->get();
 
       foreach($carSensorsId as $sensorId){
         $sensor = Sensor::find($sensorId->sensor_id);
-        array_push($carsSensorsNames, $sensor->name);
+        array_push($carSensorsNames, $sensor->name);
         }
-
-
 
       $coordenadas = [];
 
@@ -86,8 +85,7 @@ class CarController extends Controller
             array_push($coordenadas, $data->pivot->data);
         }
       }
-
-      return view('users.car')->with(['car' => $car,'coordenadas' => $coordenadas,'carsSensorsNames'=>$carsSensorsNames]);
+      return view('users.car')->with(['car' => $car,'coordenadas' => $coordenadas,'carSensorsNames'=>$carSensorsNames]);
     }
 
     /**
