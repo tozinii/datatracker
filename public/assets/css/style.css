@@ -3692,6 +3692,28 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 */
 
 
+
+/*
+
+  ////////////////////////////////////////////////////
+
+  //////////        Estilos navcol          //////////
+
+  ////////////////////////////////////////////////////
+
+*/
+
+
+
+.navcol-link{
+  border-radius: 0.25rem;
+}
+
+.navcol-link.active,
+.navcol-link {
+  color: #fff;
+  background-color: midnightblue;
+}
 /*
 
   ////////////////////////////////////////////////////
