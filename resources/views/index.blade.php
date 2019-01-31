@@ -15,8 +15,8 @@
                   </div>
                </div>
                <div id="equipo" class="col-md-7 wow fadeInUp  pl_90 pr_90">
-                  <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Equipo</p>
-                  <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Crea o unete a un grupo y recopila información de los sensores implantados en vuestro coche para tener la certeza de poner en marcha el coche en cualquier momento.</p>
+                  <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Haz tu propio coche</p>
+                  <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Compra por piezas o un kit entero y monta de manera facil <br>y sencilla tu propio coche electrico.</p>
                   <div class="left-services wow fadeInRight text-right" style="visibility: visible; animation-name: fadeInRight;">
                      <a id="#services" href="#services" class="btn btn-default wow fadeInUp js-scroll-trigger disabled-link" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
                   </div>
@@ -66,7 +66,7 @@
             <div class="media">
                <div class="media-left">
                   <a href="#">
-                  <img class="media-object" src="assets/images/testimonial-3.jpg" alt="">
+                  <img class="media-object" src="assets/images/team/Iker_Apaolaza.png" alt="">
                   </a>
                </div>
                <div class="media-body">
@@ -86,7 +86,7 @@
             <div class="media">
                <div class="media-left">
                   <a href="#">
-                  <img class="media-object" src="assets/images/testimonial-2.jpg" alt="">
+                  <img class="media-object" src="assets/images/team/Jon_Jauregui.png" alt="">
                   </a>
                </div>
                <div class="media-body">
@@ -106,11 +106,151 @@
             <div class="media">
                <div class="media-left">
                   <a href="#">
-                  <img class="media-object" src="assets/images/testimonial-3.jpg" alt="">
+                  <img class="media-object" src="assets/images/team/Ander_Gonzalez.png" alt="">
                   </a>
                </div>
                <div class="media-body">
                   <h4 class="media-heading">Ander González <span class="slider_span_color"></span></h4>
+               </div>
+            </div>
+         </div>
+         <div class="item">
+            <div class="text-center">
+               <div class="img-s ">
+                  <img src="assets/images/testimonial-top.png">
+               </div>
+               <h4 class="body-slider media-heading">Ekaitz </h4>
+               <hr class="slider_hr">
+            </div>
+            <p>Estudiante de grado superior en electronica<br> en Don bosco. </p>
+            <div class="media">
+               <div class="media-left">
+                  <a href="#">
+                  <img class="media-object" src="assets/images/team/Ekaitz.png" alt="">
+                  </a>
+               </div>
+               <div class="media-body">
+                  <h4 class="media-heading">Ekaitz <span class="slider_span_color"></span></h4>
+               </div>
+            </div>
+         </div>
+         <div class="item">
+            <div class="text-center">
+               <div class="img-s ">
+                  <img src="assets/images/testimonial-top.png">
+               </div>
+               <h4 class="body-slider media-heading">Pablo </h4>
+               <hr class="slider_hr">
+            </div>
+            <p>Estudiante de grado superior en electronica<br> en Don bosco. </p>
+            <div class="media">
+               <div class="media-left">
+                  <a href="#">
+                  <img class="media-object" src="assets/images/team/Pablo.png" alt="">
+                  </a>
+               </div>
+               <div class="media-body">
+                  <h4 class="media-heading">Pablo <span class="slider_span_color"></span></h4>
+               </div>
+            </div>
+         </div>
+         <div class="item">
+            <div class="text-center">
+               <div class="img-s ">
+                  <img src="assets/images/testimonial-top.png">
+               </div>
+               <h4 class="body-slider media-heading">Sergei </h4>
+               <hr class="slider_hr">
+            </div>
+            <p>Estudiante de grado superior en electronica<br> en Don bosco. </p>
+            <div class="media">
+               <div class="media-left">
+                  <a href="#">
+                  <img class="media-object" src="assets/images/testimonial-3.jpg" alt="">
+                  </a>
+               </div>
+               <div class="media-body">
+                  <h4 class="media-heading">Sergei <span class="slider_span_color"></span></h4>
+               </div>
+            </div>
+         </div>
+         <div class="item">
+            <div class="text-center">
+               <div class="img-s ">
+                  <img src="assets/images/testimonial-top.png">
+               </div>
+               <h4 class="body-slider media-heading">David </h4>
+               <hr class="slider_hr">
+            </div>
+            <p>Estudiante de grado superior en automoción<br> en Don bosco. </p>
+            <div class="media">
+               <div class="media-left">
+                  <a href="#">
+                  <img class="media-object" src="assets/images/team/DavidGarcia.png" alt="">
+                  </a>
+               </div>
+               <div class="media-body">
+                  <h4 class="media-heading">David <span class="slider_span_color"></span></h4>
+               </div>
+            </div>
+         </div>
+         <div class="item">
+            <div class="text-center">
+               <div class="img-s ">
+                  <img src="assets/images/testimonial-top.png">
+               </div>
+               <h4 class="body-slider media-heading">David </h4>
+               <hr class="slider_hr">
+            </div>
+            <p>Estudiante de grado superior en automoción<br> en Don bosco. </p>
+            <div class="media">
+               <div class="media-left">
+                  <a href="#">
+                  <img class="media-object" src="assets/images/team/DavidMartin.png" alt="">
+                  </a>
+               </div>
+               <div class="media-body">
+                  <h4 class="media-heading">David <span class="slider_span_color"></span></h4>
+               </div>
+            </div>
+         </div>
+         <div class="item">
+            <div class="text-center">
+               <div class="img-s ">
+                  <img src="assets/images/testimonial-top.png">
+               </div>
+               <h4 class="body-slider media-heading">Kaiet </h4>
+               <hr class="slider_hr">
+            </div>
+            <p>Estudiante de grado superior en automoción<br> en Don bosco. </p>
+            <div class="media">
+               <div class="media-left">
+                  <a href="#">
+                  <img class="media-object" src="assets/images/team/Kaiet.png" alt="">
+                  </a>
+               </div>
+               <div class="media-body">
+                  <h4 class="media-heading">Kaiet <span class="slider_span_color"></span></h4>
+               </div>
+            </div>
+         </div>
+         <div class="item">
+            <div class="text-center">
+               <div class="img-s ">
+                  <img src="assets/images/testimonial-top.png">
+               </div>
+               <h4 class="body-slider media-heading">Miguel</h4>
+               <hr class="slider_hr">
+            </div>
+            <p>Estudiante de grado superior en automoción<br> en Don bosco. </p>
+            <div class="media">
+               <div class="media-left">
+                  <a href="#">
+                  <img class="media-object" src="assets/images/team/Miguel.png" alt="">
+                  </a>
+               </div>
+               <div class="media-body">
+                  <h4 class="media-heading">Miguel <span class="slider_span_color"></span></h4>
                </div>
             </div>
          </div>

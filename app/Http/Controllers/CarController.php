@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Car;
 use App\Sensor;
-use DateTime;
+use Illuminate\Support\Facades\Auth;
 
 class CarController extends Controller
 {
@@ -22,7 +21,9 @@ class CarController extends Controller
      */
     public function index()
     {
-      return view('users.cars');
+      $user = Auth::user()->id;
+      $cars = Car::where('user_id',$user)->get();
+      return view('users.cars')->with('cars',$cars);
     }
 
     /**
@@ -32,7 +33,7 @@ class CarController extends Controller
      */
     public function create()
     {
-      
+
     }
 
     /**
@@ -43,7 +44,15 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $car = new Car;
+      $car->code = $request->carname;
+      $car->user_id = Auth::user()->id;
+      $car->kit_id = $request->kit;
+      $user = Auth::user()->id;
+
+      $car->save();
+
+      return back()->with('confirmation','Enhorabuena!! Has comprado un coche');
     }
 
     /**
@@ -54,7 +63,18 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        //
+      $car = Car::find($id);
+
+
+      $coordenadas = [];
+
+      foreach ($car->sensors as $data){
+        if ($data->id == 3 ) {
+            array_push($coordenadas, $data->pivot->data);
+        }
+      }
+
+      return view('users.car')->with(['car' => $car,'coordenadas' => $coordenadas]);
     }
 
     /**
