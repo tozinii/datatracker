@@ -8,22 +8,32 @@
       <div class="tab-content">
   	    	<div id="car-list" class="tab-pane fade in active">
   		      <h3>Coches</h3>
-            @foreach($cars as $car)
-            <p>{{ $car->code }}</p>
-            @endforeach
 
-  		      <!--<form>
-  		      	<label>Bateria</label>
-  		      	<input type="text" name="bateria" value="Le queda bateria para 3 horas..." disabled="disabled">
-  		      	<label>Velocidad</label>
-  		      	<input type="text" name="velocidad" value="El coche esta yendo a 40km/h..." disabled="disabled">
-  		      	<label>Caballos</label>
-  		      	<input type="text" name="caballos" value="La potencia de este coche es de no se cuantos caballos" disabled="disabled">
-  		      	<label>Gasolina</label>
-  		      	<input type="text" name="gasolina" value="Este coche tiene un deposito de gasolina de 20 litros" disabled="disabled">
-  		      	<label>GPS</label>
-  		      	<input type="text" name="maxMarcas" value="Esta en la tercera curva..." disabled="disabled">
-  		      </form>-->
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Nº</th>
+                  <th scope="col">Coche</th>
+                  <th scope="col">Sensores</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                @foreach($cars as $car)
+                <tr>
+                  <th>{{ $car->id }}</th>
+                  <td>{{ $car->code }}</td>
+                  <td>
+                    @foreach($carsSensorsNames[$car->id] as $sensorName)
+                    <a href="{{ route('sensorInfo',[$car->code,$sensorName]) }}" class="button">{{ $sensorName }}</a>
+                    @endforeach
+                  </td>
+                </tr>
+                @endforeach
+
+              </tbody>
+            </table>
+
   		    </div>
   	  </div>
   	</div>

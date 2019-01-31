@@ -6,16 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Car;
 use App\Sensor;
-use DateTime;
-use Auth;
 
-class CarController extends Controller
+class SensorController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware(['auth','verified','user']);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -23,22 +16,7 @@ class CarController extends Controller
      */
     public function index()
     {
-      $cars = Car::where('user_id', Auth::user()->id)->get();
-      $carsSensorsNames = array();
-
-      foreach($cars as $car){
-        //Esta query devuelve un objeto
-        $carSensorsId = DB::table('car_sensor')->distinct()->select('sensor_id')->where('car_id', '=', $car->id)->get();
-
-        $carsSensorsNames[$car->id] = array();
-        foreach($carSensorsId as $sensorId){
-          $sensor = Sensor::find($sensorId->sensor_id);
-          array_push($carsSensorsNames[$car->id], $sensor->name);
-        }
-
-      }
-
-      return view('users.cars')->with(['cars'=>$cars,'carsSensorsNames'=>$carsSensorsNames]);
+        //
     }
 
     /**
@@ -48,7 +26,7 @@ class CarController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -68,19 +46,15 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($code)
+    public function show($carName,$sensorName)
     {
-      $car = Car::where('code',strtolower($code))->first();
+      $car = Car::where('code', $carName)->first();
+      $sensor = Sensor::where('name', $sensorName)->first();
 
-      $coordenadas = [];
-
-      foreach ($car->sensors as $data){
-        if ($data->id == 3 ) {
-            array_push($coordenadas, $data->pivot->data);
-        }
-      }
-
-      return view('users/car',['coordenadas' => $coordenadas]);
+      $sensorInfo = DB::table('car_sensor')
+                      ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
+                      ->get();
+      return view('users.sensors')->with(['sensorInfo'=>$sensorInfo,'carName'=>$carName,'sensorName'=>$sensorName]);
     }
 
     /**
@@ -116,5 +90,4 @@ class CarController extends Controller
     {
         //
     }
-
 }
