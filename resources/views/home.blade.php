@@ -20,19 +20,15 @@
     <thead>
       <tr>
         <th scope="col"></th>
-        @foreach($kits as $kit)
-        <th scope="col">{{$kit->name}}</th>
+        @foreach($sensors as $sensor)
+        <th scope="col">{{$sensor->name}}</th>
         @endforeach
       </tr>
     </thead>
     <tbody>
-      @foreach($kit->sensors as $sensor)
+      @foreach($kits as $kit)
       <tr>
-        <th scope="row">{{$sensor->name}}</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+        <th scope="row">{{$kit->name}}</th>
       </tr>
       @endforeach
     </tbody>
