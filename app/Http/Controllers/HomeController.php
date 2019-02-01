@@ -6,6 +6,7 @@ use App\Car;
 use App\Sensor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -30,18 +31,23 @@ class HomeController extends Controller
         $kits = Kit::all();
         $sensors = Sensor::all();
 
-        $existe = [];
+        $existe = array();
 
         foreach ($kits as $kit) {
-            foreach ($kit->sensors as $sensor) {
-                if ($sensor->pivot->kit_id == $kit->id) {
+            foreach($kit->sensors as $sensor){
+                $allSensors = DB::table('kit_sensor')->select('kit_id')->where('sensor_id', '=', $sensor->id)->get();
+                if(!array_key_exists($sensor->name, $existe)){
+                    $existe[$sensor->name] = $allSensors;
+                }
+            }
+            /*foreach ($sensors as $sensor) {
+                if ($sensor->id == $kit->id) {
                     array_push($existe, true);
                 }else{
                     array_push($existe, false);
                 }
-            }
+            }*/
         }
-
         return view('home')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors, 'existe' => $existe]);
     }
 }
