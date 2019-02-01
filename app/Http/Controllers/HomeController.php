@@ -41,6 +41,7 @@ class HomeController extends Controller
                 }
             }
         }
-        return view('home')->with(['kits' => $kits, 'cars' => $cars, 'existe' => $existe]);
+
+        return view('home')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors, 'existe' => $existe]);
     }
 }

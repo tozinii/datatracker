@@ -26,13 +26,12 @@
       </tr>
     </thead>
     <tbody>
-      @foreach($kit->sensors as $sensor)
+      @foreach($sensors as $sensor)
       <tr>
         <th scope="row">{{$sensor->name}}</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+        @foreach($kits as $kit)
+        <td>{{$kit->name}}</td>
+        @endforeach
       </tr>
       @endforeach
     </tbody>
