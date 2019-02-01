@@ -51,7 +51,6 @@
 						<label>{{ ucfirst($sensorName) }}</label><br />
 		      	<a href="{{ route('sensorInfo',[$car->code, $sensorName]) }}" class="button">Ver datos</a><br />
 						@endforeach
-		      	<label>GPS</label>
 						<div id="map"></div>
 		    </div>
 	    	<div id="estadisticas" class="tab-pane fade">
