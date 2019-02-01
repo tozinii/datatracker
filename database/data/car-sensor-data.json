@@ -10,7 +10,7 @@
 {"sensor_id":6,"car_id":7,"data":"eu est congue elementum in"},
 {"sensor_id":8,"car_id":10,"data":"mauris morbi non lectus aliquam"},
 {"sensor_id":6,"car_id":9,"data":"cursus id turpis integer aliquet massa"},
-{"sensor_id":10,"car_id":4,"data":"vel dapibus at diam nam"},
+{"sensor_id":10,"car_id":4,"data":10},
 {"sensor_id":6,"car_id":8,"data":"orci luctus et ultrices posuere"},
 {"sensor_id":5,"car_id":4,"data":"justo eu massa donec dapibus duis at"},
 {"sensor_id":8,"car_id":9,"data":"sapien ut nunc vestibulum ante ipsum primis"},
