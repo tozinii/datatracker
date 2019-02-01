@@ -15,8 +15,8 @@
                   </div>
                </div>
                <div id="equipo" class="col-md-7 wow fadeInUp  pl_90 pr_90">
-                  <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Haz tu propio coche</p>
-                  <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Compra por piezas o un kit entero y monta de manera facil <br>y sencilla tu propio coche electrico.</p>
+                  <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Construye tu propio coche</p>
+                  <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Compra por piezas o un kit entero y monta de manera fácil <br>y sencilla tu propio coche eléctrico.</p>
                   <div class="left-services wow fadeInRight text-right" style="visibility: visible; animation-name: fadeInRight;">
                      <a id="#services" href="#services" class="btn btn-default wow fadeInUp js-scroll-trigger disabled-link" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
                   </div>
@@ -30,8 +30,8 @@
             <div class="container-fluid ">
                <div class="row text-left about_row clip-polygon_right ">
                   <div id="estadisticas" class="col-md-7 wow fadeInUp pl_90 pr_90">
-                     <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Estadisticas</p>
-                     <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Visualiza de una manera facil y sencilla los datos recibidos <br>y mejora las capacidades de tu coche.</p>
+                     <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Estadísticas</p>
+                     <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Visualiza de una manera fácil y sencilla los datos recibidos <br>y mejora las capacidades de tu coche.</p>
                      <div class="left-services_32 wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
                         <a id="#services" href="#services" class="btn btn-default wow fadeInUp js-scroll-trigger disabled-link" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
                      </div>
@@ -107,7 +107,7 @@
                <h4 class="body-slider media-heading">Ekaitz Diestre </h4>
                <hr class="slider_hr">
             </div>
-            <p>Estudiante de grado superior en electronica<br> en Don bosco. </p>
+            <p>Estudiante de grado superior en electrónica<br> en Don bosco. </p>
             <div class="media">
                <div class="media-body">
                   <img class="media-object" src="assets/images/team/Ekaitz.png" alt="Ekaitz Diestre">
@@ -122,7 +122,7 @@
                <h4 class="body-slider media-heading">Pablo Hernández </h4>
                <hr class="slider_hr">
             </div>
-            <p>Estudiante de grado superior en electronica<br> en Don bosco. </p>
+            <p>Estudiante de grado superior en electrónica<br> en Don bosco. </p>
             <div class="media">
                <div class="media-body">
                   <img class="media-object" src="assets/images/team/Pablo.png" alt="Pablo Hernández">
@@ -137,7 +137,7 @@
                <h4 class="body-slider media-heading">Sergei Susperregui </h4>
                <hr class="slider_hr">
             </div>
-            <p>Estudiante de grado superior en electronica<br> en Don bosco. </p>
+            <p>Estudiante de grado superior en electrónica<br> en Don bosco. </p>
             <div class="media">
                <div class="media-body">
                   <img class="media-object" src="assets/images/team/Sergei.png" alt="Sergei Susperregui">
