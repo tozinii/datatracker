@@ -15,7 +15,7 @@ class Sensor extends Model
 
     public function kits()
       {
-        return $this->belongsToMany('App\Kit');
+        return $this->belongsToMany('App\Kit')->withPivot('sensor_id');
       }
 
 }

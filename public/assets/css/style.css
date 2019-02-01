@@ -1486,7 +1486,6 @@ background:#6871f4;
     border-radius: 50%;
 }
 .testimonial_area .testimonial_carosel .item .media .media-body {
-  padding-top: 40px;
 }
 
 .slider_span_color{
@@ -1494,11 +1493,12 @@ background:#6871f4;
   font-style: italic;
 }
 
-.testimonial_area .testimonial_carosel .item .media .media-body h4 {
- font-size: 18px;
-color:#364167;
-font-weight:600;
-  text-transform: capitalize;
+.testimonial_area .testimonial_carosel .item .media .media-body .media-object {
+ 
+  padding-top: 20px;
+  padding-left: 100px;
+  width: 270px;
+  height: 200px;
 
 }
 
@@ -1849,7 +1849,7 @@ position: relative;
   background-size: cover;
 }
 .clip-polygon_left_2 {
-   background: url(../images/s-right.jpg)left top no-repeat;
+   background: url(../images/s-right.png)left top no-repeat;
    background-size: cover;
 
     }
@@ -3578,6 +3578,20 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
    ------------------------------------------------------
 -------------                               --------------
 */
+
+
+
+
+
+/*
+  Para el logo2
+*/
+.logo2 img{
+  width: 50px;
+  height: 50px;
+}
+
+
 /*
   Para el mapa
 */
@@ -3613,7 +3627,8 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   position: absolute;
   margin-bottom: 20%;
 }
-.profile-content{
+.profile-content,
+.car-list-content{
   height: 100%;
   padding: 2.5%;
 }
@@ -3651,6 +3666,14 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   display: block;
 }
 
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+  color: initial;
+}
+
 /* Editar Perfil */
 
 #guardarPerfil {
@@ -3678,6 +3701,28 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 */
 
 
+
+/*
+
+  ////////////////////////////////////////////////////
+
+  //////////        Estilos navcol          //////////
+
+  ////////////////////////////////////////////////////
+
+*/
+
+
+
+.navcol-link{
+  border-radius: 0.25rem;
+}
+
+.navcol-link.active,
+.navcol-link {
+  color: #fff;
+  background-color: midnightblue;
+}
 /*
 
   ////////////////////////////////////////////////////

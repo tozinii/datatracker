@@ -12,7 +12,7 @@
    <div>
       <ul class="nav flex-column">
         <li class="nav-item lista">
-          <a class="nav-link collapsed" href="#submenu" data-toggle="collapse" data-target="#submenu">{{auth()->user()->name}}</a>
+          <a class="navcol-link collapsed" href="#submenu" data-toggle="collapse" data-target="#submenu">{{auth()->user()->name}}</a>
           <div class="collapse" id="submenu" aria-expanded="false">
             <ul class="nav flex-column p-4">
               <li class="nav-item lista">
@@ -31,7 +31,7 @@
         </li>
         @if(auth()->user()->role == 'User')
           <li class="nav-item lista">
-            <a class="nav-link" href="{{route('car.index')}}">Coches</a>
+            <a class="nav-link" href="{{route('cars.index')}}">Coches</a>
           </li>
         @else
           <li class="nav-item lista">

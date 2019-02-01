@@ -3,8 +3,8 @@
 {"name":"gps"},
 {"name":"consumo"},
 {"name":"temperatura"},
-{"name":"hatity"},
-{"name":"pannier"},
+{"name":"proximidad"},
+{"name":"frenos"},
 {"name":"alphazap"},
 {"name":"latlux"},
 {"name":"stim"}]
