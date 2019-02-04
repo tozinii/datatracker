@@ -51,10 +51,18 @@ class SensorController extends Controller
       $car = Car::where('code', $carName)->first();
       $sensor = Sensor::where('name', $sensorName)->first();
 
+      $coordenadas = [];
+
+      foreach ($car->sensors as $data){
+        if ($data->id == 3 ) {
+            array_push($coordenadas, $data->pivot->data);
+        }
+      }
+      
       $sensorInfo = DB::table('car_sensor')
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                       ->get();
-      return view('users.sensors')->with(['sensorInfo'=>$sensorInfo,'carName'=>$carName,'sensorName'=>$sensorName]);
+      return view('users.sensors')->with(['sensorInfo'=>$sensorInfo,'carName'=>$carName,'sensorName'=>$sensorName,'coordenadas' => $coordenadas]);
     }
 
     /**

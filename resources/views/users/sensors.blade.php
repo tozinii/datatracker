@@ -24,8 +24,10 @@
 
      </tbody>
    </table>
-   
+
    <canvas id="chartSensor" width="800" height="350"></canvas>
+
+   <div id="map"></div>
 
    <script type="text/javascript">
      var ctx = document.getElementById("chartSensor").getContext('2d');
@@ -74,6 +76,27 @@
              }
          }
      });
+
+   </script>
+   <script>
+
+       var carmap = L.map('map').setView([43.326025, -1.968831], 16);
+
+           L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiY3luZGEiLCJhIjoiY2pyOTM3b2ZmMDB0dDQzcGZ5ajR4aXJyNiJ9.uQDXCNWklDqzIdAHxI0XqA', {
+               attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+               maxZoom: 18,
+               id: 'mapbox.streets'
+           }).addTo(carmap);
+           	<?php for($i = 0; $i < count($coordenadas)-1; $i++) { ?>
+   		        var etapa<?php echo $i ?> = [
+   		            [<?php echo $coordenadas[$i] ?>],
+   		           	[<?php echo $coordenadas[$i+1] ?>]
+   		        ];
+   		        var polyline<?php echo $i ?> = L.polyline(etapa<?php echo $i ?>, {color: 'red'}).addTo(carmap);
+           	<?php
+
+           		}
+   		?>
 
    </script>
 </div>
