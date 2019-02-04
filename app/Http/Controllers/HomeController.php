@@ -40,13 +40,6 @@ class HomeController extends Controller
                     $existe[$sensor->name] = $allSensors;
                 }
             }
-            /*foreach ($sensors as $sensor) {
-                if ($sensor->id == $kit->id) {
-                    array_push($existe, true);
-                }else{
-                    array_push($existe, false);
-                }
-            }*/
         }
         return view('home')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors, 'existe' => $existe]);
     }
