@@ -17,9 +17,9 @@
                <div id="equipo" class="col-md-7 wow fadeInUp  pl_90 pr_90">
                   <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Construye tu propio coche</p>
                   <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Compra por piezas o un kit entero y monta de manera fácil <br>y sencilla tu propio coche eléctrico.</p>
-                  <div class="left-services wow fadeInRight text-right" style="visibility: visible; animation-name: fadeInRight;">
+                  <!--<div class="left-services wow fadeInRight text-right" style="visibility: visible; animation-name: fadeInRight;">
                      <a id="#services" href="#services" class="btn btn-default wow fadeInUp js-scroll-trigger disabled-link" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
-                  </div>
+                  </div>-->
                </div>
             </div>
          </div>
@@ -32,9 +32,9 @@
                   <div id="estadisticas" class="col-md-7 wow fadeInUp pl_90 pr_90">
                      <p class="about_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-name: fadeInRight;">Estadísticas</p>
                      <p class="about_bottom_h wow fadeInUp " data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;">Visualiza de una manera fácil y sencilla los datos recibidos <br>y mejora las capacidades de tu coche.</p>
-                     <div class="left-services_32 wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
+                     <!--<div class="left-services_32 wow fadeInRight text-left" style="visibility: visible; animation-name: fadeInRight;">
                         <a id="#services" href="#services" class="btn btn-default wow fadeInUp js-scroll-trigger disabled-link" data-wow-delay=" 0.5s" style="visibility: visible; animation-delay:  0.5s; animation-name: fadeInUp;"><span class="skew_14">Sobre nosotros</span></a>
-                     </div>
+                     </div>-->
                   </div>
                   <div class="col-md-5 p-0 clip-polygon_left wow fadeInUp">
                      <div class="video-img">

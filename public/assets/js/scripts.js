@@ -26,6 +26,14 @@ $(document).ready(function(){
       }, 500);
     });
 
+    $('#services').click(function() {
+      $('html, body').animate({
+        scrollTop: $('#equipo').offset().top
+      }, 500, function(){
+        window.scrollTo(0, 1100);
+      });
+    });
+
     //Mostrar y ocultar formulario de cambiar contraseña
     $('#change-password-button').on('click', function(){
       $('#change-password-element').fadeToggle();
