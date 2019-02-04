@@ -27,7 +27,9 @@
 
    <canvas id="chartSensor" width="800" height="350"></canvas>
 
+   @if($sensorName == 'gps')
    <div id="map"></div>
+   @endif
 
    <script type="text/javascript">
      var ctx = document.getElementById("chartSensor").getContext('2d');
