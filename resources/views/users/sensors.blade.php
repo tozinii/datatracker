@@ -3,7 +3,7 @@
 <script src="{{asset('assets/js/statistics/Chart.bundle.js')}}"></script>
 <script src="{{asset('assets/js/statistics/Chart.js')}}"></script>
 <div class="sensors">
-   <h1>Sensor de {{ $sensorName }} del coche {{ $carName }}</h1>
+   <h1>Sensor de {{ $sensor->name }} del coche {{ $carName }}</h1>
    <table class="table table-striped">
      <thead>
        <tr>
@@ -15,7 +15,7 @@
 
        @foreach($sensorInfo as $info)
        <tr>
-         <td>{{ $info->data }}</td>
+         <td>{{ $info->data }} {{$sensor->unidad}}</td>
          <td>{{ $info->created_at }}</td>
        </tr>
        @endforeach
@@ -24,7 +24,7 @@
 
      </tbody>
    </table>
-   
+
    <canvas id="chartSensor" width="800" height="350"></canvas>
 
    <script type="text/javascript">

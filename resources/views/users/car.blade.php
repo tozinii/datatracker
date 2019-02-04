@@ -46,9 +46,9 @@
 		<div class="tab-content">
 	    	<div id="sensores" class="tab-pane fade in active">
 		      <h3>Sensores</h3>
-						@foreach($carSensorsNames as $sensorName)
-						<label>{{ ucfirst($sensorName) }}</label><br />
-		      	<a href="{{ route('sensorInfo',[$car->code, $sensorName]) }}" class="button">Ver datos</a><br />
+						@foreach($car->kit->sensors as $sensor)
+						<label>{{ ucfirst($sensor->name) }}</label><br />
+		      	<a href="{{ route('sensorInfo',[$car->code, $sensor->name]) }}" class="button">Ver datos</a><br />
 						@endforeach
 						<div id="map"></div>
 		    </div>
