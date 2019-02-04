@@ -3,7 +3,7 @@
 
 <section class="profile-content">
 	<!-- Car data -->
-	<div class="sections">
+	<div class="row">
 
 		<!-- Car image -->
 		<img src="assets/images/article.jpeg" alt="Imagen de perfil">
@@ -36,11 +36,10 @@
 		</form>
 
 	</div>
-	<div>
+	<div class="row">
 		<ul class="nav nav-tabs">
 		    <li class="active"><a data-toggle="tab" href="#sensores">Sensores</a></li>
 		    <li><a data-toggle="tab" href="#estadisticas">Estadisticas</a></li>
-		    <li><a data-toggle="tab" href="#comentarios">Comentarios</a></li>
 		    <li><a data-toggle="tab" href="#map">Mapa</a></li>
 		</ul>
 
@@ -66,16 +65,6 @@
 			      	<input type="text" name="fallos" value="Este coche ha tenido 4 accidentes" disabled="disabled">
 			    </form>
 	    	</div>
-		    <div id="comentarios" class="tab-pane fade">
-		    	<h3>Comentarios</h3>
-		    	<form>
-		    		<textarea placeholder="Escriba aquí su comentario..."></textarea>
-		    		<input type="submit" name="submit" value="Enviar comentario">
-		    	</form>
-		    	<div class="comments-list">
-		    		<span>Paco: El coche ha girado mal en la quinta curva, tenemos que mirarlo, YA.</span>
-		    	</div>
-		    </div>
 	  </div>
 	</div>
 	</div>
