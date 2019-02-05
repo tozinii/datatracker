@@ -38,25 +38,39 @@ class HomeController extends Controller
         }
         sort($sensorName);
 
-        $sensoresKit;
-        $existe;
+        $sensores;
+        $existeTodo = [];
         foreach ($kits as $kit) {
+          $sensoresKit = [];
           foreach ($kit->sensors as $key => $sensor) {
+
             $sensoresKit[] = $sensor->name;
           }
+
+          sort($sensoresKit);
+          $sensores[] = $sensoresKit;
         }
-        sort($sensoresKit);
+        //dd(count($sensores));
 
+        foreach($kits as $key => $kit) {
+          $existe = [];
+          $existe[] = $kit->name;
+          for ($j=0; $j < count($sensorName); $j++) {
+            if (in_array($sensorName[$j],$sensores[$key])) {
+              $existe[] = true;
+            }
+            else {
+              $existe[] = false;
+            }
+          }
 
-        if ($sensor->name == $sensorName[$key]) {
-          $existe[] = true;
+          //dd($existe);
+          $existeTodo[] = $existe;
         }
-        else {
-          $existe[] = false;
-        }
 
-        //dd($existe);
+        //dd($existeTodo);
 
-        return view('home')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors]);
+
+        return view('home')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors, 'existeTodo' => $existeTodo]);
     }
 }
