@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Group;
+use App\Car;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -20,7 +21,12 @@ class AdminController extends Controller
      */
     public function adminPanel () {
       $Users = User::where('role','User')->withTrashed()->get()->count();
-        return view('users.admin')->with('users',$Users);
+
+      $cars = DB::table('cars')->select(DB::raw('count(*) as contador, created_at as fecha'))->groupBy('created_at')->get();
+
+      $mensajes = DB::table('contact')->select(DB::raw('count(*) as contador, created_at as fecha'))->groupBy('created_at')->get();
+
+      return view('users.admin')->with(['users'=>$Users,'cars'=>$cars, 'mensajes' => $mensajes]);
     }
 
 

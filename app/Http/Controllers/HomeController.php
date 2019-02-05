@@ -28,19 +28,35 @@ class HomeController extends Controller
     public function index()
     {
         $cars = Car::where('user_id',Auth::user()->id)->count();
+
         $kits = Kit::all();
-        $sensors = Sensor::all();
 
-        $existe = array();
-
-        foreach ($kits as $kit) {
-            foreach($kit->sensors as $sensor){
-                $allSensors = DB::table('kit_sensor')->select('kit_id')->where('sensor_id', '=', $sensor->id)->get();
-                if(!array_key_exists($sensor->name, $existe)){
-                    $existe[$sensor->name] = $allSensors;
-                }
-            }
+        $sensorName;
+        $sensors = Sensor::orderBy('name')->get();
+        foreach ($sensors as $sensor) {
+          $sensorName[] = $sensor->name;
         }
-        return view('home')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors, 'existe' => $existe]);
+        sort($sensorName);
+
+        $sensoresKit;
+        $existe;
+        foreach ($kits as $kit) {
+          foreach ($kit->sensors as $key => $sensor) {
+            $sensoresKit[] = $sensor->name;
+          }
+        }
+        sort($sensoresKit);
+
+
+        if ($sensor->name == $sensorName[$key]) {
+          $existe[] = true;
+        }
+        else {
+          $existe[] = false;
+        }
+
+        //dd($existe);
+
+        return view('home')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors]);
     }
 }

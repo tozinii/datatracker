@@ -19,6 +19,7 @@
   <table class="table">
     <thead>
       <tr>
+        <th></th>
         @foreach($sensors as $sensor)
         <th scope="col">{{$sensor->name}}</th>
         @endforeach
@@ -27,11 +28,7 @@
     <tbody>
       @foreach($kits as $kit)
         <tr>
-          @foreach($sensors as $sensor)
-          @for($i=0;$i==count($kit->sensors); $i++)
-            <td><?php echo $kit->sensors->name ?></td>
-            @endfor
-          @endforeach
+          <td>{{$kit->name}}</td>
         </tr>
       @endforeach
     </tbody>
