@@ -19,15 +19,22 @@
          <td>{{ $info->created_at }}</td>
        </tr>
        @endforeach
-
-
-
      </tbody>
    </table>
 
+   <form class="" action="" method="post">
+     <select class="" id="fecha">
+       <option value="año">Año</option>
+       <option value="mes">Mes</option>
+       <option value="semana">Semana</option>
+       <option value="dia" selected>Dia</option>
+       <option value="hora">Hora</option>
+     </select>
+   </form>
    <canvas id="chartSensor" width="800" height="350"></canvas>
 
    <script type="text/javascript">
+    var fecha = document.getElementById('fecha').value;
      var ctx = document.getElementById("chartSensor").getContext('2d');
      var myChart = new Chart(ctx, {
          type: 'line',
@@ -38,7 +45,7 @@
                @endforeach
              ],
              datasets: [{
-                 label: 'Valores de cada mes',
+                 label: 'Valores de cada '+fecha,
                  data: [
                    @foreach($sensorInfo as $info)
                      '{{$info->data}}',
@@ -67,6 +74,20 @@
            responsive: true,
              scales: {
                  yAxes: [{
+                     display: true,
+                     scaleLabel: {
+                       display: true,
+                       labelString: '{{$sensor->unidad}}'
+                     },
+                     ticks: {
+                         beginAtZero:true
+                     }
+                 }],
+                 xAxes: [{
+                     scaleLabel: {
+                       display: true,
+                       labelString: 'Fecha'
+                     },
                      ticks: {
                          beginAtZero:true
                      }
