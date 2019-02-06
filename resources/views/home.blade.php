@@ -32,9 +32,9 @@
           @if($key == 0)
             <td>{{$kit}}</td>
           @elseif($kit == false)
-            <td>No</td>
+            <td><img src="{{asset('assets/images/redcross.png')}}" alt="No tiene" width="60%"></td>
           @else
-            <td>Si</td>
+            <td><img src="{{asset('assets/images/tick.png')}}" alt="Tiene" width="60%"></td></td>
           @endif
         @endforeach
         </tr>
