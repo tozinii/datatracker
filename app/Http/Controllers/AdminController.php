@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Group;
+use App\Kit;
+
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -52,10 +54,14 @@ class AdminController extends Controller
     public function statistics()
     {
       $users = DB::select("SELECT count(*) as contador, to_char(created_at, 'YYYYMM') as year  FROM users WHERE role='User' GROUP BY year ORDER BY year");
+      $cars = DB::select("SELECT count(*) as contador, to_char(created_at, 'YYYYMM') as year  FROM cars GROUP BY year ORDER BY year");
+      $kits = Kit::all();
 
-
-
-      return view('users.statistics')->with('users',$users);
+      return view('users.statistics')->with([
+        'users' => $users,
+        'cars' => $cars,
+        'kits' => $kits
+      ]);
     }
 
     public function adminEvents(){
