@@ -78,14 +78,7 @@ class CarController extends Controller
         array_push($carSensorsNames, $sensor->name);
         }
 
-      $coordenadas = [];
-
-      foreach ($car->sensors as $data){
-        if ($data->id == 3 ) {
-            array_push($coordenadas, $data->pivot->data);
-        }
-      }
-      return view('users.car')->with(['car' => $car,'coordenadas' => $coordenadas,'carSensorsNames'=>$carSensorsNames]);
+      return view('users.car')->with(['car' => $car,'carSensorsNames'=>$carSensorsNames]);
     }
 
     /**

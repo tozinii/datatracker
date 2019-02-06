@@ -6286,7 +6286,7 @@ a.thumbnail:hover {
   margin-bottom: -1px;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125);
-   
+
 }
 
 .list-group-item:first-child {
@@ -6316,7 +6316,7 @@ button.list-group-item:focus,
 button.list-group-item:hover {
     color: #555;
     text-decoration: none;
-   
+
 }
 
 button.list-group-item {
