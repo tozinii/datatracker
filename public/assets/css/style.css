@@ -3684,6 +3684,11 @@ a.button {
   border-radius: 50%;
 }
 
+/*Editar Coche*/
+#save-car{
+  display: none;
+}
+
 /*Botones ver info sensor*/
 
 .sensor-info-button{

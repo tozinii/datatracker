@@ -8,7 +8,7 @@
 		<table class="table table-hover">
 		  <thead>
 		    <tr>
-		      <th scope="col">#</th>
+					<th scope="col">Nº serie</th>
 		      <th scope="col">Nombre</th>
 		      <th scope="col">Kit</th>
 					<th scope="col">Visualizar</th>
@@ -17,7 +17,7 @@
 		  <tbody>
 				@foreach($cars as $car)
 			    <tr>
-			      <th scope="row">1</th>
+						<td>{{$car->kit->num_serie}}</td>
 			      <td>{{$car->code}}</td>
 			      <td>{{$car->kit->name}}</td>
 			      <td><a href="{{route('cars.show',$car->id)}}" class="btn btn-default wow fadeInUp js-scroll-trigger">Info</a></td>

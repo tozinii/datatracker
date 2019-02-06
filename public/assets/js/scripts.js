@@ -39,4 +39,32 @@ $(document).ready(function(){
       $('#change-password-element').fadeToggle();
       $(this).hide();
     });
+
+    //Scripts para formularios de edición
+      //Editar Perfil
+      $('#editarPerfil').on('click', function() {
+
+        $('#profile-name').removeAttr('disabled');
+        $('#apellido').removeAttr('disabled');
+        $('#profile-email').removeAttr('disabled');
+        $('#descripcion').removeAttr('disabled');
+        //$('#avatar').removeAttr('disabled');
+
+        $('#editarPerfil').fadeToggle(function(){
+          $('#guardarPerfil').fadeToggle();
+        });
+      });
+
+    //Editar coche
+    $('#edit-car').on('click', function() {
+
+      $('#car-code').removeAttr('disabled');
+      $('#car-description').removeAttr('disabled');
+
+      $('#edit-car').fadeToggle(function(){
+        $('#save-car').fadeToggle();
+      });
+    });
+
+
 });
