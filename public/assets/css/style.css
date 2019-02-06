@@ -384,6 +384,27 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   transition: all 0.3s ease-in-out;
 }
 
+.sidenav-header-logo {
+  z-index: 501;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  left: 110px;
+  top: 5%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.sidenav-header-logo a {
+  display: block;
+  padding: 0;
+  outline: 0;
+  border: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
 /* -------------------------------------------------------------------
  * ## main navigation
  * ------------------------------------------------------------------- */
@@ -660,10 +681,13 @@ nav li {
  * responsive:
  * header
  * ------------------------------------------------------------------- */
-@media only screen and (min-width: 1001px) {
+@media only screen and (min-width: 1111px) {
   .header-logo {
     left: 60px;
+  }
 
+  .sidenav-header-logo {
+    left: 35px;
   }
 
   .header-menu-toggle {
@@ -672,7 +696,7 @@ nav li {
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1110px) {
   .main-navbar {
     display: none;
   }
@@ -695,6 +719,10 @@ nav li {
     left: 30px;
   }
 
+  .sidenav-header-logo{
+    left: 30px;
+  }
+
 
   .header-menu-toggle {
     right: 25px;
@@ -711,6 +739,11 @@ nav li {
   }
 
   .header-logo {
+    left: 25px;
+    top:60px;
+  }
+
+  .sidenav-header-logo {
     left: 25px;
     top:60px;
   }
@@ -1988,8 +2021,75 @@ padding-bottom: 90px;
   z-index: 25;
 }
 
-#mySidenav{
-  z-index: 50;
+  /* The sidenav */
+.sidenav {
+ height: 100%;
+ position: fixed;
+ z-index: 50;
+ top: 0;
+ left: 0;
+ background-color: #111;
+ overflow-x: hidden;
+ padding-top: 2%;
+ align-content: center;
+ transition: margin-left .5s;
+ padding: 20px;
+}
+
+#menu-hamburger{
+  display:none;
+}
+
+@media only screen and (min-width: 1300px) {
+  .sidenav{
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .sidenav{
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .sidenav{
+    display:none;
+  }
+
+  #menu-hamburger{
+    display:block;
+  }
+}
+
+@media (max-width: 768px){
+  .sidenav-header-logo a{
+    display: inline;
+  }
+  .navCol-icon img{
+    width: 30% !important;
+    margin-bottom: 0 !important;
+    margin-top: 10px;
+  }
+
+}
+
+/*Nav elements*/
+.navCol-icon img{
+ width: 80%;
+ height: 5%;
+ margin-bottom: 5%;
+}
+
+a.nav-link:hover {
+ color: black;
+}
+
+.nav-icon {
+ height: 50px;
+ width: 50px;
+ position: bottom;
+
 }
 
 .footer-h{
@@ -3289,9 +3389,6 @@ section {
 }
 section.bg-banner-img {
     padding-bottom: 100px !important;
-}
-.row.book_now {
-    text-align: left !important;
 }
 .service-about-services.text-left.tabs_box_s{]
 margin-bottom: 15px;}

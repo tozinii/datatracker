@@ -7,9 +7,9 @@
                <a href="" target="_blank" class="ml-15"><i id="social-tw" class="fa fa-twitter fa-2x social"></i></a>
                <a href="" target="_blank" class="ml-15"><i id="social-em" class="fa fa-instagram fa-2x social"></i></a>
             </div>
-         
+
          <div class="col-md-12 logo2">
-            <p class="color-gray">DataTracker 2018 &copy;</p>
+            <p class="color-gray">Matxingo DataTracker 2019 &copy;</p>
          </div>
       </div>
    </div>
