@@ -1494,7 +1494,7 @@ background:#6871f4;
 }
 
 .testimonial_area .testimonial_carosel .item .media .media-body .media-object {
- 
+
   padding-top: 20px;
   padding-left: 100px;
   width: 270px;
@@ -2827,6 +2827,8 @@ iframe {
 img {
     max-width: 100%;
     height: auto;
+    display:block;
+    margin:auto;
 }
 ul {
     list-style: outside none none;

@@ -19,48 +19,30 @@
   <table class="table">
     <thead>
       <tr>
+        <th></th>
         @foreach($sensors as $sensor)
         <th scope="col">{{$sensor->name}}</th>
         @endforeach
       </tr>
     </thead>
     <tbody>
-      @foreach($kits as $kit)
+      @foreach($existeTodo as $kits)
         <tr>
-          @foreach($sensors as $sensor)
-          @for($i=0;$i==count($kit->sensors); $i++)
-            <td><?php echo $kit->sensors->name ?></td>
-            @endfor
-          @endforeach
+        @foreach($kits as $key => $kit)
+          @if($key == 0)
+            <td>{{$kit}}</td>
+          @elseif($kit == false)
+            <td><img src="{{asset('assets/images/redcross.png')}}" alt="No tiene" width="60%"></td>
+          @else
+            <td><img src="{{asset('assets/images/tick.png')}}" alt="Tiene" width="60%"></td></td>
+          @endif
+        @endforeach
         </tr>
       @endforeach
     </tbody>
   </table>
 
 
-<div class="card-deck">
-  @foreach($kits as $kit)
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{$kit->name}}</h5>
-    </div>
-    <div class="card-body">
-      <ul class="list-group list-group-flush">
-        @foreach($kit->sensors as $sensor)
-          <li class="list-group-item">{{$sensor->name}}</li>
-        @endforeach
-      </ul>
-    </div>
-    <div class="card-body">
-      <a href="" data-target="#createCar{{$kit->id}}" data-toggle="modal" class="btn btn-default  wow fadeInUp  js-scroll-trigger">Comprar</a>
-    </div>
-
-    @include('elements.pop-up-createCar')
-  </div>
-
-  @endforeach
-</div>
 
 
 
