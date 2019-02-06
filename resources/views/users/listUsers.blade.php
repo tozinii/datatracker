@@ -14,7 +14,7 @@
 	      	  @foreach($users as $user)
 			  <a class="list-group-item list-group-item-action list-group-item-light">
 			  	<p class="userList">
-			  		{{$user->name}}
+			  		{{$user->name}} &#8212; {{$user->email}}
 			  	</p>
 			  	<button type="button" data-toggle="modal" data-target="#ban{{$user->id}}" class="btnedit btnedit-outline-danger">Ban</button>
 			  </a>

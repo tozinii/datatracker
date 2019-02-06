@@ -53,7 +53,7 @@
       </ul>
     </div>
     <div class="card-body">
-      <a href="" data-target="#createCar{{$kit->id}}" data-toggle="modal" class="btn btn-default  wow fadeInUp  js-scroll-trigger">Comprar</a>
+      <button href="" data-target="#createCar{{$kit->id}}" data-toggle="modal" class="btnedit3 btnedit-outline-primary btnedit-size" aria-label="Close">Comprar</button>
     </div>
 
     @include('elements.pop-up-createCar')

@@ -17,10 +17,10 @@
 		  <tbody>
 				@foreach($cars as $car)
 			    <tr>
-			      <th scope="row">1</th>
+			      <th scope="row">{{$car->id}}</th>
 			      <td>{{$car->code}}</td>
 			      <td>{{$car->kit->name}}</td>
-			      <td><a href="{{route('cars.show',$car->id)}}" class="btn btn-default wow fadeInUp js-scroll-trigger">Info</a></td>
+			      <td><a href="{{route('cars.show',$car->id)}}" class="btnedit btnedit-outline-info btnedit-size">Info</a></td>
 			    </tr>
 				@endforeach
 		  </tbody>

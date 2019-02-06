@@ -318,7 +318,7 @@ strong {
     line-height: 35px;
 }
 tbody a{
-  color:#337ab7 !important;
+  color:#337ab7;
 }
 dd, dt {
     line-height: 2.428571;
@@ -4119,10 +4119,51 @@ outline-suc
   padding: 0.6rem 1.3rem;
   font-size: 1.5rem;
   line-height: 1.5;
+  position: absolute;
   border-radius: 5px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
 }
+
+
+
+/*
+
+    Buton edited 3
+
+    (diferente tamaño, si, soy muy rata, lo siento, pero 
+    de perdidos al rio...)
+
+*/
+
+
+
+.btnedit3 {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  padding-left: 0.75rem;
+  padding-right: 70px;
+  margin-left: 85px;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  border-radius: 5px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+
+
 /*
 
     Buton editado (success -añadir cosas y demas-)
@@ -4169,6 +4210,55 @@ outline-suc
 .show > .btnedit-outline-success.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
 }
+
+/*
+
+    Buton editado (success POP UP -añadir cosas y demas-)
+
+*/
+
+
+
+
+.btnedit-outline-success2 {
+  color: #28a745;
+  background-color: transparent;
+  background-image: none;
+  border-color: #28a745;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  position: absolute;
+  padding: 0.8rem 0.6rem;
+}
+
+.btnedit-outline-success2:hover {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btnedit-outline-success2:focus, .btnedit-outline-success2.focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.btnedit-outline-success2.disabled, .btnedit-outline-success2:disabled {
+  color: #28a745;
+  background-color: transparent;
+}
+
+.btnedit-outline-success2:not(:disabled):not(.disabled):active, .btnedit-outline-success2:not(:disabled):not(.disabled).active,
+.show > .btnedit-outline-success2.dropdown-toggle {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btnedit-outline-success2:not(:disabled):not(.disabled):active:focus, .btnedit-outline-success2:not(:disabled):not(.disabled).active:focus,
+.show > .btnedit-outline-success2.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
 
 
 /*
@@ -4235,6 +4325,8 @@ outline-suc
   background-color: transparent;
   background-image: none;
   border-color: #6c757d;
+  margin-top: 0.3rem;
+  margin-left: 70px;
 }
 
 .btnedit-outline-secondary:hover {
@@ -4264,6 +4356,158 @@ outline-suc
   box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
 }
 
+/*
+
+    Buton editado (info)
+
+*/
+
+.btnedit-info {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btnedit-info:hover {
+  color: #fff;
+  background-color: cyan;
+  border-color: #117a8b;
+}
+
+.btnedit-info:focus, .btnedit-info.focus {
+  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
+}
+
+.btnedit-info.disabled, .btnedit-info:disabled {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btnedit-info:not(:disabled):not(.disabled):active, .btnedit-info:not(:disabled):not(.disabled).active,
+.show > .btnedit-info.dropdown-toggle {
+  color: #fff;
+  background-color: #117a8b;
+  border-color: #10707f;
+}
+
+.btnedit-info:not(:disabled):not(.disabled):active:focus, .btnedit-info:not(:disabled):not(.disabled).active:focus,
+.show > .btnedit-info.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
+}
+
+
+.btnedit-outline-info {
+  color: #17a2b8;
+  background-color: transparent;
+  background-image: none;
+  border-color: #17a2b8;
+}
+
+.btnedit-outline-info:hover {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btnedit-outline-info:focus, .btnedit-outline-info.focus {
+  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
+}
+
+.btnedit-outline-info.disabled, .btnedit-outline-info:disabled {
+  color: #17a2b8;
+  background-color: transparent;
+}
+
+.btnedit-outline-info:not(:disabled):not(.disabled):active, .btnedit-outline-info:not(:disabled):not(.disabled).active,
+.show > .btnedit-outline-info.dropdown-toggle {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btnedit-outline-info:not(:disabled):not(.disabled):active:focus, .btnedit-outline-info:not(:disabled):not(.disabled).active:focus,
+.show > .btnedit-outline-info.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
+}
+
+
+/*
+
+    Buton editado (comprar)
+
+*/
+
+
+.btnedit-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  padding-right: 0.7rem;
+}
+
+.btnedit-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.btnedit-primary:focus, .btnedit-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.btnedit-primary.disabled, .btnedit-primary:disabled {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btnedit-primary:not(:disabled):not(.disabled):active, .btnedit-primary:not(:disabled):not(.disabled).active,
+.show > .btnedit-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #0062cc;
+  border-color: #005cbf;
+}
+
+.btnedit-primary:not(:disabled):not(.disabled):active:focus, .btnedit-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btnedit-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+
+.btnedit-outline-primary {
+  color: #007bff;
+  background-color: transparent;
+  background-image: none;
+  border-color: #007bff;
+}
+
+.btnedit-outline-primary:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btnedit-outline-primary:focus, .btnedit-outline-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.btnedit-outline-primary.disabled, .btnedit-outline-primary:disabled {
+  color: #007bff;
+  background-color: transparent;
+}
+
+.btn-editoutline-primary:not(:disabled):not(.disabled):active, .btnedit-outline-primary:not(:disabled):not(.disabled).active,
+.show > .btnedit-outline-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btnedit-outline-primary:not(:disabled):not(.disabled):active:focus, .btnedit-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btnedit-outline-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
 
 
 /*
