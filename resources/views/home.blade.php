@@ -28,8 +28,8 @@
       @foreach($kits as $kit)
         <tr>
           @foreach($sensors as $sensor)
-          @for($i=0;$i==count($kit->sensors); $i++)
-            <td><?php echo $kit->sensors->name ?></td>
+          @for($i=0;$i<=count($kit->sensors); $i++)
+            <td><?php echo 'dd' ?></td>
             @endfor
           @endforeach
         </tr>
