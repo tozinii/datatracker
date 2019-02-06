@@ -1,5 +1,6 @@
 @extends('layouts.layoutLogged')
 @section('contenido')
+<script src="{{asset('assets/js/jquery-1.12.0.min.js')}}"></script>
 <script src="{{asset('assets/js/statistics/Chart.bundle.js')}}"></script>
 <script src="{{asset('assets/js/statistics/Chart.js')}}"></script>
 <div class="sensors">
@@ -30,11 +31,30 @@
        <option value="dia" selected>Dia</option>
        <option value="hora">Hora</option>
      </select>
+    <div id="fechas" class="input-append">
+      <input type="text" name="" data-format="dd/MM/yyyy hh:mm:ss">
+      <span class="add-on">
+       <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+       </i>
+      </span>
+    </div>
+
    </form>
    <canvas id="chartSensor" width="800" height="350"></canvas>
 
    <script type="text/javascript">
     var fecha = document.getElementById('fecha').value;
+    $(document).ready(function(){
+
+      $('#fecha').on('change', function() {
+        alert( this.value );
+      });
+
+      $('#fechas').datetimepicker({
+      pickDate: false
+    });
+
+    });
      var ctx = document.getElementById("chartSensor").getContext('2d');
      var myChart = new Chart(ctx, {
          type: 'line',
