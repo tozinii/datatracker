@@ -31,6 +31,7 @@
         @foreach($kits as $key => $kit)
           @if($key == 0)
             <td>{{$kit}}</td>
+            <td><button href="" data-target="#createCar{{$kit->id}}" data-toggle="modal" class="btnedit3 btnedit-outline-primary btnedit-size" aria-label="Close">Comprar</button></td>
           @elseif($kit == false)
             <td><img src="{{asset('assets/images/redcross.png')}}" alt="No tiene" width="60%"></td>
           @else
@@ -41,8 +42,6 @@
       @endforeach
     </tbody>
   </table>
-
-
 
 
 

@@ -8,7 +8,7 @@
         <h5>¿Está usted seguro de querer desbanear a {{ $banned->name }}  {{$banned->id}}?</h5>
           <form id="restored-form" action="{{ route('restore',$banned->id) }}" method="post">
               @csrf
-          <button type="submit" id="restore" class="btnedit btnedit-outline-success">Restore</button>
+          <button type="submit" id="restore" class="btnedit btnedit-outline-success2">Restore</button>
           <button type="button" class="btnedit btnedit-outline-secondary btnedit-size " data-dismiss="modal" aria-label="Close">Cancel</button>
           </form>      
       </div>

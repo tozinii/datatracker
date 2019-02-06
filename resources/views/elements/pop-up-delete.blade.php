@@ -9,7 +9,7 @@
         <form id="delete-form" action="{{ route('forceDelete',$banned->id) }}" method="post">
           @csrf
           <button type="submit"  class="btnedit btnedit-outline-danger btnedit-size">Delete</button>
-          <button type="button" class="btnedit btnedit-outline-secondary btnedit-size " data-dismiss="modal" aria-label="Close">Cancel</button>
+          <button type="button" class="btnedit btnedit-outline-secondary btnedit-size" data-dismiss="modal" aria-label="Close">Cancel</button>
         </form>        
       </div>
     </div>

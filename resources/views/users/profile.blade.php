@@ -6,7 +6,7 @@
 	<div class="sections">
 		<h2>Información de perfil:</h2>
 		<!-- Profile image -->
-		<img id="profile-image" src="{{Storage::url(auth()->user()->avatar)}}" alt="Imagen de perfil">
+		{{-- <img id="profile-image" src="{{Storage::url(auth()->user()->avatar)}}" alt="Imagen de perfil"> --}}
 
 		<!-- Profile data -->
 		<form id="editar-formulario" class="needs-validation profile-data" novalidate enctype="multipart/form-data" method="post" action="{{ route('profile.update',auth()->user()->id)}}">
@@ -27,19 +27,19 @@
 		      <input id="profile-email" type="text" class="form-control" name="email" placeholder="Correo electronico" value="{{auth()->user()->email}}" disabled>
 					<span id="profile-email-error-text" class="form-error">Introduce un correo válido</span>
 		    </div>
-		    <div class="col-md-4 mb-3">
+		    <div class="col-md-6 mb-3">
 		      <label>Descripción</label>
 		      <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción de usuario" disabled>{{auth()->user()->description}}</textarea>
 		    </div>
-				<div class="col-md-4 mb-3">
+				<!--<div class="col-md-4 mb-3">
 		      <label>Imagen</label>
 		      <input type="file" class="form-control" name="avatar" id="avatar" disabled>
-		    </div>
-		    <div class="col-md-4 mb-3" id="botonPerfil">
+		    </div>-->
+		    <div class="col-md-6 mb-3" id="botonPerfil">
 		  	  <button class="btn btn-primary" type="button" id="editarPerfil">Editar perfil</button>
 		    </div>
 				<br>
-				<div class="col-md-4 mb-3">
+				<div class="col-md-6 mb-3">
 		  	  <button class="btn btn-primary" type="submit" id="guardarPerfil">Guardar</button>
 		    </div>
 		</form>
