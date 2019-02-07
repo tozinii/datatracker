@@ -1,4 +1,4 @@
-<div class="modal fade" id="createCar{{$kit->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="createCar{{$kitId}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -10,7 +10,7 @@
       <div class="modal-body">
         <form  action="{{ route('cars.store') }}" method="post">
           @csrf
-          <input type="hidden" name="kit" value="{{$kit->id}}">
+          <input type="hidden" name="kit" value="{{$kitId}}">
           <label>Nombre del coche: </label>
           <input id="carname" type="text" name="carname" placeholder="Nombre del coche" required /><br/>
           <!--<span id="login-email-error-text" class="form-error">Introduce un correo válido</span>
