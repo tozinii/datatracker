@@ -26,11 +26,6 @@
         </div>
 
       </div>
-      <!--#start Our footer Area -->
-      <div class="our_footer_area logged-in-footer">
-         @include('elements.footer')
-      </div>
-      <!--#End Our footer Area -->
       @include('elements.scripts')
    </body>
 </html>
