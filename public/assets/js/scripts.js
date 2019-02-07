@@ -5,6 +5,12 @@ $(document).ready(function(){
     $('#submit-form-contacto').click();
   });
 
+  //Eventos navCol
+  $('#navcol-toggle-submenu').on('mouseover',function(e){
+    e.preventDefault();
+    $(this).css('cursor','pointer');
+  });
+
   //Scrolling al clicar en un elemento de navbar
     $('.nav-herramientas').click(function() {
       $('html, body').animate({

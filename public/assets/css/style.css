@@ -2056,13 +2056,18 @@ padding-bottom: 90px;
   .sidenav{
     display:none;
   }
-
   #menu-hamburger{
     display:block;
   }
+  #menu-hamburger .container{
+    margin-left: 0;
+  }
+  .sidenav-header-logo .navCol-icon{
+    margin-top: 10px;
+  }
 }
 
-@media (max-width: 768px){
+@media (max-width: 767px){
   .sidenav-header-logo a{
     display: inline;
   }
@@ -2070,6 +2075,7 @@ padding-bottom: 90px;
     width: 30% !important;
     margin-bottom: 0 !important;
     margin-top: 10px;
+    display: inline;
   }
 
 }
@@ -4275,7 +4281,7 @@ outline-suc
 
     Buton edited 3
 
-    (diferente tamaño, si, soy muy rata, lo siento, pero 
+    (diferente tamaño, si, soy muy rata, lo siento, pero
     de perdidos al rio...)
 
 */
