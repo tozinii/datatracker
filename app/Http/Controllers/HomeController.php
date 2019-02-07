@@ -54,7 +54,7 @@ class HomeController extends Controller
 
         foreach($kits as $key => $kit) {
           $existe = [];
-          $existe[] = $kit->name;
+          $existe[] = $kit;
           for ($j=0; $j < count($sensorName); $j++) {
             if (in_array($sensorName[$j],$sensores[$key])) {
               $existe[] = true;
