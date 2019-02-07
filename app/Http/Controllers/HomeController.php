@@ -36,10 +36,11 @@ class HomeController extends Controller
         foreach ($sensors as $sensor) {
           $sensorName[] = $sensor->name;
         }
+        //dd($sensors);
         sort($sensorName);
 
         $sensores;
-        $existeTodo = [];
+        $listadoKitSensores = [];
         foreach ($kits as $kit) {
           $sensoresKit = [];
           foreach ($kit->sensors as $key => $sensor) {
@@ -62,10 +63,17 @@ class HomeController extends Controller
               $existe[] = false;
             }
           }
-          $existeTodo[] = $existe;
+          $listadoKitSensores[] = $existe;
         }
 
+        $filasTabla;
+        $listadoKits = array_column($listadoKitSensores,0);
+        //dd($listadoKits);
+        for ($i=1; $i < 11; $i++) {
+          $listado[$i-1] = array_column($listadoKitSensores,$i);
+        }
+        //dd($listado);
 
-        return view('home')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors, 'existeTodo' => $existeTodo]);
+        return view('home')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors,'listadoKits' => $listadoKits,'listadoSensores' => $listado]);
     }
 }
