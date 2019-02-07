@@ -9,6 +9,11 @@ use App\Sensor;
 
 class SensorController extends Controller
 {
+
+    public function __construct()
+    {
+      $this->middleware(['auth','verified','user']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -65,7 +70,7 @@ class SensorController extends Controller
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                       ->get();
 
-      return view('users.sensors')->with(['sensorInfo'=>$sensorInfo,'carName'=>$car->name,'sensor'=>$sensor]);
+      return view('users.sensors')->with(['sensorInfo'=>$sensorInfo,'car'=>$car,'sensor'=>$sensor, 'jsonSensor' => json_encode($sensorInfo)]);
     }
 
     /**
@@ -100,5 +105,19 @@ class SensorController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function sensorDate(Request $request)
+    {
+      $car = Car::where('code',$request->carName)->first();
+
+      $sensor = Sensor::where('name',$request->sensorName)->first();
+
+      $sensorInfo = DB::table('car_sensor')
+                      ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
+                      ->get();
+
+
+      return json_encode($sensorInfo);
     }
 }

@@ -4,7 +4,7 @@
 <script src="{{asset('assets/js/statistics/Chart.bundle.js')}}"></script>
 <script src="{{asset('assets/js/statistics/Chart.js')}}"></script>
 <div class="sensors">
-   <h1>Sensor de {{ $sensor->name }} del coche {{ $carName }}</h1>
+   <h1>Sensor de {{ $sensor->name }} del coche {{ $car->code }}</h1>
    <table class="table table-striped">
      <thead>
        <tr>
@@ -24,35 +24,56 @@
    </table>
 
    <form class="" action="" method="post">
-     <select class="" id="fecha">
-       <option value="año">Año</option>
-       <option value="mes">Mes</option>
-       <option value="semana">Semana</option>
-       <option value="dia" selected>Dia</option>
-       <option value="hora">Hora</option>
+     <select class="" id="selectfecha">
+       <option value="1">Año</option>
+       <option value="2">Mes</option>
+       <option value="3" selected>Dia</option>
+       <option value="4">Hora</option>
      </select>
     <div id="fechas" class="input-append">
-      <input type="text" name="" data-format="dd/MM/yyyy hh:mm:ss">
-      <span class="add-on">
-       <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-       </i>
-      </span>
+      <input type="year" id="fecha">
     </div>
 
    </form>
+   {{var_dump($jsonSensor)}}
    <canvas id="chartSensor" width="800" height="350"></canvas>
-
    <script type="text/javascript">
-    var fecha = document.getElementById('fecha').value;
+    var fecha = document.getElementById('selectfecha').value;
+    var datos;
     $(document).ready(function(){
 
-      $('#fecha').on('change', function() {
-        alert( this.value );
-      });
+      $('#selectfecha').on('change', function() {
+        var fecha = document.getElementById('fecha');
+        var selectfecha = document.getElementById('selectfecha');
 
-      $('#fechas').datetimepicker({
-      pickDate: false
-    });
+        switch (selectfecha) {
+          case '1':
+
+
+            break;
+          default:
+
+        }
+        var date = new Date(fecha);
+
+        var carName = '{{$car->code}}';
+        var sensorName = '{{$sensor->name}}';
+
+        $.ajax({
+                data:  {carName : carName, sensorName: sensorName,fecha:date} ,
+                url:   '/sensorDate',
+                type:  'get',
+                dataType: 'json',
+                success:  function (response) {
+                    for (var i = 0; i < response.length; i++) {
+                      //alert(response[i].data);
+                    }
+                },
+                error: function (error) {
+                  alert('error: ' + error);
+                }
+        });
+      });
 
     });
      var ctx = document.getElementById("chartSensor").getContext('2d');

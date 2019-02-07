@@ -48,7 +48,7 @@
 		      <h3>Sensores</h3>
 						@foreach($car->kit->sensors as $sensor)
 						<label>{{ ucfirst($sensor->name) }}</label><br />
-		      	<a href="{{ route('sensorInfo',[$car->code, $sensor->name]) }}" class="button">Ver datos</a><br />
+		      	<a href="{{ route('show',['carName' => $car->code,'sensorName' => $sensor->name]) }}" class="button">Ver datos</a><br />
 						@endforeach
 						<div id="map"></div>
 		    </div>

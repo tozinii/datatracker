@@ -49,7 +49,9 @@ Route::resource('profile','ProfileController')->only('show','edit','destroy');
 Route::post('/password/{user}/change', 'ProfileController@changePassword')->name('changePassword');
 Route::resource('cars', 'CarController')->only('store','index','show');
 Route::get('/cars/{id}', 'CarController@index')->middleware(['auth','verified','user']);
-Route::get('/sensor/{carName}/{sensorName}', 'SensorController@show')->middleware(['auth','verified','user'])->name('sensorInfo');
+Route::get('/sensor/{carName}/{sensorName}', 'SensorController@show')->name('show');
+
+Route::get('/sensorDate','SensorController@sensorDate');
 
 
 // Rutas auth:
