@@ -50,11 +50,10 @@ class HomeController extends Controller
           sort($sensoresKit);
           $sensores[] = $sensoresKit;
         }
-        //dd(count($sensores));
 
         foreach($kits as $key => $kit) {
           $existe = [];
-          $existe[] = $kit->name;
+          $existe[] = $kit;
           for ($j=0; $j < count($sensorName); $j++) {
             if (in_array($sensorName[$j],$sensores[$key])) {
               $existe[] = true;
@@ -63,12 +62,8 @@ class HomeController extends Controller
               $existe[] = false;
             }
           }
-
-          //dd($existe);
           $existeTodo[] = $existe;
         }
-
-        //dd($existeTodo);
 
 
         return view('home')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors, 'existeTodo' => $existeTodo]);
