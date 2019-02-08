@@ -51,11 +51,11 @@ class SensorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($carName,$sensorName)
+    public function show($carName,$sensorId)
     {
       $car = Car::where('code', $carName)->first();
 
-      $sensor = Sensor::where('name', $sensorName)->first();
+      $sensor = Sensor::where('id', $sensorId)->first();
 
       /*dd($sensor->unidad);
       foreach ($car->sensors as $sensorData) {
@@ -63,7 +63,6 @@ class SensorController extends Controller
           dd($sensorData);
         }
       }*/
-
 
 
       $sensorInfo = DB::table('car_sensor')

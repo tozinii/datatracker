@@ -23,23 +23,25 @@
      </tbody>
    </table>
 
-   <form class="" action="" method="post">
-     <select class="" id="selectfecha">
+   <form action="" method="post">
+     <select class="fechas" id="selectfecha">
        <option value="1">Año</option>
        <option value="2">Mes</option>
        <option value="3" selected>Dia</option>
        <option value="4">Hora</option>
      </select>
     <div id="fechas" class="input-append">
-      <input type="date" id="fecha">
+      <input type="date" id="fecha" class="fechas">
     </div>
 
    </form>
-   @if($sensorName == 'gps')
-   <div id="map"></div>
-   @endif
    {{var_dump($jsonSensor)}}
-   <canvas id="chartSensor" width="800" height="350"></canvas>
+   @if($sensor->name == 'gps')
+    <div id="map"></div>
+   @else
+
+    <canvas id="chartSensor" width="800" height="350"></canvas>
+   @endif
    <script type="text/javascript">
     var datos;
     $(document).ready(function(){
@@ -80,17 +82,17 @@
         var sensorName = '{{$sensor->name}}';
 
         $.ajax({
-            data:  {carName : carName, sensorName: sensorName,fecha:date} ,
-            url:   '/sensorDate',
-            type:  'get',
+               data:  {carName : carName, sensorName: sensorName,fecha:date} ,
+               url:   '/sensorDate',
+               type:  'get',
             dataType: 'json',
-            success:  function (response) {
+               success:  function (response) {
               alert(response);
             },
             error: function (error) {
               alert('error: ' + error);
             }
-          });
+             });
       });
 
 
@@ -167,16 +169,26 @@
                maxZoom: 18,
                id: 'mapbox.streets'
            }).addTo(carmap);
-           	<?php for($i = 0; $i < count($coordenadas)-1; $i++) { ?>
-   		        var etapa<?php echo $i ?> = [
-   		            [<?php echo $coordenadas[$i] ?>],
-   		           	[<?php echo $coordenadas[$i+1] ?>]
-   		        ];
-   		        var polyline<?php echo $i ?> = L.polyline(etapa<?php echo $i ?>, {color: 'red'}).addTo(carmap);
-           	<?php
+           @if($sensor->name == 'gps')
+              @php
+                $coordenadas = [];
+              @endphp
+            @foreach($sensorInfo as $info)
+              array_push($coordenadas,$info->data);
+            @endforeach
 
-           		}
-   		?>
+            <?php for($i = 0; $i < count($coordenadas)-1; $i++) { ?>
+              var etapa<?php echo $i ?> = [
+                  [<?php echo $coordenadas[$i] ?>],
+                   [<?php echo $coordenadas[$i+1] ?>]
+              ];
+              var polyline<?php echo $i ?> = L.polyline(etapa<?php echo $i ?>, {color: 'red'}).addTo(carmap);
+            <?php
+
+              }
+            ?>
+          @endif
+
 
    </script>
 </div>
