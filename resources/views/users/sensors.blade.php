@@ -31,14 +31,13 @@
        <option value="4">Hora</option>
      </select>
     <div id="fechas" class="input-append">
-      <input type="year" id="fecha">
+      <input type="date" id="fecha">
     </div>
 
    </form>
    {{var_dump($jsonSensor)}}
    <canvas id="chartSensor" width="800" height="350"></canvas>
    <script type="text/javascript">
-    var fecha = document.getElementById('selectfecha').value;
     var datos;
     $(document).ready(function(){
 
@@ -46,34 +45,52 @@
         var fecha = document.getElementById('fecha');
         var selectfecha = document.getElementById('selectfecha');
 
-        switch (selectfecha) {
+        switch (selectfecha.value) {
           case '1':
+            fecha.type = 'date';
+            format = new Date(fecha);
+            var year = format.getYear();
+            break;
+          case '2':
+            fecha.type = 'month';
+            format = new Date(fecha);
+            break;
+          case '3':
+            fecha.type = 'date';
+            format = new Date(fecha);
 
+            break;
+          case '4':
+            fecha.type = 'time';
+            format = new Date(fecha);
 
             break;
           default:
 
         }
-        var date = new Date(fecha);
+      });
 
+      $('#fecha').on('change',function(){
+        var date = document.getElementById('fecha').value;
+        console.log(date);
         var carName = '{{$car->code}}';
         var sensorName = '{{$sensor->name}}';
 
         $.ajax({
-                data:  {carName : carName, sensorName: sensorName,fecha:date} ,
-                url:   '/sensorDate',
-                type:  'get',
-                dataType: 'json',
-                success:  function (response) {
-                    for (var i = 0; i < response.length; i++) {
-                      //alert(response[i].data);
-                    }
-                },
-                error: function (error) {
-                  alert('error: ' + error);
-                }
-        });
+            data:  {carName : carName, sensorName: sensorName,fecha:date} ,
+            url:   '/sensorDate',
+            type:  'get',
+            dataType: 'json',
+            success:  function (response) {
+              alert(response);
+            },
+            error: function (error) {
+              alert('error: ' + error);
+            }
+          });
       });
+
+
 
     });
      var ctx = document.getElementById("chartSensor").getContext('2d');

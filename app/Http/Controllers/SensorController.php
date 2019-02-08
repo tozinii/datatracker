@@ -111,13 +111,17 @@ class SensorController extends Controller
     {
       $car = Car::where('code',$request->carName)->first();
 
+      return json_encode($request->fecha);
+
       $sensor = Sensor::where('name',$request->sensorName)->first();
 
-      $sensorInfo = DB::table('car_sensor')
+      $sensorInfo = DB::table('car_sensor')->select('data','created_at')
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
+                      ->avg('data')
+                      ->whereMonth('created_at',2)
+                      ->groupBy('created_at')
                       ->get();
 
 
-      return json_encode($sensorInfo);
     }
 }
