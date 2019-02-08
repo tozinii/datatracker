@@ -1,0 +1,56 @@
+@extends('layouts.layoutLogged')
+
+@section('contenido')
+
+<div class="container">
+
+<h1>Bienvenido a la tienda</h1>
+<h3>Estos son los coches que puede comprar en estos momentos:</h3>
+
+
+ <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        @foreach($listadoKits as $kit)
+          <th>{{$kit->name}}</th>
+          @php
+            $kitId = $kit->id;
+          @endphp
+        @endforeach
+      </tr>
+        @for($i=0; $i < count($listadoSensores); $i++)
+          <tr>
+            <th scope="col">{{$sensors[$i]->name}}</th>
+            @for($j=0; $j < count($listadoSensores[$i]); $j++)
+              @if($listadoSensores[$i][$j] == false)
+                <td><img src="{{asset('assets/images/redcross.png')}}" alt="No tiene" width="60%"></td>
+              @elseif($listadoSensores[$i][$j] == true)
+                <td><img src="{{asset('assets/images/tick.png')}}" alt="Tiene" width="60%"></td></td>
+              @endif
+            @endfor
+
+          </tr>
+        @endfor
+        <tr>
+          <td></td>
+          @for($i=0; $i < count($listadoKits); $i++)
+            <td><button href="" data-target="#createCar{{$kitId}}" data-toggle="modal" class="btnedit3 btnedit-outline-primary btnedit-size" aria-label="Close">Comprar</button></td>
+            @include('elements/pop-up-createCar')
+          @endfor
+
+        </tr>
+
+
+    </tr>
+  </thead>
+  </table>
+
+
+
+
+
+
+</div>
+@endsection
+

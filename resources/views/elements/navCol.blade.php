@@ -31,6 +31,9 @@
         <li class="nav-item lista">
           <a class="nav-link" href="{{route('cars.index')}}">Coches</a>
         </li>
+        <li class="nav-item lista">
+          <a class="nav-link" href="{{route('shop')}}">Tienda</a>
+        </li>
       @else
         <li class="nav-item lista">
           <a class="nav-link" href="{{route('listUsers')}}">Lista de usuarios</a>

@@ -8,23 +8,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class HomeController extends Controller
-{
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware(['auth','verified','user']);
-    }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
+class ShopController extends Controller
+{
+   
     public function index()
     {
         $cars = Car::where('user_id',Auth::user()->id)->count();
@@ -74,6 +61,6 @@ class HomeController extends Controller
         }
         //dd($listado);
 
-        return view('home')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors,'listadoKits' => $listadoKits,'listadoSensores' => $listado]);
+        return view('users/shop')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors,'listadoKits' => $listadoKits,'listadoSensores' => $listado]);
     }
 }
