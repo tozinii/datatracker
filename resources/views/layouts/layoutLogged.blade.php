@@ -21,9 +21,9 @@
       </div>
 
       <div class="container-profile">
-        <div class="container">
+        
           @yield('contenido')
-        </div>
+
 
       </div>
       @include('elements.scripts')
