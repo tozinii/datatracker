@@ -51,10 +51,10 @@
 		<div class="tab-content">
 	    	<div id="sensores" class="tab-pane fade in active">
 		      <h3>Datos de los sensores</h3>
-						@foreach($carSensorsNames as $sensorName)
+						@foreach($car->sensors as $sensor)
 
-						<a href="{{ route('sensorInfo',[$car->code, $sensorName]) }}" class="sensor-info-button sensor-info-button--isi sensor-info-button--text-thick sensor-info-button--text-upper">
-							<span>{{ ucfirst($sensorName) }}</span>
+						<a href="{{ route('sensorInfo',[$car->code, $sensor->id]) }}" class="sensor-info-button sensor-info-button--isi sensor-info-button--text-thick sensor-info-button--text-upper">
+							<span>{{ ucfirst($sensor->name) }}</span>
 						</a>
 
 						@endforeach
