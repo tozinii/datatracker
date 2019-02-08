@@ -69,7 +69,7 @@ class CarController extends Controller
     {
       $car = Car::find($id);
 
-      $carSensorsNames = array();
+      /*$carSensorsNames = array();
 
       //Esta query devuelve un objeto
       $carSensorsId = DB::table('car_sensor')->distinct()->select('sensor_id')->where('car_id', '=', $car->id)->get();
@@ -77,9 +77,16 @@ class CarController extends Controller
       foreach($carSensorsId as $sensorId){
         $sensor = Sensor::find($sensorId->sensor_id);
         array_push($carSensorsNames, $sensor->name);
-        }
+      }*/
 
-      return view('users.car')->with(['car' => $car,'carSensorsNames'=>$carSensorsNames]);
+      $coordenadas = [];
+
+      foreach ($car->sensors as $data){
+        if ($data->id == 3 ) {
+            array_push($coordenadas, $data->pivot->data);
+        }
+      }
+      return view('users.car')->with(['car' => $car,'coordenadas' => $coordenadas]);
     }
 
     /**

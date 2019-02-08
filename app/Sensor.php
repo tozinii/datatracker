@@ -10,7 +10,7 @@ class Sensor extends Model
 
   public function cars()
     {
-      return $this->belongsToMany('App\Car');
+      return $this->belongsToMany('App\Car')->withPivot('data');
     }
 
     public function kits()
