@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Car;
 use App\Sensor;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use DateTime;
 use Auth;
@@ -68,7 +69,7 @@ class CarController extends Controller
     {
       $car = Car::find($id);
 
-      $carSensorsNames = array();
+      /*$carSensorsNames = array();
 
       //Esta query devuelve un objeto
       $carSensorsId = DB::table('car_sensor')->distinct()->select('sensor_id')->where('car_id', '=', $car->id)->get();
@@ -76,7 +77,7 @@ class CarController extends Controller
       foreach($carSensorsId as $sensorId){
         $sensor = Sensor::find($sensorId->sensor_id);
         array_push($carSensorsNames, $sensor->name);
-        }
+      }*/
 
       $coordenadas = [];
 
@@ -85,7 +86,7 @@ class CarController extends Controller
             array_push($coordenadas, $data->pivot->data);
         }
       }
-      return view('users.car')->with(['car' => $car,'coordenadas' => $coordenadas,'carSensorsNames'=>$carSensorsNames]);
+      return view('users.car')->with(['car' => $car,'coordenadas' => $coordenadas]);
     }
 
     /**
@@ -108,7 +109,17 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+      if(!$this->validator($request->all())->fails()){
+        $car = Car::find($id);
+
+        $car->code = $request->input('car-code');
+        $car->description = $request->input('car-description');
+
+        $car->save();
+        return back();
+      }
+      return back()->with('editCarError', 'Error en la solicitud. Por favor, rellena los campos obligatorios. (*)');
     }
 
     /**
@@ -122,4 +133,11 @@ class CarController extends Controller
         //
     }
 
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'car-code' => ['required', 'string', 'min:1', 'max:50'],
+            'car-description' => ['string', 'nullable', 'max:50'],
+        ]);
+    }
 }

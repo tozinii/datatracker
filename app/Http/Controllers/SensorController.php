@@ -9,6 +9,11 @@ use App\Sensor;
 
 class SensorController extends Controller
 {
+
+    public function __construct()
+    {
+      $this->middleware(['auth','verified','user']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -49,12 +54,23 @@ class SensorController extends Controller
     public function show($carName,$sensorName)
     {
       $car = Car::where('code', $carName)->first();
+
       $sensor = Sensor::where('name', $sensorName)->first();
+
+      /*dd($sensor->unidad);
+      foreach ($car->sensors as $sensorData) {
+        if ($sensorData->name == $sensor) {
+          dd($sensorData);
+        }
+      }*/
+
+
 
       $sensorInfo = DB::table('car_sensor')
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                       ->get();
-      return view('users.sensors')->with(['sensorInfo'=>$sensorInfo,'carName'=>$carName,'sensorName'=>$sensorName]);
+
+      return view('users.sensors')->with(['sensorInfo'=>$sensorInfo,'car'=>$car,'sensor'=>$sensor, 'jsonSensor' => json_encode($sensorInfo)]);
     }
 
     /**
@@ -89,5 +105,23 @@ class SensorController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function sensorDate(Request $request)
+    {
+      $car = Car::where('code',$request->carName)->first();
+
+      return json_encode($request->fecha);
+
+      $sensor = Sensor::where('name',$request->sensorName)->first();
+
+      $sensorInfo = DB::table('car_sensor')->select('data','created_at')
+                      ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
+                      ->avg('data')
+                      ->whereMonth('created_at',2)
+                      ->groupBy('created_at')
+                      ->get();
+
+
     }
 }

@@ -97,4 +97,8 @@ class LoginController extends Controller
         return back()->with('loginError','Error en la autenticación, vuelve a intentarlo.');
     }
 
+    public function showLoginForm(){
+      return redirect()->route('root')->with('loginError','Debes iniciar sesión.');
+    }
+
 }

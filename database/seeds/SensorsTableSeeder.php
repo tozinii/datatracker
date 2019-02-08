@@ -16,7 +16,8 @@ class SensorsTableSeeder extends Seeder
       $data = json_decode($json);
       foreach($data as $obj){
         Sensor::create(array(
-          'name'=> $obj->name
+          'name'=> $obj->name,
+          'unidad'=> $obj->unidad,
         ));
       }
     }

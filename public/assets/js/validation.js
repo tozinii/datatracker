@@ -11,9 +11,12 @@ var validLoginPassword = false;
 //Variables para validación de reset password
 var validResetPasswordEmail = false;
 
-//Variables para validación de user profile
+//Variables para validación de editar user profile
 var validProfileName =true;
 var validProfileEmail = true;
+
+//Variables para validación de editar coche
+var validCarCode =true;
 
 //Variables para validación de cambio de contraseña
 var validChangePasswordOld = false;
@@ -164,6 +167,20 @@ $(document).ready(function(){
         }
         changePasswordValidated();
       });
+
+    //Validación editar coche
+    //Code
+    $('#car-code').on('input', function(){
+      if($(this).val() != ""){
+        $('#car-code-error-text').css('display','none');
+        validCarCode = true;
+      }else{
+        $('#car-code-error-text').css('display','block');
+        validCarCode = false;
+      }
+      editCarValidated();
+    });
+
 });
 
 //Funciones validacion login y register
@@ -240,5 +257,13 @@ function changePasswordValidated(){
     $('#change-password-submit').prop('disabled', false);
   }else{
     $('#change-password-submit').prop('disabled', true);
+  }
+}
+
+function editCarValidated(){
+  if(validCarCode){
+    $('#save-car').prop('disabled', false);
+  }else{
+    $('#save-car').prop('disabled', true);
   }
 }
