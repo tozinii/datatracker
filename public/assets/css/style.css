@@ -3773,6 +3773,28 @@ a.button {
   color: initial;
 }
 
+
+/*
+
+    Estilos tablas
+
+*/
+
+.sections thead, th, td{
+  border: none;
+}
+.sections th{
+  background-color: aliceblue;
+}
+.sections h2{
+  color: black;
+  font-size: 30px;
+  font-family: 'Signika',sans-serif;
+}
+
+
+
+
 /* Editar Perfil */
 
 #guardarPerfil {
