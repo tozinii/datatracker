@@ -26,9 +26,9 @@
           <th>{{$sensors[$i]->name}}</th>
           @for($j=0; $j < count($listadoSensores[$i]); $j++)
             @if($listadoSensores[$i][$j] == false)
-              <td class="bg-red"><img src="{{asset('assets/images/redcross.png')}}" alt="No tiene" width="10%"></td>
+              <td><img src="{{asset('assets/images/redcross.png')}}" alt="No tiene" width="10%"></td>
             @elseif($listadoSensores[$i][$j] == true)
-              <td class="bg-green"><img src="{{asset('assets/images/tick.png')}}" alt="Tiene" width="10%"></td>
+              <td><img src="{{asset('assets/images/tick.png')}}" alt="Tiene" width="10%"></td>
             @endif
           @endfor
 
