@@ -65,19 +65,19 @@
                     <span class="icon-bar"></span>
       </button>
     </div>
-    
+
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <!--<ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
         <li><a href="about.php">About</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="contact.php">Contact</a></li>
-      </ul>
-      <!--<ul class="nav navbar-nav">
+      </ul>-->
+      <<ul class="nav navbar-nav">
         <li class="nav-item lista">
-          <a class="navcol-link collapsed" href="#submenu" data-toggle="collapse" data-target="#submenu">{{auth()->user()->name}}</a>
-          <div class="collapse" id="submenu" aria-expanded="false">
+          <a id="navcol-toggle-submenu" class="navcol-link collapsed" data-toggle="collapse" data-target="#submenu-two">{{auth()->user()->name}}</a>
+          <div class="collapse" id="submenu-two" aria-expanded="false">
             <ul class="nav flex-column p-4">
               <li class="nav-item lista">
                 <a class="nav-link" href="{{route('profile.show',auth()->user()->id)}}">Perfil</a>
@@ -90,7 +90,6 @@
               </form>
               </li>
             </ul>
-
           </div>
         </li>
         @if(auth()->user()->role == 'User')
@@ -105,7 +104,9 @@
             <a class="nav-link" href="{{route('statistics')}}">Estadisticas</a>
           </li>
         @endif
-      </ul>-->
+      </ul>
+
     </div>
+
   </div>
 </nav>

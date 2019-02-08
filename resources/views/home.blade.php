@@ -15,11 +15,6 @@
       <p class="mb-0">Actualmente usted dispone de {{$cars}} coche(s).</p>
     @endif
 	</div>
-
-
-
-
-
-
+  
 </div>
 @endsection

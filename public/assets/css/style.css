@@ -2056,13 +2056,23 @@ padding-bottom: 90px;
   .sidenav{
     display:none;
   }
-
   #menu-hamburger{
     display:block;
   }
+  #menu-hamburger .container{
+    margin-left: 0;
+  }
+  .sidenav-header-logo .navCol-icon{
+    margin-top: 10px;
+  }
+
+  .container-profile{
+    margin-left: 0 !important;
+    width: 100%;
+  }
 }
 
-@media (max-width: 768px){
+@media (max-width: 767px){
   .sidenav-header-logo a{
     display: inline;
   }
@@ -2070,6 +2080,7 @@ padding-bottom: 90px;
     width: 30% !important;
     margin-bottom: 0 !important;
     margin-top: 10px;
+    display: inline;
   }
 
 }
@@ -3852,6 +3863,34 @@ a.button {
   text-transform: uppercase;
 }
 
+/*Estilos shop*/
+.table-responsive .table th{
+background-color:#c3c3c3;
+}
+
+.bg-green{
+  background-color:#9cc533
+}
+
+.bg-red{
+  background-color:#ff4a37
+}
+
+#shop-table thead{
+  border: 0;
+}
+
+#shop-table thead th,
+#shop-table tfoot th{
+  text-align: center;
+}
+
+#shop-table tfoot tr td{
+  border-left-color: white;
+  border-bottom-color: white;
+  border-right-color: white;
+}
+
 /*
 -------------                           ---------------
  ------------------------------------------------------
@@ -4297,7 +4336,7 @@ outline-suc
 
     Buton edited 3
 
-    (diferente tamaño, si, soy muy rata, lo siento, pero 
+    (diferente tamaño, si, soy muy rata, lo siento, pero
     de perdidos al rio...)
 
 */
