@@ -35,7 +35,6 @@
     </div>
 
    </form>
-   {{var_dump($jsonSensor)}}
    @if($sensor->name == 'gps')
     <div id="map"></div>
    @else
@@ -43,12 +42,12 @@
     <canvas id="chartSensor" width="800" height="350"></canvas>
    @endif
    <script type="text/javascript">
-    var datos;
+    var selectfecha;
     $(document).ready(function(){
 
       $('#selectfecha').on('change', function() {
         var fecha = document.getElementById('fecha');
-        var selectfecha = document.getElementById('selectfecha');
+        selectfecha = document.getElementById('selectfecha');
 
         switch (selectfecha.value) {
           case '1':
@@ -74,20 +73,20 @@
 
         }
       });
-
       $('#fecha').on('change',function(){
-        var date = document.getElementById('fecha').value;
-        console.log(date);
+        var date = document.getElementById('fecha');
+        var tipo = date.type;
+        var valor = date.value;
         var carName = '{{$car->code}}';
         var sensorName = '{{$sensor->name}}';
 
         $.ajax({
-               data:  {carName : carName, sensorName: sensorName,fecha:date} ,
+               data:  {carName : carName, sensorName: sensorName,fecha:valor,tipo:tipo} ,
                url:   '/sensorDate',
                type:  'get',
             dataType: 'json',
                success:  function (response) {
-              alert(response);
+                  grafico(response);
             },
             error: function (error) {
               alert('error: ' + error);
@@ -98,66 +97,68 @@
 
 
     });
-     var ctx = document.getElementById("chartSensor").getContext('2d');
-     var myChart = new Chart(ctx, {
-         type: 'line',
-         data: {
-             labels: [
-               @foreach($sensorInfo as $info)
-                 '{{$info->created_at}}',
-               @endforeach
-             ],
-             datasets: [{
-                 label: 'Valores de cada '+fecha,
-                 data: [
-                   @foreach($sensorInfo as $info)
-                     '{{$info->data}}',
-                   @endforeach
-                 ],
-                 backgroundColor: [
-                     'rgba(255, 99, 132, 0.2)',
-                     'rgba(54, 162, 235, 0.2)',
-                     'rgba(255, 206, 86, 0.2)',
-                     'rgba(75, 192, 192, 0.2)',
-                     'rgba(153, 102, 255, 0.2)',
-                     'rgba(255, 159, 64, 0.2)'
-                 ],
-                 borderColor: [
-                     'rgba(54, 162, 235, 1)',
-                     'rgba(255, 206, 86, 1)',
-                     'rgba(75, 192, 192, 1)',
-                     'rgba(153, 102, 255, 1)',
-                     'rgba(255, 159, 64, 1)'
-                 ],
-                 borderWidth: 3,
-                 fill:false
-             }]
-         },
-         options: {
-           responsive: true,
-             scales: {
-                 yAxes: [{
-                     display: true,
-                     scaleLabel: {
-                       display: true,
-                       labelString: '{{$sensor->unidad}}'
-                     },
-                     ticks: {
-                         beginAtZero:true
-                     }
-                 }],
-                 xAxes: [{
-                     scaleLabel: {
-                       display: true,
-                       labelString: 'Fecha'
-                     },
-                     ticks: {
-                         beginAtZero:true
-                     }
-                 }]
-             }
-         }
-     });
+    function grafico(sensorInfo) {
+      var ctx = document.getElementById("chartSensor").getContext('2d');
+      var datos = [];
+      var fechas = [];
+      for(var i in sensorInfo){
+        datos.push(sensorInfo[i].dato);
+        fechas.push(sensorInfo[i].fecha);
+        console.log(sensorInfo[i].mes);
+      }
+      var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: fechas,
+              datasets: [{
+                  label: 'Valores de '+fecha,
+                  data: datos,
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                  ],
+                  borderWidth: 3,
+                  fill:false
+              }]
+          },
+          options: {
+            responsive: true,
+              scales: {
+                  yAxes: [{
+                      display: true,
+                      scaleLabel: {
+                        display: true,
+                        labelString: '{{$sensor->unidad}}'
+                      },
+                      ticks: {
+                          beginAtZero:true
+                      }
+                  }],
+                  xAxes: [{
+                      scaleLabel: {
+                        display: true,
+                        labelString: 'Fecha'
+                      },
+                      ticks: {
+                          beginAtZero:true
+                      }
+                  }]
+              }
+          }
+      });
+    }
+
 
    </script>
    <script>
