@@ -130,7 +130,7 @@ class SensorController extends Controller
                           ->groupBy('created_at')
                           ->get();*/
           $sensorInfo = DB::select("SELECT data as dato, created_at as fecha FROM car_sensor WHERE car_id = $car->id AND sensor_id = $sensor->id GROUP BY created_at")
-          return json_encode($sensorInfo);
+          return $sensorInfo;
 
           break;
         case 'time':
