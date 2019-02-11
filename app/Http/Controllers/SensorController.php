@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Car;
 use App\Sensor;
+use Carbon\Carbon;
 
 class SensorController extends Controller
 {
@@ -51,11 +52,11 @@ class SensorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($carName,$sensorName)
+    public function show($carName,$sensorId)
     {
       $car = Car::where('code', $carName)->first();
 
-      $sensor = Sensor::where('name', $sensorName)->first();
+      $sensor = Sensor::where('id', $sensorId)->first();
 
       /*dd($sensor->unidad);
       foreach ($car->sensors as $sensorData) {
@@ -63,7 +64,6 @@ class SensorController extends Controller
           dd($sensorData);
         }
       }*/
-
 
 
       $sensorInfo = DB::table('car_sensor')
@@ -111,9 +111,36 @@ class SensorController extends Controller
     {
       $car = Car::where('code',$request->carName)->first();
 
-      return json_encode($request->fecha);
-
       $sensor = Sensor::where('name',$request->sensorName)->first();
+
+      $fechaType = $request->tipo;
+
+      $fechaValor = $request->fecha;
+
+
+      switch ($fechaType) {
+        case 'date':
+          return json_encode('dia/año');
+          break;
+        case 'month':
+          $mes = Carbon::parse($fechaValor);
+          $sensorInfo = DB::table('car_sensor')->select(DB::raw('avg(data) as dato, MONTH(created_at) as mes'),'created_at as fecha')
+                          ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
+                          ->whereMonth('created_at',$mes->month)
+                          ->groupBy('created_at')
+                          ->get();
+
+          return json_encode($sensorInfo);
+
+          break;
+        case 'time':
+          return json_encode('hora');
+          break;
+        default:
+          // code...
+          break;
+      }
+
 
       $sensorInfo = DB::table('car_sensor')->select('data','created_at')
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
