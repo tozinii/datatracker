@@ -124,7 +124,7 @@ class SensorController extends Controller
           break;
         case 'month':
           $mes = Carbon::parse($fechaValor);
-          $sensorInfo = DB::table('car_sensor')->select(DB::raw('avg(to_number(data,'99G999D9S')) as dato'),'created_at as fecha')
+          $sensorInfo = DB::table('car_sensor')->select(DB::raw('avg(to_number(data,'G999D9S')) as dato, EXTRACT(MONTH from created_at) as mes'),'created_at as fecha')
                           ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                           ->whereMonth('created_at',$mes->month)
                           ->groupBy('created_at')
