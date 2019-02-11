@@ -129,7 +129,7 @@ class SensorController extends Controller
                           ->whereMonth('created_at',$mes->month)
                           ->groupBy('created_at')
                           ->get();
-
+          dd($sensorInfo);
           return json_encode($sensorInfo);
 
           break;
