@@ -129,7 +129,7 @@ class SensorController extends Controller
                           ->whereMonth('created_at',$mes->month)
                           ->groupBy('created_at')
                           ->get();*/
-          $sensorInfo = DB::select("SELECT data as dato, created_at as fecha FROM car_sensor WHERE car_id = $car->id AND sensor_id = $sensor->id GROUP BY created_at");
+          $sensorInfo = DB::select("SELECT data as dato, created_at as fecha FROM car_sensor WHERE car_id = $car->id AND sensor_id = $sensor->id GROUP BY fecha");
           return json_encode($sensorInfo);
 
           break;
