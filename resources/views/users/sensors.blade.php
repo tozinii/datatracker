@@ -83,7 +83,8 @@
         $.ajax({
                data:  {carName : carName, sensorName: sensorName,fecha:valor,tipo:tipo} ,
                url:   '/sensorDate',
-               type:  'get'
+               type:  'get',
+               datatype = 'json'
                success:  function (response) {
                   grafico(response);
             },
