@@ -48,6 +48,7 @@ Route::post('/event/create','AdminController@createEvent')->name('createEvent');
 Route::resource('profile','ProfileController')->only('show','edit','destroy');
 Route::post('/password/{user}/change', 'ProfileController@changePassword')->name('changePassword');
 Route::resource('cars', 'CarController')->only('store','index','show','update');
+Route::resource('kits','KitController')->only('index','edit','create');
 Route::get('/cars/{id}', 'CarController@index')->middleware(['auth','verified','user']);
 Route::get('/sensor/{carName}/{sensorName}', 'SensorController@show')->middleware(['auth','verified','user'])->name('sensorInfo');
 Route::get('/shop', 'ShopController@index')->name('shop');

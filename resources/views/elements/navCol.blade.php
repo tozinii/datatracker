@@ -41,6 +41,9 @@
         <li class="nav-item lista">
           <a class="nav-link" href="{{route('statistics')}}">Estadisticas</a>
         </li>
+        <li class="nav-item lista">
+          <a class="nav-link" href="{{route('kits.index')}}">Kits</a>
+        </li>
       @endif
     </ul>
   </div>
@@ -102,6 +105,9 @@
           </li>
           <li class="nav-item lista">
             <a class="nav-link" href="{{route('statistics')}}">Estadisticas</a>
+          </li>
+          <li class="nav-item lista">
+            <a class="nav-link" href="{{route('kits.index')}}">Kits</a>
           </li>
         @endif
       </ul>

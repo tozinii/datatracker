@@ -15,8 +15,7 @@ class KitController extends Controller
     {
         $kits = Kit::all();
 
-        dd($kits);
-        return view();
+        return view('users.kits')->with('kits',$kits);
     }
 
     /**
@@ -26,7 +25,7 @@ class KitController extends Controller
      */
     public function create()
     {
-        //
+      return view('users.kit-create');
     }
 
     /**

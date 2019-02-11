@@ -4478,7 +4478,7 @@ outline-suc
   background-image: none;
   border-color: #dc3545;
   left: 0;
-  position: absolute;
+  /*position: absolute;*/
   margin-left: 10px;
   margin-top: 3px;
 
