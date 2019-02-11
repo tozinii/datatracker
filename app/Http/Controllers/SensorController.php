@@ -124,11 +124,12 @@ class SensorController extends Controller
           break;
         case 'month':
           $mes = Carbon::parse($fechaValor);
-          $sensorInfo = DB::table('car_sensor')->select(DB::raw('data as dato, created_at as fecha'))
+          /*$sensorInfo = DB::table('car_sensor')->select(DB::raw('data as dato, created_at as fecha'))
                           ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                           ->whereMonth('created_at',$mes->month)
                           ->groupBy('created_at')
-                          ->get();
+                          ->get();*/
+          $sensorInfo = DB::select("SELECT data as dato, created_at as fecha FROM car_sensor WHERE car_id = $car->id AND sensor_id = $sensor->id GROUP BY created_at")
           dd($sensorInfo);
           return json_encode($sensorInfo);
 
