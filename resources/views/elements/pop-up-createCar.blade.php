@@ -13,11 +13,9 @@
           <input type="hidden" name="kit" value="{{$kitId}}">
           <label>Nombre del coche: </label>
           <input id="carname" type="text" name="carname" placeholder="Nombre del coche" required /><br/>
-          <!--<span id="login-email-error-text" class="form-error">Introduce un correo válido</span>
-          <span id="login-password-error-text" class="form-error">La contraseña debe tener 8 carácteres o más</span>-->
           <button type="submit" class="btnedit btnedit-outline-success2">Aceptar</button>
           <button type="button" class="btnedit btnedit-outline-secondary btnedit-size " data-dismiss="modal" aria-label="Close">Cancel</button>
-          </form>   
+          </form>
         </form>
 
 

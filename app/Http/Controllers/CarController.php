@@ -48,15 +48,19 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-      $car = new Car;
-      $car->code = $request->carname;
-      $car->user_id = Auth::user()->id;
-      $car->kit_id = $request->kit;
-      $user = Auth::user()->id;
+      if (!$this->validator($request->all())->fails()) {
+        $car = new Car;
+        $car->code = $request->carname;
+        $car->user_id = Auth::user()->id;
+        $car->kit_id = $request->kit;
+        $user = Auth::user()->id;
 
-      $car->save();
+        $car->save();
 
-      return back()->with('confirmation','Enhorabuena!! Has comprado un coche');
+        return back()->with('confirmation','Enhorabuena!! Has comprado un coche');
+      }
+        return back()->with()
+
     }
 
     /**
