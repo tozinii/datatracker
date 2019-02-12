@@ -13,33 +13,33 @@
 
 			@csrf
 			@method('PUT')
-		    <div class="col-md-4 mb-3">
+		    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 		      <label>Nombre*</label>
 		      <input id="profile-name" type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{auth()->user()->name}}" disabled>
 					<span id="profile-name-error-text" class="form-error">Introduce un nombre válido</span>
 		    </div>
-		    <div class="col-md-4 mb-3">
+		    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 		      <label>Apellido</label>
 		      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" value="{{auth()->user()->lastname}}" disabled>
 		    </div>
-		    <div class="col-md-4 mb-3">
+		    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 		      <label>Correo electrónico*</label>
 		      <input id="profile-email" type="text" class="form-control" name="email" placeholder="Correo electronico" value="{{auth()->user()->email}}" disabled>
 					<span id="profile-email-error-text" class="form-error">Introduce un correo válido</span>
 		    </div>
-		    <div class="col-md-6 mb-3">
+				<!--<div id="boton-imagen-perfil" class="col-lg-6 col-md-12 col-sm-12 col-xs-12 upload-btn-wrapper">
+					<button class="upload-btn" disabled>Subir imagen</button>
+		      <input type="file" class="form-control" name="avatar" id="avatar" disabled>
+		    </div>-->
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		      <label>Descripción</label>
 		      <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripción de usuario" disabled>{{auth()->user()->description}}</textarea>
 		    </div>
-				<!--<div class="col-md-4 mb-3">
-		      <label>Imagen</label>
-		      <input type="file" class="form-control" name="avatar" id="avatar" disabled>
-		    </div>-->
-		    <div class="col-md-6 mb-3" id="botonPerfil">
+		    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="botonPerfil">
 		  	  <button class="btn btn-primary" type="button" id="editarPerfil">Editar perfil</button>
 		    </div>
 				<br>
-				<div class="col-md-6 mb-3">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		  	  <button class="btn btn-primary" type="submit" id="guardarPerfil">Guardar</button>
 		    </div>
 		</form>

@@ -2070,6 +2070,10 @@ padding-bottom: 90px;
     margin-left: 0 !important;
     width: 100%;
   }
+
+  .sections #editar-formulario{
+    width: 400px !important;
+  }
 }
 
 @media (max-width: 767px){
@@ -3729,11 +3733,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 .disabled-link{
   cursor: default;
 }
- /* Si se os ocurre un mejor nombre
-    para esta clase decidmelo porfa
-    |||
-    vvv
-    Esta bien asi, no te preocupes    */
+
 .container-profile{
   /*float: left;*/
   margin-left: 15%;
@@ -3753,7 +3753,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 }
 .sections{
   width: 100%;
-  margin: 2%;
+  padding: 2%;
 }
 .sections img{
   height: 200px;
@@ -3762,8 +3762,8 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
 .profile-data{
 }
 .sections #editar-formulario{
-  height: 200px;
-  width: 1260px;
+  height: 500px;
+  width: 820px;
 }
 .nav-tabs a{
   color: grey;
@@ -3817,6 +3817,48 @@ a.button {
 
 #profile-image{
   border-radius: 50%;
+}
+
+/*Formularios-profile*/
+#editar-formulario #descripcion{
+  height: 150px;
+}
+
+#boton-imagen-perfil{
+  margin-top: 30px;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
 
 /*Editar Coche*/
