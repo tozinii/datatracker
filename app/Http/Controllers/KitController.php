@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Kit;
+use App\Http\Requests\StoreKitRequest;
 use Illuminate\Http\Request;
 
 class KitController extends Controller
@@ -36,7 +37,14 @@ class KitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $kit = new Kit;
+
+        $kit->name = $request->input('nombre');
+        $kit->num_serie = $request->input('num_serie');
+
+        $kit->save();
+
+        return back()->with('confirmation','El kit se ha insertado correctamente');
     }
 
     /**
