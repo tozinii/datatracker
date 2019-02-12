@@ -14,6 +14,7 @@ class CreateCarSensorTable extends Migration
     public function up()
     {
         Schema::create('car_sensor', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('sensor_id')->unsigned();
             $table->integer('car_id')->unsigned();
             $table->foreign('sensor_id')->references('id')->on('sensors')->onDelete('cascade')->onUpdate('cascade');

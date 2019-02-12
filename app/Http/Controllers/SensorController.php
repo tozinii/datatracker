@@ -69,7 +69,6 @@ class SensorController extends Controller
       $sensorInfo = DB::table('car_sensor')
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                       ->get();
-      dd($sensorInfo);
       return view('users.sensors')->with(['sensorInfo'=>$sensorInfo,'car'=>$car,'sensor'=>$sensor, 'jsonSensor' => json_encode($sensorInfo)]);
     }
 
@@ -125,10 +124,10 @@ class SensorController extends Controller
         case 'month':
           $mes = Carbon::parse($fechaValor);
 
-
           $sensorInfo = DB::table('car_sensor')->select(DB::raw('data as dato, created_at as fecha'))
                           ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                           ->whereMonth('created_at',$mes->month)
+                          ->groupBy($mes->day)
                           ->get();
           return json_encode($sensorInfo);
 
