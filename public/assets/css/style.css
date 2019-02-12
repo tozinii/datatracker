@@ -3738,7 +3738,6 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   /*float: left;*/
   margin-left: 15%;
   position: absolute;
-  margin-bottom: 20%;
 }
 .profile-content,
 .car-list-content{
@@ -3760,6 +3759,11 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   width: 200px;
 }
 .profile-data{
+  width: 100%;
+  height: 200px;
+}
+.profile-data #car-description{
+  height: 100px;
 }
 .sections #editar-formulario{
   height: 500px;

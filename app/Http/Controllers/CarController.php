@@ -137,7 +137,7 @@ class CarController extends Controller
     {
         return Validator::make($data, [
             'car-code' => ['required', 'string', 'min:1', 'max:50'],
-            'car-description' => ['string', 'nullable', 'max:50'],
+            'car-description' => ['string', 'nullable', 'max:500'],
         ]);
     }
 }
