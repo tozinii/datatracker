@@ -65,10 +65,18 @@ class SensorController extends Controller
         }
       }*/
 
-
-      $sensorInfo = DB::table('car_sensor')
+      $sensorInfo = DB::table('car_sensor')->select(DB::raw('avg(data) as dato,to_char(created_at,"YYYY-MM-DD") as fecha'))
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
+                      ->whereMonth('created_at',2)
+                      ->groupBy('created_at')
                       ->get();
+      dd($sensorInfo);
+
+
+      /*$sensorInfo = DB::table('car_sensor')
+                      ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
+                      ->get();*/
+
       return view('users.sensors')->with(['sensorInfo'=>$sensorInfo,'car'=>$car,'sensor'=>$sensor, 'jsonSensor' => json_encode($sensorInfo)]);
     }
 
@@ -124,11 +132,12 @@ class SensorController extends Controller
         case 'month':
           $mes = Carbon::parse($fechaValor);
 
-          $sensorInfo = DB::table('car_sensor')->select(DB::raw('data as dato, created_at as fecha'))
+          /*$sensorInfo = DB::table('car_sensor')->select(DB::raw('data as dato, to_timestamp(created_at, DD) as fecha'))
                           ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                           ->whereMonth('created_at',$mes->month)
-                          ->groupBy($mes->day)
-                          ->get();
+                          ->groupBy('fecha')
+                          ->get();*/
+
           return json_encode($sensorInfo);
 
           break;
