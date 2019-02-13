@@ -25,10 +25,10 @@
 
    <form action="" method="post">
      <select class="fechas" id="selectfecha">
-       <option value="1">Año</option>
-       <option value="2">Mes</option>
-       <option value="3" selected>Dia</option>
-       <option value="4">Hora</option>
+       <option value="Año">Año</option>
+       <option value="Mes">Mes</option>
+       <option value="Dia" selected>Dia</option>
+       <option value="Hora">Hora</option>
      </select>
     <div id="fechas" class="input-append">
       <input type="date" id="fecha" class="fechas">
@@ -50,21 +50,21 @@
         selectfecha = document.getElementById('selectfecha');
 
         switch (selectfecha.value) {
-          case '1':
+          case 'Año':
             fecha.type = 'date';
             format = new Date(fecha);
             var year = format.getYear();
             break;
-          case '2':
+          case 'Mes':
             fecha.type = 'month';
             format = new Date(fecha);
             break;
-          case '3':
+          case 'Dia':
             fecha.type = 'date';
             format = new Date(fecha);
 
             break;
-          case '4':
+          case 'Hora':
             fecha.type = 'time';
             format = new Date(fecha);
 
@@ -77,11 +77,13 @@
         var date = document.getElementById('fecha');
         var tipo = date.type;
         var valor = date.value;
+        var nombreSelect = selectfecha.value;
         var carName = '{{$car->code}}';
         var sensorName = '{{$sensor->name}}';
 
         $.ajax({
-               data:  {carName : carName, sensorName: sensorName,fecha:valor,tipo:tipo} ,
+               async: false,
+               data:  {carName : carName, sensorName: sensorName,fecha:valor,tipo:tipo,nombreSelect:nombreSelect} ,
                url:   '/sensorDate',
                type:  'get',
                dataType: 'json',
@@ -103,15 +105,15 @@
       var fechas = [];
       for(var i in sensorInfo){
         datos.push(sensorInfo[i].dato);
-        fechas.push(sensorInfo[i].fecha);
-        console.log(sensorInfo[i].mes);
+        fechas.push(sensorInfo[i].mes);
       }
       var myChart = new Chart(ctx, {
+
           type: 'line',
           data: {
               labels: fechas,
               datasets: [{
-                  label: 'Valores de '+fecha,
+                  label: '{{$sensor->name}} de '+fecha,
                   data: datos,
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
