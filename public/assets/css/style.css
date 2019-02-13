@@ -2028,7 +2028,7 @@ padding-bottom: 90px;
  z-index: 50;
  top: 0;
  left: 0;
- background-color: #111;
+ background-color: rgb(51, 55, 66);
  overflow-x: hidden;
  padding-top: 2%;
  align-content: center;
@@ -3721,10 +3721,7 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   color: red;
 }
 
-/*
-
-
-*/
+/**/
 .algn-cnt{
   text-align: center;
   align-content: center;
@@ -3791,7 +3788,18 @@ a.button {
   color: initial;
 }
 
-
+/* Fondo de logueado*/
+.bg-image{
+  background-image: url('/assets/images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
 /*
 
     Estilos tablas
@@ -3914,7 +3922,7 @@ a.button {
 
 /*Estilos shop*/
 .table-responsive .table th{
-background-color:#c3c3c3;
+background-color:#d6d6d6;
 }
 
 #shop-table thead{
@@ -3972,7 +3980,15 @@ background-color:#c3c3c3;
 .navcol-link.active,
 .navcol-link {
   color: #fff;
-  background-color: midnightblue;
+  background-color: rgba(105, 201, 215, 0.2);
+}
+
+.nav>li>a:focus, .nav>li>a:hover{
+  background-color: rgba(105, 201, 215, 0.6);
+}
+
+#cerrar-sesion:focus, #cerrar-sesion:hover{
+  background-color: rgba(247, 76, 76, 0.6);
 }
 /*
 
