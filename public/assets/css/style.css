@@ -3818,7 +3818,18 @@ a.button {
   font-family: 'Signika',sans-serif;
 }
 
+/*Tablas admin*/
+#banned-users-table{
+  width: 500px;
+}
+.list-users-ban-button{
+  position: static !important;
+}
 
+.list-users-banned-button{
+  position: static !important;
+  margin: 0 !important;
+}
 
 
 /* Editar Perfil */
@@ -3925,12 +3936,15 @@ a.button {
 background-color:#d6d6d6;
 }
 
-#shop-table thead{
+#shop-table thead,
+#list-users-table thead,
+#banned-users-table thead{
   border: 0;
 }
 
-#shop-table thead th,
-#shop-table tfoot th{
+#shop-table thead th,#shop-table tfoot th,
+#list-users-table thead th, #list-users-table tbody td.text-centered,
+#banned-users-table thead th, #banned-users-table tbody td.text-centered{
   text-align: center;
 }
 
