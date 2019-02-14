@@ -27,7 +27,7 @@
      <select class="fechas" id="selectfecha">
        <option value="Año">Año</option>
        <option value="Mes">Mes</option>
-       <option value="Dia" selected>Dia</option>
+       <option value="Dia">Dia</option>
        <option value="Hora">Hora</option>
      </select>
     <div id="fechas" class="input-append">
@@ -42,7 +42,7 @@
     <canvas id="chartSensor" width="800" height="350"></canvas>
    @endif
    <script type="text/javascript">
-    var selectfecha;
+
     $(document).ready(function(){
 
       $('#selectfecha').on('change', function() {
@@ -77,14 +77,14 @@
         var date = document.getElementById('fecha');
         var tipo = date.type;
         var valor = date.value;
-        var nombreSelect = selectfecha.value;
+        var nombreSelect = document.getElementById('selectfecha').value;
         var carName = '{{$car->code}}';
         var sensorName = '{{$sensor->name}}';
 
         $.ajax({
                async: false,
                data:  {carName : carName, sensorName: sensorName,fecha:valor,tipo:tipo,nombreSelect:nombreSelect} ,
-               url:   '/sensorDate',
+               url:   '{{route("sensordate")}}',
                type:  'get',
                dataType: 'json',
                success:  function (response) {
