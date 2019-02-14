@@ -18,5 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Ruta para recibir datos de sensores
-Route::get('/data/{code}/{sensorName}/{type}', 'DataController@store');
-Route::get('/data/{code}', 'DataController@showSensorData');
+Route::apiResource('/data','ApiDataController')->only('store','show');
