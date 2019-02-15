@@ -64,37 +64,6 @@ class SensorController extends Controller
           dd($sensorData);
         }
       }*/
-      $meses = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
-
-      $dias = cal_days_in_month(CAL_GREGORIAN, 2, 2019);
-      $diasMes= array();
-      for ($i=0; $i < $dias; $i++) {
-        $diasMes[]= date('d-m-Y',mktime(0,0,0,2,$i+1,2019));
-      }
-
-      $query = DB::table('car_sensor')->select(DB::raw("avg(data) as dato,to_char(created_at,'HH24:MI:SS') as hora"))
-                    ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
-                    ->whereDay('created_at',13)
-                    ->groupBy('hora')
-                    ->orderBy('hora')
-                    ->get();
-      $datos = array();
-      for ($i=0; $i < 24; $i++) {
-        $dato = array();
-        foreach ($query as $valor) {
-          if (date('G',strtotime($valor->hora)) == $i) {
-
-            $dato['hora'] = date('H:m',mktime($i,0,0,0,0,0));
-            $dato['dato'] = $valor->dato;
-            break;
-          }
-          else {
-            $dato['hora'] = date('H:m',mktime($i,0,0,0,0,0));
-            $dato['dato'] = 0;
-          }
-        }
-        array_push($datos,$dato);
-      }
       $sensorInfo = DB::table('car_sensor')
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                       ->get();
