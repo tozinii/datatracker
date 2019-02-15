@@ -3,7 +3,7 @@
    <head>
       @include('elements.head')
    </head>
-   <body id="top">
+   <body id="top" class="bg-image">
       <div class="bg-grediunt">
          <div class="bg-banner-img ">
             <div class="overlay-all ">
@@ -21,7 +21,7 @@
       </div>
 
       <div class="container-profile">
-        
+
           @yield('contenido')
 
 

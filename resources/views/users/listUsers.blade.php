@@ -9,36 +9,63 @@
 	</ul>
 
 	<div class="tab-content">
-    	<div id="userList" class="tab-pane fade in active">
-	      <div class="list-group">
-	      	  @foreach($users as $user)
-			  <a class="list-group-item list-group-item-action list-group-item-light">
-			  	<p class="userList">
-			  		{{$user->name}} &#8212; {{$user->email}}
-			  	</p>
-			  	<button type="button" data-toggle="modal" data-target="#ban{{$user->id}}" class="btnedit btnedit-outline-danger">Ban</button>
-			  </a>
-				@include('elements.pop-up-ban')
-			  @endforeach
-		  </div>
-	    </div>
-    	<div id="bannedList" class="tab-pane fade">
-	      <div class="list-group">
-	      	  @foreach($banneds as $banned)
-			  <a class="list-group-item list-group-item-action list-group-item-light">
-			  	<p class="userList">
-			  		{{$banned->name}}
-			  	</p>
-			  	<button type="button" data-toggle="modal" data-target="#delete{{$banned->id}}" class="btnedit btnedit-outline-danger">Delete</button>
-              	<button type="button" data-toggle="modal" data-target="#restore{{$banned->id}}" class="btnedit btnedit-outline-success">Restore</button>
-			  </a>
-			  @include('elements.pop-up-delete')
-				@include('elements.pop-up-restore')
+		<div id="userList" class="tab-pane fade in active">
+			<div class="list-group">
 
+				<table id="list-users-table" class="table">
+			    <thead>
+			      <tr>
+								<th>Usuario</th>
+								<th>Acciones</th>
+			      </tr>
+			    </thead>
+			    <tbody>
 
-			  @endforeach
-		  </div>
-	    </div>
+						@foreach($users as $user)
+							<tr>
+								<td><span>{{$user->name}} &#8212; {{$user->email}}</span></td>
+								<td class="text-centered"><button type="button" data-toggle="modal" data-target="#ban{{$user->id}}" class="btnedit btnedit-outline-danger list-users-ban-button">Ban</button></td>
+								@include('elements.pop-up-ban')
+							</tr>
+						@endforeach
+
+			    </tbody>
+			  </table>
+
+			</div>
+		</div>
+  	<div id="bannedList" class="tab-pane fade">
+
+			<div class="list-group">
+
+				<table id="banned-users-table" class="table">
+			    <thead>
+			      <tr>
+								<th>Usuario</th>
+								<th>Acciones</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+
+						@foreach($banneds as $banned)
+							<tr>
+								<td><span>{{$banned->name}}</span></td>
+								<td class="text-centered">
+									<button type="button" data-toggle="modal" data-target="#delete{{$banned->id}}" class="btnedit btnedit-outline-danger list-users-banned-button">Delete</button>
+					        <button type="button" data-toggle="modal" data-target="#restore{{$banned->id}}" class="btnedit btnedit-outline-success list-users-banned-button">Restore</button>
+								</td>
+								@include('elements.pop-up-delete')
+								@include('elements.pop-up-restore')
+							</tr>
+						@endforeach
+
+			    </tbody>
+			  </table>
+
+			</div>
+
+    </div>
+
   </div>
 </div>
 <!-- Pop up delete -->

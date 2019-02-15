@@ -17,7 +17,7 @@
               <a class="nav-link" href="{{route('profile.show',auth()->user()->id)}}">Perfil</a>
             </li>
             <li class="nav-item lista">
-              <a class="nav-link disabled" href="{{ route('logout')}}"  onclick="event.preventDefault();
+              <a id="cerrar-sesion" class="nav-link disabled" href="{{ route('logout')}}"  onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">Cerrar Sesión</a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                @csrf

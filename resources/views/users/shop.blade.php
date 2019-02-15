@@ -8,7 +8,7 @@
 <h3>Estos son los coches que puede comprar en estos momentos:</h3>
 
 <div class="table-responsive">
-  <table id="shop-table" class="table table-bordered">
+  <table id="shop-table" class="table">
     <thead>
       <tr>
         <th>Tipo de sensor</th>

@@ -67,20 +67,17 @@ class CarController extends Controller
      */
     public function show($id)
     {
-      $car = Car::find($id);
-
-      /*$carSensorsNames = array();
-
-      //Esta query devuelve un objeto
-      $carSensorsId = DB::table('car_sensor')->distinct()->select('sensor_id')->where('car_id', '=', $car->id)->get();
-
-      foreach($carSensorsId as $sensorId){
-        $sensor = Sensor::find($sensorId->sensor_id);
-        array_push($carSensorsNames, $sensor->name);
-      }*/
+      $car = null;
+      $idInt = intval($id);
+      
+      if(is_int($idInt)){
+        $car = Car::find($idInt);
+      }
 
       $coordenadas = [];
-
+      if ($car == null){
+        return back();
+      }
       foreach ($car->sensors as $data){
         if ($data->id == 3 ) {
             array_push($coordenadas, $data->pivot->data);
@@ -137,7 +134,7 @@ class CarController extends Controller
     {
         return Validator::make($data, [
             'car-code' => ['required', 'string', 'min:1', 'max:50'],
-            'car-description' => ['string', 'nullable', 'max:50'],
+            'car-description' => ['string', 'nullable', 'max:500'],
         ]);
     }
 }

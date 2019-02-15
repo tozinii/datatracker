@@ -54,7 +54,8 @@ $(document).ready(function(){
         $('#apellido').removeAttr('disabled');
         $('#profile-email').removeAttr('disabled');
         $('#descripcion').removeAttr('disabled');
-        //$('#avatar').removeAttr('disabled');
+        /*$('#avatar').removeAttr('disabled');
+        $('.upload-btn').removeAttr('disabled');*/
 
         $('#editarPerfil').fadeToggle(function(){
           $('#guardarPerfil').fadeToggle();
