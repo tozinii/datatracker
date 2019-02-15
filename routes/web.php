@@ -51,7 +51,7 @@ Route::resource('cars', 'CarController')->only('store','index','show','update');
 Route::get('/cars/{id}', 'CarController@index')->middleware(['auth','verified','user']);
 Route::get('/sensor/{carName}/{sensorName}', 'SensorController@show')->middleware(['auth','verified','user'])->name('sensorInfo');
 Route::get('/shop', 'ShopController@index')->name('shop');
-Route::get('/sensorDate','SensorController@sensorDate');
+Route::get('/sensorDate','SensorController@sensorDate')->name('sensordate');
 
 //Ruta para recibir datos de sensores
 Route::get('/data/{code}/{sensorName}/{type}', 'DataController@store');
