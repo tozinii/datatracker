@@ -64,6 +64,7 @@ class SensorController extends Controller
           dd($sensorData);
         }
       }*/
+
       $sensorInfo = DB::table('car_sensor')
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                       ->get();
@@ -154,7 +155,7 @@ class SensorController extends Controller
           break;
         case 'Mes':
 
-          $dias = cal_days_in_month(CAL_GREGORIAN, $fecha->month, $fecha->year);
+          $dias = date("t",strtotime($fecha->year.'-'.$fecha->month));
           $diasMes= array();
           for ($i=0; $i < $dias; $i++) {
             $diasMes[]= date('d-m-Y',mktime(0,0,0,$fecha->month,$i+1,$fecha->year));
