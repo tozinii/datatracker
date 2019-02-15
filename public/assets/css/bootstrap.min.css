@@ -2323,7 +2323,7 @@ pre code {
         width: 58.33333333%
     }
     .col-sm-6 {
-        width: 50%
+        width: 625px
     }
     .col-sm-5 {
         width: 41.66666667%
@@ -4921,23 +4921,14 @@ textarea.input-group-sm>.input-group-btn>.btn {
     }
 }
 
-.nav-pills>li {
-    float: left
+.nav-pills .nav-link {
+  border-radius: 0.25rem;
 }
 
-.nav-pills>li>a {
-    border-radius: 4px
-}
-
-.nav-pills>li+li {
-    margin-left: 2px
-}
-
-.nav-pills>li.active>a,
-.nav-pills>li.active>a:focus,
-.nav-pills>li.active>a:hover {
-    color: #fff;
-    background-color: #337ab7
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #007bff;
 }
 
 .nav-stacked>li {
@@ -5712,7 +5703,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pagination>.disabled>span,
 .pagination>.disabled>span:focus,
 .pagination>.disabled>span:hover {
-    color: #777;
+    color: black;
     cursor: not-allowed;
     background-color: #fff;
     border-color: #ddd
@@ -5796,7 +5787,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pager .disabled>a:focus,
 .pager .disabled>a:hover,
 .pager .disabled>span {
-    color: #777;
+    color: black;
     cursor: not-allowed;
     background-color: #fff
 }
@@ -6289,11 +6280,13 @@ a.thumbnail:hover {
 }
 
 .list-group-item {
-    position: relative;
-    display: block;
-    padding: 0px 15px;
-    margin-bottom: -1px;
-   
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+
 }
 
 .list-group-item:first-child {
@@ -6323,7 +6316,7 @@ button.list-group-item:focus,
 button.list-group-item:hover {
     color: #555;
     text-decoration: none;
-   
+
 }
 
 button.list-group-item {
