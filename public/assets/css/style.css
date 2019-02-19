@@ -1749,6 +1749,9 @@ position: relative;
   height: 50px;
   padding-right: 50px;
 }
+.container-logged{
+  width: 100% !important;
+}
 .our_partners_area_register .book_now_aera_register .book_now_register .booking_text_register {
   width: 100px;
   height: 100px;
@@ -3753,6 +3756,10 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   /*float: left;*/
   margin-left: 15%;
   position: absolute;
+}
+.container-profile-logged{
+  margin-left: 300px;
+  width: 75% !important;
 }
 .profile-content,
 .car-list-content{

@@ -20,7 +20,7 @@
          </div>
       </div>
 
-      <div class="container-profile">
+      <div class="container-profile container-profile-logged">
 
           @yield('contenido')
 
