@@ -789,6 +789,18 @@ nav li {
     max-width: 100%;
 }
 
+.bg-banner-500-img{
+  background-image: url(../images/errors/500.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  max-width: 100%;
+}
+
 .bg-banner-img-principal{
   height: 100vh;
 }
