@@ -4,7 +4,7 @@
 <script src="{{asset('assets/js/statistics/Chart.bundle.js')}}"></script>
 <script src="{{asset('assets/js/statistics/Chart.js')}}"></script>
 <div class="sensors">
-   <h1>Sensor de {{ $sensor->name }} del coche {{ $car->code }}</h1>
+   <h1>{{ ucfirst($sensor->name) }} del coche {{ $car->code }}</h1>
    <table class="table table-striped">
      <thead>
        <tr>
