@@ -1,8 +1,13 @@
 @extends('layouts.layoutErrors')
 
 @section('contenido')
-  <h1>Error 500</h1>
-  <p>
-    Eror en el servidor.
-  </p>
+<div class="bg-grediunt">
+   <div class="bg-banner-500-img bg-banner-img-principal">
+
+     <header class="s-header">
+         @include('elements.errorsNavBar')
+     </header>
+
+   </div>
+</div>
 @endsection
