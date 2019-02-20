@@ -69,7 +69,7 @@ class CarController extends Controller
     {
       $car = null;
       $idInt = intval($id);
-      
+
       if(is_int($idInt)){
         $car = Car::find($idInt);
       }

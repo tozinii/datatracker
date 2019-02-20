@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class ShopController extends Controller
 {
-   
+
     public function index()
     {
         $cars = Car::where('user_id',Auth::user()->id)->count();
@@ -55,11 +55,10 @@ class ShopController extends Controller
 
         $filasTabla;
         $listadoKits = array_column($listadoKitSensores,0);
-        //dd($listadoKits);
-        for ($i=1; $i < 11; $i++) {
-          $listado[$i-1] = array_column($listadoKitSensores,$i);
+        
+        for ($i=0; $i < count($sensors); $i++) {
+          $listado[$i] = array_column($listadoKitSensores,$i + 1);
         }
-        //dd($listado);
 
         return view('users/shop')->with(['kits' => $kits, 'cars' => $cars, 'sensors' => $sensors,'listadoKits' => $listadoKits,'listadoSensores' => $listado]);
     }
