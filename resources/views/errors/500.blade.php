@@ -3,6 +3,6 @@
 @section('contenido')
   <h1>Error 500</h1>
   <p>
-    Esta página no existe.
+    Eror en el servidor.
   </p>
 @endsection
