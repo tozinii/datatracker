@@ -170,13 +170,15 @@ class SensorController extends Controller
             $dato = array();
             foreach ($mesesAño as $valor) {
               if($valor->fecha -1 == $i){
-                $dato['mes'] = $meses[$i];
+                $dato['fecha'] = $meses[$i];
                 $dato['dato'] = $valor->dato;
+                $dato['titulo'] = $fecha->year;
                 break;
               }
               else {
-                $dato['mes'] = $meses[$i];
+                $dato['fecha'] = $meses[$i];
                 $dato['dato'] = 0;
+                $dato['titulo'] = $fecha->year;
               }
             }
             array_push($datos,$dato);
@@ -201,8 +203,9 @@ class SensorController extends Controller
           if(count($query) == 0){
             for ($i=0; $i < $dias; $i++) {
               $dato = array();
-              $dato['mes'] = $diasMes[$i];
+              $dato['fecha'] = $diasMes[$i];
               $dato['dato'] = 0;
+              $dato['titulo'] = $meses[$fecha->month - 1];
               array_push($datos,$dato);
             }
           }
@@ -211,13 +214,15 @@ class SensorController extends Controller
               $dato = array();
                 foreach ($query as $valor) {
                   if (date('j',strtotime($valor->fecha)) == $i+1) {
-                    $dato['mes'] = $diasMes[$i];
+                    $dato['fecha'] = $diasMes[$i];
                     $dato['dato'] = $valor->dato;
+                    $dato['titulo'] = $meses[$fecha->month - 1];
                     break;
                   }
                   else {
-                    $dato['mes'] = $diasMes[$i];
+                    $dato['fecha'] = $diasMes[$i];
                     $dato['dato'] = 0;
+                    $dato['titulo'] = $meses[$fecha->month - 1];
                   }
                 }
                 array_push($datos,$dato);
@@ -229,24 +234,26 @@ class SensorController extends Controller
 
           break;
         case 'Dia':
-          $query = DB::table('car_sensor')->select(DB::raw("avg(data) as dato,to_char(created_at,'HH24:MI:SS') as mes"))
+          $query = DB::table('car_sensor')->select(DB::raw("avg(data) as dato,to_char(created_at,'HH24:MI:SS') as fecha"))
                         ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                         ->whereDay('created_at',$fecha->day)
-                        ->groupBy('mes')
-                        ->orderBy('mes')
+                        ->groupBy('fecha')
+                        ->orderBy('fecha')
                         ->get();
           $datos = array();
           for ($i=0; $i < 24; $i++) {
             $dato = array();
             foreach ($query as $valor) {
-              if (date('H',strtotime($valor->mes)) == $i) {
-                $dato['mes'] = date('H:m',mktime($i,0,0,0,0,0));
+              if (date('H',strtotime($valor->fecha)) == $i) {
+                $dato['fecha'] = date('H:m',mktime($i,0,0,0,0,0));
                 $dato['dato'] = $valor->dato;
+                $dato['titulo'] = date('dd-mm-YYY',mktime(0,0,0,$fecha->day,$fecha->month,$fecha->year));
                 break;
               }
               else {
-                $dato['mes'] = date('H:m',mktime($i,0,0,0,0,0));
+                $dato['fecha'] = date('H:m',mktime($i,0,0,0,0,0));
                 $dato['dato'] = 0;
+                $dato['titulo'] = date('d M Y',mktime(0,0,0,$fecha->month,$fecha->day,$fecha->year));
               }
             }
             array_push($datos,$dato);

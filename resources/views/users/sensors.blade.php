@@ -103,9 +103,10 @@
       var ctx = document.getElementById("chartSensor").getContext('2d');
       var datos = [];
       var fechas = [];
+      var titulo = sensorInfo[0].titulo;
       for(var i in sensorInfo){
         datos.push(sensorInfo[i].dato);
-        fechas.push(sensorInfo[i].mes);
+        fechas.push(sensorInfo[i].fecha);
       }
       var myChart = new Chart(ctx, {
 
@@ -113,7 +114,7 @@
           data: {
               labels: fechas,
               datasets: [{
-                  label: '{{$sensor->name}} de '+fecha,
+                  label: '{{$sensor->name}} de '+titulo,
                   data: datos,
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
