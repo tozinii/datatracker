@@ -64,11 +64,45 @@ class SensorController extends Controller
           dd($sensorData);
         }
       }*/
+      $meses = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
 
+      $dias = cal_days_in_month(CAL_GREGORIAN, 2, 2019);
+      $diasMes= array();
+      for ($i=0; $i < $dias; $i++) {
+        $diasMes[]= date('d-m-Y',mktime(0,0,0,2,$i+1,2019));
+      }
 
+      $query = DB::table('car_sensor')->select(DB::raw("avg(data) as dato,to_char(created_at,'HH24:MI:SS') as hora"))
+                    ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
+                    ->whereDay('created_at',13)
+                    ->groupBy('hora')
+                    ->orderBy('hora')
+                    ->get();
+      $datos = array();
+      for ($i=0; $i < 24; $i++) {
+        $dato = array();
+        foreach ($query as $valor) {
+          if (date('G',strtotime($valor->hora)) == $i) {
+
+            $dato['hora'] = date('H:m',mktime($i,0,0,0,0,0));
+            $dato['dato'] = $valor->dato;
+            break;
+          }
+          else {
+            $dato['hora'] = date('H:m',mktime($i,0,0,0,0,0));
+            $dato['dato'] = 0;
+          }
+        }
+        array_push($datos,$dato);
+      }
       $sensorInfo = DB::table('car_sensor')
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                       ->get();
+      /*json_encode($sensorInfo);
+      $json = json_decode($sensorInfo);
+
+      array_push($json,$dias);*/
+
 
       return view('users.sensors')->with(['sensorInfo'=>$sensorInfo,'car'=>$car,'sensor'=>$sensor, 'jsonSensor' => json_encode($sensorInfo)]);
     }
@@ -117,38 +151,115 @@ class SensorController extends Controller
 
       $fechaValor = $request->fecha;
 
+      $nombreSelect = $request->nombreSelect;
 
-      switch ($fechaType) {
-        case 'date':
-          return json_encode('dia/año');
-          break;
-        case 'month':
-          $mes = Carbon::parse($fechaValor);
-          $sensorInfo = DB::table('car_sensor')->select(DB::raw('avg(data) as dato, MONTH(created_at) as mes'),'created_at as fecha')
+      $fecha = Carbon::parse($fechaValor);
+
+      $meses = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+
+      switch ($nombreSelect) {
+        case 'Año':
+          $mesesAño = DB::table('car_sensor')->select(DB::raw("avg(data) as dato, date_part('month',created_at) as fecha"))
                           ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
-                          ->whereMonth('created_at',$mes->month)
-                          ->groupBy('created_at')
+                          ->whereYear('created_at',$fecha->year)
+                          ->groupBy('fecha')
+                          ->orderBy('fecha')
                           ->get();
+          $datos = array();
+          for ($i=0; $i < count($meses) ; $i++) {
+            $dato = array();
+            foreach ($mesesAño as $valor) {
+              if($valor->fecha -1 == $i){
+                $dato['mes'] = $meses[$i];
+                $dato['dato'] = $valor->dato;
+                break;
+              }
+              else {
+                $dato['mes'] = $meses[$i];
+                $dato['dato'] = 0;
+              }
+            }
+            array_push($datos,$dato);
+          }
+          return json_encode($datos);
+          break;
+        case 'Mes':
 
-          return json_encode($sensorInfo);
+          $dias = cal_days_in_month(CAL_GREGORIAN, $fecha->month, $fecha->year);
+          $diasMes= array();
+          for ($i=0; $i < $dias; $i++) {
+            $diasMes[]= date('d-m-Y',mktime(0,0,0,$fecha->month,$i+1,$fecha->year));
+          }
+
+          $query = DB::table('car_sensor')->select(DB::raw('avg(data) as dato,date(created_at) as fecha'))
+                          ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
+                          ->whereMonth('created_at',$fecha->month)
+                          ->groupBy('fecha')
+                          ->orderBy('fecha')
+                          ->get();
+          $datos = array();
+          if(count($query) == 0){
+            for ($i=0; $i < $dias; $i++) {
+              $dato = array();
+              $dato['mes'] = $diasMes[$i];
+              $dato['dato'] = 0;
+              array_push($datos,$dato);
+            }
+          }
+          else {
+            for ($i=0; $i < $dias; $i++) {
+              $dato = array();
+                foreach ($query as $valor) {
+                  if (date('j',strtotime($valor->fecha)) == $i+1) {
+                    $dato['mes'] = $diasMes[$i];
+                    $dato['dato'] = $valor->dato;
+                    break;
+                  }
+                  else {
+                    $dato['mes'] = $diasMes[$i];
+                    $dato['dato'] = 0;
+                  }
+                }
+                array_push($datos,$dato);
+              }
+          }
+
+
+          return json_encode($datos);
 
           break;
-        case 'time':
+        case 'Dia':
+          $query = DB::table('car_sensor')->select(DB::raw("avg(data) as dato,to_char(created_at,'HH24:MI:SS') as mes"))
+                        ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
+                        ->whereDay('created_at',$fecha->day)
+                        ->groupBy('mes')
+                        ->orderBy('mes')
+                        ->get();
+          $datos = array();
+          for ($i=0; $i < 24; $i++) {
+            $dato = array();
+            foreach ($query as $valor) {
+              if (date('H',strtotime($valor->mes)) == $i) {
+                $dato['mes'] = date('H:m',mktime($i,0,0,0,0,0));
+                $dato['dato'] = $valor->dato;
+                break;
+              }
+              else {
+                $dato['mes'] = date('H:m',mktime($i,0,0,0,0,0));
+                $dato['dato'] = 0;
+              }
+            }
+            array_push($datos,$dato);
+          }
+          return json_encode($datos);
+          break;
+        case 'Hora':
           return json_encode('hora');
           break;
         default:
           // code...
           break;
       }
-
-
-      $sensorInfo = DB::table('car_sensor')->select('data','created_at')
-                      ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
-                      ->avg('data')
-                      ->whereMonth('created_at',2)
-                      ->groupBy('created_at')
-                      ->get();
-
 
     }
 }
