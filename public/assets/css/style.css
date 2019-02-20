@@ -777,6 +777,18 @@ nav li {
     max-width: 100%;
 }
 
+.bg-banner-404-img{
+    background-image: url(../images/errors/404.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    max-width: 100%;
+}
+
 .bg-banner-img-principal{
   height: 100vh;
 }
@@ -1736,6 +1748,9 @@ position: relative;
   width: 400px;
   height: 50px;
   padding-right: 50px;
+}
+.container-logged{
+  width: 100% !important;
 }
 .our_partners_area_register .book_now_aera_register .book_now_register .booking_text_register {
   width: 100px;
@@ -3695,10 +3710,16 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
    ------------------------------------------------------
 -------------                               --------------
 */
-
-
-
-
+/* Estilos paginas de error*/
+.content-above-bg{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 100px;
+  height: 100px;
+}
 
 /*
   Para el logo2
@@ -3735,6 +3756,10 @@ p.about_bottom_h.wow.fadeInUp {font-size: 15px;
   /*float: left;*/
   margin-left: 15%;
   position: absolute;
+}
+.container-profile-logged{
+  margin-left: 300px;
+  width: 75% !important;
 }
 .profile-content,
 .car-list-content{

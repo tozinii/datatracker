@@ -1,8 +1,13 @@
-@extends('layouts.layoutPrincipal')
+@extends('layouts.layoutErrors')
 
 @section('contenido')
-  <h1>Error 404</h1>
-  <p>
-    Esta página no existe.
-  </p>
+<div class="bg-grediunt">
+   <div class="bg-banner-404-img bg-banner-img-principal">
+
+     <header class="s-header">
+         @include('elements.errorsNavBar')
+     </header>
+
+   </div>
+</div>
 @endsection
