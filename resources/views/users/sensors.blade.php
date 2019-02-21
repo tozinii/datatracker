@@ -28,7 +28,7 @@
        <option value="Año">Año</option>
        <option value="Mes">Mes</option>
        <option value="Dia">Dia</option>
-       <option value="Hora">Hora</option>
+       <!--<option value="Hora">Hora</option>-->
      </select>
     <div id="fechas" class="input-append">
       <input type="date" id="fecha" class="fechas">

@@ -64,6 +64,13 @@ class SensorController extends Controller
           dd($sensorData);
         }
       }*/
+      $query = DB::table('car_sensor')->select(DB::raw("avg(data) as dato,to_char(created_at,'HH24:MI:SS') as fecha"))
+                    ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
+                    ->whereDay('created_at',21)
+                    ->groupBy('fecha')
+                    ->orderBy('fecha')
+                    ->get();
+      dd($query);
       $meses = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
 
       $dias = cal_days_in_month(CAL_GREGORIAN, 2, 2019);
