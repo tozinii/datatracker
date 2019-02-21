@@ -85,13 +85,13 @@ class SensorController extends Controller
         array_push($datos,$dato);
       }
       //dd($datos);
-      $meses = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+      /*$meses = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
 
       $dias = cal_days_in_month(CAL_GREGORIAN, 2, 2019);
       $diasMes= array();
       for ($i=0; $i < $dias; $i++) {
         $diasMes[]= date('d-m-Y',mktime(0,0,0,2,$i+1,2019));
-      }
+      }*/
 
       $sensorInfo = DB::table('car_sensor')
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
