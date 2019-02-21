@@ -4,43 +4,60 @@
 <script src="{{asset('assets/js/statistics/Chart.bundle.js')}}"></script>
 <script src="{{asset('assets/js/statistics/Chart.js')}}"></script>
 <div class="sensors">
-   <h1>Sensor de {{ $sensor->name }} del coche {{ $car->code }}</h1>
-   <table class="table table-striped">
-     <thead>
-       <tr>
-         <th scope="col">Valor</th>
-         <th scope="col">Fecha</th>
-       </tr>
-     </thead>
-     <tbody>
+   <h1>{{ ucfirst($sensor->name) }} del coche {{ $car->code }}</h1>
+   @if($sensor->name == 'gps')
+    <div id="map"></div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Valor</th>
+          <th scope="col">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
 
-       @foreach($sensorInfo as $info)
-       <tr>
-         <td>{{ $info->data }} {{$sensor->unidad}}</td>
-         <td>{{ $info->created_at }}</td>
-       </tr>
-       @endforeach
-     </tbody>
-   </table>
-
+        @foreach($sensorInfo as $info)
+        <tr>
+          <td>{{ $info->data }} {{$sensor->unidad}}</td>
+          <td>{{ $info->created_at }}</td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+   @else
    <form action="" method="post">
      <select class="fechas" id="selectfecha">
        <option value="Año">Año</option>
        <option value="Mes">Mes</option>
        <option value="Dia">Dia</option>
-       <option value="Hora">Hora</option>
+       <!--<option value="Hora">Hora</option>-->
      </select>
     <div id="fechas" class="input-append">
       <input type="date" id="fecha" class="fechas">
     </div>
 
    </form>
-   @if($sensor->name == 'gps')
-    <div id="map"></div>
-   @else
+
 
     <canvas id="chartSensor" width="800" height="350"></canvas>
-   @endif
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Valor</th>
+          <th scope="col">Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        @foreach($sensorInfo as $info)
+        <tr>
+          <td>{{ $info->data }} {{$sensor->unidad}}</td>
+          <td>{{ $info->created_at }}</td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+
    <script type="text/javascript">
 
     $(document).ready(function(){
@@ -103,9 +120,10 @@
       var ctx = document.getElementById("chartSensor").getContext('2d');
       var datos = [];
       var fechas = [];
+      var titulo = sensorInfo[0].titulo;
       for(var i in sensorInfo){
         datos.push(sensorInfo[i].dato);
-        fechas.push(sensorInfo[i].mes);
+        fechas.push(sensorInfo[i].fecha);
       }
       var myChart = new Chart(ctx, {
 
@@ -113,7 +131,7 @@
           data: {
               labels: fechas,
               datasets: [{
-                  label: '{{$sensor->name}} de '+fecha,
+                  label: '{{$sensor->name}} de '+titulo,
                   data: datos,
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
@@ -163,9 +181,10 @@
 
 
    </script>
+  @endif
    <script>
 
-       var carmap = L.map('map').setView([43.326025, -1.968831], 16);
+       var carmap = L.map('map').setView([{{$sensorInfo[0]->data}}], 16);
 
            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiY3luZGEiLCJhIjoiY2pyOTM3b2ZmMDB0dDQzcGZ5ajR4aXJyNiJ9.uQDXCNWklDqzIdAHxI0XqA', {
                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -177,9 +196,8 @@
                 $coordenadas = [];
               @endphp
             @foreach($sensorInfo as $info)
-              array_push($coordenadas,$info->data);
+              <?php $coordenadas[] = $info->data ?>;
             @endforeach
-
             <?php for($i = 0; $i < count($coordenadas)-1; $i++) { ?>
               var etapa<?php echo $i ?> = [
                   [<?php echo $coordenadas[$i] ?>],

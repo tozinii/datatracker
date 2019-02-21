@@ -23,22 +23,6 @@
          <li><a class="nav-contacto"  href="#">Contacto</a></li>
          <li><a class=""  href="#" data-toggle="modal" data-target="#login">Iniciar Sesión</a></li>
       </ul>
-      <ul class="header-nav__social">
-         <li>
-            <a href="" target="_blank"><i  class="fa fa-facebook-square fa-3x social"></i></a>
-         </li>
-         <li>
-            <a href="" target="_blank"><i  class="fa fa-twitter-square fa-3x social"></i></a>
-         </li>
-         <li>
-            <a href="" target="_blank"><i  class="fa fa-instagram fa-3x social"></i></a>
-         </li>
-         <li>
-            <a href="#0"><i class="fa fa-linkedin-square fa-3x social"></i></a>
-         </li>
-
-      </ul>
-
    </div>
 <!-- end header-nav__content -->
 </nav>

@@ -1,4 +1,4 @@
-@extends('layouts.layoutPrincipal')
+@extends('layouts.layoutErrors')
 
 @section('contenido')
 <h1>Error 405</h1>

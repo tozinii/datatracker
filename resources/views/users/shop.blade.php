@@ -38,8 +38,8 @@
     <tfoot>
       <tr>
         <td></td>
-        @for($i=0; $i < count($listadoKits); $i++)
-          <td><button href="" data-target="#createCar{{$kitId}}" data-toggle="modal" class="btnedit3 btnedit-outline-primary btnedit-size" aria-label="Close">Comprar</button></td>
+        @for($i=1; $i <= count($listadoKits); $i++)
+          <td><button href="" data-target="#createCar{{$i}}" data-toggle="modal" class="btnedit3 btnedit-outline-primary btnedit-size" aria-label="Close">Comprar</button></td>
           @include('elements/pop-up-createCar')
         @endfor
       </tr>

@@ -4,8 +4,8 @@
          <!-- <div class="col-md-4">
             -->
             <div class="bigpixi-footer-social">
-               <a href="" target="_blank" class="ml-15"><i id="social-tw" class="fa fa-twitter fa-2x social"></i></a>
-               <a href="" target="_blank" class="ml-15"><i id="social-em" class="fa fa-instagram fa-2x social"></i></a>
+               <a href="https://twitter.com/matxingoelec" target="_blank" class="ml-15"><i id="social-tw" class="fa fa-twitter fa-2x social"></i></a>
+               <a href="https://www.instagram.com/matxingo/" target="_blank" class="ml-15"><i id="social-em" class="fa fa-instagram fa-2x social"></i></a>
             </div>
 
          <div class="col-md-12 logo2">

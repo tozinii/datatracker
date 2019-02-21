@@ -2,7 +2,7 @@
 
 @section('contenido')
 
-<div class="container">
+<div class="container container-logged">
    <div class="alert alert-success ttl" role="alert">
 	  <h3 class="alert-heading">Bienvenido {{ Auth::user()->name}}</h3>
 	  <hr>
@@ -15,6 +15,6 @@
       <p class="mb-0">Actualmente usted dispone de {{$cars}} coche(s).</p>
     @endif
 	</div>
-  
+
 </div>
 @endsection

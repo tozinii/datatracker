@@ -9,6 +9,7 @@
          </div>
       </div>
       <!-- /#banner-text End -->
+      @guest
       <div class="our_partners_area_register ">
          <div class="book_now_aera_register ">
             <div class="container">
@@ -60,5 +61,6 @@
           </div>
         </div>
       </div><!-- se cierra pop up register -->
+      @endguest
    </div>
 </div>

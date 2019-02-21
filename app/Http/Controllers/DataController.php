@@ -50,6 +50,9 @@ class DataController extends Controller
     {
       $car = Car::where('code',strtolower($code))->first();
       $sensor = Sensor::where('name',$sensorName)->first();
+      if($car == null || $sensor == null){
+        return response(view('errors.500'), 500);
+      }
 
       DB::table('car_sensor')->insert(
         ['sensor_id' => $sensor->id, 'car_id' => $car->id, 'data'=>$value, 'created_at'=>date("Y-m-d H:i:s")]

@@ -1,7 +1,7 @@
 @extends('layouts.layoutLogged')
 @section('contenido')
 
-<section class="profile-content">
+<section class="profile-content profile-content-logged">
 	<!-- User data -->
 	<div class="sections">
 		<h2>Información de perfil:</h2>

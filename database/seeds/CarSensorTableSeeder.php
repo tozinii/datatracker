@@ -17,7 +17,8 @@ class CarSensorTableSeeder extends Seeder
         DB::table('car_sensor')->insert([
           'car_id'=>$obj->car_id,
           'sensor_id'=> $obj->sensor_id,
-          'data'=>$obj->data
+          'data'=>$obj->data,
+          'created_at'=>$obj->created_at
         ]);
       }
     }

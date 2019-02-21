@@ -110,7 +110,7 @@ $(document).ready(function(){
     //Validación user profile
       //Validación nombre
       $('#profile-name').on('input', function(){
-        var nameReg = /^[a-zA-Z]+$/;
+        var nameReg = /^[a-z\sA-Z]+$/;
         if($(this).val().match(nameReg)){
           $('#profile-name').css('border','1px solid black');
           validProfileName = true;
