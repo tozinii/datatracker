@@ -64,10 +64,9 @@ class SensorController extends Controller
           dd($sensorData);
         }
       }*/
-<<<<<<< HEAD
-      $query = DB::table('car_sensor')->select(DB::raw("avg(data) as dato,to_char(created_at,'HH24:MI:SS') as fecha"))
+      $query = DB::table('car_sensor')->select(DB::raw("avg(CAST(data AS integer)) as dato,to_char(created_at,'HH24') as fecha"))
                     ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
-                    ->whereDay('created_at',21)
+                    ->whereDay('created_at',15)
                     ->groupBy('fecha')
                     ->orderBy('fecha')
                     ->get();
@@ -79,8 +78,6 @@ class SensorController extends Controller
       for ($i=0; $i < $dias; $i++) {
         $diasMes[]= date('d-m-Y',mktime(0,0,0,2,$i+1,2019));
       }
-=======
->>>>>>> b0de57026d48da8d96fb54d496f092952d530767
 
       $sensorInfo = DB::table('car_sensor')
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
@@ -222,7 +219,7 @@ class SensorController extends Controller
 
           break;
         case 'Dia':
-          $query = DB::table('car_sensor')->select(DB::raw("avg(CAST(data AS integer)) as dato,to_char(created_at,'HH24:MI:SS') as fecha"))
+          $query = DB::table('car_sensor')->select(DB::raw("avg(CAST(data AS integer)) as dato,to_char(created_at,'HH') as fecha"))
                         ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                         ->whereDay('created_at',$fecha->day)
                         ->groupBy('fecha')
