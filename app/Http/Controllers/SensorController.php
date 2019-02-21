@@ -64,16 +64,27 @@ class SensorController extends Controller
           dd($sensorData);
         }
       }*/
-<<<<<<< HEAD
-      $query = DB::table('car_sensor')->select(DB::raw("avg(CAST(data AS integer)) as dato,to_char(created_at,'HH24') as fecha"))
-=======
-      $query = DB::table('car_sensor')->select(DB::raw("avg(CAST(data AS integer)) as dato,to_char(created_at,'HH24:MI:SS') as fecha"))
->>>>>>> c1aebe97f569c75d7f082e26de18e65044e86101
+      $query = DB::table('car_sensor')->select(DB::raw("CAST(data AS integer) as dato,to_char(created_at,'HH24:MI:SS') as fecha"))
                     ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                     ->whereDay('created_at',15)
-                    ->groupBy('fecha')
                     ->orderBy('fecha')
                     ->get();
+      $datos = array();
+      for ($i=0; $i < 24; $i++) {
+        $dato = array();
+        foreach ($query as $valor) {
+          if (date('G',strtotime($valor->fecha)) == $i) {
+            $dato['fecha'] = date('H:i:s',strtotime($valor->fecha));
+            $dato['dato'] = $valor->dato;
+          }
+          else {
+            $dato['fecha'] = date('H:i',mktime($i,0,0,0,0,0));
+            $dato['dato'] = 0;
+          }
+        }
+        array_push($datos,$dato);
+      }
+      //dd($datos);
       $meses = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
 
       $dias = cal_days_in_month(CAL_GREGORIAN, 2, 2019);
@@ -81,10 +92,7 @@ class SensorController extends Controller
       for ($i=0; $i < $dias; $i++) {
         $diasMes[]= date('d-m-Y',mktime(0,0,0,2,$i+1,2019));
       }
-<<<<<<< HEAD
 
-=======
->>>>>>> c1aebe97f569c75d7f082e26de18e65044e86101
       $sensorInfo = DB::table('car_sensor')
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                       ->get();
@@ -225,30 +233,34 @@ class SensorController extends Controller
 
           break;
         case 'Dia':
-          $query = DB::table('car_sensor')->select(DB::raw("avg(CAST(data AS integer)) as dato,to_char(created_at,'HH') as fecha"))
+          $query = DB::table('car_sensor')->select(DB::raw("avg(CAST(data AS integer)) as dato,to_char(created_at,'HH24:MI:SS') as fecha"))
                         ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                         ->whereDay('created_at',$fecha->day)
                         ->groupBy('fecha')
                         ->orderBy('fecha')
                         ->get();
           $datos = array();
-          for ($i=0; $i < 24; $i++) {
-            $dato = array();
+          //for ($i=0; $i < 24; $i++) {
             foreach ($query as $valor) {
-              if (date('H',strtotime($valor->fecha)) == $i) {
-                $dato['fecha'] = date('H:m',mktime($i,0,0,0,0,0));
+              $dato = array();
+              /*if (date('H',strtotime($valor->fecha)) == $i) {
+                $dato['fecha'] = date('H:i:s',strtotime($valor->fecha));
                 $dato['dato'] = $valor->dato;
                 $dato['titulo'] = date('dd-mm-YYY',mktime(0,0,0,$fecha->day,$fecha->month,$fecha->year));
                 break;
               }
               else {
-                $dato['fecha'] = date('H:m',mktime($i,0,0,0,0,0));
+                $dato['fecha'] = date('H:i',mktime($i,0,0,0,0,0));
                 $dato['dato'] = 0;
                 $dato['titulo'] = date('d M Y',mktime(0,0,0,$fecha->month,$fecha->day,$fecha->year));
-              }
+              }*/
+              $dato['fecha'] = date('H:i:s',strtotime($valor->fecha));
+              $dato['dato'] = $valor->dato;
+              $dato['titulo'] = date('d M Y',mktime(0,0,0,$fecha->month,$fecha->day,$fecha->year));
+              array_push($datos,$dato);
             }
-            array_push($datos,$dato);
-          }
+
+
           return json_encode($datos);
           break;
         case 'Hora':
@@ -259,9 +271,5 @@ class SensorController extends Controller
           break;
       }
 
-    }
-    public function mapa($value='')
-    {
-      // code...
     }
 }
