@@ -7,4 +7,8 @@
 {"description":"interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien","user_id":null,"code":"madonna","kit_id":null},
 {"description":"in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non","user_id":null,"code":"alina","kit_id":null},
 {"description":"nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta","user_id":9,"code":"noella","kit_id":2},
-{"description":"quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis","user_id":10,"code":"kristo","kit_id":3}]
+{"description":"quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis","user_id":10,"code":"kristo","kit_id":3},
+{"description":"","user_id":4,"code":"audi","kit_id":1},
+{"description":"","user_id":4,"code":"bmw","kit_id":2},
+{"description":"","user_id":4,"code":"ford","kit_id":3},
+{"description":"","user_id":4,"code":"ferrari","kit_id":4}]

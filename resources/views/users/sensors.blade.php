@@ -4,7 +4,7 @@
 <script src="{{asset('assets/js/statistics/Chart.bundle.js')}}"></script>
 <script src="{{asset('assets/js/statistics/Chart.js')}}"></script>
 <div class="sensors">
-   <h1>Sensor de {{ $sensor->name }} del coche {{ $car->code }}</h1>
+   <h1>{{ ucfirst($sensor->name) }} del coche {{ $car->code }}</h1>
    <table class="table table-striped">
      <thead>
        <tr>
@@ -22,7 +22,9 @@
        @endforeach
      </tbody>
    </table>
-
+   @if($sensor->name == 'gps')
+    <div id="map"></div>
+   @else
    <form action="" method="post">
      <select class="fechas" id="selectfecha">
        <option value="Año">Año</option>
@@ -35,12 +37,10 @@
     </div>
 
    </form>
-   @if($sensor->name == 'gps')
-    <div id="map"></div>
-   @else
+
 
     <canvas id="chartSensor" width="800" height="350"></canvas>
-   @endif
+
    <script type="text/javascript">
 
     $(document).ready(function(){
@@ -164,6 +164,7 @@
 
 
    </script>
+  @endif
    <script>
 
        var carmap = L.map('map').setView([43.326025, -1.968831], 16);
