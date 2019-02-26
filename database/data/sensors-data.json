@@ -1,5 +1,5 @@
 [{"name":"velocidad","unidad":"km/h"},
-{"name":"batería","unidad":"%"},
+{"name":"bateria","unidad":"%"},
 {"name":"gps","unidad":"coord"},
 {"name":"consumo","unidad":"A"},
 {"name":"autonomía","unidad":null},
