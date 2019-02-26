@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Car;
 use App\Sensor;
+use App\User;
 use Illuminate\Support\Facades\DB;
 
 class ApiDataController extends Controller
@@ -27,14 +28,21 @@ class ApiDataController extends Controller
      */
     public function store(Request $request)
     {
-      $car = Car::where('code',strtolower($request->input('code')))->first();
-      $sensor = Sensor::where('name',$request->input('sensorName'))->first();
+      //Si el valor no es vacio hace la insercion a la base de datos
+      if($request->input('code') != '' && $request->input('sensorName') != ''){
+        $car = Car::where('code',strtolower($request->input('code')))->first();
+        $user = User::find($car->user_id);
+        $sensor = Sensor::where('name',$request->input('sensorName'))->first();
+        if($request->input('api_token') == $user->api_token){
 
-      DB::table('car_sensor')->insert(
-        ['sensor_id' => $sensor->id, 'car_id' => $car->id, 'data'=>$request->input('value'), 'created_at'=>date("Y-m-d H:i:s")]
-      );
+          DB::table('car_sensor')->insert(
+            ['sensor_id' => $sensor->id, 'car_id' => $car->id, 'data'=>$request->input('value'), 'created_at'=>date("Y-m-d H:i:s")]
+          );
+          return response()->json('Datos insertados correctamente.');
+        }
 
-      return '';
+      }
+      return response()->json('Petición incorrecta, revise sus datos.');
     }
 
     /**
