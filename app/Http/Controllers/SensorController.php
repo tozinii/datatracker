@@ -64,19 +64,35 @@ class SensorController extends Controller
           dd($sensorData);
         }
       }*/
-      $query = DB::table('car_sensor')->select(DB::raw("avg(CAST(data AS integer)) as dato,to_char(created_at,'HH24:MI:SS') as fecha"))
+      $query = DB::table('car_sensor')->select(DB::raw("CAST(data AS integer) as dato,to_char(created_at,'HH24:MI:SS') as fecha"))
                     ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
-                    ->whereDay('created_at',21)
-                    ->groupBy('fecha')
+                    ->whereDay('created_at',15)
                     ->orderBy('fecha')
                     ->get();
-      $meses = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+      $datos = array();
+      for ($i=0; $i < 24; $i++) {
+        $dato = array();
+        foreach ($query as $valor) {
+          if (date('G',strtotime($valor->fecha)) == $i) {
+            $dato['fecha'] = date('H:i:s',strtotime($valor->fecha));
+            $dato['dato'] = $valor->dato;
+          }
+          else {
+            $dato['fecha'] = date('H:i',mktime($i,0,0,0,0,0));
+            $dato['dato'] = 0;
+          }
+        }
+        array_push($datos,$dato);
+      }
+      //dd($datos);
+      /*$meses = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
 
       $dias = cal_days_in_month(CAL_GREGORIAN, 2, 2019);
       $diasMes= array();
       for ($i=0; $i < $dias; $i++) {
         $diasMes[]= date('d-m-Y',mktime(0,0,0,2,$i+1,2019));
-      }
+      }*/
+
       $sensorInfo = DB::table('car_sensor')
                       ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                       ->get();
@@ -170,7 +186,7 @@ class SensorController extends Controller
           break;
         case 'Mes':
 
-          $dias = cal_days_in_month(CAL_GREGORIAN, $fecha->month, $fecha->year);
+          $dias = date("t",strtotime($fecha->year.'-'.$fecha->month));
           $diasMes= array();
           for ($i=0; $i < $dias; $i++) {
             $diasMes[]= date('d-m-Y',mktime(0,0,0,$fecha->month,$i+1,$fecha->year));
@@ -224,23 +240,27 @@ class SensorController extends Controller
                         ->orderBy('fecha')
                         ->get();
           $datos = array();
-          for ($i=0; $i < 24; $i++) {
-            $dato = array();
+          //for ($i=0; $i < 24; $i++) {
             foreach ($query as $valor) {
-              if (date('H',strtotime($valor->fecha)) == $i) {
-                $dato['fecha'] = date('H:m',mktime($i,0,0,0,0,0));
+              $dato = array();
+              /*if (date('H',strtotime($valor->fecha)) == $i) {
+                $dato['fecha'] = date('H:i:s',strtotime($valor->fecha));
                 $dato['dato'] = $valor->dato;
                 $dato['titulo'] = date('dd-mm-YYY',mktime(0,0,0,$fecha->day,$fecha->month,$fecha->year));
                 break;
               }
               else {
-                $dato['fecha'] = date('H:m',mktime($i,0,0,0,0,0));
+                $dato['fecha'] = date('H:i',mktime($i,0,0,0,0,0));
                 $dato['dato'] = 0;
                 $dato['titulo'] = date('d M Y',mktime(0,0,0,$fecha->month,$fecha->day,$fecha->year));
-              }
+              }*/
+              $dato['fecha'] = date('H:i:s',strtotime($valor->fecha));
+              $dato['dato'] = $valor->dato;
+              $dato['titulo'] = date('d M Y',mktime(0,0,0,$fecha->month,$fecha->day,$fecha->year));
+              array_push($datos,$dato);
             }
-            array_push($datos,$dato);
-          }
+
+
           return json_encode($datos);
           break;
         case 'Hora':
@@ -251,9 +271,5 @@ class SensorController extends Controller
           break;
       }
 
-    }
-    public function mapa($value='')
-    {
-      // code...
     }
 }
