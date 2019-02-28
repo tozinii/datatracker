@@ -3996,6 +3996,11 @@ background-color:#d6d6d6;
   width: 25px;
 }
 
+#shop-table thead th>img{
+  width: 15%;
+  display: inline-block;
+}
+
 /*
 -------------                           ---------------
  ------------------------------------------------------
