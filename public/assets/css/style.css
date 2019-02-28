@@ -4060,6 +4060,23 @@ background-color:#d6d6d6;
   margin-top: 25px;
 }
 
+.car-element{
+  width: 15%;
+  height: auto;
+  margin: 15px;
+  display: inline-block;
+}
+
+.car-element img{
+  width: 100%;
+  display: block;
+}
+
+.car-element img:hover{
+  -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
 
 
 
