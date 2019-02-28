@@ -13,7 +13,7 @@
       <tr>
         <th>Tipo de sensor</th>
         @foreach($listadoKits as $kit)
-          <th>{{$kit->name}}</th>
+          <th>{{$kit->name}}<img src="{{asset($kit->image)}}"/></th>
           @php
             $kitId = $kit->id;
           @endphp

@@ -17,6 +17,7 @@ class CreateTableKit extends Migration
             $table->increments('id');
             $table->string('name');
             $table->bigInteger('num_serie')->unique();
+            $table->string('image');
             $table->timestamps();
         });
     }
