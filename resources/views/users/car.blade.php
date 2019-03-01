@@ -48,13 +48,15 @@
 		<div class="tab-content">
 	    	<div id="sensores" class="tab-pane fade in active">
 		      <h3>Datos de los sensores</h3>
-						@foreach($car->kit->sensors as $sensor)
+		      			<div id="kit-sensores-coche" style="background-image: url('{{asset($car->kit->image)}}');">
+		      				<div id="sensores-listados">
+			      				@foreach($car->kit->sensors as $sensor)
+			      				<label>{{ ucfirst($sensor->name) }}</label>
+								<input type="text" value="{{ucfirst($sensor->data)}}" size="10" disabled>
 
-						<a href="{{ route('sensorInfo',[$car->code, $sensor->id]) }}" class="sensor-info-button sensor-info-button--isi sensor-info-button--text-thick sensor-info-button--text-upper">
-							<span>{{ ucfirst($sensor->name) }}</span>
-						</a>
-
-						@endforeach
+								@endforeach
+							</div>
+		      			</div>
 		    </div>
 	  </div>
 	</div>
