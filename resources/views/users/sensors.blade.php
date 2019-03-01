@@ -126,8 +126,11 @@
         fechas.push(sensorInfo[i].fecha);
       }
       var myChart = new Chart(ctx, {
-
-          type: 'line',
+          @if($sensor->name == 'bateria')
+            type: 'bar',
+          @else
+            type: 'line',
+          @endif
           data: {
               labels: fechas,
               datasets: [{
@@ -162,7 +165,11 @@
                         labelString: '{{$sensor->unidad}}'
                       },
                       ticks: {
-                          beginAtZero:true
+                          beginAtZero:true,
+                          @if($sensor->name == 'bateria')
+                            suggestedMin: 50,
+                            suggestedMax: 100
+                          @endif
                       }
                   }],
                   xAxes: [{
