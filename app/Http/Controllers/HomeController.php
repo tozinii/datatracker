@@ -29,6 +29,6 @@ class HomeController extends Controller
     {
         $cars = Car::where('user_id',Auth::user()->id)->count();
         
-        return view('home')->with('cars' => $cars);
+        return view('home')->with(['cars' => $cars]);
     }
 }
