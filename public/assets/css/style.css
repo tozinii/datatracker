@@ -3921,6 +3921,14 @@ a.button {
 	z-index: -1;
 }
 
+/*Tabla coches*/
+.delete-car-form{
+  display: inline-block;
+  width: 100px;
+}
+.delete-car-form > .btnedit-outline-danger{
+  position: static;
+}
 /*Editar Coche*/
 #save-car{
   display: none;

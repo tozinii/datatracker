@@ -20,7 +20,14 @@
 				  <td>{{$car->kit->num_serie}}</td>
 			      <td>{{$car->code}}</td>
 			      <td>{{$car->kit->name}}</td>
-			      <td><a href="{{route('cars.show',$car->id)}}" class="btnedit btnedit-outline-info btnedit-size">Info</a></td>
+			      <td>
+							<a href="{{route('cars.show',$car->id)}}" class="btnedit btnedit-outline-info btnedit-size">Info</a>
+							<form class="delete-car-form" action="{{ route('cars.destroy',$car->id) }}" method="post">
+			          @csrf
+			          @method('DELETE')
+			          <button type="submit" class="btnedit btnedit-outline-danger btndelete-car">Eliminar coche</button>
+			        </form>
+						</td>
 			    </tr>
 				@endforeach
 		  </tbody>
