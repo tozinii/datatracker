@@ -2101,6 +2101,15 @@ padding-bottom: 90px;
   .sections #editar-formulario{
     width: 400px !important;
   }
+
+  .btn-cars{
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .delete-car-form{
+    display: block !important;
+  }
 }
 
 @media (max-width: 767px){
