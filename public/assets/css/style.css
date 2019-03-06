@@ -3924,10 +3924,23 @@ a.button {
 /*Tabla coches*/
 .delete-car-form{
   display: inline-block;
-  width: 100px;
+}
+.delete-car-form > .btn-cars{
+  width: 100%;
 }
 .delete-car-form > .btnedit-outline-danger{
   position: static;
+}
+
+.btn-cars{
+  display: inline-block;
+  height: auto;
+  width: 25%;
+}
+
+.car-list-content .btnedit-outline-success,
+.car-list-content .btnedit-outline-danger{
+  margin: 0px;
 }
 /*Editar Coche*/
 #save-car{
