@@ -39,9 +39,10 @@ class ApiLastDataController extends Controller
      */
     public function show($id)
     {
+      $lastData = [];
       $car = Car::find($id);
-      $sensors = $car->sensor;
-      return response()->json($sensors);
+
+      return response()->json($car);
     }
 
     /**
