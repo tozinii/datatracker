@@ -75,15 +75,20 @@ class CarController extends Controller
       }
 
       $coordenadas = [];
+      $valores = [];
       if ($car == null){
         return back();
       }
       foreach ($car->sensors as $data){
-        if ($data->id == 3 ) {
-            array_push($coordenadas, $data->pivot->data);
-        }
+        array_push($coordenadas, $data->pivot->data);
       }
-      return view('users.car')->with(['car' => $car,'coordenadas' => $coordenadas]);
+      /*for ($i=0;$i<$coordenadas;$i++){
+          $linea=DB::table('car_sensor')->where('sensor_id', $i)->orderBy('created_at','DESC')->take(1)->get();
+          array_push($valores, $linea);
+      }*/
+      //$sensordata=DB::table('car_sensor')->where('car_id', $car->id)->where('sensor_id', 1)->orderby('created_at','DESC')->take(1)->get();
+
+      return view('users.car')->with(['car' => $car]);
     }
 
     /**
