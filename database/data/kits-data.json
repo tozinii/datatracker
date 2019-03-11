@@ -1,4 +1,4 @@
-[{"name":"Kit básico 1","num_serie":"9462366888"},
-{"name":"Kit básico 2","num_serie":"8486108241"},
-{"name":"Kit avanzado 1","num_serie":"0603654614"},
-{"name":"Kit avanzado 2","num_serie":"1408048183"}]
+[{"name":"Kit básico 1","num_serie":"9462366888","image":"assets/images/basico1.png"},
+{"name":"Kit básico 2","num_serie":"8486108241","image":"assets/images/basico2.png"},
+{"name":"Kit avanzado 1","num_serie":"0603654614","image":"assets/images/avanzado1.png"},
+{"name":"Kit avanzado 2","num_serie":"1408048183","image":"assets/images/avanzado2.png"}]
