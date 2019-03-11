@@ -52,7 +52,7 @@
 		      				<div id="sensores-listados">
 			      				@foreach($car->kit->sensors as $sensor)
 			      				<label>{{ ucfirst($sensor->name) }}</label>
-								<input type="text" value="{{($sensor->pivot->data)}}" size="10" disabled>
+								<input type="text" value="{{($sensor->valor)}}" size="10" disabled>
 
 								@endforeach
 							</div>
