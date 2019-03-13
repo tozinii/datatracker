@@ -2101,6 +2101,15 @@ padding-bottom: 90px;
   .sections #editar-formulario{
     width: 400px !important;
   }
+
+  .btn-cars{
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .delete-car-form{
+    display: block !important;
+  }
 }
 
 @media (max-width: 767px){
@@ -3921,6 +3930,27 @@ a.button {
 	z-index: -1;
 }
 
+/*Tabla coches*/
+.delete-car-form{
+  display: inline-block;
+}
+.delete-car-form > .btn-cars{
+  width: 100%;
+}
+.delete-car-form > .btnedit-outline-danger{
+  position: static;
+}
+
+.btn-cars{
+  display: inline-block;
+  height: auto;
+  width: 25%;
+}
+
+.car-list-content .btnedit-outline-success,
+.car-list-content .btnedit-outline-danger{
+  margin: 0px;
+}
 /*Editar Coche*/
 #save-car{
   display: none;
@@ -4058,6 +4088,23 @@ background-color:#d6d6d6;
 
 .ttl{
   margin-top: 25px;
+}
+
+.car-element{
+  width: 15%;
+  height: auto;
+  margin: 15px;
+  display: inline-block;
+}
+
+.car-element img{
+  width: 100%;
+  display: block;
+}
+
+.car-element img:hover{
+  -webkit-transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 

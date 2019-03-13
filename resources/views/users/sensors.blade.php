@@ -118,16 +118,26 @@
     });
     function grafico(sensorInfo) {
       var ctx = document.getElementById("chartSensor").getContext('2d');
+      console.log(sensorInfo);
       var datos = [];
       var fechas = [];
-      var titulo = sensorInfo[0].titulo;
+      var titulo;
+      if(sensorInfo == ''){
+        titulo = 'vacio';
+      }
+      else{
+        titulo = sensorInfo[0].titulo;
+      }
       for(var i in sensorInfo){
         datos.push(sensorInfo[i].dato);
         fechas.push(sensorInfo[i].fecha);
       }
       var myChart = new Chart(ctx, {
-
-          type: 'line',
+          @if($sensor->name == 'bateria')
+            type: 'bar',
+          @else
+            type: 'line',
+          @endif
           data: {
               labels: fechas,
               datasets: [{
@@ -162,7 +172,11 @@
                         labelString: '{{$sensor->unidad}}'
                       },
                       ticks: {
-                          beginAtZero:true
+                          beginAtZero:true,
+                          @if($sensor->name == 'bateria')
+                            suggestedMin: 50,
+                            suggestedMax: 100
+                          @endif
                       }
                   }],
                   xAxes: [{
@@ -184,7 +198,7 @@
   @endif
    <script>
 
-       var carmap = L.map('map').setView([{{$sensorInfo[0]->data}}], 16);
+          var carmap = L.map('map').setView([{{$sensorInfo[0]->data}}], 16);
 
            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiY3luZGEiLCJhIjoiY2pyOTM3b2ZmMDB0dDQzcGZ5ajR4aXJyNiJ9.uQDXCNWklDqzIdAHxI0XqA', {
                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
