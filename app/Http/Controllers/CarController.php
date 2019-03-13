@@ -73,17 +73,19 @@ class CarController extends Controller
       if(is_int($idInt)){
         $car = Car::find($idInt);
       }
-
-      $coordenadas = [];
+      
       if ($car == null){
         return back();
       }
-      foreach ($car->sensors as $data){
-        if ($data->id == 3 ) {
-            array_push($coordenadas, $data->pivot->data);
-        }
+
+      foreach ($car->kit->sensors as $sensor){
+        $a=DB::table('car_sensor')->where('car_id', $car->id)->where('sensor_id', $sensor->id)->orderby('created_at','DESC')->take(1)->first();
+        $sensor->valor=$a==null?"":$a->data;
+        //dump($sensor);
       }
-      return view('users.car')->with(['car' => $car,'coordenadas' => $coordenadas]);
+      
+
+      return view('users.car')->with(['car' => $car]);
     }
 
     /**

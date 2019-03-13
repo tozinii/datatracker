@@ -27,8 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $cars = Car::where('user_id',Auth::user()->id)->get();
+       
+      $cars = Car::where('user_id',Auth::user()->id)->get();
 
         return view('home')->with('cars', $cars);
-    }
+     }
 }
