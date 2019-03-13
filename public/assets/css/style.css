@@ -2101,6 +2101,15 @@ padding-bottom: 90px;
   .sections #editar-formulario{
     width: 400px !important;
   }
+
+  .btn-cars{
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .delete-car-form{
+    display: block !important;
+  }
 }
 
 @media (max-width: 767px){
@@ -3921,6 +3930,27 @@ a.button {
 	z-index: -1;
 }
 
+/*Tabla coches*/
+.delete-car-form{
+  display: inline-block;
+}
+.delete-car-form > .btn-cars{
+  width: 100%;
+}
+.delete-car-form > .btnedit-outline-danger{
+  position: static;
+}
+
+.btn-cars{
+  display: inline-block;
+  height: auto;
+  width: 25%;
+}
+
+.car-list-content .btnedit-outline-success,
+.car-list-content .btnedit-outline-danger{
+  margin: 0px;
+}
 /*Editar Coche*/
 #save-car{
   display: none;
@@ -4058,6 +4088,23 @@ background-color:#d6d6d6;
 
 .ttl{
   margin-top: 25px;
+}
+
+.car-element{
+  width: 15%;
+  height: auto;
+  margin: 15px;
+  display: inline-block;
+}
+
+.car-element img{
+  width: 100%;
+  display: block;
+}
+
+.car-element img:hover{
+  -webkit-transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 
@@ -4969,18 +5016,147 @@ outline-suc
 #map{
   z-index:2 ;
 }
+/*
+  Estilos responsive cars
 
-#kit-sensores-coche{
-  width: 1000px;
-  height: 500px;
-  background-repeat: no-repeat;
+  ////////////////////////////////////////////////////////
+
+  Movil
+*/
+@media(max-width: 488px){
+  #contenido{
+    width: 100%
+    height: auto;
+  }
+  
+  #sensores{
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+  #lista-sensores{
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    align-content: center;
+  }
+  #sensores-listados{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 60%;
+    height: 12%;
+    float: left;
+    text-align: center;
+  }
+  .clear{
+    clear: both;
+  }
+  #imagen-coche{
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #imagen-coche img{
+    width: auto;
+    height: auto;
+    display: block;
+  }
 }
-#sensores-listados{
-  width: 100%;
-  height: 50%;
+/*
+/////////////////////////////////////////////////////////////////
+
+    Tablet
+
+///////////////////////////////////////////////////////////////
+*/
+
+@media(min-width: 768px),(max-width: 1023px){
+  #contenido{
+    width: 100%
+    height: auto;
+  }
+  
+  #sensores{
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+  #lista-sensores{
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    align-content: center;
+  }
+  #sensores-listados{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 36%;
+    height: 12%;
+    float: left;
+    text-align: center;
+  }
+  .clear{
+    clear: both;
+  }
+  #imagen-coche{
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #imagen-coche img{
+    width: auto;
+    height: auto;
+    display: block;
+  }
+/*
+/////////////////////////////////////////////////////////////////
+
+    Ordenador
+
+///////////////////////////////////////////////////////////////
+*/
+}
+@media(min-width: 1024px){
+  #contenido{
+    width: 100%
+    height: auto;
+  }
+  
+  #sensores{
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+  #lista-sensores{
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    align-content: center;
+  }
+  #sensores-listados{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 15%;
+    height: 12%;
+    float: left;
+    text-align: center;
+  }
+  .clear{
+    clear: both;
+  }
+  #imagen-coche{
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #imagen-coche img{
+    width: auto;
+    height: auto;
+    display: block;
+  }
 }
 
-#kit-sensores-coche input{
-  width: 10%;
-}
 

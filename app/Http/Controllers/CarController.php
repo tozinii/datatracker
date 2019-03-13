@@ -96,7 +96,14 @@ class CarController extends Controller
      */
     public function edit($id)
     {
-        //
+      $car = null;
+      $idInt = intval($id);
+
+      if(is_int($idInt)){
+        $car = Car::find($idInt);
+      }
+
+      return view('users.edit-car')->with('car',$car);
     }
 
     /**
@@ -129,7 +136,9 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $car = Car::find($id);
+      $car->delete();
+      return redirect()->route('cars.index');
     }
 
     protected function validator(array $data)
