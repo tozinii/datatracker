@@ -74,6 +74,34 @@ $(document).ready(function(){
     });
 
     //Ajax para los datos de los sensores del coche
+    $.ajax({
+      url: 'api@lastdata',
+      success: function(respuesta) {
+      console.log(respuesta);
+      //setInterval(respuesta,1000);
+      },
+      error: function() {
+        console.log("No se ha podido obtener la información");
+      }
+    });
+    //Otra posibilidad
+    /*var uri = 'api/products';
+    $(document).ready(function () {
+      // Send an AJAX request
+      $.getJSON(uri)
+      .done(function (data) {
+      // On success, 'data' contains a list of products.
+        $.each(data, function (key, item) {
+          // Add a list item for the product.
+          $('<li>', { text: formatItem(item) }).appendTo($('#products'));
+        });
+      });
+    });
+    function formatItem(item) {
+    return item.Name + ': $' + item.Price;
+    }*/
+
+    //Una posibilidad mal
     /*function getDatosSensores(){
       $.ajax({
             type: "GET",
