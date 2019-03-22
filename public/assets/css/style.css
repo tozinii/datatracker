@@ -5016,3 +5016,147 @@ outline-suc
 #map{
   z-index:2 ;
 }
+/*
+  Estilos responsive cars
+
+  ////////////////////////////////////////////////////////
+
+  Movil
+*/
+@media(max-width: 488px){
+  #contenido{
+    width: 100%
+    height: auto;
+  }
+  
+  #sensores{
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+  #lista-sensores{
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    align-content: center;
+  }
+  #sensores-listados{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 60%;
+    height: 12%;
+    float: left;
+    text-align: center;
+  }
+  .clear{
+    clear: both;
+  }
+  #imagen-coche{
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #imagen-coche img{
+    width: auto;
+    height: auto;
+    display: block;
+  }
+}
+/*
+/////////////////////////////////////////////////////////////////
+
+    Tablet
+
+///////////////////////////////////////////////////////////////
+*/
+
+@media(min-width: 768px),(max-width: 1023px){
+  #contenido{
+    width: 100%
+    height: auto;
+  }
+  
+  #sensores{
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+  #lista-sensores{
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    align-content: center;
+  }
+  #sensores-listados{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 36%;
+    height: 12%;
+    float: left;
+    text-align: center;
+  }
+  .clear{
+    clear: both;
+  }
+  #imagen-coche{
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #imagen-coche img{
+    width: auto;
+    height: auto;
+    display: block;
+  }
+/*
+/////////////////////////////////////////////////////////////////
+
+    Ordenador
+
+///////////////////////////////////////////////////////////////
+*/
+}
+@media(min-width: 1024px){
+  #contenido{
+    width: 100%
+    height: auto;
+  }
+  
+  #sensores{
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+  #lista-sensores{
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    align-content: center;
+  }
+  #sensores-listados{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    width: 15%;
+    height: 12%;
+    float: left;
+    text-align: center;
+  }
+  .clear{
+    clear: both;
+  }
+  #imagen-coche{
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #imagen-coche img{
+    width: auto;
+    height: auto;
+    display: block;
+  }
+}
+
+

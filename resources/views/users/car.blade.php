@@ -2,21 +2,28 @@
 @section('contenido')
 
 <section class="profile-content">
-	<div>
-		<div>
-	    	<div id="sensores">
-		      <h3>Datos de los sensores</h3>
+		<div class="sections">
+			<div id="contenido">
+			    <div id="sensores">
+			    	<h2>{{ucfirst($car->code)}}</h2>
+				    <div id="lista-sensores">
+				    	<h3>{{ucfirst($car->kit->name)}}</h3>
 						@foreach($car->kit->sensors as $sensor)
-
-						<a href="{{ route('sensorInfo',[$car->code, $sensor->id]) }}" class="sensor-info-button sensor-info-button--isi sensor-info-button--text-thick sensor-info-button--text-upper">
-							<span>{{ ucfirst($sensor->name) }}</span>
-						</a>
-
+						    <div id="sensores-listados">
+						      	<label>{{ ucfirst($sensor->name) }}</label>
+								<input type="text" value="{{($sensor->valor)}}" disabled>
+							</div>
 						@endforeach
-		    </div>
+					</div>
+				</div>
+				<div class="clear">
+					<div id="imagen-coche">
+						<img src="{{asset($car->kit->image)}}">
+					</div>
+				</div>
+			</div>
 	  </div>
 	</div>
-	</div>
 </section>
-
 @endsection
+

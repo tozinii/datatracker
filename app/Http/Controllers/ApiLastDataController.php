@@ -8,7 +8,7 @@ use App\Sensor;
 use App\User;
 use Illuminate\Support\Facades\DB;
 
-class ApiDataController extends Controller
+class ApiLastDataController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,23 +28,7 @@ class ApiDataController extends Controller
      */
     public function store(Request $request)
     {
-      $jsonData = json_decode($request->getContent(), true);
-
-      //Si el valor no es vacio hace la insercion a la base de datos
-      if($jsonData['code'] != '' && $jsonData['sensorName'] != ''){
-        $car = Car::where('code',strtolower($jsonData['code']))->first();
-        $user = User::find($car->user_id);
-        $sensor = Sensor::where('name',$jsonData['sensorName'])->first();
-        if($jsonData['api_token'] == $user->api_token){
-
-          DB::table('car_sensor')->insert(
-            ['sensor_id' => $sensor->id, 'car_id' => $car->id, 'data'=>$jsonData['value'], 'created_at'=>date("Y-m-d H:i:s")]
-          );
-          return response()->json('Datos insertados correctamente.');
-        }
-
-      }
-      return response()->json('Petición incorrecta, revise sus datos.');
+        //
     }
 
     /**
@@ -55,9 +39,32 @@ class ApiDataController extends Controller
      */
     public function show($id)
     {
+        
+      $lastData = array();
       $car = Car::find($id);
+      //return $car->kit->sensors;
+      foreach ($car->kit->sensors as $carSensor) {
+        if ($carSensor->name == 'gps') {
+            $query = DB::table('car_sensor')->select(DB::raw("data,to_char(created_at,'HH24:MI:SS') as fecha"))
+                    ->where([['car_id', '=', $car->id],['sensor_id', '=', $carSensor->id]])
+                    ->latest()
+                    ->first();
+        }
+        else{
 
-      return response()->json($car);
+            $query = DB::table('car_sensor')->select(DB::raw("CAST(data AS integer) as dato,to_char(created_at,'HH24:MI:SS') as fecha"))
+                    ->where([['car_id', '=', $car->id],['sensor_id', '=', $carSensor->id]])
+                    ->latest()
+                    ->first();
+
+        }
+        
+        array_push($lastData, $query);
+      }
+
+
+
+      return $lastData;
     }
 
     /**
