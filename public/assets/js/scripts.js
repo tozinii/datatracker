@@ -73,5 +73,27 @@ $(document).ready(function(){
       });
     });
 
-
+    //Ajax para los datos de los sensores del coche
+    /*function getDatosSensores(){
+      $.ajax({
+            type: "GET",
+            url: "/api/ApiLastDataController/show",
+            data: dataString,
+            success: function() {
+                $('#counter').text(sum);
+            }
+        });
+      $.get("/api/ApiLastDataController/show", function(data){
+        var datos="";
+        dump(data);
+        /*if(data.length==0){
+          datos+='<input type="text" value="No hay valor" disabled></div>';
+        }else{
+          for(var i = 0; i < data.length; i++){
+            datos+='<input type="text" value="'+data[i].valor'" disabled></div>';
+          }
+        }
+        setInterval(getDatosSensores,1000);
+      })
+    }*/
 });
