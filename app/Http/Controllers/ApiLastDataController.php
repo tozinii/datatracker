@@ -43,28 +43,12 @@ class ApiLastDataController extends Controller
       $lastData = array();
       $car = Car::find($id);
       //return $car->kit->sensors;
-      foreach ($car->kit->sensors as $carSensor) {
-        if ($carSensor->name == 'gps') {
-            $query = DB::table('car_sensor')->select(DB::raw("data,to_char(created_at,'HH24:MI:SS') as fecha"))
-                    ->where([['car_id', '=', $car->id],['sensor_id', '=', $carSensor->id]])
-                    ->latest()
-                    ->first();
-        }
-        else{
-
-            $query = DB::table('car_sensor')->select(DB::raw("CAST(data AS integer) as dato,to_char(created_at,'HH24:MI:SS') as fecha"))
-                    ->where([['car_id', '=', $car->id],['sensor_id', '=', $carSensor->id]])
-                    ->latest()
-                    ->first();
-
+        foreach ($car->kit->sensors as $carSensor) {
+            $query = DB::table('car_sensor')->where('car_id', $car->id)->where('sensor_id', $carSensor->id)->orderby('created_at','DESC')->take(1)->first();
         }
         
         array_push($lastData, $query);
-      }
-
-
-
-      return $lastData;
+        return $lastData;
     }
 
     /**

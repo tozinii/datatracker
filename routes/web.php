@@ -48,7 +48,7 @@ Route::post('/event/create','AdminController@createEvent')->name('createEvent');
 Route::resource('profile','ProfileController')->only('show','edit','destroy');
 Route::post('/password/{user}/change', 'ProfileController@changePassword')->name('changePassword');
 Route::resource('cars', 'CarController')->only('store','index','show','update', 'destroy', 'edit');
-Route::get('/cars/{id}', 'api@lastdata')->middleware(['auth','verified','user']);
+Route::get('/cars/{id}', 'CarController@show')->middleware(['auth','verified','user']);
 Route::get('/sensor/{carName}/{sensorName}', 'SensorController@show')->middleware(['auth','verified','user'])->name('sensorInfo');
 Route::get('/shop', 'ShopController@index')->name('shop');
 Route::get('/sensorDate','SensorController@sensorDate')->name('sensordate');
@@ -56,7 +56,7 @@ Route::get('/sensorDate','SensorController@sensorDate')->name('sensordate');
 //Ruta para recibir datos de sensores
 Route::get('/data/{code}/{sensorName}/{type}', 'DataController@store');
 Route::get('/data/{code}', 'DataController@showSensorData');
-
+Route::get('/lastdata', 'ApiLastDataController@show');
 
 
 // Rutas auth:

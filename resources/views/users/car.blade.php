@@ -1,6 +1,5 @@
 @extends('layouts.layoutLogged')
 @section('contenido')
-
 <section class="profile-content">
 		<div class="sections">
 			<div id="contenido">
@@ -11,7 +10,7 @@
 						@foreach($car->kit->sensors as $sensor)
 						    <div id="sensores-listados">
 						      	<label>{{ ucfirst($sensor->name) }}</label>
-								<input type="text" value="{{($sensor->valor)}}" disabled>
+								<input type="text" id="valor" value="{{($sensor->valor)}}" disabled>
 							</div>
 						@endforeach
 					</div>
