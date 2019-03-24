@@ -45,9 +45,9 @@ class ApiLastDataController extends Controller
       //return $car->kit->sensors;
         foreach ($car->kit->sensors as $carSensor) {
             $query = DB::table('car_sensor')->where('car_id', $car->id)->where('sensor_id', $carSensor->id)->orderby('created_at','DESC')->take(1)->first();
+            array_push($lastData, $query);
         }
         
-        array_push($lastData, $query);
         return $lastData;
     }
 
