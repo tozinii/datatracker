@@ -71,37 +71,8 @@ $(document).ready(function(){
       $('#edit-car').fadeToggle(function(){
         $('#save-car').fadeToggle();
       });
-    });
+    }); 
 });
 
-function getSensores(){
-  var requestURL = "/api/lastdata";
 
-  var request = new XMLHttpRequest();
-
-  request.open('GET', requestURL);
-  request.responseType = 'json';
-  request.send();
-
-  request.onload = function() {
-    var lastdata = request.response;
-    mostrarvalores(lastdata);
-  }
-}
-
-function mostrarvalores(jsonObj) {
-  var sensor = jsonObj['sensor_id'];
-      
-  for (var i = 0; i < sensor.length; i++) {
-    var valor = sensor[i].data;
-    //esto deberia cambiarlo para que seleccione el input que ya tengo creado
-    var listItem = document.createElement('input');
-    //Esta parte esta mal
-    listItem.textContent = valor;
-    myList.appendChild(listItem);
-
-    sensores-listados.appendChild(myList);
-
-    section.appendChild(sensores-listados);
-  }
-}
+ 
