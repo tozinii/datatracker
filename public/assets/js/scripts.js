@@ -71,7 +71,8 @@ $(document).ready(function(){
       $('#edit-car').fadeToggle(function(){
         $('#save-car').fadeToggle();
       });
-    });
-
-
+    }); 
 });
+
+
+ 

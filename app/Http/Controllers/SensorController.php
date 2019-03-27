@@ -236,6 +236,7 @@ class SensorController extends Controller
           $query = DB::table('car_sensor')->select(DB::raw("avg(CAST(data AS integer)) as dato,to_char(created_at,'HH24:MI:SS') as fecha"))
                         ->where([['car_id', '=', $car->id],['sensor_id', '=', $sensor->id]])
                         ->whereDay('created_at',$fecha->day)
+                        ->whereMonth('created_at',$fecha->month)
                         ->groupBy('fecha')
                         ->orderBy('fecha')
                         ->get();

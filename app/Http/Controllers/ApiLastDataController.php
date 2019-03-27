@@ -39,6 +39,7 @@ class ApiLastDataController extends Controller
      */
     public function show($id)
     {
+<<<<<<< HEAD
 
       $lastData = array();
       $car = Car::find($id);
@@ -49,6 +50,18 @@ class ApiLastDataController extends Controller
       }
       
       return $lastData;
+=======
+        
+      $lastData = array();
+      $car = Car::find($id);
+      //return $car->kit->sensors;
+        foreach ($car->kit->sensors as $carSensor) {
+            $query = DB::table('car_sensor')->where('car_id', $car->id)->where('sensor_id', $carSensor->id)->orderby('created_at','DESC')->take(1)->first();
+            array_push($lastData, $query);
+        }
+        
+        return $lastData;
+>>>>>>> 0728664ba196a2e377d562ec9371b232d62f1152
     }
 
     /**
