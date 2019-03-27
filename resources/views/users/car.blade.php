@@ -37,73 +37,73 @@ $(document).ready(function () {
 		  success: function(dato) {
 		  		console.log(dato);
 
-		  		if (dato[0].data != null) {
+		  		if (dato[0] != null) {
 		  			var newRow1 = "<input type='text' id='valor' value="+dato[0].data+" disabled>"
 		  		}else{
 		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
 		  		}
 
-		  		if (dato[1].data != null) {
+		  		if (dato[1] != null) {
 		  			var newRow1 = "<input type='text' id='valor' value="+dato[1].data+" disabled>"
 		  		}else{
 		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
 		  		}
 
-		  		if (dato[2].data != null) {
+		  		if (dato[2] != null) {
 		  			var newRow1 = "<input type='text' id='valor' value="+dato[2].data+" disabled>"
 		  		}else{
 		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
 		  		}
 
-		  		if (dato[3].data != null) {
+		  		if (dato[3] != null) {
 		  			var newRow1 = "<input type='text' id='valor' value="+dato[3].data+" disabled>"
 		  		}else{
 		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
 		  		}
 
-		  		if (dato[4].data != null) {
+		  		if (dato[4] != null) {
 		  			var newRow1 = "<input type='text' id='valor' value="+dato[4].data+" disabled>"
 		  		}else{
 		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
 		  		}
 
-		  		if (dato[5].data != null) {
+		  		if (dato[5] != null) {
 		  			var newRow1 = "<input type='text' id='valor' value="+dato[5].data+" disabled>"
 		  		}else{
 		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
 		  		}
 
-		  		if (dato[6].data != null) {
+		  		if (dato[6] != null) {
 		  			var newRow1 = "<input type='text' id='valor' value="+dato[6].data+" disabled>"
 		  		}else{
 		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
 		  		}
 
-		  		if (dato[7].data != null) {
+		  		if (dato[7] != null) {
 		  			var newRow1 = "<input type='text' id='valor' value="+dato[7].data+" disabled>"
 		  		}else{
 		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
 		  		}
 
-		  		if (dato[8].data != null) {
+		  		if (dato[8] != null) {
 		  			var newRow1 = "<input type='text' id='valor' value="+dato[8].data+" disabled>"
 		  		}else{
 		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
 		  		}
 
-		  		if (dato[9].data != null) {
+		  		if (dato[9] != null) {
 		  			var newRow1 = "<input type='text' id='valor' value="+dato[9].data+" disabled>"
 		  		}else{
 		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
 		  		}
 
-		  		if (dato[10].data != null) {
+		  		if (dato[10] != null) {
 		  			var newRow1 = "<input type='text' id='valor' value="+dato[10].data+" disabled>"
 		  		}else{
 		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
 		  		}
 
-		  		if (dato[11].data != null) {
+		  		if (dato[11] != null) {
 		  			var newRow1 = "<input type='text' id='valor' value="+dato[11].data+" disabled>"
 		  		}else{
 		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
