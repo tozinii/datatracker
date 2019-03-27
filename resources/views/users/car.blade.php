@@ -35,6 +35,7 @@ $(document).ready(function () {
 		  type: "GET",
 		  dataType: 'json',
 		  success: function(dato) {
+		  		console.log(dato);
 			  	var newRow1 = "<input type='text' id='valor' value="+dato[0].data+" disabled>"
 			  	var newRow2 = "<input type='text' id='valor' value="+dato[1].data+" disabled>"
 			  	var newRow3 = "<input type='text' id='valor' value="+dato[2].data+" disabled>"
