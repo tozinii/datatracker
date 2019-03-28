@@ -6,7 +6,7 @@
 			    <div id="sensores">
 			    	<h2>{{ucfirst($car->code)}}</h2>
 			    	<input type="hidden" id="idCoche" value="{{$car->id}}">
-
+			    	<input type="hidden" id="idKit" value="{{$car->kit->id}}">
 				    <div id="lista-sensores">
 				    	<h3>{{ucfirst($car->kit->name)}}</h3>
 						@foreach($car->kit->sensors as $sensor)
@@ -29,100 +29,67 @@
 <script type="text/javascript">
 $(document).ready(function () {
 	var car_id = document.getElementById("idCoche").value;
-
+	var kit = document.getElementById("idKit").value;
+	var valores = [];
 	  	$.ajax({
 		  url: '/api/lastdata/'+car_id,
 		  type: "GET",
 		  dataType: 'json',
 		  success: function(dato) {
-		  		console.log(dato);
-
-		  		if (dato[0] != null) {
-		  			var newRow1 = "<input type='text' id='valor' value="+dato[0].data+" disabled>"
-		  		}else{
-		  			var newRow1 = "<input type='text' id='valor' value='Sin valor' disabled>"
-		  		}
-
-		  		if (dato[1] != null) {
-		  			var newRow2 = "<input type='text' id='valor' value="+dato[1].data+" disabled>"
-		  		}else{
-		  			var newRow2 = "<input type='text' id='valor' value='Sin valor' disabled>"
-		  		}
-
-		  		if (dato[2] != null) {
-		  			var newRow3 = "<input type='text' id='valor' value="+dato[2].data+" disabled>"
-		  		}else{
-		  			var newRow3 = "<input type='text' id='valor' value='Sin valor' disabled>"
-		  		}
-
-		  		if (dato[3] != null) {
-		  			var newRow4 = "<input type='text' id='valor' value="+dato[3].data+" disabled>"
-		  		}else{
-		  			var newRow4 = "<input type='text' id='valor' value='Sin valor' disabled>"
-		  		}
-
-		  		if (dato[4] != null) {
-		  			var newRow5 = "<input type='text' id='valor' value="+dato[4].data+" disabled>"
-		  		}else{
-		  			var newRow5 = "<input type='text' id='valor' value='Sin valor' disabled>"
-		  		}
-
-		  		if (dato[5] != null) {
-		  			var newRow6 = "<input type='text' id='valor' value="+dato[5].data+" disabled>"
-		  		}else{
-		  			var newRow6 = "<input type='text' id='valor' value='Sin valor' disabled>"
-		  		}
-
-		  		if (dato[6] != null) {
-		  			var newRow7 = "<input type='text' id='valor' value="+dato[6].data+" disabled>"
-		  		}else{
-		  			var newRow7 = "<input type='text' id='valor' value='Sin valor' disabled>"
-		  		}
-
-		  		if (dato[7] != null) {
-		  			var newRow8 = "<input type='text' id='valor' value="+dato[7].data+" disabled>"
-		  		}else{
-		  			var newRow8 = "<input type='text' id='valor' value='Sin valor' disabled>"
-		  		}
-
-		  		if (dato[8] != null) {
-		  			var newRow9 = "<input type='text' id='valor' value="+dato[8].data+" disabled>"
-		  		}else{
-		  			var newRow9 = "<input type='text' id='valor' value='Sin valor' disabled>"
-		  		}
-
-		  		if (dato[9] != null) {
-		  			var newRow10 = "<input type='text' id='valor' value="+dato[9].data+" disabled>"
-		  		}else{
-		  			var newRow10 = "<input type='text' id='valor' value='Sin valor' disabled>"
-		  		}
-
-		  		if (dato[10] != null) {
-		  			var newRow11 = "<input type='text' id='valor' value="+dato[10].data+" disabled>"
-		  		}else{
-		  			var newRow11 = "<input type='text' id='valor' value='Sin valor' disabled>"
-		  		}
-
-		  		if (dato[11] != null) {
-		  			var newRow12 = "<input type='text' id='valor' value="+dato[11].data+" disabled>"
-		  		}else{
-		  			var newRow12 = "<input type='text' id='valor' value='Sin valor' disabled>"
-		  		}
-			
-			  	$(newRow1).appendTo("#1");
-			  	$(newRow2).appendTo("#2");
-			  	$(newRow3).appendTo("#3");
-			  	$(newRow4).appendTo("#4");
-			  	$(newRow5).appendTo("#5");
-			  	$(newRow6).appendTo("#6");
-			  	$(newRow7).appendTo("#7");
-			  	$(newRow8).appendTo("#8");
-			  	$(newRow9).appendTo("#9");
-			  	$(newRow10).appendTo("#10");
-			  	$(newRow11).appendTo("#11");
-			  	$(newRow12).appendTo("#12");
+		  		switch(kit) {
+				  case "1":
+				  	valores = [1,2,3,4,5,10];
+				    for(var i = 0; i < dato.length; i++){
+			  			if (dato[i] != null) {
+			  				var newRow = "<input type='text' id='valor' value="+dato[i].data+" disabled>";
+			  				$(newRow).appendTo("#"+dato[i].sensor_id);
+			  			}else{
+			  				var newRow = "<input type='text' id='valor' value='Sin Valor' disabled>";
+			  				$(newRow).appendTo("#"+valores[i]);
+		  				}
+		  			}
+				    break;
+				  case "2":
+				    valores = [1,2,3,4,5,7,10,11,12];
+				    for(var i = 0; i < dato.length; i++){
+			  			if (dato[i] != null) {
+			  				var newRow = "<input type='text' id='valor' value="+dato[i].data+" disabled>";
+			  				$(newRow).appendTo("#"+dato[i].sensor_id);
+			  			}else{
+			  				var newRow = "<input type='text' id='valor' value='Sin Valor' disabled>";
+			  				$(newRow).appendTo("#"+valores[i]);
+		  				}
+		  			}
+				    break;
+				  case "3":
+				    valores = [1,2,3,4,5,6,7,10,11,12];
+				    for(var i = 0; i < dato.length; i++){
+			  			if (dato[i] != null) {
+			  				var newRow = "<input type='text' id='valor' value="+dato[i].data+" disabled>";
+			  				$(newRow).appendTo("#"+dato[i].sensor_id);
+			  			}else{
+			  				var newRow = "<input type='text' id='valor' value='Sin Valor' disabled>";
+			  				$(newRow).appendTo("#"+valores[i]);
+		  				}
+		  			}
+				   	break;
+				  case "4":
+				    for(var i = 0; i < dato.length; i++){
+			  			if (dato[i] != null) {
+			  				console.log(i);
+			  				var newRow = "<input type='text' id='valor' value="+dato[i].data+" disabled>";
+			  				$(newRow).appendTo("#"+dato[i].sensor_id);
+			  			}else{
+			  				var mostrar = i+1;
+			  				var newRow = "<input type='text' id='valor' value='Sin Valor' disabled>";
+			  				$(newRow).appendTo("#"+mostrar);
+		  				}
+		  			}
+				    break;
+				  default:
+				    alert("sa matao paco");
+				}
 	       }
-
 		});
 });
 </script>
