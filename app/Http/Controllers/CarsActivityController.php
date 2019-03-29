@@ -29,17 +29,24 @@ class CarsActivityController extends Controller
     public function index()
     {
     	// $posicion cogera la posicion de los coches que vaya a coger para mostrarlos en el mapa
-       //$hoy = '2019-03-22';
-    	$hoy = date('Y-m-d');
+       $hoy = '2019-03-29';
+    	//$hoy = date('Y-m-d');
        // coger los coches que hayan recibido los datos el dia de hoy (sin la hora)
        // Para ello recorro todos los coches y cojo de cada uno los datos que hayan sido recibidos el dia de hoy
-       $cars = Car::all();
+       $cars = array();
+       $sensorsData = DB::table('car_sensor')->select('car_id')->where('created_at', '<=', $hoy)->groupBy('car_id')->get();
+       foreach ($sensorsData as $car) {
+         $cars = Car::find($car->car_id)->get();
+       }
+       return $cars;
+       /*
        foreach ($cars as $car) {
          // Otro foreach que recorra todos los sensores del coche? o no hace falta? A la noche miro que no me da tiempo
          $sensoresHoy = Car::where([['created_at', '>', $hoy],['cars.kit_id', '3']])->get();
        }
+       */
       //return $cars;
 
-        return view('users.carsActivity')->with('cars', $cars, $posicion);
+        return view('users.carsActivity')->with('cars', $cars);
      }
 }
