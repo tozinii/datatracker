@@ -5159,4 +5159,20 @@ outline-suc
   }
 }
 
+#velocimetro{
+  clear: both;
+  background: url(/assets/images/velocimetro.png) no-repeat orange;
+  width: 500px;
+  height: 500px;
+  position:relative;
+
+}
+
+#flecha{
+  width: 100%;
+  height: auto;
+  transform: rotate(-220deg);
+  /*transform-origin: center left;*/
+}
+
 

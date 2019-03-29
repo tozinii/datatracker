@@ -12,9 +12,12 @@
 						@foreach($car->kit->sensors as $sensor)
 						    <div id="sensores-listados">
 						      	<label>{{ ucfirst($sensor->name) }}</label>
-						      	<div id="{{$sensor->id}}"></div>
+						      	<input type='text' id='sensor{{$sensor->id}}' value='' disabled>
 							</div>
 						@endforeach
+					</div>
+					<div id="velocimetro">
+						<img id="flecha" src="/assets/images/flecha.png">
 					</div>
 				</div>
 				<div class="clear">
@@ -36,7 +39,28 @@ $(document).ready(function () {
 		  type: "GET",
 		  dataType: 'json',
 		  success: function(dato) {
-		  		switch(kit) {
+		  	console.log(dato);
+
+		  		for(var i = 0; i<dato.length; i++){
+		  			var mostrar = i+1;
+		  			if($("#sensor"+mostrar) && dato[i]) $("#sensor"+mostrar).val(dato[i].data);
+		  		}
+		  		
+		 		$("#flecha").css("transform", "rotate(405deg)");
+		  		
+			  	/*var newRow2 = $("2").val = dato[1].data;
+			  	var newRow3 = $("3").val = dato[2].data;
+			  	var newRow4 = $("4").val = dato[3].data;
+			  	var newRow5 = $("5").val = dato[4].data;
+			  	var newRow6 = $("6").val = dato[5].data;
+			  	var newRow7 = $("7").val = dato[6].data;
+			  	var newRow8 = $("8").val = dato[7].data;
+			  	var newRow9 = $("9").val = dato[8].data;
+			  	var newRow10 = $("10").val = dato[9].data;
+			  	var newRow11 = $("11").val = dato[10].data;
+			  	var newRow12 = $("12").val = dato[11].data;*/
+			
+		  		/*switch(kit) {
 				  case "1":
 				  	valores = [1,2,3,4,5,10];
 				    for(var i = 0; i < dato.length; i++){
@@ -88,7 +112,7 @@ $(document).ready(function () {
 				    break;
 				  default:
 				    alert("sa matao paco");
-				}
+				}*/
 	       }
 		});
 });
