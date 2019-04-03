@@ -5163,16 +5163,130 @@ outline-suc
   clear: both;
   background: url(/assets/images/velocimetro.png) no-repeat orange;
   width: 500px;
-  height: 500px;
-  position:relative;
+  height: auto;
+  position: relative;
 
 }
 
-#flecha{
+#flechaVelocimetro{
   width: 100%;
   height: auto;
   transform: rotate(-220deg);
   /*transform-origin: center left;*/
 }
 
+#bateria{
+  background: url(/assets/images/pilas.png) no-repeat green;
+  width: 300px;
+  height: auto;
+  position: relative;
 
+}
+.bg-pilas {
+    width: 640px; height: 320px;
+    background: url('/assets/images/css_sprites.png') -10px -10px green;
+}
+
+#Consumo{
+  clear: both;
+  background: url(/assets/images/velocimetro.png) no-repeat red;
+  width: 500px;
+  height: auto;
+  position: relative;
+
+}
+
+#flechaConsumo{
+  width: 100%;
+  height: auto;
+  transform: rotate(-220deg);
+  /*transform-origin: center left;*/
+}
+
+#Autonomia{
+  clear: both;
+  background: url(/assets/images/velocimetro.png) no-repeat blue;
+  width: 500px;
+  height: auto;
+  position: relative;
+
+}
+
+#flechaAutonomia{
+  width: 100%;
+  height: auto;
+  transform: rotate(-220deg);
+  /*transform-origin: center left;*/
+}
+
+#Voltaje{
+  clear: both;
+  background: yellow;
+  width: 500px;
+  height: auto;
+  position: relative;
+
+}
+
+#Potencia{
+  clear: both;
+  background: url(/assets/images/velocimetro.png) no-repeat purple;
+  width: 500px;
+  height: auto;
+  position: relative;
+
+}
+
+#flechaPotencia{
+  width: 100%;
+  height: auto;
+  transform: rotate(-220deg);
+  /*transform-origin: center left;*/
+}
+
+#Temperatura-Motor{
+  clear: both;
+  background: url(/assets/images/velocimetro.png) no-repeat black;
+  width: 500px;
+  height: auto;
+  position: relative;
+
+}
+
+#flechaTemperatura-Motor{
+  width: 100%;
+  height: auto;
+  transform: rotate(-220deg);
+  /*transform-origin: center left;*/
+}
+#Temperatura-Bateria{
+  clear: both;
+  background: url(/assets/images/velocimetro.png) no-repeat orange;
+  width: 500px;
+  height: auto;
+  position: relative;
+
+}
+
+#flechaTemperatura-Bateria{
+  width: 100%;
+  height: auto;
+  transform: rotate(-220deg);
+  /*transform-origin: center left;*/
+}
+
+#RPM{
+  clear: both;
+  background: url(/assets/images/velocimetro.png) no-repeat red;
+  width: 500px;
+  height: auto;
+  position: relative;
+
+}
+
+#flechaRPM{
+  width: 100%;
+  height: auto;
+  transform: rotate(-220deg);
+  /*transform-origin: center left;*/
+}
