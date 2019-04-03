@@ -5275,6 +5275,22 @@ outline-suc
   /*transform-origin: center left;*/
 }
 
+#Rumbo{
+  clear: both;
+  background: url(/assets/images/brujula.png) no-repeat green;
+  width: 500px;
+  height: auto;
+  position: relative;
+
+}
+
+#flechaRumbo{
+  width: 100%;
+  height: auto;
+  transform: rotate(-220deg);
+  /*transform-origin: center left;*/
+}
+
 #RPM{
   clear: both;
   background: url(/assets/images/velocimetro.png) no-repeat red;

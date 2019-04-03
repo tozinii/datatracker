@@ -47,7 +47,7 @@
 						
 					</div>
 					<div id="Rumbo">
-						
+						<img id="flechaRumbo" src="/assets/images/flecha.png">
 					</div>
 					<div id="RPM">
 						<img id="flechaRPM" src="/assets/images/flecha.png">
