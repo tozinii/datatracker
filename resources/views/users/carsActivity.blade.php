@@ -17,42 +17,53 @@
     @endforeach
   </div>
   <div id="map">
-    
+
   </div>
 
 
    <script>
 
-          var carmap = L.map('map').setView([{{$sensorInfo[0]->data}}], 16);
+   function renderizarMapa(coordenadasMapa){
+     var carmap = L.map('map').setView([43.326353,-1.971578], 16);
 
-           L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiY3luZGEiLCJhIjoiY2pyOTM3b2ZmMDB0dDQzcGZ5ajR4aXJyNiJ9.uQDXCNWklDqzIdAHxI0XqA', {
-               attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-               maxZoom: 18,
-               id: 'mapbox.streets'
-           }).addTo(carmap);
-           /*
-                  Aqui usar un ajax para coger la api y el valor del gps
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiY3luZGEiLCJhIjoiY2pyOTM3b2ZmMDB0dDQzcGZ5ajR4aXJyNiJ9.uQDXCNWklDqzIdAHxI0XqA', {
+          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          maxZoom: 18,
+          id: 'mapbox.streets'
+      }).addTo(carmap);
+      // Se pasa la coordenada en string por lo que hay que dividirla y pasarla a int cada coordenada
+      var marker = L.marker(coordenadasMapa[3]["coords"]).addTo(carmap);
 
+   }
 
-           @if($sensor->name == 'gps')
-              @php
-                $coordenadas = [];
-              @endphp
-            @foreach($sensorInfo as $info)
-              <?php $coordenadas[] = $info->data ?>;
-            @endforeach
-            <?php for($i = 0; $i < count($coordenadas)-1; $i++) { ?>
-              var etapa<?php echo $i ?> = [
-                  [<?php echo $coordenadas[$i] ?>],
-                   [<?php echo $coordenadas[$i+1] ?>]
-              ];
-              var polyline<?php echo $i ?> = L.polyline(etapa<?php echo $i ?>, {color: 'red'}).addTo(carmap);
-            <?php
+   $(document).ready(function () {
+    var carsId = {{ $cars_ids }};
+    console.log(carsId);
+   	var carCoords = [];
 
+    for(let carId of carsId){
+   	  	$.ajax({
+   		  url: '/api/lastdata/'+carId,
+   		  type: "GET",
+   		  dataType: 'json',
+   		  success: function(dato, status, xhr) {
+            var coordenadas = null;
+            for(var sensor of dato){
+              if(sensor && sensor.sensor_id == 3){
+                coordenadas = sensor.data;
               }
-            ?>
-            */
-          @endif
+            }
+            carCoords.push({
+                id: carId,
+                coords: coordenadas
+            });
+            if(carCoords.length === carsId.length){
+              renderizarMapa(carCoords);
+            }
+  	       }
+  		});
+    }
+  });
 
 
    </script>

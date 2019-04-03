@@ -34,19 +34,14 @@ class CarsActivityController extends Controller
        // coger los coches que hayan recibido los datos el dia de hoy (sin la hora)
        // Para ello recorro todos los coches y cojo de cada uno los datos que hayan sido recibidos el dia de hoy
        $cars = array();
+       $cars_ids = array();
        $sensorsData = DB::table('car_sensor')->select('car_id')->where('created_at', '<=', $hoy)->groupBy('car_id')->get();
        foreach ($sensorsData as $car) {
          $cars = Car::find($car->car_id)->get();
        }
-       return $cars;
-       /*
        foreach ($cars as $car) {
-         // Otro foreach que recorra todos los sensores del coche? o no hace falta? A la noche miro que no me da tiempo
-         $sensoresHoy = Car::where([['created_at', '>', $hoy],['cars.kit_id', '3']])->get();
+         array_push($cars_ids, $car->id);
        }
-       */
-      //return $cars;
-
-        return view('users.carsActivity')->with('cars', $cars);
+        return view('users.carsActivity')->with(['cars'=>$cars , 'cars_ids'=>json_encode($cars_ids)]);
      }
 }
