@@ -16,40 +16,43 @@
 							</div>
 						@endforeach
 					</div>
-					<div id="velocimetro">
+					<div class="sensor1" id="1">
 						<img id="flechaVelocimetro" src="/assets/images/flecha.png">
 					</div>
-					<div class="bg-pilas">
-						
+					<div id="2">
+						<i class="sensor2" id="bateria1"></i>
+						<i class="sensor2" id="bateria2"></i>
+						<i class="sensor2" id="bateria3"></i>
+						<i class="sensor2" id="bateria4"></i>
 					</div>
-					<div id="mapa">
-						
+					<div class="sensor3" id="3">
+						Aqui va el mapa
 					</div>
-					<div id="Consumo">
+					<div class="sensor4" id="4">
 						<img id="flechaConsumo" src="/assets/images/flecha.png">
 					</div>
-					<div id="Autonomia">
+					<div class="sensor5" id="5">
 						<img id="flechaAutonomia" src="/assets/images/flecha.png">
 					</div>
-					<div id="Voltaje">
+					<div class="sensor6" id="6">
 						<img id="Indicador" src="/assets/images/Voltaje.png">
 					</div>
-					<div id="Potencia">
+					<div class="sensor7" id="7">
 						<img id="flechaPotencia" src="/assets/images/flecha.png">
 					</div>
-					<div id="Temperatura-Motor">
+					<div class="sensor8" id="8">
 						<img id="flechaTemperatura-Motor" src="/assets/images/flecha.png">
 					</div>
-					<div id="Temperatura-Bateria">
+					<div class="sensor9" id="9">
 						<img id="flechaTemperatura-Bateria" src="/assets/images/flecha.png">
 					</div>
-					<div id="Satelites">
-						
+					<div class="sensor10" id="10">
+						Aqui van los satelites
 					</div>
-					<div id="Rumbo">
+					<div class="sensor11" id="11">
 						<img id="flechaRumbo" src="/assets/images/flecha.png">
 					</div>
-					<div id="RPM">
+					<div class="sensor12" id="12">
 						<img id="flechaRPM" src="/assets/images/flecha.png">
 					</div>
 
@@ -77,8 +80,25 @@ $(document).ready(function () {
 
 		  		for(var i = 0; i<dato.length; i++){
 		  			var mostrar = i+1;
-		  			if($("#sensor"+mostrar) && dato[i]) $("#sensor"+mostrar).val(dato[i].data);
+		  			if($("#sensor"+mostrar) && dato[i]){
+		  				$("#sensor"+mostrar).val(dato[i].data);
+		  				document.getElementById(mostrar).style.display = "block";
+		  			}
 		  		}
+		  		//Esto funciona
+		  		document.getElementById("1").style.display = "block";
+		  		//$("velocimetro").style.display = "block";
+		  		if(dato[1].data < 25){
+		  			document.getElementById("bateria1").style.display = "block";
+		  		}else if(dato[1].data >= 25 && dato[2].data < 50){
+		  			document.getElementById("bateria2").style.display = "block";
+		  		}else if(dato[1].data >= 50 && dato[2].data < 75){
+		  			document.getElementById("bateria3").style.display = "block";
+		  		}else{
+		  			document.getElementById("bateria1").style.display = "block";
+		  		}
+
+		  		//Esto deberia cambiarlo
 		  		var rotar;
 		  		if(dato[0].data != 0){
 		  			rotar = rotar = (405*dato[0].data)/50;
