@@ -20,13 +20,10 @@
 						<img id="flechaVelocimetro" src="/assets/images/flecha.png">
 					</div>
 					<div id="2">
-						<i class="sensor2" id="bateria1"></i>
-						<i class="sensor2" id="bateria2"></i>
-						<i class="sensor2" id="bateria3"></i>
-						<i class="sensor2" id="bateria4"></i>
+						<i class="sensor2" id="cocheBateria"></i>
 					</div>
 					<div class="sensor3" id="3">
-						<div id="mapid" ></div>
+						<div id="mapid" onload="setVista(coordenadas)"></div>
 					</div>
 					<div class="sensor4" id="4">
 						<img id="flechaConsumo" src="/assets/images/flecha.png">
@@ -73,7 +70,8 @@ $(document).ready(function () {
 	var car_id = document.getElementById("idCoche").value;
 	var kit = document.getElementById("idKit").value;
 	var valores = [];
-	  	$.ajax({
+	function ajax(){
+		$.ajax({
 		  url: '/api/lastdata/'+car_id,
 		  type: "GET",
 		  dataType: 'json',
@@ -88,44 +86,72 @@ $(document).ready(function () {
 		  				coordenadas[0] = parseFloat(coordenadas[0]);
 		  				coordenadas[1] = parseFloat(coordenadas[1]);
 		  				if(dato[1].data < 20){
-		  					$('#bateria1').css('display','block');
+		  					$(".sensor2").addClass("bateria1");
 				  		}else if(dato[1].data < 51){
-				  			$('#bateria2').css('display','block');
+				  			$(".sensor2").removeClass("bateria1");
+				  			$(".sensor2").addClass("bateria2");
 				  		}else if(dato[1].data < 90){
-				  			$('#bateria3').css('display','block');
+				  			$(".sensor2").removeClass("bateria2");
+				  			$(".sensor2").addClass("bateria3");
 				  		}else{
-				  			$('#bateria4').css('display','block');
+				  			$(".sensor2").removeClass("bateria3");
+				  			$(".sensor2").addClass("bateria4");
 				  		}
 				  	}
 				}
 
 		  		//$("velocimetro").style.display = "block";
-				mapa.setView([coordenadas], 12);
-				marker.setLatLng(coordenadas).addTo(mapa);
+				/*var mapa = L.map('mapid').setView([coordenadas], 12);
+				var marker = L.marker([coordenadas],{icon:cocheIcon});.addTo(mapa);*/
 
 		  		var rotar;
-		  		if(dato[0].data != 0){
-		  			rotar = rotar = (405*dato[0].data)/50;
+		  		if(dato[0].data >= 0){
+		  			rotar = (265*dato[0].data/50)+140;
 		  			console.log(rotar);
-		  			if(rotar < 82){
-		  				rotar = rotar = ((405*dato[0].data)/50)+135;
-		  				$("#flecha").css("transform", "rotate("+rotar+"deg)");
-		  				console.log(rotar);
-		  			}else if(rotar > 83 && rotar < 163){
-		  				rotar = rotar = ((405*dato[0].data)/50)+100;
-		  				$("#flecha").css("transform", "rotate("+rotar+"deg)");
-		  				console.log(rotar);
-		  			}else if(rotar < 280){
-		  				rotar = rotar = ((405*dato[0].data)/50)+45;
-		  				$("#flecha").css("transform", "rotate("+rotar+"deg)");
-		  				console.log(rotar);
-		  			}else{
-		  				$("#flecha").css("transform", "rotate("+rotar+"deg)");
-		  				console.log(rotar);
-		  			}
+		  			$("#flechaVelocimetro").css("transform", "rotate("+rotar+"deg)");
 		  		}
+		  		if(dato[3].data >= 0){
+		  			rotar = (265*dato[3].data/100)+140;
+		  			console.log(rotar);
+		  			$("#flechaConsumo").css("transform", "rotate("+rotar+"deg)");
+		  		}
+		  		if(dato[4].data >= 0){
+		  			rotar = (265*dato[4].data/100)+140;
+		  			console.log(rotar);
+		  			$("#flechaAutonomia").css("transform", "rotate("+rotar+"deg)");
+		  		}
+		  		if(dato[6].data >= 0){
+		  			rotar = (265*dato[6].data/100)+140;
+		  			console.log(rotar);
+		  			$("#flechaPotencia").css("transform", "rotate("+rotar+"deg)");
+		  		}
+		  		if(dato[7].data >= 0){
+		  			rotar = (265*dato[7].data/100)+140;
+		  			console.log(rotar);
+		  			$("#flechaTemperatura-Motor").css("transform", "rotate("+rotar+"deg)");
+		  		}
+		  		if(dato[8].data >= 0){
+		  			rotar = (265*dato[8].data/100)+140;
+		  			console.log(rotar);
+		  			$("#flechaTemperatura-Bateria").css("transform", "rotate("+rotar+"deg)");
+		  		}
+		  		if(dato[10].data >= 0){
+		  			rotar = (265*dato[10].data/100)+140;
+		  			console.log(rotar);
+		  			$("#flechaRumbo").css("transform", "rotate("+rotar+"deg)");
+		  		}
+		  		if(dato[11].data >= 0){
+		  			rotar = (265*dato[11].data/1000)+140;
+		  			console.log(rotar);
+		  			$("#flechaRPM").css("transform", "rotate("+rotar+"deg)");
+		  		}
+
+
 	       }
 		});
+	}
+	  	
+		setInterval(ajax, 5000);
 });
 </script>
 @endsection

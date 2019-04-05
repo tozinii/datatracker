@@ -5173,38 +5173,31 @@ outline-suc
   width: 100%;
   height: auto;
   transform: rotate(-220deg);
-  /*transform-origin: center left;*/
+  transition: 1s ease-in-out;
 }
 
 .sensor2 {
     background: url('/assets/images/css_sprites.png');
     background-repeat: no-repeat;
-    display: inline-block;
+    display: block;
+    width: 165px;
+    height: 230px;
     clear: both;
 }
 
-#bateria1{
-  width: 165px;
-  height: 230px;
-  display: none;
+.bateria0{
   background-position: 0px -50px;
 }
-#bateria2{
-  width: 165px;
-  height: 230px;
-  display: none;
+.bateria1{
+  background-position: 0px -50px;
+}
+.bateria2{
   background-position: -165px -50px;
 }
-#bateria3{
-  width: 165px;
-  height: 230px;
-  display: none;
+.bateria3{
   background-position: -330px -50px;
 }
-#bateria4{
-  width: 165px;
-  height: 230px;
-  display: none;
+.bateria4{
   background-position: -495px -50px;
 }
 
@@ -5234,7 +5227,7 @@ outline-suc
   width: 100%;
   height: auto;
   transform: rotate(-220deg);
-  /*transform-origin: center left;*/
+  transition: 1s ease-in-out;
 }
 
 .sensor5{
@@ -5250,7 +5243,7 @@ outline-suc
   width: 100%;
   height: auto;
   transform: rotate(-220deg);
-  /*transform-origin: center left;*/
+  transition: 1s ease-in-out;
 }
 
 .sensor6{
@@ -5277,7 +5270,7 @@ outline-suc
   width: 100%;
   height: auto;
   transform: rotate(-220deg);
-  /*transform-origin: center left;*/
+  transition: 1s ease-in-out;
 }
 
 .sensor8{
@@ -5294,7 +5287,7 @@ outline-suc
   width: 100%;
   height: auto;
   transform: rotate(-220deg);
-  /*transform-origin: center left;*/
+  transition: 1s ease-in-out;
 }
 
 .sensor9{
@@ -5311,7 +5304,7 @@ outline-suc
   width: 100%;
   height: auto;
   transform: rotate(-220deg);
-  /*transform-origin: center left;*/
+  transition: 1s ease-in-out;
 }
 
 .sensor10{
@@ -5337,7 +5330,7 @@ outline-suc
   width: 100%;
   height: auto;
   transform: rotate(-220deg);
-  /*transform-origin: center left;*/
+  transition: 1s ease-in-out;
 }
 
 .sensor12{
@@ -5354,5 +5347,5 @@ outline-suc
   width: 100%;
   height: auto;
   transform: rotate(-220deg);
-  /*transform-origin: center left;*/
+  transition: 1s ease-in-out;
 }
