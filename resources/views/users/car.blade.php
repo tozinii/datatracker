@@ -67,7 +67,7 @@
 	</div>
 </section>
 @include('includes.geoscripts')
-
+<script src="/assets/js/map.js" ></script>
 <script type="text/javascript">
 $(document).ready(function () {
 	var car_id = document.getElementById("idCoche").value;
@@ -101,7 +101,7 @@ $(document).ready(function () {
 
 		  		//$("velocimetro").style.display = "block";
 				mapa.setView([coordenadas], 12);
-				marker.setLatLng([coordenadas]).addTo(mapa);
+				marker.setLatLng(coordenadas).addTo(mapa);
 
 		  		var rotar;
 		  		if(dato[0].data != 0){
@@ -128,6 +128,5 @@ $(document).ready(function () {
 		});
 });
 </script>
-<script src="/assets/js/map.js" ></script>
 @endsection
 
