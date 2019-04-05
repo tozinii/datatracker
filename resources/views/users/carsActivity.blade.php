@@ -5,7 +5,7 @@
 <div class="container">
    <div class="alert alert-info ttl" role="alert">
 	  <h3 class="alert-heading">Bienvenido {{ Auth::user()->name}}</h3>
-	  <p>Este es el panel de actividad, aqui podra observar los coches que han recibido algun dato el dia de hoy.</p>
+	  <p>Añadir datos nuevos aleatorios medio realistas. Poner una vista predeterminada de donosti entero. Ruta aplicacion -> posgps/3 </p>
 	</div>
 </div>
 
@@ -31,8 +31,15 @@
           maxZoom: 18,
           id: 'mapbox.streets'
       }).addTo(carmap);
-      // Se pasa la coordenada en string por lo que hay que dividirla y pasarla a int cada coordenada
-      var marker = L.marker(coordenadasMapa[3]["coords"]).addTo(carmap);
+      var marcadores = [];
+      for(var i=0; i=coordenadasMapa.length;i++){
+        if(coordenadasMapa[i] != null){
+          marcadores.push(L.marker(coordenadasMapa[i]["coords"]));
+        }
+      }
+      for (var i = marcadores.length - 1; i >= 0; i--) {
+        marcadores[i].addTo(carmap);
+      }
 
    }
 
@@ -47,12 +54,13 @@
    		  type: "GET",
    		  dataType: 'json',
    		  success: function(dato, status, xhr) {
-            var coordenadas = null;
+            var coordenadas = [];
             for(var sensor of dato){
-              if(sensor && sensor.sensor_id == 3){
+              if(sensor && sensor.sensor_id == 3 && sensor.data != null){
                 coordenadas = sensor.data;
               }
             }
+            console.log(coordenadas);
             carCoords.push({
                 id: carId,
                 coords: coordenadas
@@ -62,10 +70,9 @@
             }
   	       }
   		});
-    }
-  });
-
-
+    
+  }
+});
    </script>
 
 @endsection
