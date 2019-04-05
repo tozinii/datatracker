@@ -26,7 +26,7 @@
 						<i class="sensor2" id="bateria4"></i>
 					</div>
 					<div class="sensor3" id="3">
-						Aqui va el mapa
+						<div id="mapid" ></div>
 					</div>
 					<div class="sensor4" id="4">
 						<img id="flechaConsumo" src="/assets/images/flecha.png">
@@ -66,6 +66,8 @@
 	  </div>
 	</div>
 </section>
+@include('includes.geoscripts')
+
 <script type="text/javascript">
 $(document).ready(function () {
 	var car_id = document.getElementById("idCoche").value;
@@ -76,31 +78,30 @@ $(document).ready(function () {
 		  type: "GET",
 		  dataType: 'json',
 		  success: function(dato) {
-		  	console.log(dato);
 
 		  		for(var i = 0; i<dato.length; i++){
 		  			var mostrar = i+1;
 		  			if($("#sensor"+mostrar) && dato[i]){
 		  				$("#sensor"+mostrar).val(dato[i].data);
-		  				document.getElementById(mostrar).style.display = "block";
+		  				$('#'+mostrar).css('display','block');
+		  				var coordenadas = dato[2].data.split(",");
+		  				coordenadas[0] = parseFloat(coordenadas[0]);
+		  				coordenadas[1] = parseFloat(coordenadas[1]);
 		  				if(dato[1].data < 20){
-		  					document.getElementById("bateria1").style.display = "block";
-		  					console.log(dato[1].data);
+		  					$('#bateria1').css('display','block');
 				  		}else if(dato[1].data < 51){
-				  			console.log(dato[1].data);
-				  			document.getElementById("bateria2").style.display = "block";
+				  			$('#bateria2').css('display','block');
 				  		}else if(dato[1].data < 90){
-				  			console.log(dato[1].data);
-				  			document.getElementById("bateria3").style.display = "block";
+				  			$('#bateria3').css('display','block');
 				  		}else{
-				  			document.getElementById("bateria4").style.display = "block";
-				  			console.log(dato[1].data);
+				  			$('#bateria4').css('display','block');
 				  		}
 				  	}
 				}
 
 		  		//$("velocimetro").style.display = "block";
-
+				mapa.setView([coordenadas], 12);
+				marker.setLatLng([coordenadas]).addTo(mapa);
 
 		  		var rotar;
 		  		if(dato[0].data != 0){
@@ -127,5 +128,6 @@ $(document).ready(function () {
 		});
 });
 </script>
+<script src="/assets/js/map.js" ></script>
 @endsection
 

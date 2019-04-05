@@ -229,7 +229,6 @@ a {
 }
 
 
-
 .title h1{
     font-size: 35px;
     font-weight: 700;
@@ -359,6 +358,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   background-color: transparent;
   position: absolute;
   top: 24px;
+  clear: both;
 }
 /* -------------------------------------------------------------------
  * ## header logo
@@ -5215,6 +5215,9 @@ outline-suc
   height: auto;
   position: relative;
   display: none;
+}
+#mapid { 
+  height: 500px;
 }
 
 .sensor4{
