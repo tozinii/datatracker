@@ -24,16 +24,15 @@
    <script>
 
    function renderizarMapa(coordenadasMapa){
-     var carmap = L.map('map').setView([43.326353,-1.971578], 16);
+     var activity = L.map('map').setView([43.326353,-1.971578], 16);
 
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiY3luZGEiLCJhIjoiY2pyOTM3b2ZmMDB0dDQzcGZ5ajR4aXJyNiJ9.uQDXCNWklDqzIdAHxI0XqA', {
           attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
           maxZoom: 18,
           id: 'mapbox.streets'
-      }).addTo(carmap);
+      }).addTo(activity);
       // Se pasa la coordenada en string por lo que hay que dividirla y pasarla a int cada coordenada
-      var marker = L.marker(coordenadasMapa[3]["coords"]).addTo(carmap);
-
+      var coche = L.marker(coordenadasMapa[3]["coords"]).addTo(activity);
    }
 
    $(document).ready(function () {
