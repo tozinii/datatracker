@@ -43,12 +43,12 @@ class ApiLastDataController extends Controller
       $lastData = array();
       $car = Car::find($id);
       //return $car->kit->sensors;
-      if($car != NULL && $car->kit != null && $car->kit->sensors != null){
+      //if($car != NULL && $car->kit != null && $car->kit->sensors != null){
         foreach ($car->kit->sensors as $carSensor) {
             $query = DB::table('car_sensor')->where('car_id', $car->id)->where('sensor_id', $carSensor->id)->orderby('created_at','DESC')->take(1)->first();
             array_push($lastData, $query);
         }
-      }
+     // }
 
         return $lastData;
     }
