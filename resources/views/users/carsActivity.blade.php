@@ -30,11 +30,6 @@
           attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
           maxZoom: 18,
           id: 'mapbox.streets'
-<<<<<<< HEAD
-      }).addTo(activity);
-      // Se pasa la coordenada en string por lo que hay que dividirla y pasarla a int cada coordenada
-      var coche = L.marker(coordenadasMapa[3]["coords"]).addTo(activity);
-=======
       }).addTo(carmap);
       var marcadores = [];
       for(var i=0; i=coordenadasMapa.length;i++){
@@ -46,7 +41,6 @@
         marcadores[i].addTo(carmap);
       }
 
->>>>>>> 956c660a61dff407c4635d9998eef594e5ea0c2b
    }
 
    $(document).ready(function () {
@@ -76,7 +70,7 @@
             }
   	       }
   		});
-    
+
   }
 });
    </script>
