@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Car;
-use App\Sensor;
-use App\User;
-use Illuminate\Support\Facades\DB;
 
-class ApiLastDataController extends Controller
+class ApiCarsActivity extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -39,18 +35,21 @@ class ApiLastDataController extends Controller
      */
     public function show($id)
     {
-
-      $lastData = array();
-      $car = Car::find($id);
-      //return $car->kit->sensors;
-      if($car != NULL && $car->kit != null && $car->kit->sensors != null){
-        foreach ($car->kit->sensors as $carSensor) {
-            $query = DB::table('car_sensor')->where('car_id', $car->id)->where('sensor_id', $carSensor->id)->orderby('created_at','DESC')->take(1)->first();
-            array_push($lastData, $query);
-        }
-      }
-
-        return $lastData;
+        // $posicion cogera la posicion de los coches que vaya a coger para mostrarlos en el mapa
+       $hoy = '2019-03-29';
+        //$hoy = date('Y-m-d');
+       // coger los coches que hayan recibido los datos el dia de hoy (sin la hora)
+       // Para ello recorro todos los coches y cojo de cada uno los datos que hayan sido recibidos el dia de hoy
+       $cars = array();
+       $cars_ids = array();
+       $sensorsData = DB::table('car_sensor')->select('car_id')->where('created_at', '<=', $hoy)->groupBy('car_id')->get();
+       foreach ($sensorsData as $car) {
+         $cars = Car::find($car->car_id)->get();
+       }
+       foreach ($cars as $car) {
+         array_push($cars_ids, $car->id);
+       }
+        return view('users.carsActivity')->with(['cars'=>$cars , 'cars_ids'=>json_encode($cars_ids)]);
     }
 
     /**
