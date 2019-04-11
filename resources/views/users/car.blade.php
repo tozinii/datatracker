@@ -7,7 +7,9 @@
 			    	<h2>{{ucfirst($car->code)}}</h2>
 			    	<input type="hidden" id="idCoche" value="{{$car->id}}">
 			    	<input type="hidden" id="idKit" value="{{$car->kit->id}}">
-			    	<input type="button" id="datos" value="Añadir datos" onclick="">
+			    	<form method="get" action="/store/{{$car->id}}">
+			    		<button type="submmit" id="valoresSensores" value="{{$car->id}}">{{$car->id}}</button>
+			    	</form>
 				    <div id="lista-sensores">
 				    	<h3>{{ucfirst($car->kit->name)}}</h3>
 						@foreach($car->kit->sensors as $sensor)
@@ -24,7 +26,7 @@
 						<i class="sensor2" id="cocheBateria"></i>
 					</div>
 					<div class="sensor3" id="3">
-						<div id="mapid"></div>
+						<div id="mapid" onload="setVista(coordenadas)"></div>
 					</div>
 					<div class="sensor4" id="4">
 						<img id="flechaConsumo" src="/assets/images/flecha.png">
@@ -94,49 +96,56 @@ $(document).ready(function () {
 				  		}else if(dato[1].data < 90){
 				  			$(".sensor2").removeClass("bateria2");
 				  			$(".sensor2").addClass("bateria3");
-				  		}else if(dato[1].data == 0){
-				  			$(".sensor2").removeClass("bateria3");
-				  			$(".sensor2").addClass("bateria0");
 				  		}else{
-				  			$(".sensor2").removeClass("bateria0");
+				  			$(".sensor2").removeClass("bateria3");
 				  			$(".sensor2").addClass("bateria4");
 				  		}
 				  	}
 				}
 
 		  		//$("velocimetro").style.display = "block";
+				/*var mapa = L.map('mapid').setView([coordenadas], 12);
+				var marker = L.marker([coordenadas],{icon:cocheIcon});.addTo(mapa);*/
 
 		  		var rotar;
 		  		if(dato[0].data >= 0){
 		  			rotar = (265*dato[0].data/50)+140;
+		  			console.log(rotar);
 		  			$("#flechaVelocimetro").css("transform", "rotate("+rotar+"deg)");
 		  		}
 		  		if(dato[3].data >= 0){
 		  			rotar = (265*dato[3].data/100)+140;
+		  			console.log(rotar);
 		  			$("#flechaConsumo").css("transform", "rotate("+rotar+"deg)");
 		  		}
 		  		if(dato[4].data >= 0){
 		  			rotar = (265*dato[4].data/100)+140;
+		  			console.log(rotar);
 		  			$("#flechaAutonomia").css("transform", "rotate("+rotar+"deg)");
 		  		}
 		  		if(dato[6].data >= 0){
 		  			rotar = (265*dato[6].data/100)+140;
+		  			console.log(rotar);
 		  			$("#flechaPotencia").css("transform", "rotate("+rotar+"deg)");
 		  		}
 		  		if(dato[7].data >= 0){
 		  			rotar = (265*dato[7].data/100)+140;
+		  			console.log(rotar);
 		  			$("#flechaTemperatura-Motor").css("transform", "rotate("+rotar+"deg)");
 		  		}
 		  		if(dato[8].data >= 0){
 		  			rotar = (265*dato[8].data/100)+140;
+		  			console.log(rotar);
 		  			$("#flechaTemperatura-Bateria").css("transform", "rotate("+rotar+"deg)");
 		  		}
 		  		if(dato[10].data >= 0){
 		  			rotar = (265*dato[10].data/100)+140;
+		  			console.log(rotar);
 		  			$("#flechaRumbo").css("transform", "rotate("+rotar+"deg)");
 		  		}
 		  		if(dato[11].data >= 0){
 		  			rotar = (265*dato[11].data/1000)+140;
+		  			console.log(rotar);
 		  			$("#flechaRPM").css("transform", "rotate("+rotar+"deg)");
 		  		}
 
@@ -145,8 +154,10 @@ $(document).ready(function () {
 		});
 	}
 	  	
-		setInterval(ajax, 1000);
+		setInterval(ajax, 5000);
 });
 </script>
 @endsection
+
+
 
