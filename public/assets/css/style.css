@@ -5168,9 +5168,10 @@ outline-suc
 }
 
 .sensor1{
-  clear: both;
+  float: left;
   background: url(/assets/images/velocimetro.png) no-repeat orange;
-  width: 500px;
+  background-size: 100px;
+  width: 100px;
   height: auto;
   position: relative;
   display: none;
@@ -5183,53 +5184,50 @@ outline-suc
   transform: rotate(-220deg);
   transition: 1s ease-in-out;
 }
-
+#bateria2{
+  float: left;
+  width: 100px; 
+}
 .sensor2 {
     background: url('/assets/images/css_sprites.png');
+    background-size: 165px;
     background-repeat: no-repeat;
     display: block;
-    width: 165px;
-    height: 230px;
-    clear: both;
+    width: 41.25px;
+    height: 80px;
+}
+
+#cocheBateria{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bateria0{
   background: url('/assets/images/bateria-vacia.png');
-  background-position: 0px -50px;
 }
 .bateria1{
-  background-position: 0px -50px;
+  background-position: 0px -0px;
 }
 .bateria2{
-  background-position: -165px -50px;
+  background-position: -41.25px -0px;
 }
 .bateria3{
-  background-position: -330px -50px;
+  background-position: -82.5px -0px;
 }
 .bateria4{
-  background-position: -495px -50px;
+  background-position: -123.7px -0px;
 }
 
 .sensor3{
-  clear: both;
-  background: url(/assets/images/velocimetro.png) no-repeat orange;
+  float: left;
   width: 500px;
   height: auto;
   position: relative;
   display: none;
 }
+
 #mapid { 
   height: 500px;
-}
-
-.sensor4{
-  clear: both;
-  background: url(/assets/images/velocimetro.png) no-repeat red;
-  width: 500px;
-  height: auto;
-  position: relative;
-  display: none;
-
 }
 
 #flechaConsumo{
@@ -5239,15 +5237,6 @@ outline-suc
   transition: 1s ease-in-out;
 }
 
-.sensor5{
-  clear: both;
-  background: url(/assets/images/velocimetro.png) no-repeat blue;
-  width: 500px;
-  height: auto;
-  position: relative;
-  display: none;
-}
-
 #flechaAutonomia{
   width: 100%;
   height: auto;
@@ -5255,24 +5244,11 @@ outline-suc
   transition: 1s ease-in-out;
 }
 
-.sensor6{
-  clear: both;
-  background: yellow;
-  width: 500px;
+#flechaVoltios{
+  width: 100%;
   height: auto;
-  position: relative;
-  display: none;
-
-}
-
-.sensor7{
-  clear: both;
-  background: url(/assets/images/velocimetro.png) no-repeat purple;
-  width: 500px;
-  height: auto;
-  position: relative;
-  display: none;
-
+  transform: rotate(-220deg);
+  transition: 1s ease-in-out;
 }
 
 #flechaPotencia{
@@ -5282,31 +5258,11 @@ outline-suc
   transition: 1s ease-in-out;
 }
 
-.sensor8{
-  clear: both;
-  background: url(/assets/images/velocimetro.png) no-repeat black;
-  width: 500px;
-  height: auto;
-  position: relative;
-  display: none;
-
-}
-
 #flechaTemperatura-Motor{
   width: 100%;
   height: auto;
   transform: rotate(-220deg);
   transition: 1s ease-in-out;
-}
-
-.sensor9{
-  clear: both;
-  background: url(/assets/images/velocimetro.png) no-repeat orange;
-  width: 500px;
-  height: auto;
-  position: relative;
-  display: none;
-
 }
 
 #flechaTemperatura-Bateria{
@@ -5316,20 +5272,11 @@ outline-suc
   transition: 1s ease-in-out;
 }
 
-.sensor10{
-  clear: both;
-  background: url(/assets/images/velocimetro.png) no-repeat orange;
-  width: 500px;
-  height: auto;
-  position: relative;
-  display: none;
-
-}
-
 .sensor11{
-  clear: both;
+  float: left;
   background: url(/assets/images/brujula.png) no-repeat green;
-  width: 500px;
+  background-size: 100px;
+  width: 100px;
   height: auto;
   position: relative;
   display: none;
@@ -5342,19 +5289,15 @@ outline-suc
   transition: 1s ease-in-out;
 }
 
-.sensor12{
-  clear: both;
-  background: url(/assets/images/velocimetro.png) no-repeat red;
-  width: 500px;
-  height: auto;
-  position: relative;
-  display: none;
-
-}
-
 #flechaRPM{
   width: 100%;
   height: auto;
   transform: rotate(-220deg);
   transition: 1s ease-in-out;
+}
+
+#SensoresVisualizados{
+  clear: both;
+  width: 800px;
+  height: 500px;
 }

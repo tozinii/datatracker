@@ -7,9 +7,7 @@
 			    	<h2>{{ucfirst($car->code)}}</h2>
 			    	<input type="hidden" id="idCoche" value="{{$car->id}}">
 			    	<input type="hidden" id="idKit" value="{{$car->kit->id}}">
-			    	<form method="get" action="/store/{{$car->id}}">
-			    		<button type="submmit" id="valoresSensores" value="{{$car->id}}">{{$car->id}}</button>
-			    	</form>
+			    	<button id="valoresSensores" value="{{$car->id}}">{{$car->id}}</button>
 				    <div id="lista-sensores">
 				    	<h3>{{ucfirst($car->kit->name)}}</h3>
 						@foreach($car->kit->sensors as $sensor)
@@ -19,42 +17,45 @@
 							</div>
 						@endforeach
 					</div>
-					<div class="sensor1" id="1">
+					<div id="SensoresVisualizados">
+						<div class="sensor1" id="1">
 						<img id="flechaVelocimetro" src="/assets/images/flecha.png">
+						</div>
+						<div id="bateria2">
+							<i class="sensor2" id="cocheBateria"></i>
+						</div>
+						<div class="sensor1" id="4">
+							<img id="flechaConsumo" src="/assets/images/flecha.png">
+						</div>
+						<div class="sensor1" id="5">
+							<img id="flechaAutonomia" src="/assets/images/flecha.png">
+						</div>
+						<div class="sensor1" id="6">
+							<img id="flechaVoltios" src="/assets/images/flecha.png">
+						</div>
+						<div class="sensor1" id="7">
+							<img id="flechaPotencia" src="/assets/images/flecha.png">
+						</div>
+						<div class="sensor1" id="8">
+							<img id="flechaTemperatura-Motor" src="/assets/images/flecha.png">
+						</div>
+						<div class="sensor1" id="9">
+							<img id="flechaTemperatura-Bateria" src="/assets/images/flecha.png">
+						</div>
+						<div class="sensor10" id="10">
+							Aqui van los satelites
+						</div>
+						<div class="sensor11" id="11">
+							<img id="flechaRumbo" src="/assets/images/flecha.png">
+						</div>
+						<div class="sensor1" id="12">
+							<img id="flechaRPM" src="/assets/images/flecha.png">
+						</div>
+						<div class="sensor3" id="3">
+							<div id="mapid"></div>
+						</div>
 					</div>
-					<div id="2">
-						<i class="sensor2" id="cocheBateria"></i>
-					</div>
-					<div class="sensor3" id="3">
-						<div id="mapid" onload="setVista(coordenadas)"></div>
-					</div>
-					<div class="sensor4" id="4">
-						<img id="flechaConsumo" src="/assets/images/flecha.png">
-					</div>
-					<div class="sensor5" id="5">
-						<img id="flechaAutonomia" src="/assets/images/flecha.png">
-					</div>
-					<div class="sensor6" id="6">
-						<img id="Indicador" src="/assets/images/Voltaje.png">
-					</div>
-					<div class="sensor7" id="7">
-						<img id="flechaPotencia" src="/assets/images/flecha.png">
-					</div>
-					<div class="sensor8" id="8">
-						<img id="flechaTemperatura-Motor" src="/assets/images/flecha.png">
-					</div>
-					<div class="sensor9" id="9">
-						<img id="flechaTemperatura-Bateria" src="/assets/images/flecha.png">
-					</div>
-					<div class="sensor10" id="10">
-						Aqui van los satelites
-					</div>
-					<div class="sensor11" id="11">
-						<img id="flechaRumbo" src="/assets/images/flecha.png">
-					</div>
-					<div class="sensor12" id="12">
-						<img id="flechaRPM" src="/assets/images/flecha.png">
-					</div>
+					
 
 				</div>
 				<div class="clear">
@@ -81,7 +82,7 @@ $(document).ready(function () {
 	var car_id = document.getElementById("idCoche").value;
 	var kit = document.getElementById("idKit").value;
 	var valores = [];
-	function ajax(){
+	function ActualizarAjax(){
 		$.ajax({
 		  url: '/api/lastdata/'+car_id,
 		  type: "GET",
@@ -96,7 +97,10 @@ $(document).ready(function () {
 		  				var coordenadas = dato[2].data.split(",");
 		  				coordenadas[0] = parseFloat(coordenadas[0]);
 		  				coordenadas[1] = parseFloat(coordenadas[1]);
-		  				L.marker([coordenadas[0],coordenadas[1]]).addTo(mapa);
+		  				var marcador = L.marker([coordenadas[0],coordenadas[1]]).addTo(mapa);
+		  				if(!marcador){
+							mapa.removeLayer(marcador);
+						}
 		  				if(dato[1].data < 20){
 		  					$(".sensor2").addClass("bateria1");
 				  		}else if(dato[1].data < 51){
@@ -161,9 +165,24 @@ $(document).ready(function () {
 
 	       }
 		});
+		
 	}
+
+	$("#valoresSensores").on("click", function(e){
+		e.preventDefault();
+		$.ajax({
+			  url: '/store/'+car_id,
+			  type: "GET",
+			  dataType: 'json',
+			  success: function(dato) {
+			  	ActualizarAjax();
+
+		       }
+		});
+	});
+	
 	  	
-		setInterval(ajax, 5000);
+	setInterval(ActualizarAjax, 5000);
 });
 
 
