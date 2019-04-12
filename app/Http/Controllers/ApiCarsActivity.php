@@ -45,6 +45,9 @@ class ApiCarsActivity extends Controller
        $cars_ids = DB::table('car_sensor')->select('car_id')->where('created_at', '<=', $hoy)->groupBy('car_id')->get();
        foreach ($cars_ids as $car) {
          $cars = Car::find($car->car_id)->get();
+         foreach ($car as $key => $value) {
+           // code...
+         }
        }
        /*foreach ($cars as $car) {
          array_push($cars_ids, $car->id);

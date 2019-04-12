@@ -5,7 +5,7 @@
 <div class="container">
    <div class="alert alert-info ttl" role="alert">
 	  <h3 class="alert-heading">Bienvenido {{ Auth::user()->name}}</h3>
-	  <p>Añadir datos nuevos aleatorios medio realistas. Poner una vista predeterminada de donosti entero. Ruta aplicacion -> posgps/3 </p>
+	  <p>Añadir datos nuevos aleatorios medio realistas. Poner una vista predeterminada de donosti entero. </p>
 	</div>
 </div>
 
@@ -23,56 +23,47 @@
 
    <script>
 
-   function renderizarMapa(coordenadasMapa){
-     var activity = L.map('map').setView([43.326353,-1.971578], 16);
+   var carCoords = [];
+   var coordenadas = [];
+     var map = L.map('map').setView([43.326353,-1.971578], 13);
 
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=sk.eyJ1IjoiY3luZGEiLCJhIjoiY2pyOTM3b2ZmMDB0dDQzcGZ5ajR4aXJyNiJ9.uQDXCNWklDqzIdAHxI0XqA', {
           attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
           maxZoom: 18,
           id: 'mapbox.streets'
-      }).addTo(carmap);
-      var marcadores = [];
-      for(var i=0; i=coordenadasMapa.length;i++){
-        if(coordenadasMapa[i] != null){
-          marcadores.push(L.marker(coordenadasMapa[i]["coords"]));
-        }
-      }
-      for (var i = marcadores.length - 1; i >= 0; i--) {
-        marcadores[i].addTo(carmap);
-      }
+      }).addTo(map);
 
-   }
+
 
    $(document).ready(function () {
-    var carsId = {{ $cars_ids }};
-    console.log(carsId);
-   	var carCoords = [];
+     var cars_ids = {{$cars_ids}};
 
-    for(let carId of carsId){
+
+    for(let carId of cars_ids){
    	  	$.ajax({
    		  url: '/api/lastdata/'+carId,
    		  type: "GET",
    		  dataType: 'json',
-   		  success: function(dato, status, xhr) {
-            var coordenadas = [];
-            for(var sensor of dato){
-              if(sensor && sensor.sensor_id == 3 && sensor.data != null){
-                coordenadas = sensor.data;
+   		  success: function(dato) {
+          for (var i = 0; i < dato.length; i++) {
+            if(dato[i] != null){
+              if(dato[i].sensor_id == 3){
+                  coordenadas = dato[2].data.split(",");
+                          coordenadas[0] = parseFloat(coordenadas[0]);
+                          coordenadas[1] = parseFloat(coordenadas[1]);
+                L.marker([coordenadas[0], coordenadas[1]]).addTo(map);
+                carCoords = dato[2].data;
+                  console.log(carCoords);
               }
             }
-            console.log(coordenadas);
-            carCoords.push({
-                id: carId,
-                coords: coordenadas
-            });
-            if(carCoords.length === carsId.length){
-              renderizarMapa(carCoords);
-            }
-  	       }
+          }
+        }
   		});
 
   }
 });
+
+
    </script>
 
 @endsection

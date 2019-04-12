@@ -29,7 +29,7 @@ class CarsActivityController extends Controller
     public function index()
     {
     	// $posicion cogera la posicion de los coches que vaya a coger para mostrarlos en el mapa
-       $hoy = '2019-03-29';
+       $hoy = '2019-04-12';
     	//$hoy = date('Y-m-d');
        // coger los coches que hayan recibido los datos el dia de hoy (sin la hora)
        // Para ello recorro todos los coches y cojo de cada uno los datos que hayan sido recibidos el dia de hoy
