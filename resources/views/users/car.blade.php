@@ -7,6 +7,9 @@
 			    	<h2>{{ucfirst($car->code)}}</h2>
 			    	<input type="hidden" id="idCoche" value="{{$car->id}}">
 			    	<input type="hidden" id="idKit" value="{{$car->kit->id}}">
+			    	<form method="get" action="/store/{{$car->id}}">
+			    		<button type="submmit" id="valoresSensores" value="{{$car->id}}">{{$car->id}}</button>
+			    	</form>
 				    <div id="lista-sensores">
 				    	<h3>{{ucfirst($car->kit->name)}}</h3>
 						@foreach($car->kit->sensors as $sensor)
@@ -155,4 +158,6 @@ $(document).ready(function () {
 });
 </script>
 @endsection
+
+
 

@@ -46,19 +46,30 @@ class DataController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$code,$sensorName,$value)
+    public function store($id)//Request $request, $sensorName, $value
     {
-      $car = Car::where('code',strtolower($code))->first();
-      $sensor = Sensor::where('name',$sensorName)->first();
+      $car = Car::where('id', $id)->first();
+      /*$sensor = Sensor::where('name',$sensorName)->first();
       if($car == null || $sensor == null){
         return response(view('errors.500'), 500);
+      }*/
+      for($i = 1; $i<=12; $i++){
+        if($i == 3){
+            DB::table('car_sensor')->insert(['sensor_id' => $i, 'car_id' => $car->id, 'data'=>(43.270579 + lcg_value()*(abs(43.325575 - 43.270579))).', '.(-1.952729 + lcg_value()*(abs(-2.014163 - -1.952729))), 'created_at'=>date("Y-m-d H:i:s")]);
+        }else if($i == 1){
+            DB::table('car_sensor')->insert(['sensor_id' => $i, 'car_id' => $car->id, 'data'=>random_int(1,50), 'created_at'=>date("Y-m-d H:i:s")]);
+        }else if ($i == 12){
+            DB::table('car_sensor')->insert(['sensor_id' => $i, 'car_id' => $car->id, 'data'=>random_int(1,1000), 'created_at'=>date("Y-m-d H:i:s")]);
+        }else{
+            DB::table('car_sensor')->insert(['sensor_id' => $i, 'car_id' => $car->id, 'data'=>random_int(1,100), 'created_at'=>date("Y-m-d H:i:s")]);
+        }
+      
       }
-
-      DB::table('car_sensor')->insert(
+      /*DB::table('car_sensor')->insert(
         ['sensor_id' => $sensor->id, 'car_id' => $car->id, 'data'=>$value, 'created_at'=>date("Y-m-d H:i:s")]
-      );
+      );*/
 
-      return redirect()->route('root');
+      return back();
 
     }
 

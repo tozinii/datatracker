@@ -52,9 +52,10 @@ Route::get('/cars/{id}', 'CarController@show')->middleware(['auth','verified','u
 Route::get('/sensor/{carName}/{sensorName}', 'SensorController@show')->middleware(['auth','verified','user'])->name('sensorInfo');
 Route::get('/shop', 'ShopController@index')->name('shop');
 Route::get('/sensorDate','SensorController@sensorDate')->name('sensordate');
+Route::get('/carsActivity', 'CarsActivityController@index')->name('carsActivity');
 
 //Ruta para recibir datos de sensores
-Route::get('/data/{code}/{sensorName}/{type}', 'DataController@store');
+Route::get('/store/{id}', 'DataController@store')->name('store');
 Route::get('/data/{code}', 'DataController@showSensorData');
 Route::get('/lastdata', 'ApiLastDataController@show');
 

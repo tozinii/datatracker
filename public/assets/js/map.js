@@ -1,4 +1,4 @@
-L.map('mapid').setView([43.326353,-1.971578], 14);
+var mapa = L.map('mapid').setView([43.326353,-1.971578], 14);
 
 	var baselayer = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
@@ -46,9 +46,4 @@ var toplayer = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png
 	    shadowAnchor: [4, 62],  // the same for the shadow
 	    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 	});
-	
-	L.marker([43.326353,-1.971578],{icon:cocheIcon});
-
-	function setVista(x,y){
-	mapa.setView([x, y],16);
-	}
+	var marker=L.marker([43.326353,-1.971578],{icon:cocheIcon}).addTo(mapa);

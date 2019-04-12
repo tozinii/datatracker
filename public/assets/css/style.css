@@ -5186,6 +5186,7 @@ outline-suc
 }
 
 .bateria0{
+  background: url('/assets/images/bateria-vacia.png');
   background-position: 0px -50px;
 }
 .bateria1{
