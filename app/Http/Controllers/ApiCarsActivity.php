@@ -42,13 +42,13 @@ class ApiCarsActivity extends Controller
        // Para ello recorro todos los coches y cojo de cada uno los datos que hayan sido recibidos el dia de hoy
        $cars = array();
        $cars_ids = array();
-       $sensorsData = DB::table('car_sensor')->select('car_id')->where('created_at', '<=', $hoy)->groupBy('car_id')->get();
-       foreach ($sensorsData as $car) {
+       $cars_ids = DB::table('car_sensor')->select('car_id')->where('created_at', '<=', $hoy)->groupBy('car_id')->get();
+       foreach ($cars_ids as $car) {
          $cars = Car::find($car->car_id)->get();
        }
-       foreach ($cars as $car) {
+       /*foreach ($cars as $car) {
          array_push($cars_ids, $car->id);
-       }
+       }*/
         return view('users.carsActivity')->with(['cars'=>$cars , 'cars_ids'=>json_encode($cars_ids)]);
     }
 
