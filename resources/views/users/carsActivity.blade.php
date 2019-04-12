@@ -8,21 +8,30 @@
 	  <p>Añadir datos nuevos aleatorios medio realistas. Poner una vista predeterminada de donosti entero. </p>
 	</div>
 </div>
+    <div id="carList" class="tab-pane fade in active">
+      <div class="list-group">
+        <table id="list-users-table" class="table">
+          <thead>
+            <tr>
+                <th>Coches</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($cars as $car)
+            @if($car->kit->sensor_id == 3)
+              <tr>
+                <td><span id="cocheLista{{$car->id}}">{{$car->code}}</span></td>
+              </tr>
+            @endif
 
-  <div class="row">
-    @foreach($cars as $car)
-    <div class="car-element">
-      <p><b>Coche:</b>{{ $car->code }}</p>
-    </div>
-    @endforeach
-  </div>
-  <div id="map">
+            @endforeach
+          </tbody>
+        </table>
+      </div>  </div>
 
-  </div>
-
+  <div id="map" class="mapPosition"></div>
 
    <script>
-
    var carCoords = [];
    var coordenadas = [];
      var map = L.map('map').setView([43.326353,-1.971578], 13);
@@ -48,12 +57,22 @@
           for (var i = 0; i < dato.length; i++) {
             if(dato[i] != null){
               if(dato[i].sensor_id == 3){
+                if(dato[2].data != null){
                   coordenadas = dato[2].data.split(",");
                           coordenadas[0] = parseFloat(coordenadas[0]);
                           coordenadas[1] = parseFloat(coordenadas[1]);
                 L.marker([coordenadas[0], coordenadas[1]]).addTo(map);
                 carCoords = dato[2].data;
                   console.log(carCoords);
+                  // Recoger el elemento html de la lista para poner un sprite en verde que indica que ese coche tiene datos de gps
+                var cocheLista = getElementById('cocheLista'+carId);
+                cocheLista.style('background: green');
+
+                }else{
+                // Recoger el elemento html de la lista para poner un sprite en rojo que indica que ese coche no tiene datos de gps
+
+
+                }
               }
             }
           }

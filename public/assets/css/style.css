@@ -4428,7 +4428,10 @@ outline-suc
   margin-left: 500px;
 }
 
-
+#carList{
+  width: 200px;
+  display: inline-block;
+}
 
 
 
@@ -5016,6 +5019,11 @@ outline-suc
 #map{
   z-index:2 ;
 }
+
+.mapPosition{
+  display: inline-block;
+}
+
 /*
   Estilos responsive cars
 
