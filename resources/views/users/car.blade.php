@@ -67,8 +67,16 @@
 	</div>
 </section>
 @include('includes.geoscripts')
-<script src="/assets/js/map.js" ></script>
 <script type="text/javascript">
+var mapa = L.map('mapid').setView([43.326353,-1.971578], 12);
+
+var baselayer = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets',
+	}).addTo(mapa);
+
 $(document).ready(function () {
 	var car_id = document.getElementById("idCoche").value;
 	var kit = document.getElementById("idKit").value;
@@ -88,6 +96,7 @@ $(document).ready(function () {
 		  				var coordenadas = dato[2].data.split(",");
 		  				coordenadas[0] = parseFloat(coordenadas[0]);
 		  				coordenadas[1] = parseFloat(coordenadas[1]);
+		  				L.marker([coordenadas[0],coordenadas[1]]).addTo(mapa);
 		  				if(dato[1].data < 20){
 		  					$(".sensor2").addClass("bateria1");
 				  		}else if(dato[1].data < 51){
@@ -156,6 +165,9 @@ $(document).ready(function () {
 	  	
 		setInterval(ajax, 5000);
 });
+
+
+	
 </script>
 @endsection
 
