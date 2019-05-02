@@ -13,8 +13,8 @@
 
 			@csrf
 			@method('PUT')
-			<img src="https://i.imgur.com/Xfukwc2.jpg" title="source: imgur.com" />
-			<img src="https://imgur.com/Xfukwc2" title="source: imgur.com" />
+			<img src="{{auth()->user()->avatar}}" title="source: imgur.com" />
+			<img src="https://i.imgur.com/qUqUW2c.png" title="source: imgur.com" />
 			<p id="fotoDiv" hidden>
         		<label>Cambiar foto: </label><input type="file" name="foto" class="form-control-file" >
       		</p>
