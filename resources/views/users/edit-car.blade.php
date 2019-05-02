@@ -12,6 +12,7 @@
 		<form id="edit-car-form" method="POST" action="{{ route('cars.update',$car->id)}}" class="needs-validation profile-data" novalidate>
 			@csrf
 			@method('PUT')
+        <label>Cambiar foto: </label><input type="file" name="foto" class="form-control-file">
 				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 					<label>Código*</label>
 					<input id="car-code" type="text" name="car-code" class="form-control" value="{{$car->code}}" disabled="disabled">

@@ -5,6 +5,7 @@
 			<div id="contenido">
 			    <div id="sensores">
 			    	<h2>{{ucfirst($car->code)}}</h2>
+						<img src="{{$car->avatar}}" title="source: imgur.com" />
 			    	<input type="hidden" id="idCoche" value="{{$car->id}}">
 			    	<input type="hidden" id="idKit" value="{{$car->kit->id}}">
 			    	<button id="valoresSensores" value="{{$car->id}}">{{$car->id}}</button>
@@ -23,21 +24,21 @@
 							<div class="sensor1" id="1">
 								<img id="flechaVelocimetro" src="/assets/images/flecha.png">
 							</div>
-							
+
 						</div>
 						<div class="listado-sensores">
 							<label>Bateria</label>
 							<div id="bateria2">
 								<i class="sensor2" id="cocheBateria"></i>
 							</div>
-							
+
 						</div>
 						<div class="listado-sensores">
 							<label>Consumo</label>
 							<div class="sensor1" id="4">
 								<img id="flechaConsumo" src="/assets/images/flecha.png">
 							</div>
-							
+
 						</div>
 						<div class="listado-sensores">
 							<label>Autonomia</label>
@@ -94,7 +95,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 
 				</div>
 			</div>
@@ -209,7 +210,7 @@ $(document).ready(function () {
 		  		}
 	       }
 		});
-		
+
 	}
 
 	$("#valoresSensores").on("click", function(e){
@@ -224,15 +225,12 @@ $(document).ready(function () {
 		       }
 		});
 	});
-	
-	  	
+
+
 	setInterval(ActualizarAjax, 5000);
 });
 
 
-	
+
 </script>
 @endsection
-
-
-
