@@ -13,6 +13,11 @@
 
 			@csrf
 			@method('PUT')
+			<img src="https://i.imgur.com/Xfukwc2.jpg" title="source: imgur.com" />
+			<img src="https://imgur.com/Xfukwc2" title="source: imgur.com" />
+			<p id="fotoDiv" hidden>
+        		<label>Cambiar foto: </label><input type="file" name="foto" class="form-control-file" >
+      		</p>
 		    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 		      <label>Nombre*</label>
 		      <input id="profile-name" type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{auth()->user()->name}}" disabled>

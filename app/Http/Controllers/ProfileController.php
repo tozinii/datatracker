@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -84,9 +87,48 @@ class ProfileController extends Controller
     {
       if(!$this->validator($request->all())->fails()){
         $user=User::find($id);
-        if ($request->hasFile('avatar')) {
-          $user->avatar = $request->file('avatar')->store('public');
-        }
+          $foto = $request->file('foto');
+          if($foto == ''){
+            $user->avatar = 'avatar.png';
+          }else{
+          // $extension = $foto->getClientOriginalExtension();
+          // Storage::disk('public')->put($foto->getFileName().'.'.$extension, File::get($foto));
+            $image64 = base64_encode(file_get_contents($foto)); //pasar la foto a base64
+
+            //llamar a la api y subir la imagen
+            $curl = curl_init();
+
+            $client_id = "64b806a9b93f90f";
+
+            $token = "e91ea0203e37ebb4a90cf957ea2edee47f3c59cb";
+
+            curl_setopt_array($curl, array(
+              CURLOPT_URL => "https://api.imgur.com/3/image",
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_ENCODING => "",
+              CURLOPT_MAXREDIRS => 10,
+              CURLOPT_TIMEOUT => 0,
+              CURLOPT_FOLLOWLOCATION => false,
+              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+              CURLOPT_CUSTOMREQUEST => "POST",
+              CURLOPT_POSTFIELDS => array('image' => $image64),
+              CURLOPT_HTTPHEADER => array(
+                // "Authorization: Client-ID {{1cb45b7462006f}}",
+                "Authorization: Bearer ".$token //nuestro token para acceder a ala api
+              ),
+            ));
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
+
+            curl_close($curl);
+
+            if ($err) {
+              echo "cURL Error #:" . $err;
+            } else {
+              $json = json_decode($response);
+              $user->avatar = $json->data->link; //pilla link de la api
+            }
+          }
         $user->name = $request->input('nombre');
         $user->lastname = $request->input('apellido');
         $user->email = $request->input('email');

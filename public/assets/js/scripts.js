@@ -49,7 +49,7 @@ $(document).ready(function(){
     //Scripts para formularios de edición
       //Editar Perfil
       $('#editarPerfil').on('click', function() {
-
+        $('#fotoDiv').removeAttr('hidden');
         $('#profile-name').removeAttr('disabled');
         $('#apellido').removeAttr('disabled');
         $('#profile-email').removeAttr('disabled');
