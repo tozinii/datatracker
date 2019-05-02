@@ -17,51 +17,85 @@
 							</div>
 						@endforeach
 					</div>
-					<div id="SensoresVisualizados">
-						<div class="sensor1" id="1">
-						<img id="flechaVelocimetro" src="/assets/images/flecha.png">
+					<div id="SensoresVisualizados" class="fondo">
+						<div class="listado-sensores">
+							<label>Velocidad</label>
+							<div class="sensor1" id="1">
+								<img id="flechaVelocimetro" src="/assets/images/flecha.png">
+							</div>
+							
 						</div>
-						<div id="bateria2">
-							<i class="sensor2" id="cocheBateria"></i>
+						<div class="listado-sensores">
+							<label>Bateria</label>
+							<div id="bateria2">
+								<i class="sensor2" id="cocheBateria"></i>
+							</div>
+							
 						</div>
-						<div class="sensor1" id="4">
-							<img id="flechaConsumo" src="/assets/images/flecha.png">
+						<div class="listado-sensores">
+							<label>Consumo</label>
+							<div class="sensor1" id="4">
+								<img id="flechaConsumo" src="/assets/images/flecha.png">
+							</div>
+							
 						</div>
-						<div class="sensor1" id="5">
-							<img id="flechaAutonomia" src="/assets/images/flecha.png">
+						<div class="listado-sensores">
+							<label>Autonomia</label>
+							<div class="sensor1" id="5">
+								<img id="flechaAutonomia" src="/assets/images/flecha.png">
+							</div>
 						</div>
-						<div class="sensor1" id="6">
-							<img id="flechaVoltios" src="/assets/images/flecha.png">
+						<div class="listado-sensores">
+							<label>Voltaje</label>
+							<div class="sensor1" id="6">
+								<img id="flechaVoltios" src="/assets/images/flecha.png">
+							</div>
 						</div>
-						<div class="sensor1" id="7">
-							<img id="flechaPotencia" src="/assets/images/flecha.png">
+						<div class="listado-sensores">
+							<label>Potencia</label>
+							<div class="sensor1" id="7">
+								<img id="flechaPotencia" src="/assets/images/flecha.png">
+							</div>
 						</div>
-						<div class="sensor1" id="8">
-							<img id="flechaTemperatura-Motor" src="/assets/images/flecha.png">
+						<div class="listado-sensores">
+							<label>Temperatura-Motor</label>
+							<div class="sensor1" id="8">
+								<img id="flechaTemperatura-Motor" src="/assets/images/flecha.png">
+							</div>
 						</div>
-						<div class="sensor1" id="9">
-							<img id="flechaTemperatura-Bateria" src="/assets/images/flecha.png">
+						<div class="listado-sensores">
+							<label>Temperatura-Bateria</label>
+							<div class="sensor1" id="9">
+								<img id="flechaTemperatura-Bateria" src="/assets/images/flecha.png">
+							</div>
 						</div>
-						<div class="sensor10" id="10">
-							Aqui van los satelites
+						<div class="listado-sensores">
+							<label>Satelites</label>
+							<div class="sensor10" id="10">
+								Aqui van los satelites
+							</div>
 						</div>
-						<div class="sensor11" id="11">
-							<img id="flechaRumbo" src="/assets/images/flecha.png">
+						<div class="listado-sensores">
+							<label>Rumbo</label>
+							<div class="sensor11" id="11">
+								<img id="flechaRumbo" src="/assets/images/flecha.png">
+							</div>
 						</div>
-						<div class="sensor1" id="12">
-							<img id="flechaRPM" src="/assets/images/flecha.png">
+						<div class="listado-sensores">
+							<label>RPM</label>
+							<div class="sensor1" id="12">
+								<img id="flechaRPM" src="/assets/images/flecha.png">
+							</div>
 						</div>
-						<div class="sensor3" id="3">
-							<div id="mapid"></div>
+						<div class="listado-sensores">
+							<label>GPS</label>
+							<div class="sensor3" id="3">
+								<div id="mapid"></div>
+							</div>
 						</div>
 					</div>
 					
 
-				</div>
-				<div class="clear">
-					<div id="imagen-coche">
-						<img src="{{asset($car->kit->image)}}">
-					</div>
 				</div>
 			</div>
 	  </div>
@@ -119,6 +153,18 @@ $(document).ready(function () {
 		  		//$("velocimetro").style.display = "block";
 				/*var mapa = L.map('mapid').setView([coordenadas], 12);
 				var marker = L.marker([coordenadas],{icon:cocheIcon});.addTo(mapa);*/
+				if(kit==1){
+					$(".fondo").addClass("fondo1");
+				}else if(kit==2){
+					$(".fondo").removeClass("fondo1");
+					$(".fondo").addClass("fondo2");
+				}else if(kit==3){
+					$(".fondo").removeClass("fondo2");
+					$(".fondo").addClass("fondo3");
+				}else{
+					$(".fondo").removeClass("fondo3");
+					$(".fondo").addClass("fondo4");
+				}
 
 		  		var rotar;
 		  		if(dato[0].data >= 0){
@@ -161,8 +207,6 @@ $(document).ready(function () {
 		  			console.log(rotar);
 		  			$("#flechaRPM").css("transform", "rotate("+rotar+"deg)");
 		  		}
-
-
 	       }
 		});
 		
