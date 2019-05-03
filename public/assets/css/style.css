@@ -5154,7 +5154,7 @@ outline-suc
 }
 
 .sensor1{
-  background: url(/assets/images/velocimetro.png) no-repeat orange;
+  background: url(/assets/images/velocimetro.png) no-repeat;
   background-size: 100px;
   width: 100px;
   height: auto;
@@ -5257,7 +5257,7 @@ outline-suc
 }
 
 .sensor11{
-  background: url(/assets/images/brujula.png) no-repeat green;
+  background: url(/assets/images/brujula.png) no-repeat;
   background-size: 100px;
   width: 100px;
   height: auto;
@@ -5289,13 +5289,13 @@ outline-suc
 }
 
 .fondo1{
-  background: url(/assets/images/basico1.png) no-repeat;
+  background: url(/assets/images/basico1.png) no-repeat center center;
 }
 .fondo2{
-  background: url(/assets/images/basico2.png) no-repeat;
+  background: url(/assets/images/basico2.png) no-repeat center center;
 }
 .fondo3{
-  background: url(/assets/images/avanzado1.png) no-repeat;
+  background: url(/assets/images/avanzado1.png) no-repeat center center;
 }
 .fondo4{
   background: url(/assets/images/avanzado2.png) no-repeat center center;
