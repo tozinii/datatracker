@@ -156,7 +156,7 @@ class CarController extends Controller
               echo "cURL Error #:" . $err;
             } else {
               $json = json_decode($response);
-              $user->avatar = $json->data->link; //pilla link de la api
+              $car->avatar = $json->data->link; //pilla link de la api
             }
           }
         $car->code = $request->input('car-code');
