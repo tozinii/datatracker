@@ -113,8 +113,7 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id){
 
       if(!$this->validator($request->all())->fails()){
         $car = Car::find($id);
@@ -123,6 +122,8 @@ class CarController extends Controller
           if($foto == ''){
             $car->avatar = 'avatar.png';
           }else{
+          // $extension = $foto->getClientOriginalExtension();
+          // Storage::disk('public')->put($foto->getFileName().'.'.$extension, File::get($foto));
             $image64 = base64_encode(file_get_contents($foto)); //pasar la foto a base64
 
             //llamar a la api y subir la imagen
@@ -163,8 +164,8 @@ class CarController extends Controller
         $car->description = $request->input('car-description');
 
         $car->save();
-        return back();
-      }
+        return back()->withCookie(cookie('name', 'value', 60));
+     }
       return back()->with('editCarError', 'Error en la solicitud. Por favor, rellena los campos obligatorios. (*)');
     }
 

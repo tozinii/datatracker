@@ -9,10 +9,12 @@
 		<!-- <img src="assets/images/article.jpeg" alt="Imagen de perfil">-->
 
 		<!-- Car data -->
-		<form id="edit-car-form" method="POST" action="{{ route('cars.update',$car->id)}}" class="needs-validation profile-data" novalidate>
+		<form id="edit-car-form" method="post" action="{{ route('cars.update',$car->id)}}" class="needs-validation profile-data" novalidate>
 			@csrf
 			@method('PUT')
-        <label>Cambiar foto: </label><input type="file" name="foto" class="form-control-file">
+        	<p id="fotoDiv">
+        		<label>Cambiar foto: </label><input type="file" name="foto" class="form-control-file" >
+      		</p>
 				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 					<label>Código*</label>
 					<input id="car-code" type="text" name="car-code" class="form-control" value="{{$car->code}}" disabled="disabled">
