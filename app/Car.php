@@ -21,4 +21,13 @@ class Car extends Model
       return $this->belongsTo('App\User');
     }
 
+  public function lastsensors()
+    {
+      $lastsensors = $this->belongsToMany('App\Sensor')
+                  ->withPivot('data','created_at')
+                  ->orderBy('car_sensor.created_at', 'desc');
+
+      return $lastsensors;
+    }
+
 }
