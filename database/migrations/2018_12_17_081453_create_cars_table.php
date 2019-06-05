@@ -17,6 +17,7 @@ class CreateCarsTable extends Migration
           $table->increments('id');
           $table->string('description')->nullable();
           $table->string('code')->unique();
+          $table->string('avatar')->default('avatar.png');
           $table->timestamps();
       });
     }
